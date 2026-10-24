@@ -10,7 +10,63 @@
 <main id="main" class="wrap">
   <article class="prose wide">
     <h1>Coming from Lightroom or Capture One.</h1>
-    <p class="lead">What comes with you, where things are, and an honest, measured account of where Rawtonic stands against the better of the two today.</p>
+    <p class="lead">Where Rawtonic stands against the better of the two today, honestly, then what comes with you and where things are.</p>
+
+    <h2 id="today">Where Rawtonic stands today</h2>
+    <p>Rawtonic’s rule is to match or beat the better of Lightroom Classic and Capture One in every tool. It does not yet, everywhere. In short, from our side-by-side tests with development builds shortly before alpha.4 (the numbers are below):</p>
+    <div class="stand">
+      <div>
+        <h3>What works today</h3>
+        <ul class="ticks">
+          <li>Auto white balance finds the colour of the light more accurately than Camera Raw’s Auto on our test set.</li>
+          <li>Sliders keep following your hand while a batch export runs.</li>
+          <li>Merging an HDR bracket is faster than in Lightroom.</li>
+          <li>Photos moved or renamed outside the program are found again, with their ratings.</li>
+          <li>A tethered shot is on screen as quickly as in Capture One on the Sony α7 III, α7 IV and Fujifilm X-H2S.</li>
+          <li>Auto straighten usually gets the horizon closer than Lightroom.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Not there yet</h3>
+        <ul class="ticks">
+          <li class="no">Stepping to the next photo while culling takes about half a second; Capture One is almost instant.</li>
+          <li class="no">Importing a card with a backup copy takes more than twice as long as in Lightroom.</li>
+          <li class="no">A batch export takes about twice as long as in Lightroom or Capture One.</li>
+          <li class="no">The AI subject mask is slow the very first time, while its model loads; after that it takes under a second.</li>
+          <li class="no">AI Denoise is slower than Lightroom’s and its result is a little less accurate.</li>
+          <li class="no">With a Fujifilm GFX 50R, tethered shots arrive a little later than in Capture One.</li>
+          <li class="no">Auto straighten’s rare misses are a little larger than Lightroom’s.</li>
+          <li class="no">A project’s photos cannot be moved to another drive one by one yet; move the whole folder instead.</li>
+        </ul>
+      </div>
+    </div>
+
+    <details class="measured" id="measured">
+      <summary id="measured-title">The measurements behind this</summary>
+    <p>These are the measurements behind the lists above, worse results included. Unless noted: one MacBook Pro (Apple M5 Pro), the same files in all three programs, Lightroom Classic 15.6 and Capture One 16.6, measured between 10 and 24 October 2026. Rawtonic was a development build of each day, before alpha.4; the most recent rows (import, culling, slider during export, typed value) used <a class="plain" href="{{repo}}/commit/20c8c71d">commit 20c8c71d</a>, and later changes are not measured here. Where one program was not measured, the verdict compares only with the other. Times come from screen recordings at 60 frames a second, so they are known to about one frame (0.017 s): they show when the screen changed, not the full delay from hand to eye.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="measured-title">
+      <table>
+        <thead><tr><th scope="col">Task</th><th scope="col">Rawtonic</th><th scope="col">Lightroom Classic</th><th scope="col">Capture One</th><th scope="col">Verdict</th><th scope="col">What the measurement covers</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Auto white balance, angular error from the measured light</th><td class="num">1.88°</td><td class="num">3.78° (Camera Raw’s Auto)</td><td>not scored</td><td><span class="v better">Better</span> than Camera Raw</td><td>270 scenes of the Cube++ dataset with a grey card measured in each, mean error of the light each program found; one camera family (Canon 550D/600D). Lightroom was not measured directly: the figure is Camera Raw’s Auto, which Lightroom uses. Capture One’s Auto cannot be converted to this error; on another 272 scenes its result was the least neutral of the three by grey-card colour, a different measure. Not a test of taste: Rawtonic keeps part of warm light warm on purpose, so the balance it applies is 3.52° from neutral on average.</td></tr>
+          <tr><th scope="row">Dragging a slider while a batch export runs</th><td class="num">42–58 updates per drag, last ≤ 0.05 s after release</td><td class="num">40–47, last ≤ 0.31 s</td><td class="num">11–18, last 2.1 s</td><td><span class="v better">Better</span></td><td>Exposure dragged for 1.2 s during each program’s own batch export.</td></tr>
+          <tr><th scope="row">HDR merge, time</th><td class="num">4–6 s</td><td class="num">about 19 s</td><td>not measured</td><td><span class="v better">Faster</span> than Lightroom</td><td>A real hand-held five-frame bracket (public, CC BY-SA), measured 10 October 2026. Speed only: image quality of the merges is not part of this verdict.</td></tr>
+          <tr><th scope="row">Finding moved and renamed files</th><td>moves verified, ratings kept</td><td>lost the ratings of 5 files</td><td>not measured</td><td><span class="v better">Better</span></td><td>Synchronize Folder on one folder of 12 files changed outside both programs.</td></tr>
+          <tr><th scope="row">Typed slider value on screen</th><td class="num">within about one frame</td><td class="num">within two frames</td><td class="num">1–12 frames (0.02–0.21 s)</td><td><span class="v equal">Equal</span></td><td>Time from the moment the test script sent Return to the first recorded frame with the changed photo, four or five values each. The recording cannot resolve less than one frame (0.017 s); two of Rawtonic’s five changes were too small for it to detect.</td></tr>
+          <tr><th scope="row">Tethered shot on screen</th><td class="num">1.1–1.5 s; GFX 50R 2.4 s</td><td>not measured</td><td class="num">1.2–1.6 s; GFX 50R 2.1 s</td><td><span class="v equal">Equal</span>, GFX 50R <span class="v worse">worse</span></td><td>Median from the shutter request to the photo in view, Sony α7 III and α7 IV, Fujifilm X-H2S and GFX 50R, macOS.</td></tr>
+          <tr><th scope="row">Auto straighten, error</th><td class="num">median 0.06°, 90 % within 0.46°</td><td class="num">0.18°, 0.42°</td><td>not measured</td><td><span class="v equal">Mixed</span></td><td>51 test photos: a better typical result, slightly worse worst cases.</td></tr>
+          <tr><th scope="row">Next photo while culling</th><td class="num">0.51 s</td><td class="num">0.35 s</td><td class="num">0.10 s</td><td><span class="v worse">Worse</span></td><td>Rate and step on, 20 photos at fit, median. Rawtonic shows the developed photo, the others a preview first.</td></tr>
+          <tr><th scope="row">Import 200 RAW+JPEG with backup and renaming</th><td class="num">27.0 s</td><td class="num">11.5 s</td><td class="num">23.7 s</td><td><span class="v worse">Worse</span></td><td>Until all files are in place. Rawtonic has no metadata preset in the import dialog yet.</td></tr>
+          <tr><th scope="row">Export two recipes of 20 RAWs (40 files)</th><td class="num">17 s</td><td class="num">8 s</td><td class="num">9 s</td><td><span class="v worse">Worse</span></td><td>2048 px JPEG with watermark and full-size 16-bit TIFF, until the last file is written.</td></tr>
+          <tr><th scope="row">AI subject mask, very first use</th><td class="num">13.7 s</td><td class="num">7.9 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>First use after installing, model loading included; later uses take under a second.</td></tr>
+          <tr><th scope="row">AI denoise, 24 MP</th><td class="num">about 10 s, error 2.21</td><td class="num">6.5 s, error 1.69</td><td>not compared</td><td><span class="v worse">Worse</span></td><td>Time per photo, and lightness error at the same remaining noise. Lightroom’s figure is Camera Raw’s Denoise.</td></tr>
+          <tr><th scope="row">Moving a shoot to another drive</th><td>a project’s photos cannot leave its folder yet: move the whole folder</td><td>moves and keeps working, 2.1 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>26 RAW+JPEG pairs to an external drive. Moving a whole folder, or a catalog’s photos, works and is verified byte for byte.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    </details>
+    <p>Still being measured: colour noise reduction at every setting and ISO, sharpening of fine low-contrast detail at high settings, chromatic aberration on a few cameras, and Capture One’s side of several rows. Each release’s notes say what changed. Numbers are the maintainers’ own measurements on their own and on public test files; we use the other programs only to observe their results, never their profiles, presets or looks.</p>
+
 
     <h2 id="import">What comes with you</h2>
     <ul>
@@ -58,29 +114,6 @@
       </table>
     </div>
 
-    <h2 id="measured">Measured side by side</h2>
-    <p>Rawtonic’s rule is to match or beat the better of Lightroom Classic and Capture One in every tool, shown by measurement. It does not yet, everywhere. These are the measurements behind that statement, worse results included. Unless noted: one MacBook Pro (Apple M5 Pro), the same files in all three programs, Lightroom Classic 15.6 and Capture One 16.6, measured between 10 and 24 October 2026. Rawtonic was a development build of each day, before alpha.4; the most recent rows (import, culling, slider during export, typed value) used <a class="plain" href="{{repo}}/commit/20c8c71d">commit 20c8c71d</a>, and later changes are not measured here. Where one program was not measured, the verdict compares only with the other. Times come from screen recordings at 60 frames a second, so they are known to about one frame (0.017 s): they show when the screen changed, not the full delay from hand to eye.</p>
-    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="measured">
-      <table>
-        <thead><tr><th scope="col">Task</th><th scope="col">Rawtonic</th><th scope="col">Lightroom Classic</th><th scope="col">Capture One</th><th scope="col">Verdict</th><th scope="col">What the measurement covers</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Auto white balance, angular error from the measured light</th><td class="num">1.88°</td><td class="num">3.78° (Camera Raw’s Auto)</td><td>not scored</td><td><span class="v better">Better</span> than Camera Raw</td><td>270 scenes of the Cube++ dataset with a grey card measured in each, mean error of the light each program found; one camera family (Canon 550D/600D). Lightroom was not measured directly: the figure is Camera Raw’s Auto, which Lightroom uses. Capture One’s Auto cannot be converted to this error; on another 272 scenes its result was the least neutral of the three by grey-card colour, a different measure. Not a test of taste: Rawtonic keeps part of warm light warm on purpose, so the balance it applies is 3.52° from neutral on average.</td></tr>
-          <tr><th scope="row">Dragging a slider while a batch export runs</th><td class="num">42–58 updates per drag, last ≤ 0.05 s after release</td><td class="num">40–47, last ≤ 0.31 s</td><td class="num">11–18, last 2.1 s</td><td><span class="v better">Better</span></td><td>Exposure dragged for 1.2 s during each program’s own batch export.</td></tr>
-          <tr><th scope="row">HDR merge, time</th><td class="num">4–6 s</td><td class="num">about 19 s</td><td>not measured</td><td><span class="v better">Faster</span> than Lightroom</td><td>A real hand-held five-frame bracket (public, CC BY-SA), measured 10 October 2026. Speed only: image quality of the merges is not part of this verdict.</td></tr>
-          <tr><th scope="row">Finding moved and renamed files</th><td>moves verified, ratings kept</td><td>lost the ratings of 5 files</td><td>not measured</td><td><span class="v better">Better</span></td><td>Synchronize Folder on one folder of 12 files changed outside both programs.</td></tr>
-          <tr><th scope="row">Typed slider value on screen</th><td class="num">within about one frame</td><td class="num">within two frames</td><td class="num">1–12 frames (0.02–0.21 s)</td><td><span class="v equal">Equal</span></td><td>Time from the moment the test script sent Return to the first recorded frame with the changed photo, four or five values each. The recording cannot resolve less than one frame (0.017 s); two of Rawtonic’s five changes were too small for it to detect.</td></tr>
-          <tr><th scope="row">Tethered shot on screen</th><td class="num">1.1–1.5 s; GFX 50R 2.4 s</td><td>not measured</td><td class="num">1.2–1.6 s; GFX 50R 2.1 s</td><td><span class="v equal">Equal</span>, GFX 50R <span class="v worse">worse</span></td><td>Median from the shutter request to the photo in view, Sony α7 III and α7 IV, Fujifilm X-H2S and GFX 50R, macOS.</td></tr>
-          <tr><th scope="row">Auto straighten, error</th><td class="num">median 0.06°, 90 % within 0.46°</td><td class="num">0.18°, 0.42°</td><td>not measured</td><td><span class="v equal">Mixed</span></td><td>51 test photos: a better typical result, slightly worse worst cases.</td></tr>
-          <tr><th scope="row">Next photo while culling</th><td class="num">0.51 s</td><td class="num">0.35 s</td><td class="num">0.10 s</td><td><span class="v worse">Worse</span></td><td>Rate and step on, 20 photos at fit, median. Rawtonic shows the developed photo, the others a preview first.</td></tr>
-          <tr><th scope="row">Import 200 RAW+JPEG with backup and renaming</th><td class="num">27.0 s</td><td class="num">11.5 s</td><td class="num">23.7 s</td><td><span class="v worse">Worse</span></td><td>Until all files are in place. Rawtonic has no metadata preset in the import dialog yet.</td></tr>
-          <tr><th scope="row">Export two recipes of 20 RAWs (40 files)</th><td class="num">17 s</td><td class="num">8 s</td><td class="num">9 s</td><td><span class="v worse">Worse</span></td><td>2048 px JPEG with watermark and full-size 16-bit TIFF, until the last file is written.</td></tr>
-          <tr><th scope="row">AI subject mask, very first use</th><td class="num">13.7 s</td><td class="num">7.9 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>First use after installing, model loading included; later uses take under a second.</td></tr>
-          <tr><th scope="row">AI denoise, 24 MP</th><td class="num">about 10 s, error 2.21</td><td class="num">6.5 s, error 1.69</td><td>not compared</td><td><span class="v worse">Worse</span></td><td>Time per photo, and lightness error at the same remaining noise. Lightroom’s figure is Camera Raw’s Denoise.</td></tr>
-          <tr><th scope="row">Moving a shoot to another drive</th><td>a project’s photos cannot leave its folder yet: move the whole folder</td><td>moves and keeps working, 2.1 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>26 RAW+JPEG pairs to an external drive. Moving a whole folder, or a catalog’s photos, works and is verified byte for byte.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Still being measured: colour noise reduction at every setting and ISO, sharpening of fine low-contrast detail at high settings, chromatic aberration on a few cameras, and Capture One’s side of several rows. Each release’s notes say what changed. Numbers are the maintainers’ own measurements on their own and on public test files; we use the other programs only to observe their results, never their profiles, presets or looks.</p>
   </article>
 </main>
 
