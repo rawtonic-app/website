@@ -12,6 +12,10 @@ URL=${DEPLOY_URL:-https://rawtonic.cc/}
 DRY=""
 [ "${1:-}" = "--dry-run" ] && DRY="--dry-run"
 
+# Build the pages from pages/ and release.json; refuses while a placeholder
+# (TBD in release.json, OFFEN FÜR NUTZER on the legal pages) is left.
+node scripts/build.mjs --strict
+
 stamp=$(date +%Y%m%d-%H%M%S)
 if [ -z "$DRY" ]; then
   # Keep the live copy before replacing it (the newest 10 are kept).
