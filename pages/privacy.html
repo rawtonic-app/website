@@ -1,0 +1,76 @@
+<!--page {"path": "/privacy/", "title": "Privacy · Rawtonic", "description": "What this website, the Rawtonic app and its report relay (relay.rawtonic.cc) process, for how long, and how to have a report deleted."} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose">
+    <h1>Privacy.</h1>
+    <p class="lead">This website counts no visitors and loads nothing from other sites. The Rawtonic app has no account and no tracking. This page says what is processed anyway, where, for how long, and how to have it deleted.</p>
+    <p class="small muted">As of 24 October 2026, for Rawtonic {{release.version}}. The app’s own, more detailed privacy notes: <a class="plain" href="{{repo}}/blob/main/PRIVACY.md">PRIVACY.md</a>.</p>
+
+    <h2 id="controller">Who is responsible</h2>
+    <p>Responsible (controller under the GDPR) for this website and for the relay at <code>relay.rawtonic.cc</code>:<br>
+    <mark class="todo">OFFEN FÜR NUTZER: name of the controller</mark><br>
+    <mark class="todo">OFFEN FÜR NUTZER: postal address</mark><br>
+    E-mail: <a class="plain" href="mailto:hello@rawtonic.cc">hello@rawtonic.cc</a></p>
+    <p>Mail to this address is forwarded by Cloudflare Email Routing to the maintainer’s mailbox, so Cloudflare processes it on the way.</p>
+
+    <h2 id="website">This website</h2>
+    <ul>
+      <li><b>No cookies, no analytics, no third parties.</b> Pages, images and the typeface come from this server only. There are no tracking pixels, embedded videos, maps or social buttons.</li>
+      <li><b>Server logs.</b> Like any web server, the servers that deliver rawtonic.cc record each request: IP address, date and time, the page or file asked for, the referring page and the browser’s identification. They are used only to keep the site running and secure (Art. 6 (1) (f) GDPR) and are deleted after <mark class="todo">OFFEN FÜR NUTZER: retention period of the web server logs</mark>.</li>
+      <li><b>Downloads come from GitHub.</b> The download buttons link to the release files on github.com. Clicking one sends your request to GitHub, under <a class="plain" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>; so do the other links to GitHub.</li>
+    </ul>
+
+    <h2 id="app">The app</h2>
+    <p>Photos, catalogs and edits stay on your computer. Rawtonic goes online on its own for one thing only:</p>
+    <ul>
+      <li><b>Update check.</b> At startup, at most once every 24 hours, Rawtonic asks GitHub’s public releases list whether a newer version exists. On by default; turn off “Check for updates at startup” in Preferences → General. GitHub receives your IP address and the app’s name and version, nothing else: no cookies, identifiers, photos, paths or settings. Rawtonic never downloads or installs an update itself.</li>
+    </ul>
+    <p>Everything else happens only when you ask for it: an AI tool’s model downloads from GitHub the first time you use it, “Show on map” loads a map from openstreetmap.org, links open in your browser. And the contributions below.</p>
+
+    <h2 id="relay">Reports and the relay</h2>
+    <p>Problem reports, crash reports and camera test results reach the developers through Rawtonic’s own small service, <code>relay.rawtonic.cc</code>. Nothing is sent unless you click Send after seeing exactly what goes out. You need no account. Legal basis: your consent by sending (Art. 6 (1) (a) GDPR); you can withdraw it by having the report deleted.</p>
+    <h3>What the relay receives</h3>
+    <ul>
+      <li><b>Problem report:</b> the text you wrote, and only if you left them in: system details (graphics card), the last 200 lines of Rawtonic’s log, the camera make, model and file type of the open photo, a screenshot of Rawtonic’s window, and, for a photo that renders wrong, the photo’s file if you attach it. Always: Rawtonic’s version, your operating system and its version, the processor type.</li>
+      <li><b>Crash report:</b> version, system, graphics card, the error message, where in Rawtonic’s code it happened, the names of the functions that were running, and the end of the log of that run.</li>
+      <li><b>Camera test result:</b> camera model and firmware, system, Rawtonic version, camera driver, each test step’s result and timing. No serial number, file names or photos.</li>
+    </ul>
+    <p>Before you see the text, Rawtonic tries to remove folder paths, your user and computer name, serial numbers, e-mail and IP addresses and GPS positions. That is a help, not a guarantee, so read what you send. A photo file is sent as it is and keeps its metadata, such as the date, the camera’s serial number and a GPS position if one was recorded; the dialog warns you.</p>
+    <h3>Where it goes and for how long</h3>
+    <ul>
+      <li>The relay runs on <b>Cloudflare</b> Workers. Cloudflare sees your IP address, as any web host does. The relay itself stores <b>no IP address</b>: to limit abuse it counts requests under a keyed hash of the address that changes every hour, day or week and is deleted when that period ends. Request logging is switched off.</li>
+      <li>Each report becomes an issue in a <b>private</b> GitHub repository that only the maintainers can read, filed by the relay’s own account. A screenshot or photo file is kept in private Cloudflare R2 storage, never public.</li>
+      <li>Reports, crash reports and camera tests are <b>deleted after 90 days</b>, with their files. Plain facts from camera tests (which camera works how) may be copied into the public list of tested cameras before that.</li>
+      <li>Processors: Cloudflare, Inc. and GitHub, Inc., both in the United States. <mark class="todo">OFFEN FÜR NUTZER: basis for the transfer to the US (e.g. EU–US Data Privacy Framework or standard contractual clauses) and the data processing agreements in place</mark></li>
+    </ul>
+    <h3 id="delete">Deleting a report</h3>
+    <p>After sending you see a <b>report id</b>. With it, a report is deleted at once, with its files:</p>
+    <ul>
+      <li>in the app: “Delete this report now” in the confirmation after sending;</li>
+      <li>by e-mail: send the report id to <a class="plain" href="mailto:hello@rawtonic.cc">hello@rawtonic.cc</a>.</li>
+    </ul>
+    <p>The relay keeps no name or address with a report, so the id is the only way we can find yours.</p>
+    <h3>Other ways to send</h3>
+    <p>Each report dialog can also copy the report (nothing is sent) or open GitHub’s public issue form with the text filled in. That issue is public, filed with your own GitHub account under GitHub’s terms, and only when you submit it there.</p>
+
+    <h2 id="statistics">Anonymous usage statistics</h2>
+    <p>Off unless you switch on “Send anonymous usage statistics once a week” in Preferences → General (consent, Art. 6 (1) (a) GDPR; switching it off withdraws it and deletes what is kept on your computer). Once a week Rawtonic sends, for the past week: the camera models you opened, which tools from a fixed list you used at all (yes or no), Rawtonic’s version, your operating system and version, the processor type and the maker of your graphics card. No id, no times finer than the week. The relay only adds one to a counter per value and keeps neither the send nor your IP address; the maintainers see a value only when at least ten sends counted it in that week, rarer values are merged into “other”. Counters are kept for two years. As they are only counters, single sends cannot be deleted afterwards. “Show what is sent” in Preferences shows the exact data at any time.</p>
+
+    <h2 id="samples">RAW samples</h2>
+    <p>When a camera does not open, Rawtonic can show how to give a sample to raw.pixls.us. Rawtonic sends nothing there: you upload the file on that site yourself, where it becomes public under CC0 and that site’s own terms apply.</p>
+
+    <h2 id="rights">Your rights</h2>
+    <p>You have the right to access, rectification, erasure, restriction of processing, data portability and objection, and to withdraw a consent at any time with effect for the future. Write to <a class="plain" href="mailto:hello@rawtonic.cc">hello@rawtonic.cc</a>; for a report, include its id. You may also complain to a data protection supervisory authority, for example the one where you live.</p>
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>

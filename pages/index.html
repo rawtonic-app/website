@@ -1,0 +1,240 @@
+<!--page {"path": "/", "title": "Rawtonic: a free, open-source RAW developer for photographers", "description": "Rawtonic is a free, open-source RAW developer for photographers: ingest, select, develop, retouch and export on your own machine. For macOS on Apple Silicon and for Linux."} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon; Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/readme-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
+</head>
+<body>
+{{> header}}
+
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-row">
+      <h1 id="hero-title">The photograph<br>comes first.</h1>
+      <p class="lead">A free, open-source RAW developer. Ingest, select, develop, retouch and export on your own machine.</p>
+    </div>
+    <div class="actions" id="hero-actions">
+      <a class="button" data-os-download="mac" href="{{release.mac.url}}">Download for macOS</a>
+      <a class="button quiet" data-os-download="linux" href="{{release.linux.url}}">Download for Linux</a>
+    </div>
+    <p class="note small muted">Rawtonic {{release.version}}, {{release.name}} · <span class="nowrap">Macs with Apple Silicon,</span> <span class="nowrap">macOS 13 or later</span> · <span class="nowrap">Linux x86-64</span> · no Windows or Intel Mac build yet · the Mac app is not signed yet, so it takes <a class="plain" href="#install">one extra step to open</a>.</p>
+    <figure class="shot">{{picture readme-develop "Rawtonic Develop: an alpine lake photograph beside the light controls, histogram and filmstrip" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop.</figcaption></figure>
+  </section>
+
+  <section class="section wrap" aria-labelledby="facts-title">
+    <h2 class="sr-only" id="facts-title">What Rawtonic stands for</h2>
+    <div class="facts">
+      <div><h3>Originals stay yours.</h3><p>Your RAW files are never modified or deleted. Ingest verifies every copy; edits live in the library and in XMP sidecars.</p></div>
+      <div><h3>Fast, on the graphics card.</h3><p>The photograph is rendered on the GPU, so sliders, brushes and masks respond while you drag, even while an export runs.</p></div>
+      <div><h3>No account, no tracking.</h3><p>One update check a day, which you can turn off. Reports and usage statistics leave only when you choose. The AI tools run on your computer. <a class="plain" href="/privacy/">Privacy</a></p></div>
+    </div>
+  </section>
+
+  <section class="section wrap modules" id="inside" aria-labelledby="inside-title">
+    <h2 class="head" id="inside-title">From card to client.</h2>
+    <div class="tabs" role="tablist" aria-label="Parts of Rawtonic">
+      <button type="button" role="tab" id="t-library" aria-controls="p-library" aria-selected="true">Library</button>
+      <button type="button" role="tab" id="t-develop" aria-controls="p-develop" aria-selected="false" tabindex="-1">Develop</button>
+      <button type="button" role="tab" id="t-colour" aria-controls="p-colour" aria-selected="false" tabindex="-1">Colour</button>
+      <button type="button" role="tab" id="t-masks" aria-controls="p-masks" aria-selected="false" tabindex="-1">Masks</button>
+      <button type="button" role="tab" id="t-retouch" aria-controls="p-retouch" aria-selected="false" tabindex="-1">Retouch</button>
+      <button type="button" role="tab" id="t-export" aria-controls="p-export" aria-selected="false" tabindex="-1">Export</button>
+    </div>
+    <div class="panel" role="tabpanel" id="p-library" aria-labelledby="t-library" tabindex="0">
+      <figure class="shot">{{picture readme-library "Rawtonic Library: a grid of photographs with ratings, picks and metadata" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Library.</figcaption></figure>
+      <div><h3>Find the keepers.</h3><p>Ingest verifies every copy, with an optional second backup, or add photos where they are. Shoot tethered over USB (experimental). Rate, pick, filter, search and sort the shoot, with smart albums; metadata travels in XMP sidecars.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-develop" aria-labelledby="t-develop" tabindex="0" hidden>
+      <figure class="shot">{{picture readme-develop "Rawtonic Develop with light controls beside an alpine lake photograph" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Develop.</figcaption></figure>
+      <div><h3>Shape the light.</h3><p>Exposure, highlights, shadows, whites and blacks, levels, point and region curves, clarity, structure and dehaze. Sharpening, noise reduction, lens and chromatic aberration corrections, crop and perspective.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-colour" aria-labelledby="t-colour" tabindex="0" hidden>
+      <figure class="shot">{{picture readme-color "Rawtonic colour grading controls beside a landscape photograph" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Colour.</figcaption></figure>
+      <div><h3>Find the feeling.</h3><p>RAW white balance, a colour editor, three-way colour grading, vibrance, a black-and-white mix, camera profiles, CUBE LUTs and soft proofing for print and web colour spaces.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-masks" aria-labelledby="t-masks" tabindex="0" hidden>
+      <figure class="shot">{{picture readme-masks "Rawtonic masks panel beside a portrait" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Masks.</figcaption></figure>
+      <div><h3>Work on one part.</h3><p>Brush, linear and radial masks, colour and luminance ranges, and masks for subject, sky, background, depth and people: skin, hair, eyes, lips and clothes, each with its own opacity.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-retouch" aria-labelledby="t-retouch" tabindex="0" hidden>
+      <figure class="shot">{{picture readme-retouch "Rawtonic automatic face retouch on a studio portrait" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Retouch.</figcaption></figure>
+      <div><h3>Clean it up.</h3><p>Heal and clone with spots or brush strokes, remove objects and run automatic face retouch. Each AI model downloads once, the first time you use the tool, and runs on your computer.</p></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-export" aria-labelledby="t-export" tabindex="0" hidden>
+      <figure class="shot">{{picture readme-export "Rawtonic export dialog with format and colour space settings" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Export.</figcaption></figure>
+      <div><h3>Deliver it.</h3><p>JPEG, TIFF, PNG, WebP, JPEG XL and AVIF in sRGB, Display P3, Adobe RGB or ProPhoto RGB, through saved recipes, several at once. Output sharpening, watermarks and borders; the queue survives a restart.</p></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="switching" aria-labelledby="switching-title">
+    <div class="split-head">
+      <h2 class="head" id="switching-title">Coming from Lightroom or Capture One?</h2>
+      <p class="muted">Bring your library along and see, measured, where Rawtonic stands today: ahead in some places, behind in others.</p>
+    </div>
+    <div class="switch">
+      <div>
+        <h3 class="lead">What comes with you</h3>
+        <ul class="ticks" style="margin-top:16px">
+          <li>A Lightroom Classic catalog (<code>.lrcat</code>) or a Capture One session: ratings, colour labels, keywords, edits and albums. The other library is only read.</li>
+          <li>Lightroom presets and Capture One styles, with a list of what could not be translated.</li>
+          <li>Ratings, labels and keywords from XMP sidecars, read when photos are added. Lightroom’s own settings in a sidecar are kept untouched.</li>
+          <li class="no">Not yet: virtual copies, smart albums and Capture One’s local layers.</li>
+        </ul>
+      </div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Measured comparison, summary">
+        <table>
+          <caption>Measured on the same files and Mac, October 2026. Lower is better.</caption>
+          <thead><tr><th scope="col">Task</th><th scope="col">Rawtonic</th><th scope="col">Better of the two</th><th scope="col">Verdict</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Auto white balance, error</th><td class="num">1.88°</td><td class="num">3.78° (Lightroom’s Auto)</td><td><span class="v better">Better</span></td></tr>
+            <tr><th scope="row">Slider while exporting, last update after release</th><td class="num">≤ 0.05 s</td><td class="num">≤ 0.31 s (Lightroom)</td><td><span class="v better">Better</span></td></tr>
+            <tr><th scope="row">Tethered shot on screen</th><td class="num">1.1–1.5 s</td><td class="num">1.2–1.6 s (Capture One)</td><td><span class="v equal">Equal</span></td></tr>
+            <tr><th scope="row">Next photo while culling</th><td class="num">0.51 s</td><td class="num">0.10 s (Capture One)</td><td><span class="v worse">Worse</span></td></tr>
+            <tr><th scope="row">Import 200 RAW+JPEG with backup</th><td class="num">27.0 s</td><td class="num">11.5 s (Lightroom)</td><td><span class="v worse">Worse</span></td></tr>
+            <tr><th scope="row">Export 40 files, two recipes</th><td class="num">17 s</td><td class="num">8 s (Lightroom)</td><td><span class="v worse">Worse</span></td></tr>
+          </tbody>
+        </table>
+        <p class="more small"><a class="plain" href="/switching/">The full comparison, what each number covers, and the shortcuts</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="new" aria-labelledby="new-title">
+    <div class="split-head">
+      <h2 class="head" id="new-title">New in alpha.4.</h2>
+      <p class="muted">Released {{release.dateText}}. Saved edits keep their look; new edits get the improvements below.</p>
+    </div>
+    <div class="changes">
+      <div><h3>Help without an account.</h3><p>Report a problem from the app, send a crash report on the next start, or send your camera’s tether test. Each shows exactly what will be sent first and sends only on your click. <a class="plain" href="#help">How it works</a></p></div>
+      <div><h3>Know when to update.</h3><p>Rawtonic looks for a new release at startup, at most once a day, and shows a small notice. It never downloads or installs anything itself; turn the check off in Preferences.</p></div>
+      <div><h3>Cleaner edges and colour.</h3><p>Purple and green fringes from the lens are corrected automatically in new RAW edits, colour noise reduction leaves fewer coloured specks, and sharpening eases off in the shadows.</p></div>
+      <div><h3>Curves and files.</h3><p>A Luminance curve, a targeted adjustment for the region curve, curves with any number of points. Photos and whole folders move to other drives, every copy read back and compared before the original goes to the Trash.</p></div>
+    </div>
+    <p class="also">Also: exporting with several recipes renders each photo once for all of them; extended attributes such as Finder tags move with photos; Save &amp; Relaunch restarts again. <a class="plain" href="{{release.url}}">Full release notes</a></p>
+  </section>
+
+  <section class="section wrap" id="install" aria-labelledby="install-title" data-os="mac">
+    <div class="install-head">
+      <h2 class="head" id="install-title">Install it.</h2>
+      <div class="seg" role="group" aria-label="Your system">
+        <button type="button" data-os-pick="mac" aria-pressed="true">macOS</button>
+        <button type="button" data-os-pick="linux" aria-pressed="false">Linux</button>
+      </div>
+    </div>
+    <div class="install-grid">
+      <ol class="steps">
+        <li class="mac"><b>Download the DMG</b> for Apple Silicon, {{release.mac.size}}. It needs macOS 13 or later; Intel Macs are not supported yet.</li>
+        <li class="mac"><b>Drag Rawtonic to Applications.</b> The alpha is not signed with an Apple Developer ID, so macOS blocks it at first. Clear the quarantine flag once with the command shown here, or right-click the app and choose Open, then Open again.</li>
+        <li class="mac"><b>Keep your backups.</b> It is early software and bugs are expected. Updating from an earlier alpha? Saved edits look as before; the improved defaults apply to new edits and to photos you have not edited yet.</li>
+        <li class="linux"><b>Download the AppImage</b> for x86-64, {{release.linux.size}}. It runs on Ubuntu 22.04 or later, Debian 12, Fedora and others with glibc 2.35 or later.</li>
+        <li class="linux"><b>Make it executable and start it</b> with the commands shown here. If it does not start, install FUSE 2 (libfuse2t64 on Ubuntu 24.04, libfuse2 on older Ubuntu and Debian) or start it with --appimage-extract-and-run.</li>
+        <li class="linux"><b>Give the first start a minute.</b> Before the first photo appears in Develop, the graphics driver prepares Rawtonic’s shaders. That happens once; later starts are quick.</li>
+      </ol>
+      <div class="code">
+        <p class="small muted">In Terminal</p>
+        <pre class="mac"><code>xattr -cr /Applications/Rawtonic.app</code></pre>
+        <pre class="linux"><code>chmod +x {{release.linux.file}}
+./{{release.linux.file}}</code></pre>
+        <p class="small muted">SHA-256</p>
+        <pre class="mac"><code>{{release.mac.sha256}}</code></pre>
+        <pre class="linux"><code>{{release.linux.sha256}}</code></pre>
+        <p class="small">Something wrong? Use <b>Report a problem</b> in the app, or see <a class="plain" href="#help">other ways to help</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="help" aria-labelledby="help-title">
+    <div class="split-head">
+      <h2 class="head" id="help-title">Help without a GitHub account.</h2>
+      <p class="muted">Most of what makes Rawtonic better comes from photographers who say what went wrong. You need no account for any of it, and nothing leaves your computer before you have seen it and clicked Send.</p>
+    </div>
+    <div class="help">
+      <div><h3>Report a problem.</h3><p>Help menu on macOS, or the “…” menu in Library and Develop. Write what happened; add, if you like, system details, the end of the log, the camera model and file type, and a screenshot. You can edit or remove each part before sending.</p></div>
+      <div><h3>Crash report on the next start.</h3><p>If Rawtonic stops because of an error in its own code, it asks once at the next start whether to send what it noted: the error, where in the code it happened and the end of the log. “Never” deletes the notes and stops them.</p></div>
+      <div><h3>Test your camera.</h3><p>The tether panel’s Camera test checks a camera step by step; Send result adds it to the <a class="plain" href="{{repo}}/blob/main/docs/TETHER_CAMERAS.md">list of tested cameras</a>. No serial number, file names or photos are in it.</p></div>
+      <div><h3>Anonymous usage statistics.</h3><p>Off unless you switch them on in Preferences: once a week, which cameras and tools were used, as plain yes/no counters without any id. “Show what is sent” shows the exact data at any time.</p></div>
+      <div><h3>Share a RAW sample.</h3><p>When a camera or RAW mode does not open, Rawtonic shows how to give a sample file to <a class="plain" href="https://raw.pixls.us/">raw.pixls.us</a>, the public collection open-source decoders learn new cameras from. You upload it there yourself; Rawtonic sends nothing.</p></div>
+      <div><h3>After sending.</h3><p>Reports reach the developers through Rawtonic’s own relay and are deleted after 90 days. With the report id you see after sending, you can delete one at any time. Prefer GitHub? Each dialog can also copy the report or open it as a GitHub issue. <a class="plain" href="/privacy/#relay">Details</a></p></div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="cameras" aria-labelledby="cameras-title">
+    <div class="split-head">
+      <h2 class="head" id="cameras-title">Your camera.</h2>
+      <p class="muted">Rawtonic is built for professional and popular cameras and phones of the last ten years: Canon, Nikon, Sony, Fujifilm, Panasonic, OM System and Olympus, Leica, DJI, iPhone ProRAW and other DNGs.</p>
+    </div>
+    <div class="changes">
+      <div><h3>Opening RAW files.</h3><p>Run over every file of the public raw.pixls.us collection in October 2026 (2,016 files from 1,034 camera models), Rawtonic developed files of 965 models. 181 files did not open, most of them Nikon High Efficiency NEFs, GoPro, Sigma X3F and some Hasselblad and Olympus formats. Opening a file is not the same as matching each camera’s colour; that is measured on a smaller set of cameras.</p></div>
+      <div><h3>Tethered shooting, experimental.</h3><p>Tested on a Mac with the Sony α7 III and α7 IV and the Fujifilm X-H2S and GFX 50R. Fujifilm live view does not work yet, Canon cameras are not offered yet, and no camera has been tried on Linux. <a class="plain" href="{{repo}}/blob/main/docs/TETHER_CAMERAS.md">Tested and reported cameras</a></p></div>
+    </div>
+  </section>
+
+  <section class="section wrap faq" id="faq" aria-labelledby="faq-title">
+    <h2 class="head" id="faq-title">Questions.</h2>
+    <dl class="faq-list">
+      <div><dt>What does it cost?</dt><dd>Nothing. Rawtonic is free and open source under the AGPL-3.0-or-later.</dd></div>
+      <div><dt>Which systems does it run on?</dt><dd>macOS 13 or later on Apple Silicon, and x86-64 Linux with glibc 2.35 or later. There is no Windows or Intel Mac build yet.</dd></div>
+      <div><dt>Will it change my RAW files?</dt><dd>No. Ingest verifies every copy, and edits live in the library and XMP sidecars, never in the RAW file itself.</dd></div>
+      <div><dt>Why does macOS block the app?</dt><dd>This alpha is not signed with an Apple Developer ID. Clear the quarantine flag once, or right-click the app and choose Open, twice.</dd></div>
+      <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Otherwise only when you ask: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
+      <div><dt>Do the AI tools use the cloud?</dt><dd>No. They run on your computer. Each model downloads once, the first time you use the tool.</dd></div>
+      <div><dt>Does my camera work?</dt><dd>Most recent cameras do; Nikon High Efficiency NEFs don’t open yet. <a class="plain" href="#cameras">Camera support</a></dd></div>
+      <div><dt>Can I bring my Lightroom or Capture One work?</dt><dd>Yes: catalogs, sessions, presets and styles import, though not every adjustment carries over yet. <a class="plain" href="/switching/">Switching</a></dd></div>
+      <div><dt>Can I keep my folders as they are?</dt><dd>Yes. Add photos where they are, or import into folders outside the catalog; Synchronize Folder catches changes made elsewhere.</dd></div>
+      <div><dt>Is it ready for my only copies?</dt><dd>It is an early alpha. Rawtonic never modifies your RAW files, but keep backups as you would with any new software.</dd></div>
+    </dl>
+  </section>
+
+  <section class="download" id="download" aria-labelledby="download-title">
+    <div class="wrap">
+      <h2 class="head" id="download-title">Download.</h2>
+      <div class="dl-grid">
+        <div class="dl">
+          <h3>macOS</h3>
+          <p class="muted">Apple Silicon, macOS 13 or later · DMG, {{release.mac.size}}</p>
+          <a class="button" href="{{release.mac.url}}">Download for macOS</a>
+        </div>
+        <div class="dl">
+          <h3>Linux</h3>
+          <p class="muted">x86-64, glibc 2.35 or later · AppImage, {{release.linux.size}}</p>
+          <a class="button" href="{{release.linux.url}}">Download for Linux</a>
+        </div>
+      </div>
+      <p class="dl-note">Rawtonic {{release.version}}, free and open source, with the rough edges of an early alpha. Downloads come from GitHub. <a class="plain" href="{{release.url}}">Release notes and SHA-256</a> · <a class="plain" href="{{repo}}/releases">All releases</a></p>
+    </div>
+  </section>
+</main>
+
+{{> footer}}
+
+<script>
+(() => {
+  const $$ = (q) => [...document.querySelectorAll(q)];
+  const tabs = $$('[role="tab"]');
+  const select = (t, focus) => {
+    tabs.forEach((x) => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    if (focus) t.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      const n = tabs.length;
+      const to = { ArrowRight: i + 1, ArrowLeft: i - 1 + n, Home: 0, End: n - 1 }[e.key];
+      if (to !== undefined) { e.preventDefault(); select(tabs[to % n], true); }
+    });
+  });
+  const inst = document.getElementById('install');
+  const pick = (os) => { inst.dataset.os = os; $$('[data-os-pick]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.osPick === os))); };
+  $$('[data-os-pick]').forEach((b) => b.addEventListener('click', () => pick(b.dataset.osPick)));
+  if (/Linux/.test(navigator.platform || navigator.userAgent) && !/Android/.test(navigator.userAgent)) {
+    pick('linux');
+    // The visitor's system gets the primary button, first.
+    const row = document.getElementById('hero-actions');
+    const mac = row.querySelector('[data-os-download="mac"]'), linux = row.querySelector('[data-os-download="linux"]');
+    mac.classList.add('quiet'); linux.classList.remove('quiet'); row.prepend(linux);
+  }
+})();
+</script>
+</body>
+</html>

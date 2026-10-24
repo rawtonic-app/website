@@ -1,0 +1,89 @@
+<!--page {"path": "/switching/", "title": "Switching from Lightroom or Capture One to Rawtonic", "description": "What imports from Lightroom Classic and Capture One, where tools and shortcuts are, and a measured side-by-side comparison: where Rawtonic is better, equal or still behind."} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose wide">
+    <h1>Coming from Lightroom or Capture One.</h1>
+    <p class="lead">What comes with you, where things are, and an honest, measured account of where Rawtonic stands against the better of the two today.</p>
+
+    <h2 id="import">What comes with you</h2>
+    <ul>
+      <li><b>Your library.</b> Library → Import from Lightroom or Capture One… reads a Lightroom Classic catalog (<code>.lrcat</code>) or a Capture One session (<code>.cosessiondb</code>): ratings, colour labels, keywords, edits and albums. The other library is only read, never changed. If its photos moved, point Rawtonic to their new folder.</li>
+      <li><b>Presets and styles.</b> Import Lightroom presets and Capture One styles in Develop’s Styles &amp; presets panel. Rawtonic lists what it could not translate; Capture One’s Color Editor becomes Rawtonic’s colour editor.</li>
+      <li><b>Sidecars.</b> Ratings, labels and keywords in XMP sidecars are read when photos are added; Lightroom’s own settings in a sidecar are kept untouched when Rawtonic writes to it.</li>
+      <li><b>Not yet:</b> virtual copies, smart albums and Capture One’s local adjustment layers are listed as not imported. Not every adjustment looks the same as in the program it came from.</li>
+    </ul>
+
+    <h2 id="names">Same job, Rawtonic’s name</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="names">
+      <table>
+        <thead><tr><th scope="col">Lightroom</th><th scope="col">Capture One</th><th scope="col">Rawtonic</th></tr></thead>
+        <tbody>
+          <tr><td>Catalog</td><td>Catalog</td><td>Catalog</td></tr>
+          <tr><td>—</td><td>Session</td><td>Project (one folder with Capture, Selects, Output and Trash)</td></tr>
+          <tr><td>Survey view</td><td>Viewer with several variants selected</td><td>Multi view, <kbd>N</kbd></td></tr>
+          <tr><td>Export preset</td><td>Process recipe</td><td>Export recipe</td></tr>
+          <tr><td>Masking</td><td>Layers</td><td>Layers, each with its masks</td></tr>
+          <tr><td>Presets</td><td>Styles</td><td>Styles &amp; presets</td></tr>
+          <tr><td>Synchronize Folder</td><td>Synchronize</td><td>Synchronize Folder</td></tr>
+          <tr><td>Previous Import</td><td>Recent Imports</td><td>Previous Import</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="shortcuts">Shortcuts</h2>
+    <p>Cursor tools follow Capture One’s keys; views follow Lightroom’s where they exist. Every shortcut can be changed in Preferences → Controls. On Linux, <kbd>Ctrl</kbd> replaces <kbd>⌘</kbd>.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="shortcuts">
+      <table>
+        <thead><tr><th scope="col">Key</th><th scope="col">Does</th><th scope="col">Key</th><th scope="col">Does</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>0</kbd>–<kbd>5</kbd></td><td>Rating</td><td><kbd>⌘J</kbd></td><td>Move to Selects</td></tr>
+          <tr><td><kbd>N</kbd></td><td>Multi view of the selected photos</td><td><kbd>⇧N</kbd></td><td>Lock zoom across them</td></tr>
+          <tr><td><kbd>Y</kbd></td><td>Before/After split</td><td><kbd>\</kbd></td><td>Show the original</td></tr>
+          <tr><td><kbd>J</kbd></td><td>Clipping warning</td><td><kbd>⇧S</kbd></td><td>Soft proof</td></tr>
+          <tr><td><kbd>C</kbd></td><td>Crop</td><td><kbd>R</kbd> / <kbd>⇧R</kbd></td><td>Straighten / Auto straighten</td></tr>
+          <tr><td><kbd>B</kbd> / <kbd>E</kbd></td><td>Brush / Erase</td><td><kbd>L</kbd> / <kbd>T</kbd></td><td>Linear / radial mask</td></tr>
+          <tr><td><kbd>Q</kbd></td><td>Heal and clone spots</td><td><kbd>W</kbd></td><td>White balance picker</td></tr>
+          <tr><td><kbd>M</kbd></td><td>Mask overlay</td><td><kbd>H</kbd></td><td>Solo the selected layer</td></tr>
+          <tr><td><kbd>⇧⌘C</kbd> / <kbd>⇧⌘V</kbd></td><td>Copy / paste adjustments</td><td><kbd>⇧⌘S</kbd></td><td>Sync settings</td></tr>
+          <tr><td><kbd>F6</kbd></td><td>Filmstrip</td><td><kbd>Tab</kbd></td><td>Hide the side panels</td></tr>
+          <tr><td><kbd>⌘K</kbd></td><td>Fire a tethered camera</td><td><kbd>F</kbd></td><td>Full screen</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="measured">Measured side by side</h2>
+    <p>Rawtonic’s rule is to match or beat the better of Lightroom Classic and Capture One in every tool, shown by measurement. It does not yet, everywhere. These are the measurements behind that statement, worse results included. Unless noted: one MacBook Pro (Apple M5 Pro), the same files in all three programs, the versions of Lightroom Classic and Capture One installed there in October 2026. Times come from screen recordings at 60 frames a second: they show when the screen changed, not the full delay from hand to eye.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="measured">
+      <table>
+        <thead><tr><th scope="col">Task</th><th scope="col">Rawtonic</th><th scope="col">Lightroom Classic</th><th scope="col">Capture One</th><th scope="col">Verdict</th><th scope="col">What the measurement covers</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Auto white balance, angular error from the measured light</th><td class="num">1.88°</td><td class="num">3.78°</td><td>least neutral of the three, not scored</td><td><span class="v better">Better</span></td><td>270 scenes of the Cube++ dataset with a grey card measured in each, mean error; one camera family. Lightroom’s figure is Camera Raw’s Auto, which Lightroom uses. Not a test of taste: warm light is kept warm on purpose.</td></tr>
+          <tr><th scope="row">Dragging a slider while a batch export runs</th><td class="num">42–58 updates per drag, last ≤ 0.05 s after release</td><td class="num">40–47, last ≤ 0.31 s</td><td class="num">11–18, last 2.1 s</td><td><span class="v better">Better</span></td><td>Exposure dragged for 1.2 s during each program’s own batch export.</td></tr>
+          <tr><th scope="row">HDR merge</th><td class="num">4–6 s</td><td class="num">about 19 s</td><td>not measured</td><td><span class="v better">Better</span></td><td>Real hand-held brackets (public, CC BY-SA), measured 10 October 2026; sharpness and shadow noise equal to Lightroom’s result.</td></tr>
+          <tr><th scope="row">Finding moved and renamed files</th><td>moves verified, ratings kept</td><td>lost the ratings of 5 files</td><td>not measured</td><td><span class="v better">Better</span></td><td>Synchronize Folder on one folder of 12 files changed outside both programs.</td></tr>
+          <tr><th scope="row">Typed slider value on screen</th><td class="num">≤ 0.01 s</td><td class="num">0–0.02 s</td><td class="num">0.02–0.21 s</td><td><span class="v equal">Equal</span></td><td>Time from Return to the changed photo.</td></tr>
+          <tr><th scope="row">Tethered shot on screen</th><td class="num">1.1–1.5 s; GFX 50R 2.4 s</td><td>not measured</td><td class="num">1.2–1.6 s; GFX 50R 2.1 s</td><td><span class="v equal">Equal</span>, GFX 50R <span class="v worse">worse</span></td><td>Median from the shutter request to the photo in view, Sony α7 III and α7 IV, Fujifilm X-H2S and GFX 50R, macOS.</td></tr>
+          <tr><th scope="row">Auto straighten, error</th><td class="num">median 0.06°, 90 % within 0.46°</td><td class="num">0.18°, 0.42°</td><td>not measured</td><td><span class="v equal">Mixed</span></td><td>51 test photos: a better typical result, slightly worse worst cases.</td></tr>
+          <tr><th scope="row">Next photo while culling</th><td class="num">0.51 s</td><td class="num">0.35 s</td><td class="num">0.10 s</td><td><span class="v worse">Worse</span></td><td>Rate and step on, 20 photos at fit, median. Rawtonic shows the developed photo, the others a preview first.</td></tr>
+          <tr><th scope="row">Import 200 RAW+JPEG with backup and renaming</th><td class="num">27.0 s</td><td class="num">11.5 s</td><td class="num">23.7 s</td><td><span class="v worse">Worse</span></td><td>Until all files are in place. Rawtonic has no metadata preset in the import dialog yet.</td></tr>
+          <tr><th scope="row">Export two recipes of 20 RAWs (40 files)</th><td class="num">17 s</td><td class="num">8 s</td><td class="num">9 s</td><td><span class="v worse">Worse</span></td><td>2048 px JPEG with watermark and full-size 16-bit TIFF, until the last file is written.</td></tr>
+          <tr><th scope="row">AI subject mask, very first use</th><td class="num">13.7 s</td><td class="num">7.9 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>First use after installing, model loading included; later uses take under a second.</td></tr>
+          <tr><th scope="row">AI denoise, 24 MP</th><td class="num">about 10 s, error 2.21</td><td class="num">6.5 s, error 1.69</td><td>not compared</td><td><span class="v worse">Worse</span></td><td>Time per photo, and lightness error at the same remaining noise. Lightroom’s figure is Camera Raw’s Denoise.</td></tr>
+          <tr><th scope="row">Moving a shoot to another drive</th><td>a project’s photos cannot leave its folder yet: move the whole folder</td><td>moves and keeps working, 2.1 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>26 RAW+JPEG pairs to an external drive. Moving a whole folder, or a catalog’s photos, works and is verified byte for byte.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Still being measured: colour noise reduction at every setting and ISO, sharpening of fine low-contrast detail at high settings, chromatic aberration on a few cameras, and Capture One’s side of several rows. Each release’s notes say what changed. Numbers are the maintainers’ own measurements on their own and on public test files; we use the other programs only to observe their results, never their profiles, presets or looks.</p>
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>
