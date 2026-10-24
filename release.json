@@ -2,17 +2,17 @@
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
   "version": "0.1.0-alpha.4",
   "name": "the fourth alpha",
-  "date": "TBD",
-  "dateText": "TBD",
+  "date": "2026-10-24",
+  "dateText": "24 October 2026",
   "tag": "v0.1.0-alpha.4",
   "mac": {
     "file": "Rawtonic_0.1.0-alpha.4_aarch64.dmg",
-    "size": "TBD",
-    "sha256": "TBD"
+    "size": "37 MB",
+    "sha256": "41765a772d068c6631e10fd51c6b204d322e92746e2110d184cd28c2f2ae7402"
   },
   "linux": {
     "file": "Rawtonic_0.1.0-alpha.4_amd64.AppImage",
-    "size": "TBD",
-    "sha256": "TBD"
+    "size": "129 MB",
+    "sha256": "6d036fb10d87c7c7cd07a9e706c6b1a4a9a3e719d99e1743bde677c6133de7ad"
   }
 }
