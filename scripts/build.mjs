@@ -48,7 +48,7 @@ const render = (text, context, where, depth = 0) => {
 };
 
 // {{picture name "alt" "sizes" [eager]}}: AVIF and WebP at 720 and 1440 px
-// wide (made from assets/<name>.jpg, see README) with the JPEG as fallback.
+// wide (made by scripts/images.sh, see README) with the JPEG as fallback.
 const WIDTHS = [720, 1440];
 function picture(name, alt, sizes, eager, where) {
   for (const f of [`${name}.jpg`, ...WIDTHS.flatMap((w) => [`${name}-${w}.avif`, `${name}-${w}.webp`])]) {
@@ -56,7 +56,23 @@ function picture(name, alt, sizes, eager, where) {
   }
   const set = (ext) => WIDTHS.map((w) => `/assets/${name}-${w}.${ext} ${w}w`).join(', ');
   const load = eager ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"';
-  return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img src="/assets/${name}.jpg" alt="${alt}" width="1440" height="900" ${load}></picture>`;
+  const { width, height } = jpegSize(path.join(root, 'site/assets', `${name}.jpg`), where);
+  return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img src="/assets/${name}.jpg" alt="${alt}" width="${width}" height="${height}" ${load}></picture>`;
+}
+
+// Width and height from the JPEG's frame header, so each <img> reserves its
+// own aspect ratio while it loads.
+function jpegSize(file, where) {
+  const b = fs.readFileSync(file);
+  for (let i = 2; i + 9 < b.length; ) {
+    if (b[i] !== 0xff) break;
+    const marker = b[i + 1];
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+      return { height: b.readUInt16BE(i + 5), width: b.readUInt16BE(i + 7) };
+    }
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  throw new Error(`${where}: cannot read the size of ${file}`);
 }
 
 const lastChange = (file) => {

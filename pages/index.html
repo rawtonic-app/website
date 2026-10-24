@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 {{> head}}
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon; Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/readme-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon; Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
 </head>
 <body>
 {{> header}}
@@ -19,7 +19,7 @@
       <a class="button quiet" data-os-download="linux" href="{{release.linux.url}}">Download for Linux</a>
     </div>
     <p class="note small muted">Rawtonic {{release.version}}, {{release.name}} · <span class="nowrap">Macs with Apple Silicon,</span> <span class="nowrap">macOS 13 or later</span> · <span class="nowrap">Linux x86-64</span> · no Windows or Intel Mac build yet · the Mac app is not signed yet, so it takes <a class="plain" href="#install">one extra step to open</a>.</p>
-    <figure class="shot">{{picture readme-develop "Rawtonic Develop: an alpine lake photograph beside the light controls, histogram and filmstrip" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop.</figcaption></figure>
+    <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic {{release.version}}; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
   </section>
 
   <section class="section wrap" aria-labelledby="facts-title">
@@ -31,74 +31,52 @@
     </div>
   </section>
 
-  <section class="section wrap modules" id="inside" aria-labelledby="inside-title">
-    <h2 class="head" id="inside-title">From card to client.</h2>
-    <div class="tabs" role="tablist" aria-label="Parts of Rawtonic">
-      <button type="button" role="tab" id="t-library" aria-controls="p-library" aria-selected="true">Library</button>
-      <button type="button" role="tab" id="t-develop" aria-controls="p-develop" aria-selected="false" tabindex="-1">Develop</button>
-      <button type="button" role="tab" id="t-colour" aria-controls="p-colour" aria-selected="false" tabindex="-1">Colour</button>
-      <button type="button" role="tab" id="t-masks" aria-controls="p-masks" aria-selected="false" tabindex="-1">Masks</button>
-      <button type="button" role="tab" id="t-retouch" aria-controls="p-retouch" aria-selected="false" tabindex="-1">Retouch</button>
-      <button type="button" role="tab" id="t-export" aria-controls="p-export" aria-selected="false" tabindex="-1">Export</button>
+  <section class="section wrap" id="inside" aria-labelledby="inside-title">
+    <h2 class="head features-head" id="inside-title">From card to client.</h2>
+    <div class="features">
+      <article class="feature">
+        <figure class="shot crop">{{picture shot-library "Rawtonic Library: a smart album named Best of the year, searched for sony, showing four rated RAW files" "(min-width: 901px) 58vw, 94vw"}}<figcaption>A smart album of four- and five-star photos, searched for “sony”.</figcaption></figure>
+        <div><h3>Find the keepers.</h3><p>Rate, pick and search the shoot. A smart album gathers your best photos by itself and stays up to date as you rate.</p><p class="small muted">Search finds part of any word in file names, keywords, camera and lens; filter by focal length, aperture, ISO and date. Ingest verifies every copy, with an optional second backup; shooting tethered over USB is experimental.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="shot crop">{{picture shot-multiview "Rawtonic multi view: eleven RAW photographs side by side in Develop, with ratings and exposure details under each" "(min-width: 901px) 58vw, 94vw"}}<figcaption>Multi view with the eleven photos of that album.</figcaption></figure>
+        <div><h3>Compare side by side.</h3><p>Put the candidates next to each other in Develop. With Edit all selected, one change goes to all of them.</p><p class="small muted">Lock the zoom to check focus on every frame at 100 %. Copy and paste settings, or sync them across a selection.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="shot crop">{{picture shot-beforeafter "Before and After split view: the left half of a mountain photograph is dark and blue as shot, the right half is the brighter edit" "(min-width: 901px) 58vw, 94vw"}}<figcaption>Before/After on the Dolomites frame from the top of the page.</figcaption></figure>
+        <div><h3>See what you changed.</h3><p>Split the view and drag across the photo to compare your edit with the original, or with a named snapshot of an earlier version.</p><p class="small muted">Snapshots keep versions of an edit under a name; History keeps every step.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="shot crop">{{picture shot-curve "Tone curve panel with an S-shaped curve on the Luminance channel, beside a misty heath at sunrise" "(min-width: 901px) 58vw, 94vw"}}<figcaption>An S-curve on the Luminance channel.</figcaption></figure>
+        <div><h3>Contrast that keeps its colour.</h3><p>The Luminance curve changes brightness only, so adding contrast does not push the colours of warm morning light.</p><p class="small muted">Exposure, highlights, shadows, whites and blacks, levels, point and region curves with a targeted adjustment, clarity, structure and dehaze.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="shot crop">{{picture shot-refine "Three panels: a cat's ear at 100 percent, its subject mask with a smooth edge, and the same mask with Refine edge following the single hairs" "(min-width: 901px) 58vw, 94vw"}}<figcaption>Left to right: the photo at 100 %, the subject mask, the same mask with Refine edge at 25 px.</figcaption></figure>
+        <div><h3>Masks that follow fur.</h3><p>Select the subject, sky, background or people with one click. Refine edge carries the mask out into fur, hair and foliage.</p><p class="small muted">Brush, linear and radial masks, colour and luminance ranges, each layer with its own opacity. The AI masks run on your computer; each model downloads once.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="shot crop">{{picture shot-grading "Colour grading wheels for shadows, midtones and highlights, beside a lighthouse in warm evening light" "(min-width: 901px) 58vw, 94vw"}}<figcaption>Warm highlights, cool shadows: two moves on the colour wheels.</figcaption></figure>
+        <div><h3>Find the feeling.</h3><p>Colour wheels for shadows, midtones and highlights set the mood of a photo in a couple of moves.</p><p class="small muted">RAW white balance, a colour mixer and colour editor, vibrance, a black-and-white mix, camera profiles, CUBE LUTs and soft proofing for print and web colour spaces.</p></div>
+      </article>
+      <article class="feature">
+        <figure class="shot crop">{{picture shot-export "Library with the export queue open: eleven photos as TIFF, four exported, about five seconds left, while the photos stay in view" "(min-width: 901px) 58vw, 94vw"}}<figcaption>Eleven 16-bit TIFFs in ProPhoto RGB on their way.</figcaption></figure>
+        <div><h3>Deliver while you keep working.</h3><p>Exports run in a queue in the background, with several recipes at once, while you go on editing.</p><p class="small muted">JPEG, TIFF, PNG, WebP, JPEG XL and AVIF in sRGB, Display P3, Adobe RGB or ProPhoto RGB. Output sharpening, watermarks and borders; the queue survives a restart.</p></div>
+      </article>
     </div>
-    <div class="panel" role="tabpanel" id="p-library" aria-labelledby="t-library" tabindex="0">
-      <figure class="shot">{{picture readme-library "Rawtonic Library: a grid of photographs with ratings, picks and metadata" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Library.</figcaption></figure>
-      <div><h3>Find the keepers.</h3><p>Ingest verifies every copy, with an optional second backup, or add photos where they are. Shoot tethered over USB (experimental). Rate, pick, filter, search and sort the shoot, with smart albums; metadata travels in XMP sidecars.</p></div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-develop" aria-labelledby="t-develop" tabindex="0" hidden>
-      <figure class="shot">{{picture readme-develop "Rawtonic Develop with light controls beside an alpine lake photograph" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Develop.</figcaption></figure>
-      <div><h3>Shape the light.</h3><p>Exposure, highlights, shadows, whites and blacks, levels, point and region curves, clarity, structure and dehaze. Sharpening, noise reduction, lens and chromatic aberration corrections, crop and perspective.</p></div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-colour" aria-labelledby="t-colour" tabindex="0" hidden>
-      <figure class="shot">{{picture readme-color "Rawtonic colour grading controls beside a landscape photograph" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Colour.</figcaption></figure>
-      <div><h3>Find the feeling.</h3><p>RAW white balance, a colour editor, three-way colour grading, vibrance, a black-and-white mix, camera profiles, CUBE LUTs and soft proofing for print and web colour spaces.</p></div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-masks" aria-labelledby="t-masks" tabindex="0" hidden>
-      <figure class="shot">{{picture readme-masks "Rawtonic masks panel beside a portrait" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Masks.</figcaption></figure>
-      <div><h3>Work on one part.</h3><p>Brush, linear and radial masks, colour and luminance ranges, and masks for subject, sky, background, depth and people: skin, hair, eyes, lips and clothes, each with its own opacity.</p></div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-retouch" aria-labelledby="t-retouch" tabindex="0" hidden>
-      <figure class="shot">{{picture readme-retouch "Rawtonic automatic face retouch on a studio portrait" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Retouch.</figcaption></figure>
-      <div><h3>Clean it up.</h3><p>Heal and clone with spots or brush strokes, remove objects and run automatic face retouch. Each AI model downloads once, the first time you use the tool, and runs on your computer.</p></div>
-    </div>
-    <div class="panel" role="tabpanel" id="p-export" aria-labelledby="t-export" tabindex="0" hidden>
-      <figure class="shot">{{picture readme-export "Rawtonic export dialog with format and colour space settings" "(min-width: 901px) 62vw, 94vw"}}<figcaption>Export.</figcaption></figure>
-      <div><h3>Deliver it.</h3><p>JPEG, TIFF, PNG, WebP, JPEG XL and AVIF in sRGB, Display P3, Adobe RGB or ProPhoto RGB, through saved recipes, several at once. Output sharpening, watermarks and borders; the queue survives a restart.</p></div>
-    </div>
+    <p class="also">Also in Develop: heal and clone with spots or brush strokes, remove objects, red eye and pet eye correction, automatic face retouch, sharpening, noise reduction, lens and chromatic aberration corrections, crop and perspective.</p>
   </section>
 
   <section class="section wrap" id="switching" aria-labelledby="switching-title">
     <div class="split-head">
       <h2 class="head" id="switching-title">Coming from Lightroom or Capture One?</h2>
-      <p class="muted">Bring your library along and see, measured, where Rawtonic stands today: ahead in some places, behind in others.</p>
+      <p class="muted">Bring your library along. Rawtonic is an early alpha: it is already ahead in some places and still slower in others, such as importing, stepping through a shoot and batch exports. <a class="plain" href="/switching/#today">What works today and what is not there yet</a></p>
     </div>
-    <div class="switch">
-      <div>
-        <h3 class="lead">What comes with you</h3>
-        <ul class="ticks" style="margin-top:16px">
-          <li>A Lightroom Classic catalog (<code>.lrcat</code>) or a Capture One session: ratings, colour labels, keywords, edits and albums. The other library is only read.</li>
-          <li>Lightroom presets and Capture One styles, with a list of what could not be translated.</li>
-          <li>Ratings, labels and keywords from XMP sidecars, read when photos are added. Lightroom’s own settings in a sidecar are kept untouched.</li>
-          <li class="no">Not yet: virtual copies, smart albums and Capture One’s local layers.</li>
-        </ul>
-      </div>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="Measured comparison, summary">
-        <table>
-          <caption>Measured on the same files and Mac, October 2026, with development builds before alpha.4. Lower is better. Where only one of the two was measured, the verdict compares with that one.</caption>
-          <thead><tr><th scope="col">Task</th><th scope="col">Rawtonic</th><th scope="col">Best measured</th><th scope="col">Verdict</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Auto white balance, error finding the light (270 scenes, one camera family)</th><td class="num">1.88°</td><td class="num">3.78° (Camera Raw’s Auto; Capture One not scored)</td><td><span class="v better">Better</span></td></tr>
-            <tr><th scope="row">Slider while exporting, last update after release</th><td class="num">≤ 0.05 s</td><td class="num">≤ 0.31 s (Lightroom)</td><td><span class="v better">Better</span></td></tr>
-            <tr><th scope="row">Tethered shot on screen (Sony α7 III, α7 IV, Fujifilm X-H2S)</th><td class="num">1.1–1.5 s</td><td class="num">1.2–1.6 s (Capture One; Lightroom not measured)</td><td><span class="v equal">Equal</span></td></tr>
-            <tr><th scope="row">Tethered shot on screen (Fujifilm GFX 50R)</th><td class="num">2.4 s</td><td class="num">2.1 s (Capture One)</td><td><span class="v worse">Worse</span></td></tr>
-            <tr><th scope="row">Next photo while culling</th><td class="num">0.51 s</td><td class="num">0.10 s (Capture One)</td><td><span class="v worse">Worse</span></td></tr>
-            <tr><th scope="row">Import 200 RAW+JPEG with backup</th><td class="num">27.0 s</td><td class="num">11.5 s (Lightroom)</td><td><span class="v worse">Worse</span></td></tr>
-            <tr><th scope="row">Export 40 files, two recipes</th><td class="num">17 s</td><td class="num">8 s (Lightroom)</td><td><span class="v worse">Worse</span></td></tr>
-          </tbody>
-        </table>
-        <p class="more small"><a class="plain" href="/switching/">The full comparison, what each number covers, and the shortcuts</a></p>
-      </div>
-    </div>
+    <ul class="ticks switch-list">
+      <li>A Lightroom Classic catalog (<code>.lrcat</code>) or a Capture One session: ratings, colour labels, keywords, edits and albums. The other library is only read.</li>
+      <li>Lightroom presets and Capture One styles, with a list of what could not be translated.</li>
+      <li>Ratings, labels and keywords from XMP sidecars, read when photos are added. Lightroom’s own settings in a sidecar are kept untouched.</li>
+      <li class="no">Not yet: virtual copies, smart albums and Capture One’s local layers.</li>
+    </ul>
   </section>
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
@@ -220,19 +198,6 @@
 <script>
 (() => {
   const $$ = (q) => [...document.querySelectorAll(q)];
-  const tabs = $$('[role="tab"]');
-  const select = (t, focus) => {
-    tabs.forEach((x) => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
-    if (focus) t.focus();
-  };
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => select(t));
-    t.addEventListener('keydown', (e) => {
-      const n = tabs.length;
-      const to = { ArrowRight: i + 1, ArrowLeft: i - 1 + n, Home: 0, End: n - 1 }[e.key];
-      if (to !== undefined) { e.preventDefault(); select(tabs[to % n], true); }
-    });
-  });
   $$('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
     try { await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent); b.textContent = 'Copied'; }
     catch { b.textContent = 'Select and copy'; }

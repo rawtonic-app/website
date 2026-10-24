@@ -38,7 +38,8 @@
     .section{padding-top:var(--section)}
     .plain{text-decoration:underline}
     .nowrap{white-space:nowrap}
-    .shot img{width:100%;background:var(--surface);border-radius:1.2%/1.9%}
+    .shot img{width:100%}
+    .shot.crop img{border-radius:8px}
     .shot figcaption{padding-top:10px;font-size:var(--step-small);color:var(--muted)}
     mark.todo{background:#5a2a20;color:#ffd9cf;padding:0 .3em;font-weight:600}
 
@@ -66,21 +67,30 @@
     .facts h3,.changes h3,.help h3{font-size:var(--step-body);font-weight:600;margin-bottom:6px}
     .facts p{color:var(--muted)}
 
-    .modules h2{margin-bottom:32px}
-    .tabs{display:flex;flex-wrap:wrap;gap:4px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);padding:4px;width:max-content;max-width:100%;margin-bottom:32px}
-    .tabs button,.seg button{min-height:44px;padding:0 18px;font-size:var(--step-small);color:var(--muted);transition:background-color 180ms ease,color 180ms ease}
-    .tabs button[aria-selected="true"],.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
-    @media (hover:hover) and (pointer:fine){.tabs button:not([aria-selected="true"]):hover,.seg button:not([aria-pressed="true"]):hover{color:var(--ink)}}
-    .panel{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:24px clamp(32px,4vw,64px);align-items:start}
-    .panel h3{font-size:var(--step-lead);line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
-    .panel[hidden]{display:none}
+    .seg button{min-height:44px;padding:0 18px;font-size:var(--step-small);color:var(--muted);transition:background-color 180ms ease,color 180ms ease}
+    .seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+    @media (hover:hover) and (pointer:fine){.seg button:not([aria-pressed="true"]):hover{color:var(--ink)}}
+
+    .features-head{margin-bottom:clamp(40px,5vw,72px)}
+    .features{display:grid;gap:clamp(64px,8vw,120px)}
+    .feature{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:24px clamp(32px,4vw,64px);align-items:center}
+    .feature:nth-child(even){grid-template-columns:minmax(0,4fr) minmax(0,7fr)}
+    .feature:nth-child(even) > div{order:-1}
+    .feature h3{font-size:var(--step-lead);line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+    .feature p + p{margin-top:14px}
+    .switch-list{max-width:72ch}
+    .stand{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px clamp(32px,5vw,80px);margin:8px 0 40px}
+    .stand h3{margin-top:16px}
+    .prose .ticks{padding-left:0;gap:12px}
+    .measured{margin-bottom:14px}
+    .measured summary{cursor:pointer;font-weight:600;padding-block:10px;font-size:var(--step-lead);letter-spacing:-.015em}
+    .measured[open] summary{margin-bottom:12px}
 
     .split-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px clamp(32px,5vw,80px);align-items:end;margin-bottom:48px}
     .changes,.help{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px clamp(32px,5vw,80px)}
     .changes p,.help p{color:var(--muted)}
     .also{margin-top:48px;color:var(--muted)}
 
-    .switch{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px clamp(32px,5vw,80px);align-items:start}
     .ticks{list-style:none;padding:0;display:grid;gap:12px}
     .ticks li{padding-left:1.5em;position:relative}
     .ticks li::before{content:"";position:absolute;left:0;top:.62em;width:.6em;height:.6em;background:var(--accent)}
@@ -141,7 +151,8 @@
     .foot .legal{flex-basis:100%;max-width:90ch}
 
     @media (max-width:900px){
-      .hero-row,.panel,.split-head,.install-grid,.faq,.facts,.changes,.help,.switch{grid-template-columns:1fr}
+      .hero-row,.stand,.feature,.feature:nth-child(even),.split-head,.install-grid,.faq,.facts,.changes,.help{grid-template-columns:1fr}
+      .feature:nth-child(even) > div{order:0}
       .nav{order:3;flex-basis:100%;overflow-x:auto;gap:22px;margin-inline:calc(-1 * var(--margin));padding-inline:var(--margin);scrollbar-width:none}
       .nav .button{display:none}
     }
@@ -150,8 +161,6 @@
       .dl{padding:24px}
       .actions .button{flex:1 1 100%}
       .top .logo{width:140px}
-      .tabs{width:100%}
-      .tabs button{flex:1 1 30%;padding:0 10px}
     }
-    @media (prefers-reduced-motion:reduce){.button,.tabs button,.seg button{transition:none}}
+    @media (prefers-reduced-motion:reduce){.button,.seg button{transition:none}}
   </style>

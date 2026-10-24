@@ -2,15 +2,11 @@
 
 The website of [Rawtonic](https://github.com/rawtonic-app/rawtonic), a free, open-source RAW developer.
 
-- `pages/` holds the pages (`index`, `switching`, `privacy`, `imprint`) and `pages/partials/` the shared head, styles, header and footer.
+- `pages/` holds the pages (`index`, `switching`, `credits`, `privacy`, `imprint`) and `pages/partials/` the shared head, styles, header and footer.
 - `release.json` is the one place for release facts: version, date, file names, sizes and SHA-256.
 - `scripts/build.mjs` (Node 20+, no dependencies) builds `site/**/index.html` and `site/sitemap.xml` from both. The built files are not committed.
 - `site/` is what is served: the built pages, `assets/`, `robots.txt`. No analytics, no third-party scripts or fonts.
-- Screenshots: `site/assets/readme-*.jpg` are the same files as `docs/images/` in the app repository. Each also exists as AVIF and WebP at 720 and 1440 px; pages use them through `{{picture name "alt" "sizes"}}`. After replacing a JPEG, make the variants again:
-  ```sh
-  cd site/assets && for f in readme-*.jpg; do b=${f%.jpg}; for w in 720 1440; do
-    magick $f -resize ${w}x -quality 55 $b-$w.avif; cwebp -quiet -q 78 -resize $w 0 $f -o $b-$w.webp; done; done
-  ```
+- Screenshots: `site/assets/shot-*` are window captures of the app (made with a QA build through its QA control channel, `window.capture` at Retina 2×), cropped as PNG. `scripts/images.sh DIR` turns each `DIR/<name>.png` into `<name>.jpg` (1440 px on the page background, the fallback) and AVIF and WebP at 720 and 1440 px that keep the window's transparent corners; pages use them through `{{picture name "alt" "sizes"}}`, which takes each image's width and height from its JPEG. The capture PNGs are not committed. Photographs and their licences: `CREDITS.md` and the `/credits/` page.
 - `site/assets/og-image.jpg` (1200 × 630) is the link preview image.
 - Fonts: Hanken Grotesk under the SIL Open Font License (`site/assets/fonts/OFL.txt`).
 
