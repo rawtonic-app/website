@@ -28,9 +28,9 @@
     </ul>
 
     <h2 id="app">The app</h2>
-    <p>Photos, catalogs and edits stay on your computer. Rawtonic goes online on its own for one thing only:</p>
+    <p>Photos, catalogs and edits stay on your computer. Rawtonic goes online on its own for the update check, and, only if you switch them on, for the weekly <a class="plain" href="#statistics">usage statistics</a>:</p>
     <ul>
-      <li><b>Update check.</b> At startup, at most once every 24 hours, Rawtonic asks GitHub’s public releases list whether a newer version exists. On by default; turn off “Check for updates at startup” in Preferences → General. GitHub receives your IP address and the app’s name and version, nothing else: no cookies, identifiers, photos, paths or settings. Rawtonic never downloads or installs an update itself.</li>
+      <li><b>Update check.</b> At startup, at most once every 24 hours, Rawtonic asks GitHub’s public Releases API (<code>api.github.com</code>, the ten most recent releases of Rawtonic) whether a newer version exists. On by default; turn off “Check for updates at startup” in Preferences → General. GitHub receives your IP address and a User-Agent header of <code>Rawtonic/</code> and the version, as with any web request; the request carries no cookies, identifiers, photos, paths or settings. Rawtonic never downloads or installs an update itself; a notice links to the release page.</li>
     </ul>
     <p>Everything else happens only when you ask for it: an AI tool’s model downloads from GitHub the first time you use it, “Show on map” loads a map from openstreetmap.org, links open in your browser. And the contributions below.</p>
 
@@ -39,13 +39,14 @@
     <h3>What the relay receives</h3>
     <ul>
       <li><b>Problem report:</b> the text you wrote, and only if you left them in: system details (graphics card), the last 200 lines of Rawtonic’s log, the camera make, model and file type of the open photo, a screenshot of Rawtonic’s window, and, for a photo that renders wrong, the photo’s file if you attach it. Always: Rawtonic’s version, your operating system and its version, the processor type.</li>
-      <li><b>Crash report:</b> version, system, graphics card, the error message, where in Rawtonic’s code it happened, the names of the functions that were running, and the end of the log of that run.</li>
+      <li><b>Crash report:</b> version, system, graphics card, the error message, where in Rawtonic’s code it happened, the names of the functions that were running, and the end of the log of that run. After a crash Rawtonic keeps this record on your computer and asks once, at the next start, whether to send it; nothing is sent unless you then choose to. “Not now” keeps the record, “Never” deletes all records and stops recording. Records are deleted after sending or after 30 days.</li>
       <li><b>Camera test result:</b> camera model and firmware, system, Rawtonic version, camera driver, each test step’s result and timing. No serial number, file names or photos.</li>
     </ul>
     <p>Before you see the text, Rawtonic tries to remove folder paths, your user and computer name, serial numbers, e-mail and IP addresses and GPS positions. That is a help, not a guarantee, so read what you send. A photo file is sent as it is and keeps its metadata, such as the date, the camera’s serial number and a GPS position if one was recorded; the dialog warns you.</p>
     <h3>Where it goes and for how long</h3>
     <ul>
-      <li>The relay runs on <b>Cloudflare</b> Workers. Cloudflare sees your IP address, as any web host does. The relay itself stores <b>no IP address</b>: to limit abuse it counts requests under a keyed hash of the address that changes every hour, day or week and is deleted when that period ends. Request logging is switched off.</li>
+      <li>The relay runs on <b>Cloudflare</b> Workers, with a Cloudflare D1 database. Cloudflare sees your IP address, as any web host does. The relay itself stores <b>no IP address</b>: to limit abuse it counts requests under a keyed hash of the address that changes every hour, day or week and is deleted when that period ends. Request logging is switched off.</li>
+      <li>The D1 database holds, for each report, only a hash of its report id, its kind, the number of its GitHub issue, the names of its stored files and when it arrived; that row is deleted with the report. It also holds the abuse counters above, deleted when their period ends, and the statistics counters (below).</li>
       <li>Each report becomes an issue in a <b>private</b> GitHub repository that only the maintainers can read, filed by the relay’s own account. A screenshot or photo file is kept in private Cloudflare R2 storage, never public.</li>
       <li>Reports, crash reports and camera tests are <b>deleted after 90 days</b>, with their files. Plain facts from camera tests (which camera works how) may be copied into the public list of tested cameras before that.</li>
       <li>Processors: Cloudflare, Inc. and GitHub, Inc., both in the United States. <mark class="todo">OFFEN FÜR NUTZER: basis for the transfer to the US (e.g. EU–US Data Privacy Framework or standard contractual clauses) and the data processing agreements in place</mark></li>
@@ -56,7 +57,7 @@
       <li>in the app: “Delete this report now” in the confirmation after sending;</li>
       <li>by e-mail: send the report id to <a class="plain" href="mailto:hello@rawtonic.cc">hello@rawtonic.cc</a>.</li>
     </ul>
-    <p>The relay keeps no name or address with a report, so the id is the only way we can find yours.</p>
+    <p>The relay asks for no name, account or contact address and keeps none beside a report, so the id is the only way we can find yours. What you write, a screenshot or an attached photo can still contain personal information.</p>
     <h3>Other ways to send</h3>
     <p>Each report dialog can also copy the report (nothing is sent) or open GitHub’s public issue form with the text filled in. That issue is public, filed with your own GitHub account under GitHub’s terms, and only when you submit it there.</p>
 
