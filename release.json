@@ -1,18 +1,18 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.5",
-  "name": "a fix release for alpha.4",
+  "version": "0.1.0-alpha.6",
+  "name": "faster import and culling, a Mac menu bar, presets and tester feedback",
   "date": "2026-10-25",
   "dateText": "25 October 2026",
-  "tag": "v0.1.0-alpha.5",
+  "tag": "v0.1.0-alpha.6",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.5_aarch64.dmg",
-    "size": "37 MB",
-    "sha256": "c9d0a78a39dd08ee4e511adbd1ee4a38e85b768bfe1c2378523f8d94dfafce29"
+    "file": "Rawtonic_0.1.0-alpha.6_aarch64.dmg",
+    "size": "38 MB",
+    "sha256": "72ae470c7718a3b3d2daee56158b1577fbda74dd1a62dcb70324d83fbc075452"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.5_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.6_amd64.AppImage",
     "size": "129 MB",
-    "sha256": "36cc875e98a614b85e65860fa29bbc5f08f7e2f406b9bfbca0e165a93b56d999"
+    "sha256": "d5dc3c4f4eb96234e9f6c58b481f56f0de7394c05fc24ad0f8a6ff875c252606"
   }
 }
