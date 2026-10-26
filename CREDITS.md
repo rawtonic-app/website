@@ -2,7 +2,7 @@
 
 ## Photographs in the screenshots
 
-The `site/assets/shot-*` images are window captures of Rawtonic 0.1.0-alpha.4 on macOS (October 2026), made in a demo project with RAW files that photographers shared on the [pixls.us PlayRaw](https://discuss.pixls.us/c/processing/playraw/30) forum. The photos were developed in Rawtonic for the captures; the captures were cropped and scaled (the Refine edge picture puts three crops of one session side by side), nothing was painted or retouched afterwards. As adaptations of the photographs, the screenshots are shared under CC BY-SA 4.0. The photographers do not endorse Rawtonic. The RAW files themselves are not part of this repository.
+The `site/assets/shot-*` images are window captures of Rawtonic 0.1.0-alpha.7 on macOS (October 2026), made in a demo project with RAW files that photographers shared on the [pixls.us PlayRaw](https://discuss.pixls.us/c/processing/playraw/30) forum. The photos were developed in Rawtonic for the captures; the captures were cropped and scaled (the Refine edge picture puts three crops of one session side by side), nothing was painted or retouched afterwards. As adaptations of the photographs, the screenshots are shared under CC BY-SA 4.0. The photographers do not endorse Rawtonic. The RAW files themselves are not part of this repository.
 
 | Name in the demo | Photographer (forum name) | Source | Licence as stated in the post |
 | :-- | :-- | :-- | :-- |
