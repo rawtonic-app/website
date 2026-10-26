@@ -19,7 +19,7 @@ python3 -m http.server -d site 8000     # http://localhost:8000/
 
 ## Release
 
-1. Fill `release.json`: `date` (YYYY-MM-DD), `dateText` (e.g. "28 October 2026"), each file's `size` (e.g. "36 MB") and `sha256` from the GitHub release. Until the release exists these stay `TBD` in the repository on purpose (so a plain build shows them and `--strict` refuses to deploy); never fill them with guesses.
+1. Fill `release.json`: `date` (YYYY-MM-DD), `dateText` (e.g. "28 October 2026"), each file's (`mac`, `macIntel` = the experimental Intel DMG, `linux`) `size` (e.g. "36 MB") and `sha256` from the GitHub release. Until the release exists these stay `TBD` in the repository on purpose (so a plain build shows them and `--strict` refuses to deploy); never fill them with guesses.
 2. Update "New in alpha.N" in `pages/index.html` from the app's CHANGELOG.
 3. `node scripts/build.mjs --strict` must pass: it refuses while a `TBD` or an `OFFEN FÜR NUTZER` placeholder (privacy and imprint) is left.
 

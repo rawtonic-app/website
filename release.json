@@ -1,18 +1,23 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.6.1",
-  "name": "fixes from the first alpha.6 tests",
+  "version": "0.1.0-alpha.7",
+  "name": "the first signed and notarized alpha",
   "date": "2026-10-26",
   "dateText": "26 October 2026",
-  "tag": "v0.1.0-alpha.6.1",
+  "tag": "v0.1.0-alpha.7",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.6.1_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.7_aarch64.dmg",
     "size": "38 MB",
-    "sha256": "45bc70e4bbd03b46ee6fb595ff71e528ee3344410b48f1f4702db15e3fb6bd4a"
+    "sha256": "7e0ede5508283c3df4a0347585720ece04555c797850364c36eb2bb1d0eaa10d"
+  },
+  "macIntel": {
+    "file": "Rawtonic_0.1.0-alpha.7_x86_64.dmg",
+    "size": "42 MB",
+    "sha256": "5fe46a34885156b77d8a1be9afe9ba246025b79e2a7ffad3c0f6e56357e2b42b"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.6.1_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.7_amd64.AppImage",
     "size": "129 MB",
-    "sha256": "1306d1187665621b47149d099a258326b7b4cda56f33f2e31ac3ddd655e89e8d"
+    "sha256": "d23f7f202485645964303c9eea3934ffc9993e22d0a97a117af98b531d2e287a"
   }
 }

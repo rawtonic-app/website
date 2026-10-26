@@ -27,6 +27,7 @@ const ctx = {
     url: `${REPO}/releases/tag/${release.tag}`,
     mac: { ...release.mac, url: download(release.mac.file) },
     linux: { ...release.linux, url: download(release.linux.file) },
+    macIntel: { ...release.macIntel, url: download(release.macIntel.file) },
   },
   repo: REPO,
   origin: ORIGIN,

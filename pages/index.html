@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 {{> head}}
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon; Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon (Intel experimental); Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
 </head>
 <body>
 {{> header}}
@@ -18,7 +18,7 @@
       <a class="button" data-os-download="mac" href="{{release.mac.url}}">Download for macOS</a>
       <a class="button quiet" data-os-download="linux" href="{{release.linux.url}}">Download for Linux</a>
     </div>
-    <p class="note small muted">Rawtonic {{release.version}}, {{release.name}} · <span class="nowrap">Macs with Apple Silicon,</span> <span class="nowrap">macOS 13 or later</span> · <span class="nowrap">Linux x86-64</span> · no Windows or Intel Mac build yet · the Mac app is not signed yet, so it takes <a class="plain" href="#install">one extra step to open</a>.</p>
+    <p class="note small muted">Rawtonic {{release.version}}, {{release.name}} · <span class="nowrap">Macs with Apple Silicon,</span> <span class="nowrap">macOS 13 or later</span> · <span class="nowrap">Linux x86-64</span> · signed and notarized by Apple · <span class="nowrap">Intel Macs experimental</span> · no Windows build yet.</p>
     <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic 0.1.0-alpha.5; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
   </section>
 
@@ -81,16 +81,16 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.6.</h2>
-      <p class="muted">alpha.6.1 ({{release.dateText}}) fixes four things from the first alpha.6 tests: a double click opens a photo in Develop, F full screen keeps the keyboard on the Mac, shortcuts work right after a slider drag, and the grid no longer flickers. Edits saved with an earlier alpha render as before; new edits get the improvements below.</p>
+      <h2 class="head" id="new-title">New in alpha.7.</h2>
+      <p class="muted">Released {{release.dateText}}. The first alpha signed with an Apple Developer ID and notarized by Apple: it opens with a double-click. Edits saved with an earlier alpha render as before; new edits and photos you have not edited yet get the improvements below.</p>
     </div>
     <div class="changes">
-      <div><h3>Menus and commands.</h3><p>A full menu bar on the Mac and a command palette (⇧⌘P) that finds and runs any command. The view and flag keys can be rebound.</p></div>
-      <div><h3>Faster import and culling.</h3><p>200 RAW+JPEG pairs from a card with a backup copy are in place after about 10 s instead of 27 s, every copy read back and compared. The next photo shows at once while you rate and flag, and ratings and flags can be undone.</p></div>
-      <div><h3>Presets and colour.</h3><p>Preset buttons in Grain, Vignette, Color grading, Black &amp; white, Sharpening and Noise reduction, 39 built-in styles, and a range wheel and Skin tone mode in the Colour Editor.</p></div>
-      <div><h3>Full screen, loupe, night scenes.</h3><p>F shows only the photograph; the Library has a loupe for looking through. Highlights reach further in dark frames such as lamps and lit windows.</p></div>
+      <div><h3>Signed and notarized.</h3><p>No Terminal step and no “damaged” message any more: macOS checks Rawtonic like any other app from the internet and opens it. AI masks and tethering work in the signed app.</p></div>
+      <div><h3>Colours keep their hue.</h3><p>Colours an export or screen cannot show are brought into range at their own hue: blue LEDs no longer turn purple, red-orange flowers no longer red. On 24 test photos the hue error fell from 5.3° to 2.4°.</p></div>
+      <div><h3>Lens corrections as the camera makes them.</h3><p>Framing and distortion from the camera’s own data now match the camera on Sony, Nikon Z, Canon R5 Mark II and R6 Mark III, Samsung NX, Panasonic and Fujifilm, often to a fraction of a pixel.</p></div>
+      <div><h3>Faster batch export.</h3><p>27 RAWs to a web JPEG and a full-size 16-bit TIFF in about 25 s instead of 37–38 s on a Mac mini M4 Pro, with Develop staying fluid meanwhile.</p></div>
     </div>
-    <p class="also">Also: Before/After split top and bottom, a Storage page in Preferences, AI masks prepared in the background. <a class="plain" href="{{release.url}}">Full release notes</a></p>
+    <p class="also">Also: an experimental build for Intel Macs, relative paths for the Linux AppImage’s command line, and preview storage in one place in Preferences. <a class="plain" href="{{release.url}}">Full release notes</a></p>
   </section>
 
   <section class="section wrap" id="install" aria-labelledby="install-title" data-os="mac">
@@ -103,27 +103,20 @@
     </div>
     <div class="install-grid">
       <ol class="steps">
-        <li class="mac"><b>Download the DMG</b> for Apple Silicon, {{release.mac.size}}. It needs macOS 13 or later; Intel Macs are not supported yet.</li>
-        <li class="mac"><b>Drag Rawtonic to Applications.</b> The alpha is not signed with an Apple Developer ID yet, so macOS says it “can’t be opened” or is “damaged”. It isn’t; you allow it once:
-          <ol class="sub">
-            <li>Open <b>Terminal</b>: press <kbd>⌘</kbd> <kbd>Space</kbd>, type <i>Terminal</i> and press <kbd>Return</kbd>.</li>
-            <li>Copy the command shown here (<b>Copy</b> button), paste it into the Terminal window with <kbd>⌘</kbd> <kbd>V</kbd> and press <kbd>Return</kbd>. Nothing is printed when it worked.</li>
-            <li>Start Rawtonic from Applications as usual. You need to do this once per new version.</li>
-          </ol>
-          Without Terminal: try to open Rawtonic once, then go to <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+        <li class="mac"><b>Download the DMG</b> for Apple Silicon, {{release.mac.size}}. It needs macOS 13 or later. For Intel Macs there is an <a class="plain" href="{{release.macIntel.url}}">experimental DMG</a> ({{release.macIntel.size}}), so far tested only under Rosetta on Apple Silicon.</li>
+        <li class="mac"><b>Drag Rawtonic to Applications</b> and open it with a double-click. Rawtonic is signed with an Apple Developer ID and notarized by Apple, so macOS only asks once whether you want to open an app downloaded from the internet.</li>
         <li class="mac"><b>Keep your backups.</b> It is early software and bugs are expected. Updating from an earlier alpha? Saved edits are meant to look as before; the improved defaults apply to new edits and to photos you have not edited yet.</li>
         <li class="linux"><b>Download the AppImage</b> for x86-64, {{release.linux.size}}. It runs on Ubuntu 22.04 or later, Debian 12, Fedora and others with glibc 2.35 or later.</li>
         <li class="linux"><b>Make it executable and start it</b> with the commands shown here. If it does not start, install FUSE 2 (libfuse2t64 on Ubuntu 24.04, libfuse2 on older Ubuntu and Debian) or start it with --appimage-extract-and-run.</li>
         <li class="linux"><b>Give the first start a minute.</b> Before the first photo appears in Develop, the graphics driver prepares Rawtonic’s shaders. That happens once; later starts are quick.</li>
       </ol>
       <div class="code">
-        <p class="small muted">In Terminal</p>
-        <div class="cmd mac"><pre><code id="mac-cmd">xattr -cr /Applications/Rawtonic.app</code></pre><button type="button" class="copy" data-copy="mac-cmd">Copy</button></div>
-        <p class="small muted mac">This removes the “downloaded from the internet” mark from Rawtonic only. It changes nothing else on your Mac.</p>
+        <p class="small muted linux">In a terminal</p>
         <pre class="linux"><code>chmod +x {{release.linux.file}}
 ./{{release.linux.file}}</code></pre>
         <p class="small muted">SHA-256</p>
         <pre class="mac"><code>{{release.mac.sha256}}</code></pre>
+        <p class="small muted mac">Intel (experimental): <code>{{release.macIntel.sha256}}</code></p>
         <pre class="linux"><code>{{release.linux.sha256}}</code></pre>
         <p class="small">Something wrong? Use <b>Report a problem</b> in the app, or see <a class="plain" href="#help">other ways to help</a>.</p>
       </div>
@@ -160,9 +153,9 @@
     <h2 class="head" id="faq-title">Questions.</h2>
     <dl class="faq-list">
       <div><dt>What does it cost?</dt><dd>Nothing. Rawtonic is free and open source under the AGPL-3.0-or-later.</dd></div>
-      <div><dt>Which systems does it run on?</dt><dd>macOS 13 or later on Apple Silicon, and x86-64 Linux with glibc 2.35 or later. There is no Windows or Intel Mac build yet.</dd></div>
+      <div><dt>Which systems does it run on?</dt><dd>macOS 13 or later on Apple Silicon, and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. There is no Windows build yet.</dd></div>
       <div><dt>Will it change my RAW files?</dt><dd>No. Ingest verifies every copy, and edits live in the library and XMP sidecars, never in the RAW file itself.</dd></div>
-      <div><dt>Why does macOS block the app?</dt><dd>This alpha is not signed with an Apple Developer ID. Clear the quarantine flag once, or right-click the app and choose Open, twice.</dd></div>
+      <div><dt>Is the Mac app signed?</dt><dd>Yes. Since alpha.7 it is signed with an Apple Developer ID and notarized by Apple, so it opens like any other app.</dd></div>
       <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Otherwise only when you ask: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
       <div><dt>Do the AI tools use the cloud?</dt><dd>No. They run on your computer. Each model downloads once, the first time you use the tool.</dd></div>
       <div><dt>Does my camera work?</dt><dd>Files of 965 of the 1,034 camera models in the public raw.pixls.us collection developed in our October 2026 run; Nikon High Efficiency NEFs, Sigma X3F, GoPro and some other formats don’t open yet. <a class="plain" href="#cameras">Camera support</a></dd></div>
@@ -180,7 +173,7 @@
           <h3>macOS</h3>
           <p class="muted">Apple Silicon, macOS 13 or later · DMG, {{release.mac.size}}</p>
           <a class="button" href="{{release.mac.url}}">Download for macOS</a>
-          <p class="small muted">Not signed yet: <a class="plain" href="#install">how to open it the first time</a>.</p>
+          <p class="small muted">Signed and notarized. Intel Macs: <a class="plain" href="{{release.macIntel.url}}">experimental DMG</a>, {{release.macIntel.size}}.</p>
         </div>
         <div class="dl">
           <h3>Linux</h3>
