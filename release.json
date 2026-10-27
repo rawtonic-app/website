@@ -1,23 +1,23 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.7.1",
-  "name": "the first signed and notarized alpha, with one fix",
-  "date": "2026-10-26",
-  "dateText": "26 October 2026",
-  "tag": "v0.1.0-alpha.7.1",
+  "version": "0.1.0-alpha.8",
+  "name": "film grain, one lens warp for view and export",
+  "date": "2026-10-27",
+  "dateText": "27 October 2026",
+  "tag": "v0.1.0-alpha.8",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.7.1_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.8_aarch64.dmg",
     "size": "38 MB",
-    "sha256": "c0009b40ef035df3a9939158743a577a092396f201eadfd13644cb0ba56f86e3"
+    "sha256": "2bb50e36d4fda8b618fd7ea62eb27a4c63d3871c1fe9600c85b9f77e951f2cb3"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.7.1_x86_64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.8_x86_64.dmg",
     "size": "42 MB",
-    "sha256": "598841aa41213b2ccd0e8f85694bfe4c1508d3b16c82829cfefe675491529d8c"
+    "sha256": "b5c9c93793f354d4b4ca2c867c3b8f448fe763316ff95d04dad274668240c475"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.7.1_amd64.AppImage",
-    "size": "129 MB",
-    "sha256": "2a06fd96ba093802b49405af44c2d4b7e5018341f6a804a47b433bfd99ba8876"
+    "file": "Rawtonic_0.1.0-alpha.8_amd64.AppImage",
+    "size": "130 MB",
+    "sha256": "6e606e5a7acc93eeb9599b852dc81626565136fb2db1272b5393b09c10989020"
   }
 }
