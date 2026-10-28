@@ -1,23 +1,23 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.9",
-  "name": "large-hole removal with a larger AI model, Match Light, X rejects",
+  "version": "0.1.0-alpha.9.1",
+  "name": "spot tool: mode choice starts the tool, list and Alt-delete",
   "date": "2026-10-28",
   "dateText": "28 October 2026",
-  "tag": "v0.1.0-alpha.9",
+  "tag": "v0.1.0-alpha.9.1",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.9_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.9.1_aarch64.dmg",
     "size": "38 MB",
-    "sha256": "1dd8fda762f81968e8d3af59a8b1cf7700dfd894832abe2d3433c2d06140f9af"
+    "sha256": "1b554d079481e89fd7f3931d10be24b7755849a10a90553a714f301dde3ad60a"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.9_x86_64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.9.1_x86_64.dmg",
     "size": "43 MB",
-    "sha256": "c4f8af5572eb4e4b1e2a5eeb466d72a56fa6c7019f13f790eaa95e3338569e5e"
+    "sha256": "bca494adb03eea93a8c0d197f580f31b595f69d9bf2f5ecf3f8a51f113ad8b5b"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.9_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.9.1_amd64.AppImage",
     "size": "130 MB",
-    "sha256": "fb362e935e76af340bf20ade7d12163331db7693f49d4b8333d80875c325cca6"
+    "sha256": "0023ba39b60d4a7daec1a36f5b51d19201b27fa1c3717cfaaefc32b0bcf975a0"
   }
 }
