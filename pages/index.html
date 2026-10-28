@@ -81,16 +81,16 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.8.</h2>
-      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS like alpha.7. Edits saved with an earlier alpha render as before; new edits and photos you have not edited yet get the improvements below.</p>
+      <h2 class="head" id="new-title">New in alpha.9.</h2>
+      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS. Most edits render as before; exports of older Panasonic and Leica RAWs and of JPEG or TIFF photos with lens vignetting correction change (see the release notes).</p>
     </div>
     <div class="changes">
-      <div><h3>Film grain.</h3><p>Grain built like the grain of photographic film, with a Colour slider for colour negative grain and four presets measured on film scans. Develop now shows it as the export will look.</p></div>
-      <div><h3>One lens warp for view and export.</h3><p>Lens and geometry corrections run on the graphics card, the same for the Develop view and the export, so what you see is the export’s geometry to the pixel.</p></div>
-      <div><h3>Waiting photos are fetched.</h3><p>Photos a Fujifilm camera kept while Rawtonic was not connected are fetched at connect and freed on the camera only once they are safely in the library. Tested on a GFX 50R.</p></div>
-      <div><h3>Styles replace each other.</h3><p>A new style takes the last one back first, a second click removes it, and the applied style is marked. Your own changes after a style stay yours.</p></div>
+      <div><h3>Large removals, filled better.</h3><p>Large holes are filled by a larger AI model that sees the photo around them, on macOS and Linux. It is downloaded once when you first need it, and always runs on your computer.</p></div>
+      <div><h3>Match Light.</h3><p>A wedding or event series shot in window light, tungsten and flash gets consistent exposure and white balance from one reference photo, in one undo step.</p></div>
+      <div><h3>Culling keys.</h3><p>X rejects, 6–9 set colour labels and Alt+X shows the proof margin. Colour labels show their name on the tiles.</p></div>
+      <div><h3>Precise point curves.</h3><p>A click puts the point exactly under the pointer in every channel, and curve points can be moved with the keyboard.</p></div>
     </div>
-    <p class="also">Also: AI tools need less memory (up to 3 GB in a measured session), object removal no longer paints new objects into large holes, the update notice downloads the right installer, and Rawtonic shows what is new after an update. <a class="plain" href="{{release.url}}">Full release notes</a></p>
+    <p class="also">Also: Canon owners can help test tethered shooting (off by default), spot removal settings in the Retouch tab, linked colour grading wheels, a protection brush for freckles in face retouch, and a calmer, consistent interface. <a class="plain" href="{{release.url}}">Full release notes</a></p>
   </section>
 
   <section class="section wrap" id="install" aria-labelledby="install-title" data-os="mac">

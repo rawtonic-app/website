@@ -1,23 +1,23 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.8",
-  "name": "film grain, one lens warp for view and export",
-  "date": "2026-10-27",
-  "dateText": "27 October 2026",
-  "tag": "v0.1.0-alpha.8",
+  "version": "0.1.0-alpha.9",
+  "name": "large-hole removal with a larger AI model, Match Light, X rejects",
+  "date": "2026-10-28",
+  "dateText": "28 October 2026",
+  "tag": "v0.1.0-alpha.9",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.8_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.9_aarch64.dmg",
     "size": "38 MB",
-    "sha256": "2bb50e36d4fda8b618fd7ea62eb27a4c63d3871c1fe9600c85b9f77e951f2cb3"
+    "sha256": "1dd8fda762f81968e8d3af59a8b1cf7700dfd894832abe2d3433c2d06140f9af"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.8_x86_64.dmg",
-    "size": "42 MB",
-    "sha256": "b5c9c93793f354d4b4ca2c867c3b8f448fe763316ff95d04dad274668240c475"
+    "file": "Rawtonic_0.1.0-alpha.9_x86_64.dmg",
+    "size": "43 MB",
+    "sha256": "c4f8af5572eb4e4b1e2a5eeb466d72a56fa6c7019f13f790eaa95e3338569e5e"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.8_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.9_amd64.AppImage",
     "size": "130 MB",
-    "sha256": "6e606e5a7acc93eeb9599b852dc81626565136fb2db1272b5393b09c10989020"
+    "sha256": "fb362e935e76af340bf20ade7d12163331db7693f49d4b8333d80875c325cca6"
   }
 }
