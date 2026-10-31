@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 {{> head}}
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon (Intel experimental); Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon (Intel experimental); Windows 10 or 11 x64 (experimental); Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.windows.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
 </head>
 <body>
 {{> header}}
@@ -16,9 +16,23 @@
     </div>
     <div class="actions" id="hero-actions">
       <a class="button" data-os-download="mac" href="{{release.mac.url}}">Download for macOS</a>
+      <a class="button quiet" data-os-download="windows" href="{{release.windows.url}}">Download for Windows<span class="tag">experimental</span></a>
       <a class="button quiet" data-os-download="linux" href="{{release.linux.url}}">Download for Linux</a>
     </div>
-    <p class="note small muted">Rawtonic {{release.version}}, {{release.name}} · <span class="nowrap">Macs with Apple Silicon,</span> <span class="nowrap">macOS 13 or later</span> · <span class="nowrap">Linux x86-64</span> · signed and notarized by Apple · <span class="nowrap">Intel Macs experimental</span> · <a class="plain nowrap" href="#install" data-os-link="windows">Windows experimental, unsigned</a>.</p>
+    <script>
+    (() => {
+      // The visitor's system gets the primary button, first. Runs before the page paints; no request, no tracking.
+      const ua = navigator.userAgent || '', plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+      const os = /Android|iPhone|iPad|iPod/.test(ua) ? '' : /Win/.test(plat + ua) ? 'windows' : /Linux|X11/.test(plat + ua) ? 'linux' : '';
+      if (!os) return;
+      const row = document.getElementById('hero-actions'), pick = row.querySelector('[data-os-download="' + os + '"]');
+      row.querySelectorAll('.button').forEach((b) => b.classList.add('quiet'));
+      pick.classList.remove('quiet'); row.prepend(pick);
+    })();
+    </script>
+    <p class="note small muted">Rawtonic {{release.version}} · <a class="plain" href="#new">What’s new</a> · <a class="plain" href="#install">Requirements and install</a></p>
+    <p class="note small muted">macOS 13 or later on Apple Silicon (Intel experimental), signed and notarized · Windows 10 or 11, x64, experimental and unsigned · Linux x86-64, AppImage.</p>
+    <p class="note small muted">Windows: SmartScreen says “Windows protected your PC”; click <b>More info</b>, then <b>Run anyway</b>. Needs a graphics card with a Vulkan or DirectX 12 driver. <a class="plain" href="#install" data-os-link="windows">Windows install steps</a></p>
     <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic 0.1.0-alpha.7; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
   </section>
 
@@ -216,10 +230,6 @@
   if (/Win/.test(navigator.platform || navigator.userAgent)) pick('windows');
   if (/Linux/.test(navigator.platform || navigator.userAgent) && !/Android/.test(navigator.userAgent)) {
     pick('linux');
-    // The visitor's system gets the primary button, first.
-    const row = document.getElementById('hero-actions');
-    const mac = row.querySelector('[data-os-download="mac"]'), linux = row.querySelector('[data-os-download="linux"]');
-    mac.classList.add('quiet'); linux.classList.remove('quiet'); row.prepend(linux);
   }
 })();
 </script>
