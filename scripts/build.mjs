@@ -28,10 +28,55 @@ const ctx = {
     mac: { ...release.mac, url: download(release.mac.file) },
     linux: { ...release.linux, url: download(release.linux.file) },
     macIntel: { ...release.macIntel, url: download(release.macIntel.file) },
+    windows: { ...release.windows, url: download(release.windows.file) },
   },
   repo: REPO,
   origin: ORIGIN,
 };
+
+// Release history (/releases/): every earlier release of the app's CHANGELOG.md
+// at this release's tag, newest first, with its date, a short summary and its
+// highlights' titles. RAWTONIC_CHANGELOG=path reads a local copy instead
+// (before the tag exists); otherwise the build needs the network.
+async function loadChangelog() {
+  if (process.env.RAWTONIC_CHANGELOG) return fs.readFileSync(process.env.RAWTONIC_CHANGELOG, 'utf8');
+  const url = `https://raw.githubusercontent.com/rawtonic-app/rawtonic/${release.tag}/CHANGELOG.md`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`release history: ${url} answered ${res.status} (set RAWTONIC_CHANGELOG to a local CHANGELOG.md)`);
+  return res.text();
+}
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// Markdown inline → plain text: links keep their text, emphasis and code marks go.
+const plain = (s) => s.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\*\*|`/g, '').replace(/(^|[\s(])\*([^*]+)\*/g, '$1$2').replace(/\\(.)/g, '$1').trim();
+// A sentence ends at . ! or ? before a space and a capital (not inside "alpha.7" or "0.887").
+const sentences = (s, n) => s.split(/(?<=[.!?])\s+(?=[A-Z*])/).slice(0, n).join(' ').trim();
+function releaseHistory(md, current) {
+  const sections = md.split(/^## /m).slice(1).map((s) => {
+    const [head, ...rest] = s.split('\n');
+    const m = head.match(/^(\d+\.\d+\.\d+-alpha\.[\d.]+)\s+—\s+(\d{4}-\d{2}-\d{2})\s*$/);
+    return m && { version: m[1], date: m[2], body: rest.join('\n') };
+  }).filter((r) => r && r.version !== current);
+  if (sections.length === 0) throw new Error('release history: no earlier release found in CHANGELOG.md');
+  const items = sections.map(({ version, date, body }) => {
+    const intro = body.split(/\n(?=- |### )/)[0].trim();
+    const summary = plain(sentences(intro.replace(/^The \w+ alpha\.\s*/, ''), 2));
+    const hl = (body.match(/### Highlights\n([\s\S]*?)(?=\n### |$)/) || [, body.split(/\n### /)[0]])[1];
+    const bullets = hl.split('\n').filter((l) => l.startsWith('- '));
+    const titles = bullets.map((l) => {
+      const bold = l.match(/^- \*\*(.+?)\*\*/);
+      const t = plain(bold ? bold[1] : sentences(l.slice(2), 1));
+      return t.length > 140 ? `${t.slice(0, 137).replace(/\s+\S*$/, '')}…` : t.replace(/[.:]$/, '');
+    }).slice(0, 6);
+    const more = bullets.length > titles.length ? `<li class="muted">and ${bullets.length - titles.length} more</li>` : '';
+    const when = new Date(`${date}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+    return `<li class="rel"><h2><a class="plain" href="${REPO}/releases/tag/v${version}">${esc(version)}</a></h2><p class="small muted"><time datetime="${date}">${when}</time></p>`
+      + (summary ? `<p>${esc(summary)}</p>` : '')
+      + (titles.length ? `<ul>${titles.map((t) => `<li>${esc(t)}</li>`).join('')}${more}</ul>` : '')
+      + '</li>';
+  });
+  return `<ol class="releases">${items.join('\n')}</ol>`;
+}
+ctx.history = { list: releaseHistory(await loadChangelog(), release.version) };
 
 const lookup = (obj, key, where) => {
   const v = key.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj);

@@ -1,0 +1,20 @@
+<!--page {"path": "/releases/", "title": "Release history · Rawtonic", "description": "Every earlier alpha of Rawtonic, the free, open-source RAW developer: date, version, highlights and its release notes on GitHub."} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose wide">
+    <h1>Release history.</h1>
+    <p class="muted">The current release is <a class="plain" href="/#new">Rawtonic {{release.version}}</a>. Earlier alphas, newest first, with their highlights from the <a class="plain" href="{{repo}}/blob/{{release.tag}}/CHANGELOG.md">changelog</a>; each version links to its release notes, downloads and SHA-256 on GitHub. Older downloads are kept there for reference; use the current release.</p>
+    {{history.list}}
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>

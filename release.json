@@ -1,23 +1,28 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.9.1",
-  "name": "spot tool: mode choice starts the tool, list and Alt-delete",
-  "date": "2026-10-28",
-  "dateText": "28 October 2026",
-  "tag": "v0.1.0-alpha.9.1",
+  "version": "0.1.0-alpha.10",
+  "name": "activity centre, duplicates, eyes per face, Windows experimental",
+  "date": "2026-10-31",
+  "dateText": "31 October 2026",
+  "tag": "v0.1.0-alpha.10",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.9.1_aarch64.dmg",
-    "size": "38 MB",
-    "sha256": "1b554d079481e89fd7f3931d10be24b7755849a10a90553a714f301dde3ad60a"
+    "file": "Rawtonic_0.1.0-alpha.10_aarch64.dmg",
+    "size": "TBD",
+    "sha256": "TBD"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.9.1_x86_64.dmg",
-    "size": "43 MB",
-    "sha256": "bca494adb03eea93a8c0d197f580f31b595f69d9bf2f5ecf3f8a51f113ad8b5b"
+    "file": "Rawtonic_0.1.0-alpha.10_x86_64.dmg",
+    "size": "TBD",
+    "sha256": "TBD"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.9.1_amd64.AppImage",
-    "size": "130 MB",
-    "sha256": "0023ba39b60d4a7daec1a36f5b51d19201b27fa1c3717cfaaefc32b0bcf975a0"
+    "file": "Rawtonic_0.1.0-alpha.10_amd64.AppImage",
+    "size": "TBD",
+    "sha256": "TBD"
+  },
+  "windows": {
+    "file": "Rawtonic_0.1.0-alpha.10_x64-setup.exe",
+    "size": "TBD",
+    "sha256": "TBD"
   }
 }
