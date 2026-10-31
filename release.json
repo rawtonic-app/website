@@ -7,22 +7,22 @@
   "tag": "v0.1.0-alpha.10",
   "mac": {
     "file": "Rawtonic_0.1.0-alpha.10_aarch64.dmg",
-    "size": "TBD",
-    "sha256": "TBD"
+    "size": "39 MB",
+    "sha256": "80868e90da7fb9596e8dc0ee4cbb5dac204daac979162b1686ae6a7063411727"
   },
   "macIntel": {
     "file": "Rawtonic_0.1.0-alpha.10_x86_64.dmg",
-    "size": "TBD",
-    "sha256": "TBD"
+    "size": "43 MB",
+    "sha256": "08035f366d0953e86d6a65b40546d96b215b039a9cb0f048492bed96891887a9"
   },
   "linux": {
     "file": "Rawtonic_0.1.0-alpha.10_amd64.AppImage",
-    "size": "TBD",
-    "sha256": "TBD"
+    "size": "131 MB",
+    "sha256": "20df805fcebe6709239fa746ee8119516feb799cf8fdfe7dd9cb8f92344f5211"
   },
   "windows": {
     "file": "Rawtonic_0.1.0-alpha.10_x64-setup.exe",
-    "size": "TBD",
-    "sha256": "TBD"
+    "size": "30 MB",
+    "sha256": "2256820611b39a8854f50754ffee28a8b5ffd135700beecb17230da7b45adbd0"
   }
 }
