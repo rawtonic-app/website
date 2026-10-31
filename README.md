@@ -2,7 +2,7 @@
 
 The website of [Rawtonic](https://github.com/rawtonic-app/rawtonic), a free, open-source RAW developer.
 
-- `pages/` holds the pages (`index`, `switching`, `credits`, `privacy`, `imprint`) and `pages/partials/` the shared head, styles, header and footer.
+- `pages/` holds the pages (`index`, `switching`, `releases`, `credits`, `privacy`, `imprint`) and `pages/partials/` the shared head, styles, header and footer.
 - `release.json` is the one place for release facts: version, date, file names, sizes and SHA-256.
 - `scripts/build.mjs` (Node 20+, no dependencies) builds `site/**/index.html` and `site/sitemap.xml` from both. The built files are not committed.
 - `site/` is what is served: the built pages, `assets/`, `robots.txt`. No analytics scripts, no third-party scripts or fonts.
@@ -19,9 +19,10 @@ python3 -m http.server -d site 8000     # http://localhost:8000/
 
 ## Release
 
-1. Fill `release.json`: `date` (YYYY-MM-DD), `dateText` (e.g. "28 October 2026"), each file's (`mac`, `macIntel` = the experimental Intel DMG, `linux`) `size` (e.g. "36 MB") and `sha256` from the GitHub release. Until the release exists these stay `TBD` in the repository on purpose (so a plain build shows them and `--strict` refuses to deploy); never fill them with guesses.
+1. Fill `release.json`: `date` (YYYY-MM-DD), `dateText` (e.g. "28 October 2026"), each file's (`mac`, `macIntel` = the experimental Intel DMG, `linux`, `windows` = the experimental, unsigned installer) `size` (e.g. "36 MB") and `sha256` from the GitHub release. Until the release exists these stay `TBD` in the repository on purpose (so a plain build shows them and `--strict` refuses to deploy); never fill them with guesses.
 2. Update "New in alpha.N" in `pages/index.html` from the app's CHANGELOG.
-3. `node scripts/build.mjs --strict` must pass: it refuses while a `TBD` or an `OFFEN FÜR NUTZER` placeholder (privacy and imprint) is left.
+3. The release history page (`/releases/`) is generated: every earlier release in the app's `CHANGELOG.md` at `release.json`'s tag (fetched from GitHub at build time, so the tag must exist; `RAWTONIC_CHANGELOG=path/to/CHANGELOG.md` reads a local copy instead), newest first, with date, summary and highlight titles. No hand edits.
+4. `node scripts/build.mjs --strict` must pass: it refuses while a `TBD` or an `OFFEN FÜR NUTZER` placeholder (privacy and imprint) is left.
 
 ## Deploy
 

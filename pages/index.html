@@ -18,7 +18,7 @@
       <a class="button" data-os-download="mac" href="{{release.mac.url}}">Download for macOS</a>
       <a class="button quiet" data-os-download="linux" href="{{release.linux.url}}">Download for Linux</a>
     </div>
-    <p class="note small muted">Rawtonic {{release.version}}, {{release.name}} · <span class="nowrap">Macs with Apple Silicon,</span> <span class="nowrap">macOS 13 or later</span> · <span class="nowrap">Linux x86-64</span> · signed and notarized by Apple · <span class="nowrap">Intel Macs experimental</span> · no Windows build yet.</p>
+    <p class="note small muted">Rawtonic {{release.version}}, {{release.name}} · <span class="nowrap">Macs with Apple Silicon,</span> <span class="nowrap">macOS 13 or later</span> · <span class="nowrap">Linux x86-64</span> · signed and notarized by Apple · <span class="nowrap">Intel Macs experimental</span> · <a class="plain nowrap" href="#install" data-os-link="windows">Windows experimental, unsigned</a>.</p>
     <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic 0.1.0-alpha.7; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
   </section>
 
@@ -81,16 +81,16 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.9.</h2>
-      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS. alpha.9.1 makes the spot tool start when you pick a mode, and lists your spots to hide or delete them (Alt-click deletes one). Most edits render as before; exports of older Panasonic and Leica RAWs and of JPEG or TIFF photos with lens vignetting correction change (see the release notes).</p>
+      <h2 class="head" id="new-title">New in alpha.10.</h2>
+      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS, and a first, experimental Windows installer. Saved edits export exactly as before; photos you never edited may change where the release notes say so. <a class="plain" href="/releases/">Earlier releases</a></p>
     </div>
     <div class="changes">
-      <div><h3>Large removals, filled better.</h3><p>Large holes are filled by a larger AI model that sees the photo around them, on macOS and Linux. It is downloaded once when you first need it, and always runs on your computer.</p></div>
-      <div><h3>Match Light.</h3><p>A wedding or event series shot in window light, tungsten and flash gets consistent exposure and white balance from one reference photo, in one undo step.</p></div>
-      <div><h3>Culling keys.</h3><p>X rejects, 6–9 set colour labels and Alt+X shows the proof margin. Colour labels show their name on the tiles.</p></div>
-      <div><h3>Precise point curves.</h3><p>A click puts the point exactly under the pointer in every channel, and curve points can be moved with the keyboard.</p></div>
+      <div><h3>An activity centre.</h3><p>Everything Rawtonic is doing, has done and needs you for, in one place in the top bar: progress and Cancel, results, and failures that stay until you deal with them.</p></div>
+      <div><h3>Culling help.</h3><p>Find Duplicates finds the same photo under other names and folders. Eyes open or closed is suggested per face, never decided for you.</p></div>
+      <div><h3>Bands and Levels.</h3><p>A linear gradient can be a two-sided band. Levels has handles right on the histogram and pickers that make a pixel neutral.</p></div>
+      <div><h3>Cleaner high-ISO shadows.</h3><p>New edits keep the true level and colour of lifted shadows in noisy photos, with less of a colour tint.</p></div>
     </div>
-    <p class="also">Also: Canon owners can help test tethered shooting (off by default), spot removal settings in the Retouch tab, linked colour grading wheels, a protection brush for freckles in face retouch, and a calmer, consistent interface. <a class="plain" href="{{release.url}}">Full release notes</a></p>
+    <p class="also">Also: one Undo for a batch edit on every photo, Open With and Edit With (macOS), Shift Capture Time, moving a whole session, the camera’s preview at Shift+\, Canon photos open in the aspect ratio they were shot in, separate shadow and highlight clipping warnings, and an experimental Windows installer. <a class="plain" href="{{release.url}}">Full release notes</a> · <a class="plain" href="/releases/">Release history</a></p>
   </section>
 
   <section class="section wrap" id="install" aria-labelledby="install-title" data-os="mac">
@@ -99,6 +99,7 @@
       <div class="seg" role="group" aria-label="Your system">
         <button type="button" data-os-pick="mac" aria-pressed="true">macOS</button>
         <button type="button" data-os-pick="linux" aria-pressed="false">Linux</button>
+        <button type="button" data-os-pick="windows" aria-pressed="false">Windows</button>
       </div>
     </div>
     <div class="install-grid">
@@ -109,6 +110,9 @@
         <li class="linux"><b>Download the AppImage</b> for x86-64, {{release.linux.size}}. It runs on Ubuntu 22.04 or later, Debian 12, Fedora and others with glibc 2.35 or later.</li>
         <li class="linux"><b>Make it executable and start it</b> with the commands shown here. If it does not start, install FUSE 2 (libfuse2t64 on Ubuntu 24.04, libfuse2 on older Ubuntu and Debian) or start it with --appimage-extract-and-run.</li>
         <li class="linux"><b>Give the first start a minute.</b> Before the first photo appears in Develop, the graphics driver prepares Rawtonic’s shaders. That happens once; later starts are quick.</li>
+        <li class="windows"><b>Experimental and unsigned.</b> <a class="plain" href="{{release.windows.url}}">Download the installer</a> for Windows 10 or 11 (x64), {{release.windows.size}}. It needs a graphics card with a Vulkan or DirectX 12 driver; PCs with only Microsoft’s software renderer are not supported. So far it has been tested with one NVIDIA graphics card.</li>
+        <li class="windows"><b>Check the download.</b> In PowerShell, <code>Get-FileHash</code> on the installer must print the SHA-256 shown here. This catches a damaged download; as the installer is not signed, it does not prove who made it.</li>
+        <li class="windows"><b>Start it.</b> Windows SmartScreen says “Windows protected your PC”: click <b>More info</b>, then <b>Run anyway</b>. It installs for your user only, without administrator rights, and takes about a minute while it prepares the graphics pipelines.</li>
       </ol>
       <div class="code">
         <p class="small muted linux">In a terminal</p>
@@ -118,6 +122,9 @@
         <pre class="mac"><code>{{release.mac.sha256}}</code></pre>
         <p class="small muted mac">Intel (experimental): <code>{{release.macIntel.sha256}}</code></p>
         <pre class="linux"><code>{{release.linux.sha256}}</code></pre>
+        <p class="small muted windows">In PowerShell</p>
+        <pre class="windows"><code>Get-FileHash .\{{release.windows.file}}</code></pre>
+        <pre class="windows"><code>{{release.windows.sha256}}</code></pre>
         <p class="small">Something wrong? Use <b>Report a problem</b> in the app, or see <a class="plain" href="#help">other ways to help</a>.</p>
       </div>
     </div>
@@ -145,7 +152,7 @@
     </div>
     <div class="changes">
       <div><h3>Opening RAW files.</h3><p>Run over every file of the public raw.pixls.us collection in October 2026 (2,016 files from 1,034 camera models), Rawtonic developed files of 965 models. 181 files did not open, most of them Nikon High Efficiency NEFs, GoPro, Sigma X3F and some Hasselblad and Olympus formats. The collection holds a few files per camera, not every RAW mode, and opening a file is not the same as matching each camera’s colour; that is measured on a smaller set of cameras.</p></div>
-      <div><h3>Tethered shooting, experimental.</h3><p>Tested on a Mac with the Sony α7 III and α7 IV and the Fujifilm X-H2S and GFX 50R. Fujifilm live view does not work yet, Canon cameras are not offered yet, and no camera has been tried on Linux. <a class="plain" href="{{repo}}/blob/main/docs/TETHER_CAMERAS.md">Tested and reported cameras</a></p></div>
+      <div><h3>Tethered shooting, experimental.</h3><p>Tested on a Mac with the Sony α7 III and α7 IV and the Fujifilm X-H2S and GFX 50R. Fujifilm live view does not work yet, Canon cameras only behind an experimental opt-in, and no camera has been tried on Linux. <a class="plain" href="{{repo}}/blob/main/docs/TETHER_CAMERAS.md">Tested and reported cameras</a></p></div>
     </div>
   </section>
 
@@ -153,7 +160,7 @@
     <h2 class="head" id="faq-title">Questions.</h2>
     <dl class="faq-list">
       <div><dt>What does it cost?</dt><dd>Nothing. Rawtonic is free and open source under the AGPL-3.0-or-later.</dd></div>
-      <div><dt>Which systems does it run on?</dt><dd>macOS 13 or later on Apple Silicon, and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. There is no Windows build yet.</dd></div>
+      <div><dt>Which systems does it run on?</dt><dd>macOS 13 or later on Apple Silicon, and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. Windows 10 and 11 (x64) are experimental: the installer is not signed, needs a Vulkan or DirectX 12 graphics driver and has so far been tested with one NVIDIA graphics card.</dd></div>
       <div><dt>Will it change my RAW files?</dt><dd>No. Ingest verifies every copy, and edits live in the library and XMP sidecars, never in the RAW file itself.</dd></div>
       <div><dt>Is the Mac app signed?</dt><dd>Yes. Since alpha.7 it is signed with an Apple Developer ID and notarized by Apple, so it opens like any other app.</dd></div>
       <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Otherwise only when you ask: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
@@ -180,6 +187,12 @@
           <p class="muted">x86-64, glibc 2.35 or later · AppImage, {{release.linux.size}}</p>
           <a class="button" href="{{release.linux.url}}">Download for Linux</a>
         </div>
+        <div class="dl">
+          <h3>Windows</h3>
+          <p class="muted">Experimental, unsigned · x64 installer, {{release.windows.size}}</p>
+          <a class="button quiet" href="{{release.windows.url}}">Download for Windows</a>
+          <p class="small muted">Needs a Vulkan or DirectX 12 graphics driver. SmartScreen: More info, then Run anyway. <a class="plain" href="#install" data-os-link="windows">How to install</a></p>
+        </div>
       </div>
       <p class="dl-note">Rawtonic {{release.version}}, free and open source, with the rough edges of an early alpha. Downloads come from GitHub. <a class="plain" href="{{release.url}}">Release notes and SHA-256</a> · <a class="plain" href="{{repo}}/releases">All releases</a></p>
     </div>
@@ -199,6 +212,8 @@
   const inst = document.getElementById('install');
   const pick = (os) => { inst.dataset.os = os; $$('[data-os-pick]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.osPick === os))); };
   $$('[data-os-pick]').forEach((b) => b.addEventListener('click', () => pick(b.dataset.osPick)));
+  $$('[data-os-link]').forEach((a) => a.addEventListener('click', () => pick(a.dataset.osLink)));
+  if (/Win/.test(navigator.platform || navigator.userAgent)) pick('windows');
   if (/Linux/.test(navigator.platform || navigator.userAgent) && !/Android/.test(navigator.userAgent)) {
     pick('linux');
     // The visitor's system gets the primary button, first.
