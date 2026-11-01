@@ -1,28 +1,28 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.11",
-  "name": "stacks, catalogs in and out, Lightroom catalog edits, Relight",
+  "version": "0.1.0-alpha.11.1",
+  "name": "Relight set-ups that look lit, finer sliders",
   "date": "2026-11-01",
   "dateText": "1 November 2026",
-  "tag": "v0.1.0-alpha.11",
+  "tag": "v0.1.0-alpha.11.1",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.11_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.11.1_aarch64.dmg",
     "size": "39 MB",
-    "sha256": "b3c8017ee75a690c5da20c3e800c1c2edfc8d95df7a912f49dd2409f2fd500e4"
+    "sha256": "63319a543f22d9447a6f91fcd3fad5aca6e80269440bbb0169aa4bb5b8f8c8d7"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.11_x86_64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.11.1_x86_64.dmg",
     "size": "45 MB",
-    "sha256": "641b82eafd7f2238b1f612b6b96d55687bb9a1fc98f9a2eec986a6fc36d5279e"
+    "sha256": "9a1a4ff4c7f9014bd3ef0272dd1a5b915aa9ffdd476e0ba1c3618aa3cd685c4b"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.11_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.11.1_amd64.AppImage",
     "size": "132 MB",
-    "sha256": "fe28860f5eebfbef33bb1a3f233a62f63333223a4dafc21911ef569300d43e4a"
+    "sha256": "26b75dbd06d73544297ca977cb33beea0dc0dcf29189d1b5e3430ef24382e0e8"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.11_x64-setup.exe",
+    "file": "Rawtonic_0.1.0-alpha.11.1_x64-setup.exe",
     "size": "30 MB",
-    "sha256": "2b2b51f8cf5cefc489c3d190db8bf7b9cce59562d42be2a5e453b724fa2603f8"
+    "sha256": "04f245cf27d4febea35a32389531e36d952ee75969c9965bcc60163174659d07"
   }
 }
