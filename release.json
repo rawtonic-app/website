@@ -1,28 +1,28 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.10",
-  "name": "activity centre, duplicates, eyes per face, Windows experimental",
-  "date": "2026-10-31",
-  "dateText": "31 October 2026",
-  "tag": "v0.1.0-alpha.10",
+  "version": "0.1.0-alpha.11",
+  "name": "stacks, catalogs in and out, Lightroom catalog edits, Relight",
+  "date": "2026-11-01",
+  "dateText": "1 November 2026",
+  "tag": "v0.1.0-alpha.11",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.10_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.11_aarch64.dmg",
     "size": "39 MB",
-    "sha256": "80868e90da7fb9596e8dc0ee4cbb5dac204daac979162b1686ae6a7063411727"
+    "sha256": "b3c8017ee75a690c5da20c3e800c1c2edfc8d95df7a912f49dd2409f2fd500e4"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.10_x86_64.dmg",
-    "size": "43 MB",
-    "sha256": "08035f366d0953e86d6a65b40546d96b215b039a9cb0f048492bed96891887a9"
+    "file": "Rawtonic_0.1.0-alpha.11_x86_64.dmg",
+    "size": "45 MB",
+    "sha256": "641b82eafd7f2238b1f612b6b96d55687bb9a1fc98f9a2eec986a6fc36d5279e"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.10_amd64.AppImage",
-    "size": "131 MB",
-    "sha256": "20df805fcebe6709239fa746ee8119516feb799cf8fdfe7dd9cb8f92344f5211"
+    "file": "Rawtonic_0.1.0-alpha.11_amd64.AppImage",
+    "size": "132 MB",
+    "sha256": "fe28860f5eebfbef33bb1a3f233a62f63333223a4dafc21911ef569300d43e4a"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.10_x64-setup.exe",
+    "file": "Rawtonic_0.1.0-alpha.11_x64-setup.exe",
     "size": "30 MB",
-    "sha256": "2256820611b39a8854f50754ffee28a8b5ffd135700beecb17230da7b45adbd0"
+    "sha256": "2b2b51f8cf5cefc489c3d190db8bf7b9cce59562d42be2a5e453b724fa2603f8"
   }
 }
