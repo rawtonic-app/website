@@ -32,7 +32,7 @@
     </script>
     <p class="note small muted">Rawtonic {{release.version}} · <a class="plain" href="#new">What’s new</a> · <a class="plain" href="#install">Requirements and install</a></p>
     <p class="note small muted">macOS 13 or later on Apple Silicon (Intel experimental), signed and notarized · Windows 10 or 11, x64, experimental and unsigned · Linux x86-64, AppImage.</p>
-    <p class="note small muted">Windows: SmartScreen says “Windows protected your PC”; click <b>More info</b>, then <b>Run anyway</b>. Needs a graphics card with a Vulkan or DirectX 12 driver. <a class="plain" href="#install" data-os-link="windows">Windows install steps</a></p>
+    <p class="note small muted">Windows: SmartScreen says “Windows protected your PC”; click <b>More info</b>, then <b>Run anyway</b>. Needs a graphics card with a Vulkan or DirectX 12 driver. <a class="plain" href="#install" data-os-link="windows">Windows install steps</a> · <a class="plain" href="/windows/">Windows blocked the download?</a></p>
     <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic 0.1.0-alpha.7; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
   </section>
 
@@ -124,9 +124,9 @@
         <li class="linux"><b>Download the AppImage</b> for x86-64, {{release.linux.size}}. It runs on Ubuntu 22.04 or later, Debian 12, Fedora and others with glibc 2.35 or later.</li>
         <li class="linux"><b>Make it executable and start it</b> with the commands shown here. If it does not start, install FUSE 2 (libfuse2t64 on Ubuntu 24.04, libfuse2 on older Ubuntu and Debian) or start it with --appimage-extract-and-run.</li>
         <li class="linux"><b>Give the first start a minute.</b> Before the first photo appears in Develop, the graphics driver prepares Rawtonic’s shaders. That happens once; later starts are quick.</li>
-        <li class="windows"><b>Experimental and unsigned.</b> <a class="plain" href="{{release.windows.url}}">Download the installer</a> for Windows 10 or 11 (x64), {{release.windows.size}}. It needs a graphics card with a Vulkan or DirectX 12 driver; PCs with only Microsoft’s software renderer are not supported. So far it has been tested with one NVIDIA graphics card.</li>
-        <li class="windows"><b>Check the download.</b> In PowerShell, <code>Get-FileHash</code> on the installer must print the SHA-256 shown here. This catches a damaged download; as the installer is not signed, it does not prove who made it.</li>
-        <li class="windows"><b>Start it.</b> Windows SmartScreen says “Windows protected your PC”: click <b>More info</b>, then <b>Run anyway</b>. It installs for your user only, without administrator rights, and takes about a minute while it prepares the graphics pipelines.</li>
+        <li class="windows"><b>Experimental and unsigned.</b> <a class="plain" href="{{release.windows.url}}">Download the {{release.windows.kind}}</a> for Windows 10 or 11 (x64), {{release.windows.size}}. It needs a graphics card with a Vulkan or DirectX 12 driver; PCs with only Microsoft’s software renderer are not supported. So far it has been tested with one NVIDIA graphics card.</li>
+        <li class="windows"><b>Check the download.</b> In PowerShell, <code>Get-FileHash</code> on the installer must print the SHA-256 shown here. This catches a damaged download; as the installer is not signed, it does not prove who made it. If your browser or Windows Security removes the download, see <a class="plain" href="/windows/">Windows blocked the download?</a></li>
+        <li class="windows"><b>Start it.</b> Windows SmartScreen says “Windows protected your PC”: click <b>More info</b>, then <b>Run anyway</b>. {{release.windows.install}} The <a class="plain" href="{{release.url}}">release page</a> also has the other Windows downloads.</li>
       </ol>
       <div class="code">
         <p class="small muted linux">In a terminal</p>
@@ -203,9 +203,9 @@
         </div>
         <div class="dl">
           <h3>Windows</h3>
-          <p class="muted">Experimental, unsigned · x64 installer, {{release.windows.size}}</p>
+          <p class="muted">Experimental, unsigned · x64 {{release.windows.kind}}, {{release.windows.size}}</p>
           <a class="button quiet" href="{{release.windows.url}}">Download for Windows</a>
-          <p class="small muted">Needs a Vulkan or DirectX 12 graphics driver. SmartScreen: More info, then Run anyway. <a class="plain" href="#install" data-os-link="windows">How to install</a></p>
+          <p class="small muted">Needs a Vulkan or DirectX 12 graphics driver. SmartScreen: More info, then Run anyway. <a class="plain" href="#install" data-os-link="windows">How to install</a> · <a class="plain" href="/windows/">Windows blocked the download?</a></p>
         </div>
       </div>
       <p class="dl-note">Rawtonic {{release.version}}, free and open source, with the rough edges of an early alpha. Downloads come from GitHub. <a class="plain" href="{{release.url}}">Release notes and SHA-256</a> · <a class="plain" href="{{repo}}/releases">All releases</a></p>

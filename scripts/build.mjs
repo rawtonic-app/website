@@ -21,6 +21,24 @@ const PLACEHOLDERS = [/\bTBD\b/, /OFFEN FÜR NUTZER/];
 const release = JSON.parse(fs.readFileSync(path.join(root, 'release.json'), 'utf8'));
 delete release._comment;
 const download = (f) => `${REPO}/releases/download/${release.tag}/${f}`;
+// The website offers one Windows download (release.json `windows`): the MSI
+// from the release after 0.1.0-alpha.11.1 on, the per-user NSIS installer
+// before. The release page also has the other installer and a portable zip.
+function windowsKind(file) {
+  if (/_x64\.msi$/.test(file)) {
+    return {
+      kind: 'MSI installer',
+      install: 'It installs for all users into Program Files, so Windows asks for administrator permission, and takes about a minute while it prepares the graphics pipelines.',
+    };
+  }
+  if (/_x64-setup\.exe$/.test(file)) {
+    return {
+      kind: 'installer',
+      install: 'It installs for your user only, without administrator rights, and takes about a minute while it prepares the graphics pipelines.',
+    };
+  }
+  throw new Error(`release.json: windows.file ${file} is neither the MSI nor the setup.exe`);
+}
 const ctx = {
   release: {
     ...release,
@@ -28,7 +46,7 @@ const ctx = {
     mac: { ...release.mac, url: download(release.mac.file) },
     linux: { ...release.linux, url: download(release.linux.file) },
     macIntel: { ...release.macIntel, url: download(release.macIntel.file) },
-    windows: { ...release.windows, url: download(release.windows.file) },
+    windows: { ...release.windows, url: download(release.windows.file), ...windowsKind(release.windows.file) },
   },
   repo: REPO,
   origin: ORIGIN,
