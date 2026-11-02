@@ -36,3 +36,7 @@ Roll back: unpack the newest file in `~/rawtonic-site-backups/` on the server ov
 ## Rules
 
 Same as the app (its AGENTS.md): no other products' content or trademarks for our features; Lightroom and Capture One are named only to say what Rawtonic imports from or how it measured against them. Honest claims: every number says what it covers. The site uses no cookies, analytics scripts or tracking. Cloudflare, which already delivers it, provides aggregated traffic counts without individual profiles; GitHub counts release downloads. See the privacy page.
+
+## Licence
+
+Code under AGPL-3.0-or-later, texts and own graphics under CC BY-SA 4.0, screenshots, photographs and fonts under their own licences: see [LICENSES.md](LICENSES.md).
