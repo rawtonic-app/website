@@ -28,7 +28,7 @@ function windowsKind(file) {
   if (/_x64\.msi$/.test(file)) {
     return {
       kind: 'MSI installer',
-      install: 'It installs for all users into Program Files, so Windows asks for administrator permission, and takes about a minute while it prepares the graphics pipelines.',
+      install: 'It installs for all users into Program Files, so Windows asks for administrator permission, and takes about a minute while it prepares the graphics pipelines. Installed an earlier release with the -setup.exe? Uninstall that copy first in Settings → Apps (your libraries, edits and settings stay); the MSI says so and stops otherwise.',
     };
   }
   if (/_x64-setup\.exe$/.test(file)) {
