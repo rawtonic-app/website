@@ -1,0 +1,40 @@
+<!--page {"path": "/windows/", "title": "Windows blocked the download? · Rawtonic", "description": "What to do when the browser, Microsoft Defender or SmartScreen holds back Rawtonic's unsigned Windows download, and how to check the file first."} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose">
+    <h1>Windows blocked the download?</h1>
+    <p>Rawtonic’s Windows downloads are not code-signed yet. Windows and browsers often hold back unsigned programs from a new publisher, although nothing is wrong with them. Before each release, every Windows download is scanned with Microsoft Defender, with freshly updated signatures, on a Windows build machine; the results are in the release’s build log. That is evidence, not a promise that your PC’s protection agrees. So check the file before you allow it.</p>
+
+    <h2>1. Check the file</h2>
+    <p>Download <code>SHA256SUMS-windows.txt</code> from the <a class="plain" href="{{release.url}}">release page</a> too. In PowerShell, in your Downloads folder:</p>
+    <pre><code>Get-FileHash .\{{release.windows.file}}</code></pre>
+    <p>The SHA-256 it prints must be the one listed for that file in <code>SHA256SUMS-windows.txt</code> (upper or lower case does not matter): <code>{{release.windows.sha256}}</code>. This catches a damaged or swapped download on the way; as the file is not signed, it does not prove who made it.</p>
+
+    <h2>2. The browser holds it back</h2>
+    <ul>
+      <li><b>Edge:</b> open Downloads (Ctrl+J), click <b>…</b> beside the file, then <b>Keep</b> → <b>Show more</b> → <b>Keep anyway</b>.</li>
+      <li><b>Chrome:</b> in Downloads, choose <b>Keep</b> (or <b>Download dangerous file</b>).</li>
+    </ul>
+
+    <h2>3. Windows Security removed it</h2>
+    <p>Open <b>Windows Security</b> → <b>Virus &amp; threat protection</b> → <b>Protection history</b>. Select the entry for the Rawtonic file, then <b>Actions</b> → <b>Restore</b> (or <b>Allow</b>). Check its SHA-256 as above before you start it.</p>
+
+    <h2>4. SmartScreen says “Windows protected your PC”</h2>
+    <p>When you start the installer, click <b>More info</b>, then <b>Run anyway</b>.</p>
+
+    <h2>Still blocked?</h2>
+    <p>Releases after 0.1.0-alpha.11.1 have three Windows downloads of the same app on their <a class="plain" href="{{release.url}}">release page</a>: an MSI installer (for all users, asks for administrator permission), an installer for your user only (<code>-setup.exe</code>, no administrator rights) and a portable zip that needs no installation. Try another one, and please <a class="plain" href="{{repo}}/issues">tell us</a> which file was blocked and by what, so we can report it to Microsoft as a false positive.</p>
+    <p class="small muted">Why unsigned? A code-signing certificate costs money every year, and Rawtonic is free. We are preparing free signing for open-source projects; see the <a class="plain" href="/code-signing/">code signing policy</a>.</p>
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>

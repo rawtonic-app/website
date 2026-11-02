@@ -1,0 +1,48 @@
+<!--page {"path": "/code-signing/", "title": "Code signing policy · Rawtonic", "description": "Which Rawtonic Windows files are code-signed, who approves a signature, and how to check a download."} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose">
+    <h1>Code signing policy.</h1>
+    <p class="lead"><b>Status: prepared, not in effect.</b> Rawtonic’s Windows downloads are not code-signed yet. This policy is written for signing through the <a class="plain" href="https://signpath.org">SignPath Foundation</a> programme for open-source projects and applies from the first release signed that way; its release notes will say so. Until then, check downloads with their SHA-256 (below).</p>
+    <p>Once in effect: Free code signing provided by <a class="plain" href="https://about.signpath.io">SignPath.io</a>, certificate by <a class="plain" href="https://signpath.org">SignPath Foundation</a>.</p>
+
+    <h2>What is signed</h2>
+    <ul>
+      <li>Only Windows files built from the public repository <a class="plain" href="{{repo}}">rawtonic-app/rawtonic</a> by its GitHub Actions workflow <a class="plain" href="{{repo}}/blob/main/.github/workflows/windows-installer.yml"><code>windows-installer.yml</code></a> on GitHub-hosted runners, from a release commit on <code>main</code>. Nothing built on a developer’s computer is signed.</li>
+      <li>The files: the app <code>rawtonic-app.exe</code>, the installers <code>Rawtonic_&lt;version&gt;_x64.msi</code> and <code>Rawtonic_&lt;version&gt;_x64-setup.exe</code>, and the copy of <code>rawtonic-app.exe</code> in <code>Rawtonic_&lt;version&gt;_x64-portable.zip</code>.</li>
+      <li>Third-party libraries shipped with the app (for example Microsoft’s ONNX Runtime DLLs) are not signed by this project; they keep their makers’ own signature, if any.</li>
+      <li>Every signing request is approved by hand by an approver, for one release at a time.</li>
+    </ul>
+
+    <h2>Team and roles</h2>
+    <ul>
+      <li><b>Committers and reviewers</b> (may change the source without further review): members of the <a class="plain" href="https://github.com/orgs/rawtonic-app/people">rawtonic-app organisation</a>: <a class="plain" href="https://github.com/nielsfranke">Niels Franke</a>.</li>
+      <li><b>Approvers</b> (decide whether a release is signed): owners of the <a class="plain" href="https://github.com/orgs/rawtonic-app/people?query=role%3Aowner">rawtonic-app organisation</a>: <a class="plain" href="https://github.com/nielsfranke">Niels Franke</a>.</li>
+    </ul>
+    <p>Changes from anyone else (pull requests) are reviewed by a committer before they are merged. All team members use multi-factor authentication for GitHub and SignPath.</p>
+
+    <h2>How to check a download</h2>
+    <ul>
+      <li><b>Signature</b> (signed releases): right-click the file → <b>Properties</b> → <b>Digital Signatures</b>; the signer is <b>SignPath Foundation</b>. In PowerShell, <code>Get-AuthenticodeSignature</code> on the file must show <code>Valid</code> and a certificate issued to SignPath Foundation.</li>
+      <li><b>Checksum</b> (every release): <code>Get-FileHash</code> on the file must print the SHA-256 listed in the release’s <code>SHA256SUMS-windows.txt</code>. This catches a damaged download; on its own it does not prove who made the file.</li>
+      <li>If Windows or the browser holds a download back: <a class="plain" href="/windows/">Windows blocked the download?</a></li>
+    </ul>
+
+    <h2>Privacy</h2>
+    <p>Rawtonic sends nothing on its own except a startup update check: at most once every 24 hours it asks GitHub’s public Releases API whether a newer version exists. It is on by default and can be turned off in Preferences → General (“Check for updates at startup”). Everything else that goes online (AI model downloads, maps, problem and crash reports, opt-in usage statistics) happens only when you ask for it, after showing what is sent. Details: <a class="plain" href="/privacy/">Privacy</a>.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy or a suspected misuse of a signature: <a class="plain" href="mailto:hello@rawtonic.cc">hello@rawtonic.cc</a>, or an <a class="plain" href="{{repo}}/issues">issue on GitHub</a>.</p>
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>

@@ -19,7 +19,7 @@ python3 -m http.server -d site 8000     # http://localhost:8000/
 
 ## Release
 
-1. Fill `release.json`: `date` (YYYY-MM-DD), `dateText` (e.g. "28 October 2026"), each file's (`mac`, `macIntel` = the experimental Intel DMG, `linux`, `windows` = the experimental, unsigned installer) `size` (e.g. "36 MB") and `sha256` from the GitHub release. Until the release exists these stay `TBD` in the repository on purpose (so a plain build shows them and `--strict` refuses to deploy); never fill them with guesses.
+1. Fill `release.json`: `date` (YYYY-MM-DD), `dateText` (e.g. "28 October 2026"), each file's (`mac`, `macIntel` = the experimental Intel DMG, `linux`, `windows` = the experimental, unsigned Windows download the site offers: `Rawtonic_<version>_x64.msi` from the release after 0.1.0-alpha.11.1 on, the `_x64-setup.exe` before; `scripts/build.mjs` words the install step after the file type and refuses any other file) `size` (e.g. "36 MB") and `sha256` from the GitHub release. Until the release exists these stay `TBD` in the repository on purpose (so a plain build shows them and `--strict` refuses to deploy); never fill them with guesses.
 2. Update "New in alpha.N" in `pages/index.html` from the app's CHANGELOG.
 3. The release history page (`/releases/`) is generated: every earlier release in the app's `CHANGELOG.md` at `release.json`'s tag (fetched from GitHub at build time, so the tag must exist; `RAWTONIC_CHANGELOG=path/to/CHANGELOG.md` reads a local copy instead), newest first, with date, summary and highlight titles. No hand edits.
 4. `node scripts/build.mjs --strict` must pass: it refuses while a `TBD` or an `OFFEN FÜR NUTZER` placeholder (privacy and imprint) is left.
