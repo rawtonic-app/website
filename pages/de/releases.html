@@ -1,0 +1,21 @@
+<!--page {"path": "/de/releases/", "title": "Versionsgeschichte · Rawtonic", "description": "Alle früheren Alphas von Rawtonic, dem kostenlosen Open-Source-RAW-Entwickler: Datum, Version, Höhepunkte und ihre Versionshinweise auf GitHub."} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose wide">
+    <h1>Versionsgeschichte.</h1>
+    <p class="muted">Die aktuelle Version ist <a class="plain" href="/de/#new">Rawtonic {{release.version}}</a>. Frühere Alphas, die neueste zuerst, mit ihren Höhepunkten aus dem <a class="plain" href="{{repo}}/blob/{{release.tag}}/CHANGELOG.md">Changelog</a>; jede Version verweist auf ihre Versionshinweise, Downloads und SHA-256 auf GitHub. Ältere Downloads bleiben dort zum Nachschlagen; verwende die aktuelle Version.</p>
+    <p class="small muted">Die Einträge stammen aus dem englischen Changelog der App und bleiben deshalb auf Englisch.</p>
+    {{history.list}}
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>

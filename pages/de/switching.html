@@ -1,0 +1,122 @@
+<!--page {"path": "/de/switching/", "title": "Von Lightroom oder Capture One zu Rawtonic wechseln", "description": "Was aus Lightroom Classic und Capture One importiert wird, wo Werkzeuge und Tastenkürzel liegen, und ein gemessener Vergleich: wo Rawtonic besser ist, gleichauf oder noch zurück."} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose wide">
+    <h1>Von Lightroom oder Capture One kommend.</h1>
+    <p class="lead">Wo Rawtonic heute gegenüber dem besseren der beiden steht, ehrlich, danach, was du mitnimmst und wo du was findest.</p>
+
+    <h2 id="today">Wo Rawtonic heute steht</h2>
+    <p>Rawtonics Regel ist, in jedem Werkzeug das bessere von Lightroom Classic und Capture One zu erreichen oder zu übertreffen. Noch gelingt das nicht überall. Kurz gefasst, aus unseren Vergleichstests (Entwicklungsversionen kurz vor alpha.4) und den Messungen von alpha.6 und alpha.7 (die Zahlen und was jede abdeckt, stehen weiter unten):</p>
+    <div class="stand">
+      <div>
+        <h3>Was heute funktioniert</h3>
+        <ul class="ticks">
+          <li>Der automatische Weißabgleich trifft die Farbe des Lichts auf unserem Testsatz genauer als die Automatik von Camera Raw.</li>
+          <li>Eine Karte mit Sicherungskopie zu importieren geht schneller als in Lightroom und Capture One: 200 RAW+JPEG-Paare in etwa 10 s (Lightroom 11,5 s, Capture One 23,7 s auf demselben Laptop).</li>
+          <li>Regler folgen weiter deiner Hand, während ein Stapelexport läuft.</li>
+          <li>Eine HDR-Belichtungsreihe zusammenzufügen geht schneller als in Lightroom.</li>
+          <li>Außerhalb des Programms verschobene oder umbenannte Fotos werden wiedergefunden, mit ihren Bewertungen.</li>
+          <li>Eine Tethering-Aufnahme ist mit der Sony α7 III, α7 IV und der Fujifilm X-H2S so schnell auf dem Bildschirm wie in Capture One.</li>
+          <li>Das automatische Ausrichten bringt den Horizont meist näher an die Waagrechte als Lightroom.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Noch nicht so weit</h3>
+        <ul class="ticks">
+          <li class="no">Das Durchblättern eines Shootings wurde seit dem Umbau in alpha.6 nicht mehr mit echten Tastendrücken mit Lightroom und Capture One verglichen. In skriptgesteuerten Durchläufen erscheint das nächste Foto nach etwa 90 ms und ist nach etwa 0,2 s fertig entwickelt; wer schneller als etwa alle 0,6 s weiterschaltet, sieht das JPEG der Kamera nach etwa 20 ms, das entwickelte Foto folgt nach etwa 0,4 s.</li>
+          <li class="no">Ein Stapelexport dauerte etwa doppelt so lange wie in Lightroom oder Capture One, als sie zuletzt verglichen wurden (alpha.4). Er ist seitdem schneller geworden (auf einem Mac mini etwa 25 s statt etwa 41 s für denselben Export), wurde aber nicht erneut mit ihnen verglichen.</li>
+          <li class="no">Die allererste KI-Motivmaske nach der Installation wartet noch auf ihr Modell, wenn du innerhalb von etwa 15 s nach dem Öffnen von Entwickeln klicken. Ein Klick nach 25 s dauerte 1,5–3,3 s (Lightroom bei der ersten Verwendung: 7,9 s); danach dauert es unter einer Sekunde.</li>
+          <li class="no">Die KI-Rauschentfernung ist langsamer als die von Lightroom und ihr Ergebnis etwas weniger genau.</li>
+          <li class="no">Mit einer Fujifilm GFX 50R kommen Tethering-Aufnahmen etwas später an als in Capture One.</li>
+          <li class="no">Die seltenen Fehlgriffe des automatischen Ausrichtens sind etwas größer als bei Lightroom.</li>
+          <li class="no">Die Fotos eines Projekts lassen sich noch nicht einzeln auf ein anderes Laufwerk verschieben; verschiebe stattdessen den ganzen Ordner.</li>
+        </ul>
+      </div>
+    </div>
+
+    <details class="measured" id="measured">
+      <summary id="measured-title">Die Messungen dahinter</summary>
+    <p>Das sind die Messungen hinter den Listen oben, schlechtere Ergebnisse eingeschlossen. Wenn nicht anders angegeben: ein MacBook Pro (Apple M5 Pro), dieselben Dateien in allen drei Programmen, Lightroom Classic 15.6 und Capture One 16.6, gemessen zwischen dem 10. und 24. Oktober 2026. Rawtonic war jeweils eine Entwicklungsversion des Tages, vor alpha.4; die Zeilen Aussortieren, Regler während des Exports und eingetippter Wert verwendeten <a class="plain" href="{{repo}}/commit/20c8c71d">Commit 20c8c71d</a>. Seitdem neu gemessene Zeilen sagen das: Import mit dem Code von alpha.6 (nur Rawtonic, auf demselben Laptop und derselben Karte), Aussortieren und Stapelexport mit alpha.6 und alpha.7 auf einem Mac mini (Apple M4 Pro), wo Lightroom und Capture One nicht gemessen wurden. Änderungen nach alpha.7 sind hier nicht gemessen. Wo ein Programm nicht gemessen wurde, vergleicht das Urteil nur mit dem anderen. Die Zeiten stammen aus Bildschirmaufnahmen mit 60 Bildern pro Sekunde und sind daher auf etwa ein Bild (0,017 s) genau: Sie zeigen, wann sich der Bildschirm änderte, nicht die volle Verzögerung von der Hand bis zum Auge.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="measured-title">
+      <table>
+        <thead><tr><th scope="col">Aufgabe</th><th scope="col">Rawtonic</th><th scope="col">Lightroom Classic</th><th scope="col">Capture One</th><th scope="col">Urteil</th><th scope="col">Was die Messung abdeckt</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Automatischer Weißabgleich, Winkelfehler zum gemessenen Licht</th><td class="num">1,88°</td><td class="num">3,78° (Automatik von Camera Raw)</td><td>nicht bewertet</td><td><span class="v better">Besser</span> als Camera Raw</td><td>270 Szenen des Datensatzes Cube++ mit je einer gemessenen Graukarte, mittlerer Fehler des Lichts, das jedes Programm ermittelte; eine Kamerafamilie (Canon 550D/600D). Lightroom wurde nicht direkt gemessen: Der Wert ist die Automatik von Camera Raw, die Lightroom verwendet. Die Automatik von Capture One lässt sich nicht in diesen Fehler umrechnen; auf 272 weiteren Szenen war ihr Ergebnis nach der Farbe der Graukarte das am wenigsten neutrale der drei, ein anderes Maß. Kein Geschmackstest: Rawtonic lässt warmes Licht absichtlich teilweise warm, daher liegt der angewandte Abgleich im Mittel 3,52° von neutral entfernt.</td></tr>
+          <tr><th scope="row">Einen Regler ziehen, während ein Stapelexport läuft</th><td class="num">42–58 Aktualisierungen pro Zug, die letzte ≤ 0,05 s nach dem Loslassen</td><td class="num">40–47, letzte ≤ 0,31 s</td><td class="num">11–18, letzte 2,1 s</td><td><span class="v better">Besser</span></td><td>Belichtung 1,2 s lang gezogen, während der eigene Stapelexport des jeweiligen Programms lief.</td></tr>
+          <tr><th scope="row">HDR zusammenfügen, Zeit</th><td class="num">4–6 s</td><td class="num">etwa 19 s</td><td>nicht gemessen</td><td><span class="v better">Schneller</span> als Lightroom</td><td>Eine echte Belichtungsreihe aus fünf Bildern aus der Hand (öffentlich, CC BY-SA), gemessen am 10. Oktober 2026. Nur die Geschwindigkeit: Die Bildqualität der Ergebnisse ist nicht Teil dieses Urteils.</td></tr>
+          <tr><th scope="row">Verschobene und umbenannte Dateien wiederfinden</th><td>Verschiebungen geprüft, Bewertungen erhalten</td><td>verlor die Bewertungen von 5 Dateien</td><td>nicht gemessen</td><td><span class="v better">Besser</span></td><td>„Ordner synchronisieren“ auf einem Ordner mit 12 Dateien, die außerhalb beider Programme geändert wurden.</td></tr>
+          <tr><th scope="row">Eingetippter Reglerwert auf dem Bildschirm</th><td class="num">innerhalb von etwa einem Bild</td><td class="num">innerhalb von zwei Bildern</td><td class="num">1–12 Bilder (0,02–0,21 s)</td><td><span class="v equal">Gleichauf</span></td><td>Zeit von dem Moment, in dem das Testskript Return sendete, bis zum ersten aufgezeichneten Bild mit dem geänderten Foto, je vier oder fünf Werte. Die Aufnahme kann weniger als ein Bild (0,017 s) nicht auflösen; zwei der fünf Änderungen von Rawtonic waren zu klein, um sie zu erkennen.</td></tr>
+          <tr><th scope="row">Tethering-Aufnahme auf dem Bildschirm</th><td class="num">1,1–1,5 s; GFX 50R 2,4 s</td><td>nicht gemessen</td><td class="num">1,2–1,6 s; GFX 50R 2,1 s</td><td><span class="v equal">Gleichauf</span>, GFX 50R <span class="v worse">schlechter</span></td><td>Median von der Auslöseanforderung bis zum Foto in der Ansicht, Sony α7 III und α7 IV, Fujifilm X-H2S und GFX 50R, macOS.</td></tr>
+          <tr><th scope="row">200 RAW+JPEG mit Sicherung und Umbenennung importieren</th><td class="num">etwa 10 s (9,6 s); 27,0 s vor alpha.6</td><td class="num">11,5 s</td><td class="num">23,7 s</td><td><span class="v better">Schneller</span></td><td>Bis alle Dateien an ihrem Platz sind, von einem exFAT-Kartenabbild mit denselben 200 Paaren (6,6 GB) auf demselben Laptop. Rawtonics Wert ist der Code von alpha.6 (<a class="plain" href="{{repo}}/commit/c0e70de1">Commit c0e70de1</a>, 25. Oktober), zwei Durchläufe, die Karte vor jedem neu eingebunden, gemessen aus der eigenen Aufzeichnung der App; Lightroom und Capture One wurden am 24. Oktober aus Bildschirmaufnahmen gemessen. Eine Metadatenvorgabe im Importdialog kostet etwa 1–2 s mehr.</td></tr>
+          <tr><th scope="row">Automatisch ausrichten, Fehler</th><td class="num">Median 0,06°, 90 % innerhalb von 0,46°</td><td class="num">0,18°, 0,42°</td><td>nicht gemessen</td><td><span class="v equal">Gemischt</span></td><td>51 Testfotos: ein besseres typisches Ergebnis, etwas schlechtere Ausreißer.</td></tr>
+          <tr><th scope="row">Nächstes Foto beim Aussortieren</th><td class="num">alpha.4: 0,51 s; seit alpha.6 etwa 0,09 s erste Pixel, etwa 0,2 s entwickelt</td><td class="num">0,35 s</td><td class="num">0,10 s</td><td><span class="v">Nicht erneut verglichen</span></td><td>Test mit alpha.4: bewerten und weiterschalten, 20 Fotos in Fensteransicht, Median, aus einer Bildschirmaufnahme; Rawtonic zeigte das entwickelte Foto, die anderen zuerst eine Vorschau. Seit alpha.6 zeigt Rawtonic das JPEG der Kamera, bis das entwickelte Foto da ist. Die neuen Werte sind skriptgesteuerte Tastenereignisse auf einem Mac mini, 120 öffentliche RAWs, Mediane aus dem eigenen Protokoll der App, nicht vom Bildschirm; wer schneller als etwa alle 0,6 s weiterschaltet, sieht das JPEG der Kamera nach etwa 20 ms und das entwickelte Foto nach etwa 0,43 s. Ein Vergleich mit Lightroom und Capture One mit echten Tastendrücken steht noch aus.</td></tr>
+          <tr><th scope="row">Zwei Rezepte für 20 RAWs exportieren (38 Dateien)</th><td class="num">17 s (alpha.4)</td><td class="num">8 s</td><td class="num">9 s</td><td><span class="v worse">Schlechter</span> beim Vergleich</td><td>2048-px-JPEG mit Wasserzeichen und 16-Bit-TIFF in voller Größe, bis die letzte Datei geschrieben ist. Seitdem dauerten auf einem Mac mini (Apple M4 Pro) 27 öffentliche RAWs als 2048-px-JPEG und 16-Bit-TIFF in voller Größe aus der Bibliothek vor alpha.6 etwa 41 s, mit alpha.6 37–38 s und mit alpha.7 etwa 25 s, jede Änderung gegen die Version davor gemessen, nicht in einem Durchlauf; Lightroom und Capture One wurden nicht erneut gemessen.</td></tr>
+          <tr><th scope="row">KI-Motivmaske, allererste Verwendung</th><td class="num">alpha.4: 13,7 s; seit alpha.6 1,5–3,3 s</td><td class="num">7,9 s</td><td>nicht gemessen</td><td><span class="v equal">Gemischt</span></td><td>Erste Verwendung nach der Installation, Laden des Modells eingeschlossen; spätere Verwendungen dauern unter einer Sekunde. Seit alpha.6 bereitet Rawtonic das Modell in Entwickeln im Hintergrund vor: 1,5–3,3 s ist ein Klick 25 s nach dem Öffnen des ersten Fotos (vier Durchläufe, derselbe Laptop); ein Klick innerhalb von etwa 15 s wartet noch auf einen Teil des Ladens.</td></tr>
+          <tr><th scope="row">KI-Rauschentfernung, 24 MP</th><td class="num">etwa 10 s, Fehler 2,21</td><td class="num">6,5 s, Fehler 1,69</td><td>nicht verglichen</td><td><span class="v worse">Schlechter</span></td><td>Zeit pro Foto und Helligkeitsfehler bei gleichem Restrauschen. Der Wert für Lightroom ist die Rauschentfernung von Camera Raw.</td></tr>
+          <tr><th scope="row">Ein Shooting auf ein anderes Laufwerk verschieben</th><td>Die Fotos eines Projekts können seinen Ordner noch nicht verlassen: Verschiebe den ganzen Ordner</td><td>verschiebt und arbeitet weiter, 2,1 s</td><td>nicht gemessen</td><td><span class="v worse">Schlechter</span></td><td>26 RAW+JPEG-Paare auf ein externes Laufwerk. Einen ganzen Ordner oder die Fotos eines Katalogs zu verschieben funktioniert und wird Byte für Byte geprüft.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    </details>
+    <p>Noch in Messung: Aussortieren mit echten Tastendrücken und Stapelexport gegen Lightroom und Capture One seit alpha.6, Farbrauschreduzierung bei jeder Einstellung und ISO, Schärfung feiner kontrastarmer Details bei hohen Werten, chromatische Aberration bei einigen Kameras und die Capture-One-Seite mehrerer Zeilen. Die Versionshinweise jeder Version sagen, was sich geändert hat. Die Zahlen sind eigene Messungen der Entwickler an eigenen und öffentlichen Testdateien; die anderen Programme nutzen wir nur, um ihre Ergebnisse zu beobachten, nie ihre Profile, Presets oder Looks.</p>
+
+
+    <h2 id="import">Was du mitnimmst</h2>
+    <ul>
+      <li><b>Deine Bibliothek.</b> „Aus Lightroom oder Capture One importieren…“ auf dem Startbildschirm oder im Menü der Bibliothek liest einen Lightroom-Classic-Katalog (<code>.lrcat</code>) oder eine Capture-One-Session (<code>.cosessiondb</code>): Bewertungen, Farbmarkierungen, Stichwörter, Bearbeitungen und Alben. Die andere Bibliothek wird nur gelesen, nie verändert. Wurden ihre Fotos verschoben, zeig Rawtonic den neuen Ordner.</li>
+      <li><b>Presets und Stile.</b> Importiere Lightroom-Presets und Capture-One-Stile im Bedienfeld „Stile &amp; Vorgaben“ von Entwickeln. Rawtonic listet auf, was es nicht übertragen konnte; der Color Editor von Capture One wird zum Farbeditor von Rawtonic.</li>
+      <li><b>Sidecars.</b> Bewertungen, Markierungen und Stichwörter in XMP-Sidecars werden beim Hinzufügen der Fotos gelesen; Lightrooms eigene Einstellungen in einem Sidecar bleiben unangetastet, wenn Rawtonic hineinschreibt.</li>
+      <li><b>Noch nicht:</b> Virtuelle Kopien, Smart-Alben und die lokalen Einstellungsebenen von Capture One werden als nicht importiert aufgeführt. Nicht jede Einstellung sieht genauso aus wie in dem Programm, aus dem sie kam.</li>
+    </ul>
+
+    <h2 id="names">Gleiche Aufgabe, Rawtonics Name</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="names">
+      <table>
+        <thead><tr><th scope="col">Lightroom</th><th scope="col">Capture One</th><th scope="col">Rawtonic</th></tr></thead>
+        <tbody>
+          <tr><td>Katalog</td><td>Katalog</td><td>Katalog</td></tr>
+          <tr><td>—</td><td>Session</td><td>Projekt (ein Ordner mit Capture, Selects, Output und Trash)</td></tr>
+          <tr><td>Übersichtsansicht</td><td>Viewer mit mehreren ausgewählten Varianten</td><td>Mehrfachansicht, <kbd>N</kbd></td></tr>
+          <tr><td>Exportvorgabe</td><td>Process Recipe</td><td>Export-Rezept</td></tr>
+          <tr><td>Maskieren</td><td>Ebenen</td><td>Ebenen, jede mit ihren Masken</td></tr>
+          <tr><td>Vorgaben</td><td>Stile</td><td>Stile &amp; Vorgaben</td></tr>
+          <tr><td>Ordner synchronisieren</td><td>Synchronisieren</td><td>Ordner synchronisieren</td></tr>
+          <tr><td>Vorheriger Import</td><td>Letzte Importe</td><td>Letzter Import</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="shortcuts">Tastenkürzel</h2>
+    <p>Die Cursor-Werkzeuge folgen den Tasten von Capture One, die Ansichten denen von Lightroom, wo es sie gibt. Jedes Tastenkürzel lässt sich unter Einstellungen → Steuerung ändern. Unter Linux ersetzt <kbd>Strg</kbd> die Taste <kbd>⌘</kbd>.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="shortcuts">
+      <table>
+        <thead><tr><th scope="col">Taste</th><th scope="col">Funktion</th><th scope="col">Taste</th><th scope="col">Funktion</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>0</kbd>–<kbd>5</kbd></td><td>Bewertung</td><td><kbd>⌘J</kbd></td><td>Nach Selects verschieben</td></tr>
+          <tr><td><kbd>N</kbd></td><td>Mehrfachansicht der ausgewählten Fotos</td><td><kbd>⇧N</kbd></td><td>Zoom über alle koppeln</td></tr>
+          <tr><td><kbd>Y</kbd></td><td>Vorher/Nachher geteilt</td><td><kbd>\</kbd></td><td>Original zeigen</td></tr>
+          <tr><td><kbd>J</kbd></td><td>Clipping-Warnung</td><td><kbd>⇧S</kbd></td><td>Softproof</td></tr>
+          <tr><td><kbd>C</kbd></td><td>Zuschneiden</td><td><kbd>R</kbd> / <kbd>⇧R</kbd></td><td>Ausrichten / Automatisch ausrichten</td></tr>
+          <tr><td><kbd>B</kbd> / <kbd>E</kbd></td><td>Pinsel / Radieren</td><td><kbd>L</kbd> / <kbd>T</kbd></td><td>Verlaufs- / Radialmaske</td></tr>
+          <tr><td><kbd>Q</kbd></td><td>Flecken reparieren und klonen</td><td><kbd>W</kbd></td><td>Weißabgleich-Pipette</td></tr>
+          <tr><td><kbd>M</kbd></td><td>Maskenüberlagerung</td><td><kbd>H</kbd></td><td>Ausgewählte Ebene allein zeigen</td></tr>
+          <tr><td><kbd>⇧⌘C</kbd> / <kbd>⇧⌘V</kbd></td><td>Einstellungen kopieren / einfügen</td><td><kbd>⇧⌘S</kbd></td><td>Einstellungen synchronisieren</td></tr>
+          <tr><td><kbd>F6</kbd></td><td>Filmstreifen</td><td><kbd>Tab</kbd></td><td>Seitenbedienfelder ausblenden</td></tr>
+          <tr><td><kbd>⌘K</kbd></td><td>Tethering-Kamera auslösen</td><td><kbd>F</kbd></td><td>Vollbild</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>
