@@ -10,7 +10,7 @@
 <main id="main" class="wrap">
   <article class="prose wide">
     <h1>Von Lightroom oder Capture One kommend.</h1>
-    <p class="lead">Wo Rawtonic heute gegenüber dem besseren der beiden steht, ehrlich, danach, was Sie mitnehmen und wo Sie was finden.</p>
+    <p class="lead">Wo Rawtonic heute gegenüber dem besseren der beiden steht, ehrlich, danach, was du mitnimmst und wo du was findest.</p>
 
     <h2 id="today">Wo Rawtonic heute steht</h2>
     <p>Rawtonics Regel ist, in jedem Werkzeug das bessere von Lightroom Classic und Capture One zu erreichen oder zu übertreffen. Noch gelingt das nicht überall. Kurz gefasst, aus unseren Vergleichstests (Entwicklungsversionen kurz vor alpha.4) und den Messungen von alpha.6 und alpha.7 (die Zahlen und was jede abdeckt, stehen weiter unten):</p>
@@ -20,7 +20,7 @@
         <ul class="ticks">
           <li>Der automatische Weißabgleich trifft die Farbe des Lichts auf unserem Testsatz genauer als die Automatik von Camera Raw.</li>
           <li>Eine Karte mit Sicherungskopie zu importieren geht schneller als in Lightroom und Capture One: 200 RAW+JPEG-Paare in etwa 10 s (Lightroom 11,5 s, Capture One 23,7 s auf demselben Laptop).</li>
-          <li>Regler folgen weiter Ihrer Hand, während ein Stapelexport läuft.</li>
+          <li>Regler folgen weiter deiner Hand, während ein Stapelexport läuft.</li>
           <li>Eine HDR-Belichtungsreihe zusammenzufügen geht schneller als in Lightroom.</li>
           <li>Außerhalb des Programms verschobene oder umbenannte Fotos werden wiedergefunden, mit ihren Bewertungen.</li>
           <li>Eine Tethering-Aufnahme ist mit der Sony α7 III, α7 IV und der Fujifilm X-H2S so schnell auf dem Bildschirm wie in Capture One.</li>
@@ -32,11 +32,11 @@
         <ul class="ticks">
           <li class="no">Das Durchblättern eines Shootings wurde seit dem Umbau in alpha.6 nicht mehr mit echten Tastendrücken mit Lightroom und Capture One verglichen. In skriptgesteuerten Durchläufen erscheint das nächste Foto nach etwa 90 ms und ist nach etwa 0,2 s fertig entwickelt; wer schneller als etwa alle 0,6 s weiterschaltet, sieht das JPEG der Kamera nach etwa 20 ms, das entwickelte Foto folgt nach etwa 0,4 s.</li>
           <li class="no">Ein Stapelexport dauerte etwa doppelt so lange wie in Lightroom oder Capture One, als sie zuletzt verglichen wurden (alpha.4). Er ist seitdem schneller geworden (auf einem Mac mini etwa 25 s statt etwa 41 s für denselben Export), wurde aber nicht erneut mit ihnen verglichen.</li>
-          <li class="no">Die allererste KI-Motivmaske nach der Installation wartet noch auf ihr Modell, wenn Sie innerhalb von etwa 15 s nach dem Öffnen von Entwickeln klicken. Ein Klick nach 25 s dauerte 1,5–3,3 s (Lightroom bei der ersten Verwendung: 7,9 s); danach dauert es unter einer Sekunde.</li>
+          <li class="no">Die allererste KI-Motivmaske nach der Installation wartet noch auf ihr Modell, wenn du innerhalb von etwa 15 s nach dem Öffnen von Entwickeln klicken. Ein Klick nach 25 s dauerte 1,5–3,3 s (Lightroom bei der ersten Verwendung: 7,9 s); danach dauert es unter einer Sekunde.</li>
           <li class="no">Die KI-Rauschentfernung ist langsamer als die von Lightroom und ihr Ergebnis etwas weniger genau.</li>
           <li class="no">Mit einer Fujifilm GFX 50R kommen Tethering-Aufnahmen etwas später an als in Capture One.</li>
           <li class="no">Die seltenen Fehlgriffe des automatischen Ausrichtens sind etwas größer als bei Lightroom.</li>
-          <li class="no">Die Fotos eines Projekts lassen sich noch nicht einzeln auf ein anderes Laufwerk verschieben; verschieben Sie stattdessen den ganzen Ordner.</li>
+          <li class="no">Die Fotos eines Projekts lassen sich noch nicht einzeln auf ein anderes Laufwerk verschieben; verschiebe stattdessen den ganzen Ordner.</li>
         </ul>
       </div>
     </div>
@@ -60,7 +60,7 @@
           <tr><th scope="row">Zwei Rezepte für 20 RAWs exportieren (38 Dateien)</th><td class="num">17 s (alpha.4)</td><td class="num">8 s</td><td class="num">9 s</td><td><span class="v worse">Schlechter</span> beim Vergleich</td><td>2048-px-JPEG mit Wasserzeichen und 16-Bit-TIFF in voller Größe, bis die letzte Datei geschrieben ist. Seitdem dauerten auf einem Mac mini (Apple M4 Pro) 27 öffentliche RAWs als 2048-px-JPEG und 16-Bit-TIFF in voller Größe aus der Bibliothek vor alpha.6 etwa 41 s, mit alpha.6 37–38 s und mit alpha.7 etwa 25 s, jede Änderung gegen die Version davor gemessen, nicht in einem Durchlauf; Lightroom und Capture One wurden nicht erneut gemessen.</td></tr>
           <tr><th scope="row">KI-Motivmaske, allererste Verwendung</th><td class="num">alpha.4: 13,7 s; seit alpha.6 1,5–3,3 s</td><td class="num">7,9 s</td><td>nicht gemessen</td><td><span class="v equal">Gemischt</span></td><td>Erste Verwendung nach der Installation, Laden des Modells eingeschlossen; spätere Verwendungen dauern unter einer Sekunde. Seit alpha.6 bereitet Rawtonic das Modell in Entwickeln im Hintergrund vor: 1,5–3,3 s ist ein Klick 25 s nach dem Öffnen des ersten Fotos (vier Durchläufe, derselbe Laptop); ein Klick innerhalb von etwa 15 s wartet noch auf einen Teil des Ladens.</td></tr>
           <tr><th scope="row">KI-Rauschentfernung, 24 MP</th><td class="num">etwa 10 s, Fehler 2,21</td><td class="num">6,5 s, Fehler 1,69</td><td>nicht verglichen</td><td><span class="v worse">Schlechter</span></td><td>Zeit pro Foto und Helligkeitsfehler bei gleichem Restrauschen. Der Wert für Lightroom ist die Rauschentfernung von Camera Raw.</td></tr>
-          <tr><th scope="row">Ein Shooting auf ein anderes Laufwerk verschieben</th><td>Die Fotos eines Projekts können seinen Ordner noch nicht verlassen: Verschieben Sie den ganzen Ordner</td><td>verschiebt und arbeitet weiter, 2,1 s</td><td>nicht gemessen</td><td><span class="v worse">Schlechter</span></td><td>26 RAW+JPEG-Paare auf ein externes Laufwerk. Einen ganzen Ordner oder die Fotos eines Katalogs zu verschieben funktioniert und wird Byte für Byte geprüft.</td></tr>
+          <tr><th scope="row">Ein Shooting auf ein anderes Laufwerk verschieben</th><td>Die Fotos eines Projekts können seinen Ordner noch nicht verlassen: Verschiebe den ganzen Ordner</td><td>verschiebt und arbeitet weiter, 2,1 s</td><td>nicht gemessen</td><td><span class="v worse">Schlechter</span></td><td>26 RAW+JPEG-Paare auf ein externes Laufwerk. Einen ganzen Ordner oder die Fotos eines Katalogs zu verschieben funktioniert und wird Byte für Byte geprüft.</td></tr>
         </tbody>
       </table>
     </div>
@@ -68,10 +68,10 @@
     <p>Noch in Messung: Aussortieren mit echten Tastendrücken und Stapelexport gegen Lightroom und Capture One seit alpha.6, Farbrauschreduzierung bei jeder Einstellung und ISO, Schärfung feiner kontrastarmer Details bei hohen Werten, chromatische Aberration bei einigen Kameras und die Capture-One-Seite mehrerer Zeilen. Die Versionshinweise jeder Version sagen, was sich geändert hat. Die Zahlen sind eigene Messungen der Entwickler an eigenen und öffentlichen Testdateien; die anderen Programme nutzen wir nur, um ihre Ergebnisse zu beobachten, nie ihre Profile, Presets oder Looks.</p>
 
 
-    <h2 id="import">Was Sie mitnehmen</h2>
+    <h2 id="import">Was du mitnimmst</h2>
     <ul>
-      <li><b>Ihre Bibliothek.</b> „Aus Lightroom oder Capture One importieren…“ auf dem Startbildschirm oder im Menü der Bibliothek liest einen Lightroom-Classic-Katalog (<code>.lrcat</code>) oder eine Capture-One-Session (<code>.cosessiondb</code>): Bewertungen, Farbmarkierungen, Stichwörter, Bearbeitungen und Alben. Die andere Bibliothek wird nur gelesen, nie verändert. Wurden ihre Fotos verschoben, zeigen Sie Rawtonic den neuen Ordner.</li>
-      <li><b>Presets und Stile.</b> Importieren Sie Lightroom-Presets und Capture-One-Stile im Bedienfeld „Stile &amp; Vorgaben“ von Entwickeln. Rawtonic listet auf, was es nicht übertragen konnte; der Color Editor von Capture One wird zum Farbeditor von Rawtonic.</li>
+      <li><b>Deine Bibliothek.</b> „Aus Lightroom oder Capture One importieren…“ auf dem Startbildschirm oder im Menü der Bibliothek liest einen Lightroom-Classic-Katalog (<code>.lrcat</code>) oder eine Capture-One-Session (<code>.cosessiondb</code>): Bewertungen, Farbmarkierungen, Stichwörter, Bearbeitungen und Alben. Die andere Bibliothek wird nur gelesen, nie verändert. Wurden ihre Fotos verschoben, zeig Rawtonic den neuen Ordner.</li>
+      <li><b>Presets und Stile.</b> Importiere Lightroom-Presets und Capture-One-Stile im Bedienfeld „Stile &amp; Vorgaben“ von Entwickeln. Rawtonic listet auf, was es nicht übertragen konnte; der Color Editor von Capture One wird zum Farbeditor von Rawtonic.</li>
       <li><b>Sidecars.</b> Bewertungen, Markierungen und Stichwörter in XMP-Sidecars werden beim Hinzufügen der Fotos gelesen; Lightrooms eigene Einstellungen in einem Sidecar bleiben unangetastet, wenn Rawtonic hineinschreibt.</li>
       <li><b>Noch nicht:</b> Virtuelle Kopien, Smart-Alben und die lokalen Einstellungsebenen von Capture One werden als nicht importiert aufgeführt. Nicht jede Einstellung sieht genauso aus wie in dem Programm, aus dem sie kam.</li>
     </ul>

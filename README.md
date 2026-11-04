@@ -23,7 +23,7 @@ Every page exists in English (`pages/x.html`, `/x/`) and German (`pages/de/x.htm
 
 - Edit the English page, then the same place in `pages/de/x.html`. Keep the element ids (section anchors such as `#install`) in English and identical, and link the same targets; internal links in German pages point into `/de/` (`/de/privacy/#relay`), external links stay the same.
 - Text in the head, header and footer comes from the `T` table in `scripts/build.mjs` (`{{t.…}}` in the partials), one entry per language; add a string to both.
-- German uses the polite "Sie", decimal commas ("1,5 s") and the app's German labels (`src/i18n/locales/de.json` in the app) for menu items and buttons. The privacy and imprint pages are translations; the English version prevails, as their German text says.
+- German addresses the reader as "du" (du/dein/dich, lowercase; maintainer decision 2026-11-04), uses decimal commas ("1,5 s") and the app's German labels (`src/i18n/locales/de.json` in the app) for menu items and buttons. The privacy and imprint pages are translations; the English version prevails, as their German text says.
 - The build checks the pairs: every English page needs its German file, and the two must have the same set of element ids and the same set of link targets (with `/de/x/` read as `/x/`). `--strict` (and so `scripts/deploy.sh`) refuses to build otherwise; a plain build lists the differences.
 - The release history entries come from the app's English CHANGELOG and stay English on `/de/releases/`; only their dates and "and N more" are German.
 

@@ -38,7 +38,7 @@ const WINDOWS_KIND = {
     },
     de: {
       kind: 'MSI-Installer',
-      install: 'Er installiert für alle Benutzer unter „Programme“, deshalb fragt Windows nach Administratorrechten, und braucht etwa eine Minute, weil er die Grafik-Pipelines vorbereitet. Haben Sie eine frühere Version mit der -setup.exe installiert? Deinstallieren Sie diese zuerst unter Einstellungen → Apps (Ihre Bibliotheken, Bearbeitungen und Einstellungen bleiben erhalten); sonst weist der MSI-Installer darauf hin und bricht ab.',
+      install: 'Er installiert für alle Benutzer unter „Programme“, deshalb fragt Windows nach Administratorrechten, und braucht etwa eine Minute, weil er die Grafik-Pipelines vorbereitet. Hast du eine frühere Version mit der -setup.exe installiert? Deinstalliere diese zuerst unter Einstellungen → Apps (deine Bibliotheken, Bearbeitungen und Einstellungen bleiben erhalten); sonst weist der MSI-Installer darauf hin und bricht ab.',
     },
   },
   setup: {
@@ -48,7 +48,7 @@ const WINDOWS_KIND = {
     },
     de: {
       kind: 'Installer',
-      install: 'Er installiert nur für Ihren Benutzer, ohne Administratorrechte, und braucht etwa eine Minute, weil er die Grafik-Pipelines vorbereitet.',
+      install: 'Er installiert nur für deinen Benutzer, ohne Administratorrechte, und braucht etwa eine Minute, weil er die Grafik-Pipelines vorbereitet.',
     },
   },
 };
