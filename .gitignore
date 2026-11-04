@@ -1,3 +1,4 @@
 # Built by scripts/build.mjs from pages/ and release.json
 /site/**/index.html
 /site/sitemap.xml
+.wrangler/
