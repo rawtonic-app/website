@@ -107,43 +107,6 @@
     <p class="also">Außerdem: Session-Ordner an beliebigem Ort (auch aus dem Ordnerbaum festzulegen), eine Pipettenlupe, Lichter, die helle Himmel hell lassen, schnelleres Weiterschalten beim Aussortieren, und nach einem erzwungenen Beenden oder Absturz räumt Rawtonic auf und bietet an, eine unterbrochene Stapelbearbeitung abzuschließen. <a class="plain" href="{{release.url}}">Vollständige Versionshinweise</a> · <a class="plain" href="/de/releases/">Versionsgeschichte</a></p>
   </section>
 
-  <section class="section wrap" id="install" aria-labelledby="install-title" data-os="mac">
-    <div class="install-head">
-      <h2 class="head" id="install-title">Installieren.</h2>
-      <div class="seg" role="group" aria-label="Dein System">
-        <button type="button" data-os-pick="mac" aria-pressed="true">macOS</button>
-        <button type="button" data-os-pick="linux" aria-pressed="false">Linux</button>
-        <button type="button" data-os-pick="windows" aria-pressed="false">Windows</button>
-      </div>
-    </div>
-    <div class="install-grid">
-      <ol class="steps">
-        <li class="mac"><b>Lade das DMG</b> für Apple Silicon herunter, {{release.mac.size}}. Es braucht macOS 13 oder neuer. Für Intel-Macs gibt es ein <a class="plain" href="{{release.macIntel.url}}">experimentelles DMG</a> ({{release.macIntel.size}}), bisher nur unter Rosetta auf Apple Silicon getestet.</li>
-        <li class="mac"><b>Zieh Rawtonic in „Programme“</b> und öffne es mit einem Doppelklick. Rawtonic ist mit einer Apple Developer ID signiert und von Apple notarisiert, daher fragt macOS nur einmal, ob du eine aus dem Internet geladene App öffnen möchtest.</li>
-        <li class="mac"><b>Behalte deine Sicherungen.</b> Es ist frühe Software, Fehler sind zu erwarten. Du aktualisierst von einer früheren Alpha? Gespeicherte Bearbeitungen sollen aussehen wie zuvor; die verbesserten Standardwerte gelten für neue Bearbeitungen und für noch nicht bearbeitete Fotos.</li>
-        <li class="linux"><b>Lade das AppImage</b> für x86-64 herunter, {{release.linux.size}}. Es läuft unter Ubuntu 22.04 oder neuer, Debian 12, Fedora und anderen mit glibc 2.35 oder neuer.</li>
-        <li class="linux"><b>Mach es ausführbar und starte es</b> mit den hier gezeigten Befehlen. Startet es nicht, installiere FUSE 2 (libfuse2t64 unter Ubuntu 24.04, libfuse2 unter älteren Ubuntu- und Debian-Versionen) oder starte es mit --appimage-extract-and-run.</li>
-        <li class="linux"><b>Gib dem ersten Start eine Minute.</b> Bevor das erste Foto in Entwickeln erscheint, bereitet der Grafiktreiber die Shader von Rawtonic vor. Das geschieht einmal; spätere Starts gehen schnell.</li>
-        <li class="windows"><b>Experimentell und nicht signiert.</b> <a class="plain" href="{{release.windows.url}}">Lade den {{release.windows.kind}}</a> für Windows 10 oder 11 (x64) herunter, {{release.windows.size}}. Er braucht eine Grafikkarte mit Vulkan- oder DirectX-12-Treiber; PCs, die nur den Software-Renderer von Microsoft haben, werden nicht unterstützt. Bisher wurde er mit einer NVIDIA-Grafikkarte getestet.</li>
-        <li class="windows"><b>Prüfe den Download.</b> In der PowerShell muss <code>Get-FileHash</code> für den Installer den hier gezeigten SHA-256 ausgeben. Das erkennt einen beschädigten Download; da der Installer nicht signiert ist, beweist es nicht, wer ihn erstellt hat. Entfernt dein Browser oder die Windows-Sicherheit den Download, siehe <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></li>
-        <li class="windows"><b>Starte ihn.</b> Windows SmartScreen meldet „Der Computer wurde durch Windows geschützt“: Klick auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>. {{release.windows.install}} Die <a class="plain" href="{{release.url}}">Release-Seite</a> hat auch die anderen Windows-Downloads.</li>
-      </ol>
-      <div class="code">
-        <p class="small muted linux">Im Terminal</p>
-        <pre class="linux"><code>chmod +x {{release.linux.file}}
-./{{release.linux.file}}</code></pre>
-        <p class="small muted">SHA-256</p>
-        <pre class="mac"><code>{{release.mac.sha256}}</code></pre>
-        <p class="small muted mac">Intel (experimentell): <code>{{release.macIntel.sha256}}</code></p>
-        <pre class="linux"><code>{{release.linux.sha256}}</code></pre>
-        <p class="small muted windows">In der PowerShell</p>
-        <pre class="windows"><code>Get-FileHash .\{{release.windows.file}}</code></pre>
-        <pre class="windows"><code>{{release.windows.sha256}}</code></pre>
-        <p class="small">Etwas stimmt nicht? Nutze <b>Problem melden</b> in der App, oder sieh dir <a class="plain" href="#contribute">weitere Wege mitzuwirken</a> an.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">
     <div class="split-head">
       <h2 class="head" id="contribute-title">Mitwirken.</h2>
@@ -210,7 +173,43 @@
           <p class="small muted">Braucht einen Vulkan- oder DirectX-12-Grafiktreiber. SmartScreen: Weitere Informationen, dann Trotzdem ausführen. <a class="plain" href="#install" data-os-link="windows">So installierst du es</a> · <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></p>
         </div>
       </div>
-      <p class="dl-note">Rawtonic {{release.version}}, kostenlos und Open Source, mit den Ecken und Kanten einer frühen Alpha. Die Downloads kommen von GitHub. <a class="plain" href="{{release.url}}">Versionshinweise und SHA-256</a> · <a class="plain" href="{{repo}}/releases">Alle Versionen</a></p>
+      <p class="dl-note">Rawtonic {{release.version}}, kostenlos und Open Source, mit den Ecken und Kanten einer frühen Alpha. Die Downloads kommen von GitHub. <a class="plain" href="{{release.url}}">Versionshinweise und SHA-256</a> · <a class="plain" href="{{repo}}/releases">Alle Versionen</a> · <a class="plain" href="#install">Installationsschritte ↓</a></p>
+    </div>
+  </section>
+  <section class="section wrap" id="install" aria-labelledby="install-title" data-os="mac">
+    <div class="install-head">
+      <h2 class="head" id="install-title">Installieren.</h2>
+      <div class="seg" role="group" aria-label="Dein System">
+        <button type="button" data-os-pick="mac" aria-pressed="true">macOS</button>
+        <button type="button" data-os-pick="linux" aria-pressed="false">Linux</button>
+        <button type="button" data-os-pick="windows" aria-pressed="false">Windows</button>
+      </div>
+    </div>
+    <div class="install-grid">
+      <ol class="steps">
+        <li class="mac"><b>Lade das DMG</b> für Apple Silicon herunter, {{release.mac.size}}. Es braucht macOS 13 oder neuer. Für Intel-Macs gibt es ein <a class="plain" href="{{release.macIntel.url}}">experimentelles DMG</a> ({{release.macIntel.size}}), bisher nur unter Rosetta auf Apple Silicon getestet.</li>
+        <li class="mac"><b>Zieh Rawtonic in „Programme“</b> und öffne es mit einem Doppelklick. Rawtonic ist mit einer Apple Developer ID signiert und von Apple notarisiert, daher fragt macOS nur einmal, ob du eine aus dem Internet geladene App öffnen möchtest.</li>
+        <li class="mac"><b>Behalte deine Sicherungen.</b> Es ist frühe Software, Fehler sind zu erwarten. Du aktualisierst von einer früheren Alpha? Gespeicherte Bearbeitungen sollen aussehen wie zuvor; die verbesserten Standardwerte gelten für neue Bearbeitungen und für noch nicht bearbeitete Fotos.</li>
+        <li class="linux"><b>Lade das AppImage</b> für x86-64 herunter, {{release.linux.size}}. Es läuft unter Ubuntu 22.04 oder neuer, Debian 12, Fedora und anderen mit glibc 2.35 oder neuer.</li>
+        <li class="linux"><b>Mach es ausführbar und starte es</b> mit den hier gezeigten Befehlen. Startet es nicht, installiere FUSE 2 (libfuse2t64 unter Ubuntu 24.04, libfuse2 unter älteren Ubuntu- und Debian-Versionen) oder starte es mit --appimage-extract-and-run.</li>
+        <li class="linux"><b>Gib dem ersten Start eine Minute.</b> Bevor das erste Foto in Entwickeln erscheint, bereitet der Grafiktreiber die Shader von Rawtonic vor. Das geschieht einmal; spätere Starts gehen schnell.</li>
+        <li class="windows"><b>Experimentell und nicht signiert.</b> <a class="plain" href="{{release.windows.url}}">Lade den {{release.windows.kind}}</a> für Windows 10 oder 11 (x64) herunter, {{release.windows.size}}. Er braucht eine Grafikkarte mit Vulkan- oder DirectX-12-Treiber; PCs, die nur den Software-Renderer von Microsoft haben, werden nicht unterstützt. Bisher wurde er mit einer NVIDIA-Grafikkarte getestet.</li>
+        <li class="windows"><b>Prüfe den Download.</b> In der PowerShell muss <code>Get-FileHash</code> für den Installer den hier gezeigten SHA-256 ausgeben. Das erkennt einen beschädigten Download; da der Installer nicht signiert ist, beweist es nicht, wer ihn erstellt hat. Entfernt dein Browser oder die Windows-Sicherheit den Download, siehe <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></li>
+        <li class="windows"><b>Starte ihn.</b> Windows SmartScreen meldet „Der Computer wurde durch Windows geschützt“: Klick auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>. {{release.windows.install}} Die <a class="plain" href="{{release.url}}">Release-Seite</a> hat auch die anderen Windows-Downloads.</li>
+      </ol>
+      <div class="code">
+        <p class="small muted linux">Im Terminal</p>
+        <pre class="linux"><code>chmod +x {{release.linux.file}}
+./{{release.linux.file}}</code></pre>
+        <p class="small muted">SHA-256</p>
+        <pre class="mac"><code>{{release.mac.sha256}}</code></pre>
+        <p class="small muted mac">Intel (experimentell): <code>{{release.macIntel.sha256}}</code></p>
+        <pre class="linux"><code>{{release.linux.sha256}}</code></pre>
+        <p class="small muted windows">In der PowerShell</p>
+        <pre class="windows"><code>Get-FileHash .\{{release.windows.file}}</code></pre>
+        <pre class="windows"><code>{{release.windows.sha256}}</code></pre>
+        <p class="small">Etwas stimmt nicht? Nutze <b>Problem melden</b> in der App, oder sieh dir <a class="plain" href="#contribute">weitere Wege mitzuwirken</a> an.</p>
+      </div>
     </div>
   </section>
 </main>
