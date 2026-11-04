@@ -1,0 +1,11 @@
+{
+  // rawtonic.cc as static assets on Cloudflare Workers (free plan, no Worker code).
+  // Deploy: scripts/deploy.sh (builds site/ first). Custom domain set in "routes".
+  "name": "rawtonic-website",
+  "compatibility_date": "2026-11-03",
+  "assets": {
+    "directory": "./site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

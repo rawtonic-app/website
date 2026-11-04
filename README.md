@@ -27,11 +27,11 @@ python3 -m http.server -d site 8000     # http://localhost:8000/
 ## Deploy
 
 ```sh
-scripts/deploy.sh --dry-run   # builds (--strict), shows what would change
-scripts/deploy.sh             # builds, backup of the live copy, rsync, check that the site answers 200
+scripts/deploy.sh --dry-run   # builds (--strict), shows what wrangler would upload
+scripts/deploy.sh             # builds, uploads to Cloudflare, checks that the site answers 200
 ```
 
-Roll back: unpack the newest file in `~/rawtonic-site-backups/` on the server over `~/rawtonic`.
+Hosting (since 2026-11-04): Cloudflare Workers static assets, project `rawtonic-website` (`wrangler.jsonc`), custom domains rawtonic.cc and www.rawtonic.cc in the Cloudflare dashboard. Needs `npx wrangler login` once. Roll back a bad deploy with `npx wrangler rollback` (previous version), or move hosting back by pointing the rawtonic.cc A record at the VPS proxy (91.98.129.92), which serves the copy on the maintainer's server (backups in `~/rawtonic-site-backups/`).
 
 ## Rules
 
