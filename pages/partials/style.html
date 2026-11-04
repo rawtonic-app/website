@@ -58,6 +58,7 @@
     .nav a[aria-current="page"]{color:var(--ink)}
     .nav a.support{display:inline-flex;align-items:center;gap:.4em}
     .nav a.support svg{color:#ff5e5b;flex:none}
+    .nav a.lang{font-weight:600;letter-spacing:.04em}
     .nav .button{min-height:2.75rem;padding:0 1.1rem}
 
     .hero{padding-top:clamp(48px,7vw,112px)}
@@ -157,6 +158,8 @@
     .foot a:hover{text-decoration:underline}
     .foot .legal{flex-basis:100%;max-width:90ch}
 
+    /* German nav labels are longer: a narrower gap keeps the nav on the logo's row down to the mobile layout. */
+    @media (min-width:901px) and (max-width:1120px){.nav:lang(de){gap:clamp(12px,1.4vw,32px)}}
     @media (max-width:900px){
       .hero-row,.stand,.feature,.feature:nth-child(even),.split-head,.install-grid,.faq,.facts,.changes,.help{grid-template-columns:1fr}
       .feature:nth-child(even) > div{order:0}

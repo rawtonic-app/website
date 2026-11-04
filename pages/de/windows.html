@@ -1,0 +1,40 @@
+<!--page {"path": "/de/windows/", "title": "Windows hat den Download blockiert? · Rawtonic", "description": "Was zu tun ist, wenn der Browser, Microsoft Defender oder SmartScreen den nicht signierten Windows-Download von Rawtonic zurückhält, und wie Sie die Datei vorher prüfen."} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose">
+    <h1>Windows hat den Download blockiert?</h1>
+    <p>Die Windows-Downloads von Rawtonic sind noch nicht codesigniert. Windows und Browser halten nicht signierte Programme eines neuen Herausgebers oft zurück, obwohl mit ihnen alles in Ordnung ist. Vor jeder Version wird jeder Windows-Download auf einem Windows-Build-Rechner mit Microsoft Defender und frisch aktualisierten Signaturen geprüft; die Ergebnisse stehen im Build-Protokoll der Version. Das ist ein Beleg, kein Versprechen, dass der Schutz Ihres PCs zum selben Schluss kommt. Prüfen Sie die Datei deshalb, bevor Sie sie zulassen.</p>
+
+    <h2>1. Die Datei prüfen</h2>
+    <p>Laden Sie auch <code>SHA256SUMS-windows.txt</code> von der <a class="plain" href="{{release.url}}">Release-Seite</a> herunter. In der PowerShell, in Ihrem Download-Ordner:</p>
+    <pre><code>Get-FileHash .\{{release.windows.file}}</code></pre>
+    <p>Der ausgegebene SHA-256 muss mit dem übereinstimmen, der in <code>SHA256SUMS-windows.txt</code> für diese Datei steht (Groß- und Kleinschreibung spielt keine Rolle): <code>{{release.windows.sha256}}</code>. Das erkennt einen unterwegs beschädigten oder ausgetauschten Download; da die Datei nicht signiert ist, beweist es nicht, wer sie erstellt hat.</p>
+
+    <h2>2. Der Browser hält ihn zurück</h2>
+    <ul>
+      <li><b>Edge:</b> Öffnen Sie die Downloads (Strg+J), klicken Sie neben der Datei auf <b>…</b>, dann <b>Beibehalten</b> → <b>Mehr anzeigen</b> → <b>Trotzdem beibehalten</b>.</li>
+      <li><b>Chrome:</b> Wählen Sie in den Downloads <b>Behalten</b> (oder <b>Gefährliche Datei herunterladen</b>).</li>
+    </ul>
+
+    <h2>3. Die Windows-Sicherheit hat ihn entfernt</h2>
+    <p>Öffnen Sie <b>Windows-Sicherheit</b> → <b>Viren- &amp; Bedrohungsschutz</b> → <b>Schutzverlauf</b>. Wählen Sie den Eintrag für die Rawtonic-Datei, dann <b>Aktionen</b> → <b>Wiederherstellen</b> (oder <b>Zulassen</b>). Prüfen Sie ihren SHA-256 wie oben, bevor Sie sie starten.</p>
+
+    <h2>4. SmartScreen meldet „Der Computer wurde durch Windows geschützt“</h2>
+    <p>Wenn Sie den Installer starten, klicken Sie auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>.</p>
+
+    <h2>Immer noch blockiert?</h2>
+    <p>Versionen nach 0.1.0-alpha.11.1 haben auf ihrer <a class="plain" href="{{release.url}}">Release-Seite</a> drei Windows-Downloads derselben App: einen MSI-Installer (für alle Benutzer, fragt nach Administratorrechten), einen Installer nur für Ihren Benutzer (<code>-setup.exe</code>, ohne Administratorrechte) und ein portables Zip, das keine Installation braucht. Versuchen Sie einen anderen, und <a class="plain" href="{{repo}}/issues">sagen Sie uns</a> bitte, welche Datei von was blockiert wurde, damit wir sie Microsoft als Fehlalarm melden können.</p>
+    <p class="small muted">Warum nicht signiert? Ein Code-Signing-Zertifikat kostet jedes Jahr Geld, und Rawtonic ist kostenlos. Wir bereiten eine kostenlose Signierung für Open-Source-Projekte vor; siehe die <a class="plain" href="/de/code-signing/">Richtlinie zur Code-Signierung</a>. Unterstützung für das Projekt ist auf <a class="plain" href="https://ko-fi.com/nielsfranke">Ko-fi</a> willkommen.</p>
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!--page {"path": "/de/code-signing/", "title": "Richtlinie zur Code-Signierung · Rawtonic", "description": "Welche Windows-Dateien von Rawtonic codesigniert werden, wer eine Signatur freigibt und wie Sie einen Download prüfen."} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <article class="prose">
+    <h1>Richtlinie zur Code-Signierung.</h1>
+    <p class="lead"><b>Stand: vorbereitet, nicht in Kraft.</b> Die Windows-Downloads von Rawtonic sind noch nicht codesigniert. Diese Richtlinie ist für die Signierung über das Programm der <a class="plain" href="https://signpath.org">SignPath Foundation</a> für Open-Source-Projekte geschrieben und gilt ab der ersten so signierten Version; deren Versionshinweise werden das sagen. Bis dahin prüfen Sie Downloads mit ihrem SHA-256 (siehe unten).</p>
+    <p>Sobald in Kraft: Kostenlose Code-Signierung durch <a class="plain" href="https://about.signpath.io">SignPath.io</a>, Zertifikat von der <a class="plain" href="https://signpath.org">SignPath Foundation</a>.</p>
+
+    <h2>Was signiert wird</h2>
+    <ul>
+      <li>Nur Windows-Dateien, die aus dem öffentlichen Repository <a class="plain" href="{{repo}}">rawtonic-app/rawtonic</a> von dessen GitHub-Actions-Workflow <a class="plain" href="{{repo}}/blob/main/.github/workflows/windows-installer.yml"><code>windows-installer.yml</code></a> auf von GitHub gehosteten Runnern gebaut werden, aus einem Release-Commit auf <code>main</code>. Nichts, was auf dem Rechner eines Entwicklers gebaut wird, wird signiert.</li>
+      <li>Die Dateien: die App <code>rawtonic-app.exe</code>, die Installer <code>Rawtonic_&lt;version&gt;_x64.msi</code> und <code>Rawtonic_&lt;version&gt;_x64-setup.exe</code> sowie die Kopie von <code>rawtonic-app.exe</code> in <code>Rawtonic_&lt;version&gt;_x64-portable.zip</code>.</li>
+      <li>Mit der App ausgelieferte Bibliotheken Dritter (zum Beispiel die ONNX-Runtime-DLLs von Microsoft) werden nicht von diesem Projekt signiert; sie behalten die eigene Signatur ihrer Hersteller, falls vorhanden.</li>
+      <li>Jede Signieranfrage wird von einer freigebenden Person von Hand freigegeben, für jeweils eine Version.</li>
+    </ul>
+
+    <h2>Team und Rollen</h2>
+    <ul>
+      <li><b>Committer und Reviewer</b> (dürfen den Quellcode ohne weitere Prüfung ändern): Mitglieder der <a class="plain" href="https://github.com/orgs/rawtonic-app/people">Organisation rawtonic-app</a>: <a class="plain" href="https://github.com/nielsfranke">Niels Franke</a>.</li>
+      <li><b>Freigebende</b> (entscheiden, ob eine Version signiert wird): Inhaber der <a class="plain" href="https://github.com/orgs/rawtonic-app/people?query=role%3Aowner">Organisation rawtonic-app</a>: <a class="plain" href="https://github.com/nielsfranke">Niels Franke</a>.</li>
+    </ul>
+    <p>Änderungen von anderen (Pull Requests) werden von einem Committer geprüft, bevor sie übernommen werden. Alle Teammitglieder nutzen Mehr-Faktor-Authentifizierung für GitHub und SignPath.</p>
+
+    <h2>Einen Download prüfen</h2>
+    <ul>
+      <li><b>Signatur</b> (signierte Versionen): Rechtsklick auf die Datei → <b>Eigenschaften</b> → <b>Digitale Signaturen</b>; der Signierer ist <b>SignPath Foundation</b>. In der PowerShell muss <code>Get-AuthenticodeSignature</code> für die Datei <code>Valid</code> und ein auf die SignPath Foundation ausgestelltes Zertifikat zeigen.</li>
+      <li><b>Prüfsumme</b> (jede Version): <code>Get-FileHash</code> muss für die Datei den SHA-256 ausgeben, der in <code>SHA256SUMS-windows.txt</code> der Version steht. Das erkennt einen beschädigten Download; allein beweist es nicht, wer die Datei erstellt hat.</li>
+      <li>Wenn Windows oder der Browser einen Download zurückhält: <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></li>
+    </ul>
+
+    <h2>Datenschutz</h2>
+    <p>Rawtonic sendet von sich aus nichts außer einer Update-Prüfung beim Start: höchstens einmal alle 24 Stunden fragt es die öffentliche Releases-API von GitHub, ob es eine neuere Version gibt. Sie ist standardmäßig eingeschaltet und lässt sich unter Einstellungen → Allgemein („Beim Start nach Updates suchen“) abschalten. Alles andere, was online geht (Downloads von KI-Modellen, Karten, Problem- und Absturzberichte, die freiwillige Nutzungsstatistik), geschieht nur, wenn Sie es verlangen, und nachdem gezeigt wurde, was gesendet wird. Details: <a class="plain" href="/de/privacy/">Datenschutz</a>.</p>
+
+    <h2>Kontakt</h2>
+    <p>Fragen zu dieser Richtlinie oder ein vermuteter Missbrauch einer Signatur: <a class="plain" href="mailto:hello@rawtonic.cc">hello@rawtonic.cc</a> oder ein <a class="plain" href="{{repo}}/issues">Issue auf GitHub</a>.</p>
+  </article>
+</main>
+
+{{> footer}}
+</body>
+</html>
