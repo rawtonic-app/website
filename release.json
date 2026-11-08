@@ -1,28 +1,28 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.11.1",
-  "name": "Relight set-ups that look lit, finer sliders",
-  "date": "2026-11-01",
-  "dateText": "1 November 2026",
-  "tag": "v0.1.0-alpha.11.1",
+  "version": "0.1.0-alpha.12",
+  "name": "Search by content, proof sheets, tones that keep their texture",
+  "date": "2026-11-08",
+  "dateText": "8 November 2026",
+  "tag": "v0.1.0-alpha.12",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.11.1_aarch64.dmg",
-    "size": "39 MB",
-    "sha256": "63319a543f22d9447a6f91fcd3fad5aca6e80269440bbb0169aa4bb5b8f8c8d7"
+    "file": "Rawtonic_0.1.0-alpha.12_aarch64.dmg",
+    "size": "44 MB",
+    "sha256": "c6975f8a52e81ab37b4e5610e4e547dda37fdd9ef1bae9183fe0c6a98723dfb2"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.11.1_x86_64.dmg",
-    "size": "45 MB",
-    "sha256": "9a1a4ff4c7f9014bd3ef0272dd1a5b915aa9ffdd476e0ba1c3618aa3cd685c4b"
+    "file": "Rawtonic_0.1.0-alpha.12_x86_64.dmg",
+    "size": "46 MB",
+    "sha256": "16208d1fb20a4f1bcbad1ceaceea352197e9274e76df61c68ce9ccc02926daae"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.11.1_amd64.AppImage",
-    "size": "132 MB",
-    "sha256": "26b75dbd06d73544297ca977cb33beea0dc0dcf29189d1b5e3430ef24382e0e8"
+    "file": "Rawtonic_0.1.0-alpha.12_amd64.AppImage",
+    "size": "133 MB",
+    "sha256": "5d2e2a225e399d1c679aa2048846dfb1edbac004429235c4c54a9328b6d87681"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.11.1_x64-setup.exe",
-    "size": "30 MB",
-    "sha256": "04f245cf27d4febea35a32389531e36d952ee75969c9965bcc60163174659d07"
+    "file": "Rawtonic_0.1.0-alpha.12_x64.msi",
+    "size": "45 MB",
+    "sha256": "4b940396d4b44618908903933a07a61aa53576f668635e32c7319f31349044b7"
   }
 }

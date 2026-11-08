@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 {{> head}}
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "inLanguage": "en", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 13 or later on Apple Silicon (Intel experimental); Windows 10 or 11 x64 (experimental); Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.windows.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/", "inLanguage": "en", "description": "A free, open-source RAW photo developer for photographers. Ingest, select, develop, retouch and export on your own machine.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW photo developer", "operatingSystem": "macOS 14 or later on Apple Silicon (Intel experimental, macOS 13 or later); Windows 10 or 11 x64 (experimental); Linux x86-64 with glibc 2.35 or later", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.windows.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
 </head>
 <body>
 {{> header}}
@@ -31,7 +31,7 @@
     })();
     </script>
     <p class="note small muted">Rawtonic {{release.version}} · <a class="plain" href="#new">What’s new</a> · <a class="plain" href="#install">Requirements and install</a></p>
-    <p class="note small muted">macOS 13 or later on Apple Silicon (Intel experimental), signed and notarized · Windows 10 or 11, x64, experimental and unsigned · Linux x86-64, AppImage.</p>
+    <p class="note small muted">macOS 14 or later on Apple Silicon (Intel experimental, macOS 13 or later), signed and notarized · Windows 10 or 11, x64, experimental and unsigned · Linux x86-64, AppImage.</p>
     <p class="note small muted">Windows: SmartScreen says “Windows protected your PC”; click <b>More info</b>, then <b>Run anyway</b>. Needs a graphics card with a Vulkan or DirectX 12 driver. <a class="plain" href="#install" data-os-link="windows">Windows install steps</a> · <a class="plain" href="/windows/">Windows blocked the download?</a></p>
     <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic 0.1.0-alpha.7; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
   </section>
@@ -95,8 +95,8 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.11.</h2>
-      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS; Windows is still experimental and unsigned. alpha.11.1 makes Relight's set-ups relight a portrait without brightening or tinting it, and the sliders finer to drag. Saved edits export as in alpha.11, except Relight edits analysed before alpha.11 (see the release notes). <a class="plain" href="/releases/">Earlier releases</a></p>
+      <h2 class="head" id="new-title">New in alpha.12.</h2>
+      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS; Windows is still experimental and unsigned. alpha.12 sorts the Library by what photos show, lays out proof sheets, and makes the tone sliders keep texture. Apple Silicon now needs macOS 14. Saved edits export as before; changes apply to new edits (see the release notes). <a class="plain" href="/releases/">Earlier releases</a></p>
     </div>
     <div class="changes">
       <div><h3>Stacks.</h3><p>Group photos into stacks by hand or with Auto-Stack, split a stack and move photos up or down inside it.</p></div>
@@ -139,7 +139,7 @@
     <h2 class="head" id="faq-title">Questions.</h2>
     <dl class="faq-list">
       <div><dt>What does it cost?</dt><dd>Nothing. Rawtonic is free and open source under the AGPL-3.0-or-later. If you would like to support its development, you can on <a class="plain" href="https://ko-fi.com/nielsfranke">Ko-fi</a>; it stays free either way.</dd></div>
-      <div><dt>Which systems does it run on?</dt><dd>macOS 13 or later on Apple Silicon, and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. Windows 10 and 11 (x64) are experimental: the installer is not signed, needs a Vulkan or DirectX 12 graphics driver and has so far been tested with one NVIDIA graphics card.</dd></div>
+      <div><dt>Which systems does it run on?</dt><dd>macOS 14 Sonoma or later on Apple Silicon (the experimental Intel build: macOS 13 or later), and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. Windows 10 and 11 (x64) are experimental: the installer is not signed, needs a Vulkan or DirectX 12 graphics driver and has so far been tested with one NVIDIA graphics card.</dd></div>
       <div><dt>Will it change my RAW files?</dt><dd>No. Ingest verifies every copy, and edits live in the library and XMP sidecars, never in the RAW file itself.</dd></div>
       <div><dt>Is the Mac app signed?</dt><dd>Yes. Since alpha.7 it is signed with an Apple Developer ID and notarized by Apple, so it opens like any other app.</dd></div>
       <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Otherwise only when you ask: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
@@ -157,7 +157,7 @@
       <div class="dl-grid">
         <div class="dl">
           <h3>macOS</h3>
-          <p class="muted">Apple Silicon, macOS 13 or later · DMG, {{release.mac.size}}</p>
+          <p class="muted">Apple Silicon, macOS 14 or later · DMG, {{release.mac.size}}</p>
           <a class="button" href="{{release.mac.url}}">Download for macOS</a>
           <p class="small muted">Signed and notarized. Intel Macs: <a class="plain" href="{{release.macIntel.url}}">experimental DMG</a>, {{release.macIntel.size}}.</p>
         </div>
@@ -187,7 +187,7 @@
     </div>
     <div class="install-grid">
       <ol class="steps">
-        <li class="mac"><b>Download the DMG</b> for Apple Silicon, {{release.mac.size}}. It needs macOS 13 or later. For Intel Macs there is an <a class="plain" href="{{release.macIntel.url}}">experimental DMG</a> ({{release.macIntel.size}}), so far tested only under Rosetta on Apple Silicon.</li>
+        <li class="mac"><b>Download the DMG</b> for Apple Silicon, {{release.mac.size}}. It needs macOS 14 Sonoma or later. For Intel Macs (macOS 13 or later) there is an <a class="plain" href="{{release.macIntel.url}}">experimental DMG</a> ({{release.macIntel.size}}), so far tested only under Rosetta on Apple Silicon.</li>
         <li class="mac"><b>Drag Rawtonic to Applications</b> and open it with a double-click. Rawtonic is signed with an Apple Developer ID and notarized by Apple, so macOS only asks once whether you want to open an app downloaded from the internet.</li>
         <li class="mac"><b>Keep your backups.</b> It is early software and bugs are expected. Updating from an earlier alpha? Saved edits are meant to look as before; the improved defaults apply to new edits and to photos you have not edited yet.</li>
         <li class="linux"><b>Download the AppImage</b> for x86-64, {{release.linux.size}}. It runs on Ubuntu 22.04 or later, Debian 12, Fedora and others with glibc 2.35 or later.</li>
