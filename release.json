@@ -1,28 +1,28 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.12",
-  "name": "Search by content, proof sheets, tones that keep their texture",
-  "date": "2026-11-08",
-  "dateText": "8 November 2026",
-  "tag": "v0.1.0-alpha.12",
+  "version": "0.1.0-alpha.13",
+  "name": "Super Resolution, a second window, refitted sliders",
+  "date": "2026-11-11",
+  "dateText": "11 November 2026",
+  "tag": "v0.1.0-alpha.13",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.12_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.13_aarch64.dmg",
     "size": "44 MB",
-    "sha256": "c6975f8a52e81ab37b4e5610e4e547dda37fdd9ef1bae9183fe0c6a98723dfb2"
+    "sha256": "a882ac15caa3eea9958c72585cb4a89b9095b1da18df37453a02fb8916e61e56"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.12_x86_64.dmg",
-    "size": "46 MB",
-    "sha256": "16208d1fb20a4f1bcbad1ceaceea352197e9274e76df61c68ce9ccc02926daae"
+    "file": "Rawtonic_0.1.0-alpha.13_x86_64.dmg",
+    "size": "47 MB",
+    "sha256": "62d51d33f54e235a644786f61b009004f3dbb865f470d03e3a07985c37dd8364"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.12_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.13_amd64.AppImage",
     "size": "133 MB",
-    "sha256": "5d2e2a225e399d1c679aa2048846dfb1edbac004429235c4c54a9328b6d87681"
+    "sha256": "23c13cd624f5c073634b5d909c50968d42afe374bc413c082c0793f5da59486b"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.12_x64.msi",
+    "file": "Rawtonic_0.1.0-alpha.13_x64.msi",
     "size": "45 MB",
-    "sha256": "4b940396d4b44618908903933a07a61aa53576f668635e32c7319f31349044b7"
+    "sha256": "9b9ba252ad74d0b17c7c9820e8b251882c04f30f92c1f21a8d18dd4486c63dbc"
   }
 }
