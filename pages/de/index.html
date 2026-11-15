@@ -95,16 +95,16 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">Neu in alpha.14.</h2>
-      <p class="muted">Erschienen am {{release.dateText}}. Für macOS signiert und notarisiert; Windows ist weiterhin experimentell und nicht signiert. Mit alpha.14 läuft Rawtonic auf Windows-Laptops mit AMD-Grafik im Prozessor richtig, Windows bekommt „Öffnen mit“, „Bearbeiten mit“ und Snap Layouts, und Miniaturen und die eingepasste Ansicht kommen näher an den Export. Gespeicherte Bearbeitungen werden genau wie in alpha.13 exportiert (siehe Versionshinweise). <a class="plain" href="/de/releases/">Frühere Versionen</a></p>
+      <h2 class="head" id="new-title">Neu in alpha.15.</h2>
+      <p class="muted">Erschienen am {{release.dateText}}. Für macOS signiert und notarisiert; Windows ist weiterhin experimentell und nicht signiert. alpha.15 ordnet Stichwörter in Hierarchien, bringt Color Grading und den Farbmischer für neue Bearbeitungen näher an die gemessene Referenz und zeigt bei Vorher ein RAW so, wie es importiert wurde. Gespeicherte Bearbeitungen exportieren genau wie in alpha.14 (siehe Release-Notes). <a class="plain" href="/de/releases/">Frühere Versionen</a></p>
     </div>
     <div class="changes">
-      <div><h3>Windows mit AMD-Grafik.</h3><p>Auf einem Laptop mit Radeon 680M stürzen Exporte bearbeiteter Fotos nicht mehr ab: Ein JPEG oder 16-Bit-TIFF nach dem Bearbeiten dauert wenige Sekunden, auch mit Glow, und Regler reagieren in etwa 0,1–0,4 s, sobald ihre Ansichten vorbereitet sind. Auf einem neuen Rechner können die ersten Bearbeitungen einmal warten, während der Treiber sie vorbereitet.</p></div>
-      <div><h3>Öffnen mit und Bearbeiten mit.</h3><p>Windows bietet die Programme an, die es für den Dateityp kennt, etwa Fotos und Paint, dazu jedes Programm deiner Wahl. „Bearbeiten mit“ rechnet die Fotos neben ihre Originale, stapelt sie in der Bibliothek und übernimmt, was das Programm speichert.</p></div>
-      <div><h3>Fenster unter Windows.</h3><p>Fenstertasten in der oberen Leiste mit den Snap Layouts von Windows 11, ein Maximieren, das den Bildschirm wieder füllt, und ein Fenster, das dort wieder aufgeht, wo du es verlassen hast.</p></div>
-      <div><h3>Miniaturen wie der Export.</h3><p>Miniaturen, die Lupe der Bibliothek und die eingepasste Ansicht in Entwickeln werden mit dem Filter des Exports verkleinert und zeigen Schärfung und Luminanz-Rauschminderung etwa so wie der verkleinerte Export.</p></div>
+      <div><h3>Stichwörter in Hierarchien.</h3><p>Tippe Tiere &gt; Hunde (oder Tiere|Hunde), und Hunde landet unter Tiere. Eine Stichwortliste zeigt den Baum; zieh Fotos auf ein Stichwort, um sie zu verschlagworten, und jede Stichwortänderung lässt sich rückgängig machen.</p></div>
+      <div><h3>Color Grading, gemessen.</h3><p>Für neue Bearbeitungen setzen die Räder für Tiefen, Mitteltöne, Lichter und Global Tönungen, Luminanz, Überblendung und Balance so, wie an 48 Fotos gemessen, und Blau und Violett im Farbmischer wurden neu angepasst. Bereits bearbeitete Fotos behalten ihren Look.</p></div>
+      <div><h3>Vorher heißt wie importiert.</h3><p>Das Vorher des ganzen Fotos zeigt bei einem RAW jetzt auch die Schärfung und Rauschreduzierung, die es beim Import bekommt, und jede Vorher/Nachher-Ansicht hat eine eigene Taste: ⌥Y, ⇧⌥Y und ⇧⌘Y.</p></div>
+      <div><h3>Linux holt auf.</h3><p>Öffnen mit und Bearbeiten mit listen die Programme, die dein Desktop für den Dateityp anbietet, und die 100-%-Ansicht ist so scharf wie der Export.</p></div>
     </div>
-    <p class="also">Außerdem: Für neue Bearbeitungen passt sich Dunst entfernen dem Foto an, Schwarz −100 dunkelt weiter ab und Lensfun-Objektivprofile korrigieren so, wie Lensfun sie definiert; Super Resolution wechselt unter Windows und Linux in derselben Sitzung auf die Grafikkarte; verlustfreie JPEG-XL-Exporte sind viel schneller.</p>
+    <p class="also">Außerdem: Die eingepasste Ansicht und die Miniaturen zeigen auf Apple Silicon und dedizierten Grafikkarten die Farbrauschreduzierung des Exports; Exporte brauchen weniger Prozessorzeit und die Kommandozeile exportiert mehrere Fotos gleichzeitig; verlustfreie JPEG-XL-Exporte lassen sich wieder öffnen und kodieren viel schneller; unter Windows mit AMD-Grafik bereitet der erste Start seine Ansichten vor, ohne Speicher anzuhäufen; eine Bewertung übersteht einen Katalog, der eine Datei doppelt registriert hatte.</p>
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">

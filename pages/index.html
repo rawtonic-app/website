@@ -95,16 +95,16 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.14.</h2>
-      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS; Windows is still experimental and unsigned. alpha.14 makes Rawtonic work properly on Windows laptops with AMD integrated graphics, adds Open With and Edit With and snap layouts on Windows, and brings thumbnails and the fit view closer to the export. Saved edits export exactly as in alpha.13 (see the release notes). <a class="plain" href="/releases/">Earlier releases</a></p>
+      <h2 class="head" id="new-title">New in alpha.15.</h2>
+      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS; Windows is still experimental and unsigned. alpha.15 files keywords in hierarchies, brings Color Grading and the colour mixer closer to the measured reference for new edits, and makes Before show a RAW as it was imported. Saved edits export exactly as in alpha.14 (see the release notes). <a class="plain" href="/releases/">Earlier releases</a></p>
     </div>
     <div class="changes">
-      <div><h3>Windows on AMD graphics.</h3><p>On a Radeon 680M laptop, exports of edited photos no longer crash the app: a JPEG or 16-bit TIFF after editing takes a few seconds, Glow included, and edits respond in about 0.1–0.4 s once their views are prepared. The first edits on a new computer can wait once while the driver prepares them.</p></div>
-      <div><h3>Open With and Edit With.</h3><p>Windows lists the programs it offers for the file type, such as Photos and Paint, plus any program you pick. Edit With renders the photos beside their originals, stacks them in the library and picks up the program’s saves.</p></div>
-      <div><h3>Windows windows.</h3><p>Window controls in the top bar with Windows 11’s snap layouts, a Maximize that fills the screen again, and a window that reopens where you left it.</p></div>
-      <div><h3>Thumbnails like the export.</h3><p>Thumbnails, the Library loupe and the Develop fit view are reduced with the export’s filter and show sharpening and luminance noise reduction about as the export does, scaled down.</p></div>
+      <div><h3>Keywords in hierarchies.</h3><p>Type Animals &gt; Dogs (or Animals|Dogs) and Dogs is filed under Animals. A Keyword List shows the tree; drop photos onto a keyword to tag them, and every keyword change can be undone.</p></div>
+      <div><h3>Color Grading, measured.</h3><p>For new edits the Shadows, Midtones, Highlights and Global wheels place tints, Luminance, Blending and Balance as measured on 48 photographs, and the colour mixer’s Blues and Purples were refitted. Photos you have already edited keep their look.</p></div>
+      <div><h3>Before means as imported.</h3><p>The whole-photo Before of a RAW now includes the sharpening and noise reduction it gets at import, and each before/after mode has a key of its own: ⌥Y, ⇧⌥Y and ⇧⌘Y.</p></div>
+      <div><h3>Linux catches up.</h3><p>Open With and Edit With list the programs your desktop offers for the file type, and the 100 % view is as sharp as the export.</p></div>
     </div>
-    <p class="also">Also: for new edits Dehaze adapts its veil to the photo, Blacks −100 darkens further and Lensfun lens profiles correct as Lensfun defines them; Super Resolution on Windows and Linux moves to the graphics card in the same session; lossless JPEG XL exports are much faster.</p>
+    <p class="also">Also: the fit view and thumbnails show the export’s colour noise reduction on Apple silicon and discrete graphics cards; exports use less processor time and the command line exports several photos at once; lossless JPEG XL exports reopen and encode far faster; on Windows with AMD graphics the first start prepares its views without piling up memory; a rating survives a catalog that had registered a file twice.</p>
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">
