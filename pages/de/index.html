@@ -77,7 +77,7 @@
         <div><h3>Liefern, während du weiterarbeitest.</h3><p>Exporte laufen im Hintergrund in einer Warteschlange, mit mehreren Rezepten gleichzeitig, während du weiter bearbeitest.</p><p class="small muted">JPEG, TIFF, PNG, WebP, JPEG XL und AVIF in sRGB, Display P3, Adobe RGB oder ProPhoto RGB. Ausgabeschärfung, Wasserzeichen und Rahmen; die Warteschlange übersteht einen Neustart.</p></div>
       </article>
     </div>
-    <p class="also">Außerdem in Entwickeln: Reparieren und Klonen mit Punkten oder Pinselstrichen, Objekte entfernen, Rote-Augen- und Tieraugen-Korrektur, automatische Gesichtsretusche, Schärfen, Rauschreduzierung, Korrektur von Objektivfehlern und chromatischer Aberration, Zuschneiden und Perspektive.</p>
+    <p class="also">Außerdem: Unter Windows mit AMD-Grafik warten die ersten Bearbeitungen auf einem neuen Rechner höchstens etwa 9 s statt 37 s; Exporte neuer Bearbeitungen mit Rauschreduzierung oder Schärfung sind etwa ein Zehntel schneller; die Importansicht behält unter Windows das Foto beim Zoomen und Weiterblättern auf dem Bildschirm; unter macOS startet die App auch über einen verlinkten Ordner.</p>
   </section>
 
   <section class="section wrap" id="switching" aria-labelledby="switching-title">
@@ -95,14 +95,14 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">Neu in alpha.15.</h2>
-      <p class="muted">Erschienen am {{release.dateText}}. Für macOS signiert und notarisiert; Windows ist weiterhin experimentell und nicht signiert. alpha.15 ordnet Stichwörter in Hierarchien, bringt Color Grading und den Farbmischer für neue Bearbeitungen näher an die gemessene Referenz und zeigt bei Vorher ein RAW so, wie es importiert wurde. Gespeicherte Bearbeitungen exportieren genau wie in alpha.14 (siehe Release-Notes). <a class="plain" href="/de/releases/">Frühere Versionen</a></p>
+      <h2 class="head" id="new-title">Neu in alpha.16.</h2>
+      <p class="muted">Erschienen am {{release.dateText}}. Für macOS signiert und notarisiert; Windows ist weiterhin experimentell und nicht signiert. alpha.16 dockt den Filmstreifen in Entwickeln neben das Foto, lässt unbearbeitete Fotos mit deinen eigenen Entwicklungs-Standards pro Kamera und Gehäuse beginnen und hebt für neue Bearbeitungen die Tiefen ohne hellen Saum an und blendet Verläufe so aus wie Camera Raw. Gespeicherte Bearbeitungen exportieren genau wie in alpha.15 (siehe Release Notes). <a class="plain" href="/de/releases/">Frühere Versionen</a></p>
     </div>
     <div class="changes">
-      <div><h3>Stichwörter in Hierarchien.</h3><p>Tippe Tiere &gt; Hunde (oder Tiere|Hunde), und Hunde landet unter Tiere. Eine Stichwortliste zeigt den Baum; zieh Fotos auf ein Stichwort, um sie zu verschlagworten, und jede Stichwortänderung lässt sich rückgängig machen.</p></div>
-      <div><h3>Color Grading, gemessen.</h3><p>Für neue Bearbeitungen setzen die Räder für Tiefen, Mitteltöne, Lichter und Global Tönungen, Luminanz, Überblendung und Balance so, wie an 48 Fotos gemessen, und Blau und Violett im Farbmischer wurden neu angepasst. Bereits bearbeitete Fotos behalten ihren Look.</p></div>
-      <div><h3>Vorher heißt wie importiert.</h3><p>Das Vorher des ganzen Fotos zeigt bei einem RAW jetzt auch die Schärfung und Rauschreduzierung, die es beim Import bekommt, und jede Vorher/Nachher-Ansicht hat eine eigene Taste: ⌥Y, ⇧⌥Y und ⇧⌘Y.</p></div>
-      <div><h3>Linux holt auf.</h3><p>Öffnen mit und Bearbeiten mit listen die Programme, die dein Desktop für den Dateityp anbietet, und die 100-%-Ansicht ist so scharf wie der Export.</p></div>
+      <div><h3>Filmstreifen neben dem Foto.</h3><p>Docke den Filmstreifen als senkrechtes Raster links oder rechts in Entwickeln an – über Ansicht ▸ Panels oder indem du seine Kopfzeile an einen Fensterrand ziehst –, mit eigener Anzahl, Schnellfilter und Miniaturgröße. Der Streifen unter dem Foto bleibt, wie er war.</p></div>
+      <div><h3>Entwicklungs-Standards pro Kamera.</h3><p>Lege fest, womit unbearbeitete Fotos beginnen: ein globaler Standard, einer pro Kameramodell und einer pro einzelnem Gehäuse über die Seriennummer. Bearbeitete Fotos ändern sich nie; Zurücksetzen führt zu den Standards, „Auf neutral zurücksetzen“ zu einem sauberen Anfang.</p></div>
+      <div><h3>Tiefen ohne Saum.</h3><p>Für neue Bearbeitungen hellt angehobenes Tiefen die helle Seite starker Kanten nicht mehr auf, etwa einen Himmel über einer Skyline: Der helle Streifen bei +100 ist weniger als halb so stark, näher an Camera Raw.</p></div>
+      <div><h3>Weich auslaufende Verläufe.</h3><p>Neue radiale und lineare Verläufe halten ihre Wirkung länger und laufen knapp hinter ihrem Rand weich aus, gemessen an Camera Raw auf 12 Fotos.</p></div>
     </div>
     <p class="also">Außerdem: Die eingepasste Ansicht und die Miniaturen zeigen auf Apple Silicon und dedizierten Grafikkarten die Farbrauschreduzierung des Exports; Exporte brauchen weniger Prozessorzeit und die Kommandozeile exportiert mehrere Fotos gleichzeitig; verlustfreie JPEG-XL-Exporte lassen sich wieder öffnen und kodieren viel schneller; unter Windows mit AMD-Grafik bereitet der erste Start seine Ansichten vor, ohne Speicher anzuhäufen; eine Bewertung übersteht einen Katalog, der eine Datei doppelt registriert hatte.</p>
   </section>
