@@ -77,7 +77,7 @@
         <div><h3>Deliver while you keep working.</h3><p>Exports run in a queue in the background, with several recipes at once, while you go on editing.</p><p class="small muted">JPEG, TIFF, PNG, WebP, JPEG XL and AVIF in sRGB, Display P3, Adobe RGB or ProPhoto RGB. Output sharpening, watermarks and borders; the queue survives a restart.</p></div>
       </article>
     </div>
-    <p class="also">Also: on Windows with AMD graphics the first edits on a new computer wait at most about 9 s instead of 37 s; exports of new edits with noise reduction or sharpening are about a tenth faster; the import view keeps the photograph on screen while zooming and stepping on Windows; the app starts through a symlinked folder on macOS.</p>
+    <p class="also">Also in Develop: heal and clone with spots or brush strokes, remove objects, red eye and pet eye correction, automatic face retouch, sharpening, noise reduction, lens and chromatic aberration corrections, crop and perspective.</p>
   </section>
 
   <section class="section wrap" id="switching" aria-labelledby="switching-title">
@@ -86,25 +86,25 @@
       <p class="muted">Bring your library along. Rawtonic is an early alpha: it is already ahead in some places and still behind in others, such as batch exports and AI Denoise. <a class="plain" href="/switching/#today">What works today and what is not there yet</a></p>
     </div>
     <ul class="ticks switch-list">
-      <li>A Lightroom Classic catalog (<code>.lrcat</code>) or a Capture One session: ratings, colour labels, keywords, edits and albums. The other library is only read.</li>
+      <li>A Lightroom Classic catalog (<code>.lrcat</code>) or a Capture One session or catalog: ratings, colour labels, keywords, edits with Capture One’s local layers, albums, smart albums, virtual copies and snapshots. The other library is only read.</li>
       <li>Lightroom presets and Capture One styles, with a list of what could not be translated.</li>
       <li>Ratings, labels and keywords from XMP sidecars, read when photos are added. Lightroom’s own settings in a sidecar are kept untouched.</li>
-      <li class="no">Not yet: virtual copies, smart albums and Capture One’s local layers.</li>
+      <li class="no">Not yet: Lightroom’s Remove spots and history steps; Capture One’s brush strokes and colour ranges come over as fixed masks, not as strokes you can edit.</li>
     </ul>
   </section>
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.16.</h2>
-      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS; Windows is still experimental and unsigned. alpha.16 docks Develop’s filmstrip beside the photo, lets unedited photos start from your own develop defaults per camera and body, and for new edits raises Shadows without a light rim and fades gradients as Camera Raw does. Saved edits export exactly as in alpha.15 (see the release notes). <a class="plain" href="/releases/">Earlier releases</a></p>
+      <h2 class="head" id="new-title">New in alpha.17.</h2>
+      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS; Windows is still experimental and unsigned. alpha.17 brings Capture One’s local adjustment layers and lens correction along on import, keeps more of a Lightroom edit, tints coloured tones closer to Lightroom in Color Grading for new edits and exports large RAWs with far less memory on a Mac. Saved edits keep their look; JPEG XL exports of opaque photos no longer carry an unused alpha channel (see the release notes). <a class="plain" href="/releases/">Earlier releases</a></p>
     </div>
     <div class="changes">
-      <div><h3>Filmstrip beside the photo.</h3><p>Dock the filmstrip as a vertical grid on the left or right of Develop — from View ▸ Panels or by dragging its header to a window edge — with its own count, quick filter and thumbnail size. The strip under the photo stays as it was.</p></div>
-      <div><h3>Develop defaults per camera.</h3><p>Set what unedited photos start with: a global default, one per camera model and one per single body by serial number. Edited photos never change; Reset goes back to the defaults, Reset to Neutral to a clean start.</p></div>
-      <div><h3>Shadows without a rim.</h3><p>For new edits, raised Shadows no longer lifts the bright side of strong edges, such as a sky above a skyline: the light band at +100 is less than half as strong, closer to Camera Raw’s.</p></div>
-      <div><h3>Gradients that fade softly.</h3><p>New radial and linear gradients hold their effect longer and fade out smoothly just beyond their edge, as measured against Camera Raw on 12 photographs.</p></div>
+      <div><h3>Capture One layers come along.</h3><p>Gradient, filled and Luma Range layers become Rawtonic layers with the same geometry and opacity; brush, colour range and AI layers arrive as masks that cover virtually the same area as in Capture One. Its lens correction becomes Rawtonic’s profile for that lens, and <code>.cocatalog</code> catalogs import too.</p></div>
+      <div><h3>More of a Lightroom edit.</h3><p>Masks hold all eight Point Color ranges, catalog imports keep Point Color and Guided Upright with its guide lines, and edits from before process version 2012 keep their Exposure and tone curves.</p></div>
+      <div><h3>Color Grading, closer.</h3><p>For new edits a wheel’s tint also depends on the colour it lands on: on 24 photographs the fit never saw, 47 of 71 settings now match closely and none is clearly off. Photos you have already edited keep their look.</p></div>
+      <div><h3>Exports with less memory.</h3><p>On a Mac each photo frees its working copies as soon as they are done and a full-size TIFF goes into its file strip by strip: in four steps, each measured against the build before, a 60 MP 16-bit TIFF’s peak fell from 3.3 GB to 2.04 GB, with byte-identical files in the same time.</p></div>
     </div>
-    <p class="also">Also: the fit view and thumbnails show the export’s colour noise reduction on Apple silicon and discrete graphics cards; exports use less processor time and the command line exports several photos at once; lossless JPEG XL exports reopen and encode far faster; on Windows with AMD graphics the first start prepares its views without piling up memory; a rating survives a catalog that had registered a file twice.</p>
+    <p class="also">Also: damaged RAW files give an error instead of crashing the app where the decoder can detect the damage; .cube LUTs with their own input range import; on Linux the settled preview is lossless and the 100 % view stays sharp with a mask tool open; culling while an import runs keeps your place; menus show each command’s key as your keyboard types it; a right-click on the photo sets the brush’s size and feather.</p>
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">

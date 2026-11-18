@@ -77,7 +77,7 @@
         <div><h3>Liefern, während du weiterarbeitest.</h3><p>Exporte laufen im Hintergrund in einer Warteschlange, mit mehreren Rezepten gleichzeitig, während du weiter bearbeitest.</p><p class="small muted">JPEG, TIFF, PNG, WebP, JPEG XL und AVIF in sRGB, Display P3, Adobe RGB oder ProPhoto RGB. Ausgabeschärfung, Wasserzeichen und Rahmen; die Warteschlange übersteht einen Neustart.</p></div>
       </article>
     </div>
-    <p class="also">Außerdem: Unter Windows mit AMD-Grafik warten die ersten Bearbeitungen auf einem neuen Rechner höchstens etwa 9 s statt 37 s; Exporte neuer Bearbeitungen mit Rauschreduzierung oder Schärfung sind etwa ein Zehntel schneller; die Importansicht behält unter Windows das Foto beim Zoomen und Weiterblättern auf dem Bildschirm; unter macOS startet die App auch über einen verlinkten Ordner.</p>
+    <p class="also">Außerdem in Entwickeln: Reparieren und Klonen mit Punkten oder Pinselstrichen, Objekte entfernen, Rote-Augen- und Tieraugen-Korrektur, automatische Gesichtsretusche, Schärfen, Rauschreduzierung, Korrektur von Objektivfehlern und chromatischer Aberration, Zuschneiden und Perspektive.</p>
   </section>
 
   <section class="section wrap" id="switching" aria-labelledby="switching-title">
@@ -86,25 +86,25 @@
       <p class="muted">Nimm deine Bibliothek mit. Rawtonic ist eine frühe Alpha: an manchen Stellen schon voraus, an anderen noch zurück, etwa bei Stapelexporten und KI-Rauschentfernung. <a class="plain" href="/de/switching/#today">Was heute funktioniert und was noch fehlt</a></p>
     </div>
     <ul class="ticks switch-list">
-      <li>Einen Lightroom-Classic-Katalog (<code>.lrcat</code>) oder eine Capture-One-Session: Bewertungen, Farbmarkierungen, Stichwörter, Bearbeitungen und Alben. Die andere Bibliothek wird nur gelesen.</li>
+      <li>Einen Lightroom-Classic-Katalog (<code>.lrcat</code>) oder eine Capture-One-Session oder einen Capture-One-Katalog: Bewertungen, Farbmarkierungen, Stichwörter, Bearbeitungen mit den lokalen Ebenen von Capture One, Alben, Smart-Alben, virtuelle Kopien und Schnappschüsse. Die andere Bibliothek wird nur gelesen.</li>
       <li>Lightroom-Presets und Capture-One-Stile, mit einer Liste dessen, was sich nicht übertragen ließ.</li>
       <li>Bewertungen, Markierungen und Stichwörter aus XMP-Sidecars, gelesen beim Hinzufügen der Fotos. Lightrooms eigene Einstellungen in einem Sidecar bleiben unangetastet.</li>
-      <li class="no">Noch nicht: virtuelle Kopien, Smart-Alben und die lokalen Ebenen von Capture One.</li>
+      <li class="no">Noch nicht: Bereichsreparaturen und Protokollschritte aus Lightroom; Pinselstriche und Farbbereiche von Capture One kommen als feste Masken, nicht als Striche, die du bearbeiten kannst.</li>
     </ul>
   </section>
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">Neu in alpha.16.</h2>
-      <p class="muted">Erschienen am {{release.dateText}}. Für macOS signiert und notarisiert; Windows ist weiterhin experimentell und nicht signiert. alpha.16 dockt den Filmstreifen in Entwickeln neben das Foto, lässt unbearbeitete Fotos mit deinen eigenen Entwicklungs-Standards pro Kamera und Gehäuse beginnen und hebt für neue Bearbeitungen die Tiefen ohne hellen Saum an und blendet Verläufe so aus wie Camera Raw. Gespeicherte Bearbeitungen exportieren genau wie in alpha.15 (siehe Release Notes). <a class="plain" href="/de/releases/">Frühere Versionen</a></p>
+      <h2 class="head" id="new-title">Neu in alpha.17.</h2>
+      <p class="muted">Erschienen am {{release.dateText}}. Für macOS signiert und notarisiert; Windows ist weiterhin experimentell und nicht signiert. alpha.17 übernimmt beim Import die lokalen Einstellungsebenen und die Objektivkorrektur von Capture One, behält mehr von einer Lightroom-Bearbeitung, tönt farbige Töne im Color Grading für neue Bearbeitungen näher an Lightroom und exportiert große RAWs auf dem Mac mit viel weniger Speicher. Gespeicherte Bearbeitungen behalten ihren Look; JPEG-XL-Exporte deckender Fotos haben keinen ungenutzten Alphakanal mehr (siehe Release Notes). <a class="plain" href="/de/releases/">Frühere Versionen</a></p>
     </div>
     <div class="changes">
-      <div><h3>Filmstreifen neben dem Foto.</h3><p>Docke den Filmstreifen als senkrechtes Raster links oder rechts in Entwickeln an – über Ansicht ▸ Panels oder indem du seine Kopfzeile an einen Fensterrand ziehst –, mit eigener Anzahl, Schnellfilter und Miniaturgröße. Der Streifen unter dem Foto bleibt, wie er war.</p></div>
-      <div><h3>Entwicklungs-Standards pro Kamera.</h3><p>Lege fest, womit unbearbeitete Fotos beginnen: ein globaler Standard, einer pro Kameramodell und einer pro einzelnem Gehäuse über die Seriennummer. Bearbeitete Fotos ändern sich nie; Zurücksetzen führt zu den Standards, „Auf neutral zurücksetzen“ zu einem sauberen Anfang.</p></div>
-      <div><h3>Tiefen ohne Saum.</h3><p>Für neue Bearbeitungen hellt angehobenes Tiefen die helle Seite starker Kanten nicht mehr auf, etwa einen Himmel über einer Skyline: Der helle Streifen bei +100 ist weniger als halb so stark, näher an Camera Raw.</p></div>
-      <div><h3>Weich auslaufende Verläufe.</h3><p>Neue radiale und lineare Verläufe halten ihre Wirkung länger und laufen knapp hinter ihrem Rand weich aus, gemessen an Camera Raw auf 12 Fotos.</p></div>
+      <div><h3>Capture-One-Ebenen kommen mit.</h3><p>Verlaufs-, gefüllte und Luma-Range-Ebenen werden zu Rawtonic-Ebenen mit gleicher Geometrie und Deckkraft; Pinsel-, Farbbereichs- und KI-Ebenen kommen als Masken, die praktisch dieselbe Fläche wie in Capture One abdecken. Seine Objektivkorrektur wird zu Rawtonics Profil für dieses Objektiv, und auch <code>.cocatalog</code>-Kataloge lassen sich importieren.</p></div>
+      <div><h3>Mehr von einer Lightroom-Bearbeitung.</h3><p>Masken fassen alle acht Point-Color-Bereiche, Katalogimporte behalten Point Color und Guided Upright mit seinen Hilfslinien, und Bearbeitungen aus der Zeit vor Prozessversion 2012 behalten Belichtung und Gradationskurven.</p></div>
+      <div><h3>Color Grading, näher dran.</h3><p>Für neue Bearbeitungen hängt die Tönung eines Rads auch von der Farbe ab, auf die sie trifft: An 24 Fotos, die die Anpassung nie gesehen hat, passen jetzt 47 von 71 Einstellungen genau, keine liegt mehr deutlich daneben. Bereits bearbeitete Fotos behalten ihren Look.</p></div>
+      <div><h3>Exporte mit weniger Speicher.</h3><p>Auf dem Mac gibt jedes Foto seine Arbeitskopien frei, sobald sie fertig sind, und ein TIFF in voller Größe wird Streifen für Streifen in seine Datei geschrieben: In vier Schritten, jeder gegen den Build davor gemessen, sank der Spitzenbedarf eines 16-Bit-TIFFs mit 60 MP von 3,3 GB auf 2,04 GB, bei bitgleichen Dateien und gleicher Zeit.</p></div>
     </div>
-    <p class="also">Außerdem: Die eingepasste Ansicht und die Miniaturen zeigen auf Apple Silicon und dedizierten Grafikkarten die Farbrauschreduzierung des Exports; Exporte brauchen weniger Prozessorzeit und die Kommandozeile exportiert mehrere Fotos gleichzeitig; verlustfreie JPEG-XL-Exporte lassen sich wieder öffnen und kodieren viel schneller; unter Windows mit AMD-Grafik bereitet der erste Start seine Ansichten vor, ohne Speicher anzuhäufen; eine Bewertung übersteht einen Katalog, der eine Datei doppelt registriert hatte.</p>
+    <p class="also">Außerdem: Beschädigte RAW-Dateien melden einen Fehler, statt die App abstürzen zu lassen, wo der Decoder den Schaden erkennen kann; .cube-LUTs mit eigenem Eingangsbereich lassen sich importieren; unter Linux ist die fertig berechnete Vorschau verlustfrei und die 100-%-Ansicht bleibt mit offenem Maskenwerkzeug scharf; Aussortieren während eines Imports behält deine Stelle; Menüs zeigen die Taste jedes Befehls so, wie deine Tastatur sie schreibt; ein Rechtsklick aufs Foto stellt Größe und weiche Kante des Pinsels ein.</p>
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">

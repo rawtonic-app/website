@@ -1,28 +1,28 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.16",
-  "name": "Docked filmstrip, develop defaults per camera",
-  "date": "2026-11-16",
-  "dateText": "16 November 2026",
-  "tag": "v0.1.0-alpha.16",
+  "version": "0.1.0-alpha.17",
+  "name": "Capture One layers, Color Grading closer to Lightroom",
+  "date": "2026-11-18",
+  "dateText": "18 November 2026",
+  "tag": "v0.1.0-alpha.17",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.16_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.17_aarch64.dmg",
     "size": "45 MB",
-    "sha256": "f89034b694bf985b2695d382160114b919237abdb306507083fb3f0aff2eea9d"
+    "sha256": "2f8f0f73b1d9b834ca2a1656f93c73b994a5a0f37989f96a8ee5e1d784e50975"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.16_x86_64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.17_x86_64.dmg",
     "size": "48 MB",
-    "sha256": "ad7e5a448af32a14a2272db23f1e51aea9bbdbcc093bee77df26633b250978eb"
+    "sha256": "e4743d8b3ef3046884a91f340b7d68c1ba17f1f4300d6484f86c334c1d7bf32f"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.16_amd64.AppImage",
-    "size": "134 MB",
-    "sha256": "49962325d359b6324725ce9dcc571aad82cf4576b857987748ccc9868ed9ddc1"
+    "file": "Rawtonic_0.1.0-alpha.17_amd64.AppImage",
+    "size": "135 MB",
+    "sha256": "a84d9f7917412c679a1d48fba4eac23e202b2a9f212a9da217a42dbe92981c70"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.16_x64.msi",
-    "size": "55 MB",
-    "sha256": "de1dad8952cb20ba5d04aa85d2b66b01bc0f5a087db0ae70ace5ca6b4ff90c4e"
+    "file": "Rawtonic_0.1.0-alpha.17_x64.msi",
+    "size": "56 MB",
+    "sha256": "1d83940fb174a539b437828c1b8aa911de673f6d8d33ae5f17ad1e5f648c4854"
   }
 }
