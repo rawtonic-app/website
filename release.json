@@ -1,28 +1,70 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.17",
-  "name": "Capture One layers, Color Grading closer to Lightroom",
+  "version": "0.1.0-alpha.17.1",
+  "name": "AI runtime privacy update",
   "date": "2026-11-18",
   "dateText": "18 November 2026",
-  "tag": "v0.1.0-alpha.17",
+  "tag": "v0.1.0-alpha.17.1",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.17_aarch64.dmg",
-    "size": "45 MB",
-    "sha256": "2f8f0f73b1d9b834ca2a1656f93c73b994a5a0f37989f96a8ee5e1d784e50975"
+    "file": "Rawtonic_0.1.0-alpha.17.1_aarch64.dmg",
+    "size": "45 MiB",
+    "sha256": "d242ccbcbfa34b1a08fa842ccb16ef0abd1b9ce01dcc4b61bdf8f149ca90c530"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.17_x86_64.dmg",
-    "size": "48 MB",
-    "sha256": "e4743d8b3ef3046884a91f340b7d68c1ba17f1f4300d6484f86c334c1d7bf32f"
+    "file": "Rawtonic_0.1.0-alpha.17.1_x86_64.dmg",
+    "size": "48 MiB",
+    "sha256": "f5a1d29a01af3d20b2207bd7c58bc31d9df5facf60db70fd236df5b844ec3a78"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.17_amd64.AppImage",
-    "size": "135 MB",
-    "sha256": "a84d9f7917412c679a1d48fba4eac23e202b2a9f212a9da217a42dbe92981c70"
+    "file": "Rawtonic_0.1.0-alpha.17.1_amd64.AppImage",
+    "size": "135 MiB",
+    "sha256": "089119ba2d3ddee58d2fad8de8f820c616b0c79d74b5b08b6dd7829d8c14f6dc"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.17_x64.msi",
-    "size": "56 MB",
-    "sha256": "1d83940fb174a539b437828c1b8aa911de673f6d8d33ae5f17ad1e5f648c4854"
-  }
+    "file": "Rawtonic_0.1.0-alpha.17.1_x64.msi",
+    "size": "56 MiB",
+    "sha256": "98e5e4f494efe3c0c29892276c9178fefc5f9fcf115c44a32feaba4f2f1308c8"
+  },
+  "otherAssets": [
+    {
+      "file": "libgphoto2-2.5.34.tar.bz2",
+      "size": "8 MiB",
+      "sha256": "5df9e774eb4ab6087a193afff84dcafe9f666e3443fe29e73e6779f659ff7f28"
+    },
+    {
+      "file": "libtool-2.6.2.tar.xz",
+      "size": "1 MiB",
+      "sha256": "2ef1067c16c97db930fd740cc9bc3d3ba9a583804ae5ac42cc3e8719e49e191e"
+    },
+    {
+      "file": "libusb-1.0.30.tar.bz2",
+      "size": "1 MiB",
+      "sha256": "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"
+    },
+    {
+      "file": "Rawtonic_0.1.0-alpha.17.1_amd64.AppImage.zsync",
+      "size": "0 MiB",
+      "sha256": "efc9422c45081c43cebe6214060f30fba9763e5736797ef9798d8c171348b8c8"
+    },
+    {
+      "file": "Rawtonic_0.1.0-alpha.17.1_x64-portable.zip",
+      "size": "57 MiB",
+      "sha256": "eb68332f61734a1710b39c05ee5936cad7b663ebcb470b695d519b175e23828f"
+    },
+    {
+      "file": "Rawtonic_0.1.0-alpha.17.1_x64-setup.exe",
+      "size": "39 MiB",
+      "sha256": "398977313ff208212b7d8e608e05469a5a7e0856d4e39dc6da724023fbc05079"
+    },
+    {
+      "file": "SHA256SUMS-windows.txt",
+      "size": "0 MiB",
+      "sha256": "b4c32a934612987fa230ec0b8f1f3d60b2893ab7a789d8b6f90ac8bcf004872c"
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "size": "0 MiB",
+      "sha256": "05ea3e1ca2295b4c8319365f3a4d3256aaedc993db50cdfec9b153f395274e86"
+    }
+  ]
 }

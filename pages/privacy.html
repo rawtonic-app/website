@@ -10,8 +10,8 @@
 <main id="main" class="wrap">
   <article class="prose">
     <h1>Privacy.</h1>
-    <p class="lead">This website uses no cookies, analytics scripts or tracking. Cloudflare, which delivers the site, gives the maintainer aggregate traffic counts; GitHub counts release downloads. The Rawtonic app has no account and no tracking. This page says what is processed, where, for how long, and how to have it deleted.</p>
-    <p class="small muted">As of 26 October 2026, for Rawtonic {{release.version}}. The app’s own, more detailed privacy notes: <a class="plain" href="{{repo}}/blob/main/PRIVACY.md">PRIVACY.md</a>.</p>
+    <p class="lead">This website uses no cookies, analytics scripts or tracking. Cloudflare, which delivers the site, gives the maintainer aggregate traffic counts; GitHub counts release downloads. Rawtonic needs no account. Earlier releases let the AI runtime report usage data to Microsoft. Starting with alpha.17.1, Rawtonic disables that reporting. This page says what is processed, where, for how long, and how to have it deleted.</p>
+    <p class="small muted">As of 18 November 2026, for Rawtonic {{release.version}}. The app’s own, more detailed privacy notes: <a class="plain" href="{{repo}}/blob/main/PRIVACY.md">PRIVACY.md</a>.</p>
 
     <h2 id="controller">Who is responsible</h2>
     <p>Responsible (controller under the Swiss Federal Act on Data Protection and, where it applies, the GDPR) for this website and for the relay at <code>relay.rawtonic.cc</code>:<br>
@@ -32,6 +32,10 @@
       <li><b>Update check.</b> At startup, at most once every 24 hours, Rawtonic asks GitHub’s public Releases API (<code>api.github.com</code>, the ten most recent releases of Rawtonic) whether a newer version exists. On by default; turn off “Check for updates at startup” in Preferences → General. GitHub receives your IP address and a User-Agent header of <code>Rawtonic/</code> and the version, as with any web request; the request carries no cookies, identifiers, photos, paths or settings. Rawtonic never downloads or installs an update itself; a notice links to the release page.</li>
     </ul>
     <p>Everything else happens only when you ask for it: an AI tool’s model downloads from GitHub the first time you use it, “Show on map” loads a map from openstreetmap.org, links open in your browser. And the contributions below.</p>
+
+    <h3 id="onnx-runtime">ONNX Runtime (AI runtime)</h3>
+    <p>On Linux (alpha.2 through alpha.17) and on Apple silicon Macs (alpha.12 through alpha.17), the bundled ONNX Runtime could send usage data to <code>mobile.events.data.microsoft.com</code> when it started. This included runtime and system details, a hashed device ID, and AI model file names, hashes and run statistics. On Windows (alpha.10 through alpha.17), it wrote similar data, including the GPU plugin path, to Windows event tracing. The Windows diagnostic data service could send those details to Microsoft depending on your Windows settings. Reports contained no photos or photo file paths.</p>
+    <p>Starting with alpha.17.1, Rawtonic sets <code>ORT_DISABLE_TELEMETRY</code> on macOS and Linux and <code>ORT_RUNNING_UNIT_TESTS</code> on Windows before opening the runtime. We observed no connection in CPU tests on macOS and Linux or in Linux tests with the WebGPU and CUDA plugins. Windows measurement is pending. On macOS and Linux you can delete the old queue and device ID at the paths in the app’s privacy notes linked above. Other programs that use ONNX Runtime may share those files.</p>
 
     <h2 id="relay">Reports and the relay</h2>
     <p>Problem reports, crash reports and camera test results reach the developers through Rawtonic’s own small service, <code>relay.rawtonic.cc</code>. Nothing is sent unless you click Send after seeing exactly what goes out. You need no account. Legal basis: your consent by sending (Art. 6 (1) (a) GDPR); you can withdraw it by having the report deleted.</p>

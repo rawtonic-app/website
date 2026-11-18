@@ -41,7 +41,7 @@
     <div class="facts">
       <div><h3>Originals stay yours.</h3><p>Rawtonic never writes into your RAW files: edits live in the library and in XMP sidecars. Ingest verifies every copy, and a file you move to another drive goes to the Trash only after its copy is verified.</p></div>
       <div><h3>Fast, on the graphics card.</h3><p>The photograph is rendered on the GPU, so sliders, brushes and masks respond while you drag, even while an export runs.</p></div>
-      <div><h3>No account, no tracking.</h3><p>One update check a day, which you can turn off. Reports and usage statistics leave only when you choose. The AI tools run on your computer. <a class="plain" href="/privacy/">Privacy</a></p></div>
+      <div><h3>No account needed.</h3><p>One update check a day, which you can turn off. Reports and usage statistics leave only when you choose. The AI tools run on your computer. <a class="plain" href="/privacy/">Privacy</a></p></div>
     </div>
   </section>
 
@@ -95,16 +95,15 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.17.</h2>
-      <p class="muted">Released {{release.dateText}}. Signed and notarized for macOS; Windows is still experimental and unsigned. alpha.17 brings Capture One’s local adjustment layers and lens correction along on import, keeps more of a Lightroom edit, tints coloured tones closer to Lightroom in Color Grading for new edits and exports large RAWs with far less memory on a Mac. Saved edits keep their look; JPEG XL exports of opaque photos no longer carry an unused alpha channel (see the release notes). <a class="plain" href="/releases/">Earlier releases</a></p>
+      <h2 class="head" id="new-title">New in alpha.17.1.</h2>
+      <p class="muted">Released {{release.dateText}}. Rawtonic disables the AI runtime’s usage reporting to Microsoft. <a class="plain" href="/releases/">Earlier releases</a></p>
     </div>
     <div class="changes">
-      <div><h3>Capture One layers come along.</h3><p>Gradient, filled and Luma Range layers become Rawtonic layers with the same geometry and opacity; brush, colour range and AI layers arrive as masks that cover virtually the same area as in Capture One. Its lens correction becomes Rawtonic’s profile for that lens, and <code>.cocatalog</code> catalogs import too.</p></div>
-      <div><h3>More of a Lightroom edit.</h3><p>Masks hold all eight Point Color ranges, catalog imports keep Point Color and Guided Upright with its guide lines, and edits from before process version 2012 keep their Exposure and tone curves.</p></div>
-      <div><h3>Color Grading, closer.</h3><p>For new edits a wheel’s tint also depends on the colour it lands on: on 24 photographs the fit never saw, 47 of 71 settings now match closely and none is clearly off. Photos you have already edited keep their look.</p></div>
-      <div><h3>Exports with less memory.</h3><p>On a Mac each photo frees its working copies as soon as they are done and a full-size TIFF goes into its file strip by strip: in four steps, each measured against the build before, a 60 MP 16-bit TIFF’s peak fell from 3.3 GB to 2.04 GB, with byte-identical files in the same time.</p></div>
+      <div><h3>AI runtime privacy.</h3><p>Through alpha.17, Microsoft’s ONNX Runtime could report usage data. With reporting disabled, we observed no connection in CPU tests on macOS and Linux or in Linux tests with the WebGPU and CUDA plugins. Windows has the switch set and awaits measurement.</p></div>
+      <div><h3>More RAW files open.</h3><p>Panasonic Lumix DC-FZ83 RAW files now open. Raw TIFF files from supported cameras develop at full sensor resolution.</p></div>
+      <div><h3>Easier to find controls.</h3><p>Screen readers name more controls, and you can open Develop’s scopes from the View menu or the command palette.</p></div>
     </div>
-    <p class="also">Also: damaged RAW files give an error instead of crashing the app where the decoder can detect the damage; .cube LUTs with their own input range import; on Linux the settled preview is lossless and the 100 % view stays sharp with a mask tool open; culling while an import runs keeps your place; menus show each command’s key as your keyboard types it; a right-click on the photo sets the brush’s size and feather.</p>
+    <p class="also">To update, replace the app as usual. Your libraries, sessions and edits stay as they are.</p>
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">
@@ -142,7 +141,7 @@
       <div><dt>Which systems does it run on?</dt><dd>macOS 14 Sonoma or later on Apple Silicon (the experimental Intel build: macOS 13 or later), and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. Windows 10 and 11 (x64) are experimental: the installer is not signed, needs a Vulkan or DirectX 12 graphics driver and has so far been tested with one NVIDIA graphics card and an AMD Radeon 680M laptop.</dd></div>
       <div><dt>Will it change my RAW files?</dt><dd>No. Ingest verifies every copy, and edits live in the library and XMP sidecars, never in the RAW file itself.</dd></div>
       <div><dt>Is the Mac app signed?</dt><dd>Yes. Since alpha.7 it is signed with an Apple Developer ID and notarized by Apple, so it opens like any other app.</dd></div>
-      <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Otherwise only when you ask: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
+      <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Starting with alpha.17.1, Rawtonic disables AI runtime usage reporting. You can also start other connections: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
       <div><dt>Do the AI tools use the cloud?</dt><dd>No. They run on your computer. Each model downloads once, the first time you use the tool.</dd></div>
       <div><dt>Does my camera work?</dt><dd>Files of 965 of the 1,034 camera models in the public raw.pixls.us collection developed in our October 2026 run; Nikon High Efficiency NEFs, Sigma X3F, GoPro and some other formats don’t open yet. <a class="plain" href="#cameras">Camera support</a></dd></div>
       <div><dt>Can I bring my Lightroom or Capture One work?</dt><dd>Yes: catalogs, sessions, presets and styles import, though not every adjustment carries over yet. <a class="plain" href="/switching/">Switching</a></dd></div>
