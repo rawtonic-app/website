@@ -3,7 +3,7 @@
 <html lang="de">
 <head>
 {{> head}}
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/de/", "inLanguage": "de", "description": "Ein kostenloser Open-Source-RAW-Entwickler für Fotografen. Importieren, auswählen, entwickeln, retuschieren und exportieren auf dem eigenen Rechner.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW-Entwickler", "operatingSystem": "macOS 14 oder neuer auf Apple Silicon (Intel experimentell, macOS 13 oder neuer); Windows 10 oder 11 x64 (experimentell); Linux x86-64 mit glibc 2.35 oder neuer", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.windows.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rawtonic", "url": "{{origin}}/de/", "inLanguage": "de", "description": "Ein kostenloser Open-Source-RAW-Entwickler für Fotografen. Importieren, auswählen, entwickeln, retuschieren und exportieren auf dem eigenen Rechner.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "RAW-Entwickler", "operatingSystem": "macOS 14 oder neuer auf Apple Silicon (Intel experimentell, macOS 13 oder neuer); Windows 10 oder 11 x64 (nicht signiert); Linux x86-64 mit glibc 2.35 oder neuer", "softwareVersion": "{{release.version}}", "datePublished": "{{release.date}}", "releaseNotes": "{{release.url}}", "downloadUrl": ["{{release.mac.url}}", "{{release.windows.url}}", "{{release.linux.url}}"], "license": "https://www.gnu.org/licenses/agpl-3.0.html", "isAccessibleForFree": true, "image": "{{origin}}/assets/og-image.jpg", "screenshot": "{{origin}}/assets/shot-develop.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "sameAs": "{{repo}}"}</script>
 </head>
 <body>
 {{> header}}
@@ -16,7 +16,7 @@
     </div>
     <div class="actions" id="hero-actions">
       <a class="button" data-os-download="mac" href="{{release.mac.url}}">Download für macOS</a>
-      <a class="button quiet" data-os-download="windows" href="{{release.windows.url}}">Download für Windows<span class="tag">experimentell</span></a>
+      <a class="button quiet" data-os-download="windows" href="{{release.windows.url}}">Download für Windows<span class="tag">nicht signiert</span></a>
       <a class="button quiet" data-os-download="linux" href="{{release.linux.url}}">Download für Linux</a>
     </div>
     <script>
@@ -31,7 +31,7 @@
     })();
     </script>
     <p class="note small muted">Rawtonic {{release.version}} · <a class="plain" href="#new">Neuigkeiten</a> · <a class="plain" href="#install">Voraussetzungen und Installation</a></p>
-    <p class="note small muted">macOS 14 oder neuer auf Apple Silicon (Intel experimentell, macOS 13 oder neuer), signiert und notarisiert · Windows 10 oder 11, x64, experimentell und nicht signiert · Linux x86-64, AppImage.</p>
+    <p class="note small muted">macOS 14 oder neuer auf Apple Silicon (Intel experimentell, macOS 13 oder neuer), signiert und notarisiert · Windows 10 oder 11, x64, nicht signiert · Linux x86-64, AppImage.</p>
     <p class="note small muted">Windows: SmartScreen meldet „Der Computer wurde durch Windows geschützt“; klick auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>. Benötigt eine Grafikkarte mit Vulkan- oder DirectX-12-Treiber. <a class="plain" href="#install" data-os-link="windows">Installation unter Windows</a> · <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></p>
     <figure class="shot">{{picture shot-develop "Rawtonic Entwickeln: ein Sony-RAW eines Dolomitengipfels bei Sonnenuntergang, mit einer Himmels- und einer Vordergrundebene in der Ebenenliste, Reglern für Weißabgleich und Belichtung, einem benannten Schnappschuss und dem Filmstreifen der RAW-Dateien" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Entwickeln: ein Sony-RAW mit einer Himmelsebene und einer Verlaufsebene für den Vordergrund. Alle Bilder auf dieser Seite sind Bildschirmaufnahmen von Rawtonic 0.1.0-alpha.7; Fotos aus der pixls.us-Community, <a class="plain" href="/de/credits/">Bildnachweise</a>.</figcaption></figure>
   </section>
@@ -138,7 +138,7 @@
     <h2 class="head" id="faq-title">Fragen.</h2>
     <dl class="faq-list">
       <div><dt>Was kostet es?</dt><dd>Nichts. Rawtonic ist kostenlos und Open Source unter der AGPL-3.0-or-later. Wenn du die Entwicklung unterstützen möchtest, kannst du das auf <a class="plain" href="https://ko-fi.com/nielsfranke">Ko-fi</a> tun; kostenlos bleibt es so oder so.</dd></div>
-      <div><dt>Auf welchen Systemen läuft es?</dt><dd>macOS 14 Sonoma oder neuer auf Apple Silicon (die experimentelle Intel-Version: macOS 13 oder neuer) und Linux x86-64 mit glibc 2.35 oder neuer. Die Version für Intel-Macs ist experimentell: Bisher lief sie nur unter Rosetta auf Apple Silicon. Windows 10 und 11 (x64) sind experimentell: Der Installer ist nicht signiert, braucht einen Vulkan- oder DirectX-12-Grafiktreiber und wurde bisher mit einer NVIDIA-Grafikkarte und einem Laptop mit AMD Radeon 680M getestet.</dd></div>
+      <div><dt>Auf welchen Systemen läuft es?</dt><dd>macOS 14 Sonoma oder neuer auf Apple Silicon (die experimentelle Intel-Version: macOS 13 oder neuer) und Linux x86-64 mit glibc 2.35 oder neuer. Die Version für Intel-Macs ist experimentell: Bisher lief sie nur unter Rosetta auf Apple Silicon. Der nicht signierte Windows-Installer unterstützt Windows 10 und 11 (x64) mit einem Vulkan- oder DirectX-12-Grafiktreiber.</dd></div>
       <div><dt>Verändert es meine RAW-Dateien?</dt><dd>Nein. Der Import prüft jede Kopie, und Bearbeitungen liegen in der Bibliothek und in XMP-Sidecars, nie in der RAW-Datei selbst.</dd></div>
       <div><dt>Ist die Mac-App signiert?</dt><dd>Ja. Seit alpha.7 ist sie mit einer Apple Developer ID signiert und von Apple notarisiert, daher öffnet sie sich wie jede andere App.</dd></div>
       <div><dt>Geht es online?</dt><dd>Einmal am Tag fragt es beim Start GitHub, ob es eine neue Version gibt; das lässt sich in den Einstellungen abschalten. Ab alpha.17.1 schaltet Rawtonic die Nutzungsberichte der KI-Laufzeit ab. Du entscheidest, ob du ein KI-Modell herunterlädst, eine Karte öffnest, einen Bericht sendest oder die wöchentliche Statistik einschaltest. <a class="plain" href="/de/privacy/">Datenschutz</a></dd></div>
@@ -168,7 +168,7 @@
         </div>
         <div class="dl">
           <h3>Windows</h3>
-          <p class="muted">Experimentell, nicht signiert · x64-{{release.windows.kind}}, {{release.windows.size}}</p>
+          <p class="muted">Nicht signiert · x64-{{release.windows.kind}}, {{release.windows.size}}</p>
           <a class="button quiet" href="{{release.windows.url}}">Download für Windows</a>
           <p class="small muted">Braucht einen Vulkan- oder DirectX-12-Grafiktreiber. SmartScreen: Weitere Informationen, dann Trotzdem ausführen. <a class="plain" href="#install" data-os-link="windows">So installierst du es</a> · <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></p>
         </div>
@@ -193,7 +193,7 @@
         <li class="linux"><b>Lade das AppImage</b> für x86-64 herunter, {{release.linux.size}}. Es läuft unter Ubuntu 22.04 oder neuer, Debian 12, Fedora und anderen mit glibc 2.35 oder neuer.</li>
         <li class="linux"><b>Mach es ausführbar und starte es</b> mit den hier gezeigten Befehlen. Startet es nicht, installiere FUSE 2 (libfuse2t64 unter Ubuntu 24.04, libfuse2 unter älteren Ubuntu- und Debian-Versionen) oder starte es mit --appimage-extract-and-run.</li>
         <li class="linux"><b>Gib dem ersten Start eine Minute.</b> Bevor das erste Foto in Entwickeln erscheint, bereitet der Grafiktreiber die Shader von Rawtonic vor. Das geschieht einmal; spätere Starts gehen schnell.</li>
-        <li class="windows"><b>Experimentell und nicht signiert.</b> <a class="plain" href="{{release.windows.url}}">Lade den {{release.windows.kind}}</a> für Windows 10 oder 11 (x64) herunter, {{release.windows.size}}. Er braucht eine Grafikkarte mit Vulkan- oder DirectX-12-Treiber; PCs, die nur den Software-Renderer von Microsoft haben, werden nicht unterstützt. Bisher wurde er mit einer NVIDIA-Grafikkarte und einem Laptop mit AMD Radeon 680M getestet.</li>
+        <li class="windows"><b>Nicht signiert.</b> <a class="plain" href="{{release.windows.url}}">Lade den {{release.windows.kind}}</a> für Windows 10 oder 11 (x64) herunter, {{release.windows.size}}. Er braucht eine Grafikkarte mit Vulkan- oder DirectX-12-Treiber; PCs, die nur den Software-Renderer von Microsoft haben, werden nicht unterstützt. Auf langsameren integrierten GPUs erstellt der Treiber beim ersten Einsatz bestimmter Reglerkombinationen einmalig Grafik-Pipelines (auf einer Radeon 680M dauert das bis zu etwa einer Minute), und der Export mit zwei Threads braucht mehr Speicher als mit einem.</li>
         <li class="windows"><b>Prüfe den Download.</b> In der PowerShell muss <code>Get-FileHash</code> für den Installer den hier gezeigten SHA-256 ausgeben. Das erkennt einen beschädigten Download; da der Installer nicht signiert ist, beweist es nicht, wer ihn erstellt hat. Entfernt dein Browser oder die Windows-Sicherheit den Download, siehe <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></li>
         <li class="windows"><b>Starte ihn.</b> Windows SmartScreen meldet „Der Computer wurde durch Windows geschützt“: Klick auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>. {{release.windows.install}} Die <a class="plain" href="{{release.url}}">Release-Seite</a> hat auch die anderen Windows-Downloads.</li>
       </ol>
