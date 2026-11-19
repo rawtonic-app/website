@@ -1,29 +1,29 @@
 {
   "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.17.1",
-  "name": "AI runtime privacy update",
-  "date": "2026-11-18",
-  "dateText": "18 November 2026",
-  "tag": "v0.1.0-alpha.17.1",
+  "version": "0.1.0-alpha.18",
+  "name": "In-app updates and Rawtonic's own AI runtime",
+  "date": "2026-11-19",
+  "dateText": "19 November 2026",
+  "tag": "v0.1.0-alpha.18",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.17.1_aarch64.dmg",
-    "size": "45 MiB",
-    "sha256": "d242ccbcbfa34b1a08fa842ccb16ef0abd1b9ce01dcc4b61bdf8f149ca90c530"
+    "file": "Rawtonic_0.1.0-alpha.18_aarch64.dmg",
+    "size": "42 MiB",
+    "sha256": "110f66e25c43a41567a27fd9961724468a8ba72c41e1e3415b4f7703c7163656"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.17.1_x86_64.dmg",
-    "size": "48 MiB",
-    "sha256": "f5a1d29a01af3d20b2207bd7c58bc31d9df5facf60db70fd236df5b844ec3a78"
+    "file": "Rawtonic_0.1.0-alpha.18_x86_64.dmg",
+    "size": "49 MiB",
+    "sha256": "6a9c091b5e63792d96368cbd77be8a7a14dfac300a739b0eb16093a8a445fd68"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.17.1_amd64.AppImage",
-    "size": "135 MiB",
-    "sha256": "089119ba2d3ddee58d2fad8de8f820c616b0c79d74b5b08b6dd7829d8c14f6dc"
+    "file": "Rawtonic_0.1.0-alpha.18_amd64.AppImage",
+    "size": "133 MiB",
+    "sha256": "094cd6c16504d49289c625d9bff4ec4b026e4df2ecf33de782343b4328866633"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.17.1_x64.msi",
+    "file": "Rawtonic_0.1.0-alpha.18_x64.msi",
     "size": "56 MiB",
-    "sha256": "98e5e4f494efe3c0c29892276c9178fefc5f9fcf115c44a32feaba4f2f1308c8"
+    "sha256": "5b713f3d9ca3cb7185853e169b1675ece1d3d094259d6a3eef02735cece7c8be"
   },
   "otherAssets": [
     {
@@ -42,29 +42,44 @@
       "sha256": "fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.17.1_amd64.AppImage.zsync",
+      "file": "Rawtonic_0.1.0-alpha.18_amd64.AppImage.zsync",
       "size": "0 MiB",
-      "sha256": "efc9422c45081c43cebe6214060f30fba9763e5736797ef9798d8c171348b8c8"
+      "sha256": "7bc62e26fbbf881a6c436a5ce8412176992e014077b3ad3563a7b9ac19b31602"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.17.1_x64-portable.zip",
+      "file": "Rawtonic_0.1.0-alpha.18_x64-portable.zip",
       "size": "57 MiB",
-      "sha256": "eb68332f61734a1710b39c05ee5936cad7b663ebcb470b695d519b175e23828f"
+      "sha256": "8e64dee150cd5ce4a05c1373661ed16ea188fee831b0ca0a07fddf23eece5243"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.17.1_x64-setup.exe",
+      "file": "Rawtonic_0.1.0-alpha.18_x64-setup.exe",
       "size": "39 MiB",
-      "sha256": "398977313ff208212b7d8e608e05469a5a7e0856d4e39dc6da724023fbc05079"
+      "sha256": "a9ff4c8a1363dad2edef99429b9606aafc2d339e3e82b61a3c6353fb11eea5f5"
+    },
+    {
+      "file": "Rawtonic_0.1.0-alpha.18_aarch64.app.tar.gz",
+      "size": "42 MiB",
+      "sha256": "db69717018fcacc5bb5cf02de8ab14faaf31771d06f531c54296d62c3ba4d6d6"
+    },
+    {
+      "file": "Rawtonic_0.1.0-alpha.18_x86_64.app.tar.gz",
+      "size": "49 MiB",
+      "sha256": "ff051c1723ce13ddea2176a4fbafb13ef79008b07cb77be2961bdcdb2b9213a9"
+    },
+    {
+      "file": "latest.json",
+      "size": "0 MiB",
+      "sha256": "31a07c75cdeb7ddddf4efdd8570cf040e7a20fcd84ceede25d28a388e4721661"
     },
     {
       "file": "SHA256SUMS-windows.txt",
       "size": "0 MiB",
-      "sha256": "b4c32a934612987fa230ec0b8f1f3d60b2893ab7a789d8b6f90ac8bcf004872c"
+      "sha256": "70fdf38898af831c69b25220d6031ba4780832c5b97f382f40c223184272dddc"
     },
     {
       "file": "SHA256SUMS.txt",
       "size": "0 MiB",
-      "sha256": "05ea3e1ca2295b4c8319365f3a4d3256aaedc993db50cdfec9b153f395274e86"
+      "sha256": "4f0ac247e2fca9f3c54c2b44fa6590f1737aef3cda5d9ef8a1580771bc58320c"
     }
   ]
 }
