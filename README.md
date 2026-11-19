@@ -29,10 +29,14 @@ Every page exists in English (`pages/x.html`, `/x/`) and German (`pages/de/x.htm
 
 ## Release
 
-1. Fill `release.json`: `date` (YYYY-MM-DD), `dateText` (e.g. "28 October 2026"), each file's (`mac`, `macIntel` = the experimental Intel DMG, `linux`, `windows` = the unsigned Windows download the site offers: `Rawtonic_<version>_x64.msi` from the release after 0.1.0-alpha.11.1 on, the `_x64-setup.exe` before; `scripts/build.mjs` words the install step after the file type and refuses any other file) `size` (e.g. "36 MB") and `sha256` from the GitHub release. Until the release exists these stay `TBD` in the repository on purpose (so a plain build shows them and `--strict` refuses to deploy); never fill them with guesses.
-2. Update "New in alpha.N" in `pages/index.html` and `pages/de/index.html` from the app's CHANGELOG. The German release date is derived from `date`.
-3. The release history page (`/releases/`) is generated: every earlier release in the app's `CHANGELOG.md` at `release.json`'s tag (fetched from GitHub at build time, so the tag must exist; `RAWTONIC_CHANGELOG=path/to/CHANGELOG.md` reads a local copy instead), newest first, with date, summary and highlight titles. No hand edits.
-4. `node scripts/build.mjs --strict` must pass: it refuses while a `TBD` or an `OFFEN FÜR NUTZER` placeholder (privacy and imprint) is left.
+The site follows each release; nothing about the version is written by hand in the pages.
+
+1. **What's new** — `release.json` `whatsNew`: `version` and, for `en` and `de`, a one-line `summary`, three `items` (`title`, `text`) and a `note` (how to update, what changes for existing edits). Plain text, rendered into the home page's "New in …" block (`{{whatsnew}}`). It is written together with the release's CHANGELOG section, on the website branch `release-VERSION` (see the app's `docs/RELEASING.md`).
+2. **Facts** — `scripts/release.sh` in the app repository (stage `site`) writes `version`, `date`, `dateText`, `tag` and every file (`mac`, `macIntel` = the experimental Intel DMG, `linux`, `windows` = the MSI the site offers, `otherAssets`) with its size (MiB, rounded half-up) and SHA-256 from the release's own `SHA256SUMS.txt` onto that branch, and runs `node scripts/build.mjs --strict`. `scripts/build.mjs` words the Windows install step after the file type (`Rawtonic_<version>_x64.msi` from the release after 0.1.0-alpha.11.1 on, the `_x64-setup.exe` before) and refuses any other file. Never fill these by hand with guesses.
+3. **Publish** — `scripts/release.sh --publish VERSION` publishes the GitHub release, merges `release-VERSION` into `main`, runs `scripts/deploy.sh` and checks that rawtonic.cc and /de/ show the version.
+4. The release history page (`/releases/`) is generated: every earlier release in the app's `CHANGELOG.md` at `release.json`'s tag (fetched from GitHub at build time, so the tag must exist; `RAWTONIC_CHANGELOG=path/to/CHANGELOG.md` reads a local copy instead), newest first, with date, summary and highlight titles. No hand edits.
+
+`node scripts/build.mjs --strict` refuses while a `TBD` or an `OFFEN FÜR NUTZER` placeholder (privacy and imprint) is left, while `whatsNew.version` is not `version` or a language's text is missing, and while a page (except the release history) names an older release than `version` — `alpha.17`, `0.1.0-alpha.11.1`, `beta.2` — outside an element marked `data-history`. A sentence that names an old release on purpose ("Since alpha.7 it is signed", a measurement of alpha.6) gets the attribute on its element or a `<span data-history>` around it; every other one must be updated. So each release makes someone read the sentences that named the release before it. `node --test scripts/` tests these checks (deploy.sh runs it first).
 
 ## Deploy
 

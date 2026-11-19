@@ -3,7 +3,9 @@
 // for version, dates, file names, sizes and SHA-256). No dependencies.
 //
 //   node scripts/build.mjs            build; placeholders (TBD, OFFEN FÜR NUTZER) allowed, listed
-//   node scripts/build.mjs --strict   refuse to build while any placeholder is left (deploy.sh uses this)
+//   node scripts/build.mjs --strict   refuse to build while any placeholder is left, the
+//                                     What's new block is not this release's, or a page names an
+//                                     older release outside a data-history element (deploy.sh uses this)
 //
 // Templates: {{> name}} includes pages/partials/name.html, {{a.b}} inserts a
 // value from the context (release.json, derived links, the page's own front
@@ -14,6 +16,18 @@
 // its German counterpart (served at /de/<name>/). Each English page needs one, and
 // a pair must have the same element ids and the same link targets (internal links
 // compared with /de/ mapped away); --strict refuses the build otherwise.
+//
+// What's new: {{whatsnew}} on the home pages renders release.json's whatsNew
+// (version, then per language summary, three items {title, text} and a note),
+// written with the release's CHANGELOG section. --strict refuses it unless
+// whatsNew.version is release.version and every language is filled.
+//
+// Stale versions: outside the release history, a page that names an older
+// release than release.version (alpha.N, 0.1.0-alpha.N.M, beta.N, rc.N) must say
+// so on purpose: the sentence goes inside an element with a data-history
+// attribute (<span data-history>Since alpha.7</span>, <td data-history>). Every
+// other mention is refused by --strict, so each release makes someone read the
+// sentences that named the previous one.
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -26,6 +40,8 @@ const PLACEHOLDERS = [/\bTBD\b/, /OFFEN FÜR NUTZER/];
 
 const release = JSON.parse(fs.readFileSync(path.join(root, 'release.json'), 'utf8'));
 delete release._comment;
+const whatsNew = release.whatsNew;
+delete release.whatsNew;
 const download = (f) => `${REPO}/releases/download/${release.tag}/${f}`;
 // The website offers one Windows download (release.json `windows`): the MSI
 // from the release after 0.1.0-alpha.11.1 on, the per-user NSIS installer
@@ -65,6 +81,7 @@ const T = {
     lang: 'en', root: '/', locale: 'en_GB', dateLocale: 'en-GB',
     skip: 'Skip to content', home: 'Rawtonic home', navMain: 'Main', navFooter: 'Footer',
     features: 'Features', switching: 'Switching', whatsNew: 'What’s new', install: 'Install', contribute: 'Contribute',
+    newIn: 'New in', released: 'Released', earlier: 'Earlier releases',
     github: 'Rawtonic on GitHub', support: 'Support', download: 'Download',
     other: { lang: 'de', code: 'DE', name: 'Deutsch' },
     footLine: 'free and open source', releases: 'Releases', history: 'Release history', changelog: 'Changelog',
@@ -77,6 +94,7 @@ const T = {
     lang: 'de', root: '/de/', locale: 'de_DE', dateLocale: 'de-DE',
     skip: 'Zum Inhalt springen', home: 'Rawtonic-Startseite', navMain: 'Hauptmenü', navFooter: 'Fußzeile',
     features: 'Funktionen', switching: 'Umsteigen', whatsNew: 'Neuigkeiten', install: 'Installation', contribute: 'Mitwirken',
+    newIn: 'Neu in', released: 'Erschienen am', earlier: 'Frühere Versionen',
     github: 'Rawtonic auf GitHub', support: 'Unterstützen', download: 'Download',
     other: { lang: 'en', code: 'EN', name: 'English' },
     footLine: 'kostenlos und Open Source', releases: 'Releases', history: 'Versionsgeschichte', changelog: 'Changelog',
@@ -151,6 +169,65 @@ function releaseHistory(md, current, lang) {
 const changelog = await loadChangelog();
 const ctx = Object.fromEntries(LANGS.map((lang) => [lang, { ...ctxFor(lang), history: { list: releaseHistory(changelog, release.version, lang) } }]));
 
+// What's new (release.json whatsNew): problems are collected and refused by
+// --strict; a missing text renders as TBD so a plain build shows the gap.
+const stale = [];
+const ITEMS = 3;
+if (!whatsNew || typeof whatsNew !== 'object') stale.push('release.json: no whatsNew block (version, en, de)');
+else if (whatsNew.version !== release.version) stale.push(`release.json: whatsNew is for ${whatsNew.version}, not ${release.version}: write this release's What's new with its CHANGELOG section`);
+const filled = (s) => typeof s === 'string' && s.trim() !== '' && !PLACEHOLDERS.some((p) => p.test(s));
+function whatsNewFor(lang) {
+  const w = (whatsNew && whatsNew[lang]) || {};
+  const where = `release.json whatsNew.${lang}`;
+  if (!whatsNew?.[lang]) stale.push(`${where}: missing`);
+  const text = (s, key) => { if (!filled(s)) { stale.push(`${where}.${key}: empty`); return 'TBD'; } return s; };
+  const items = Array.isArray(w.items) ? w.items : [];
+  if (items.length !== ITEMS) stale.push(`${where}.items: ${items.length} items, the page shows ${ITEMS}`);
+  return { summary: text(w.summary, 'summary'), note: text(w.note, 'note'),
+    items: items.map((it, i) => ({ title: text(it?.title, `items[${i}].title`), text: text(it?.text, `items[${i}].text`) })) };
+}
+const shortVersion = (v) => v.replace(/^\d+\.\d+\.\d+-/, '');
+// The texts are plain text (escaped here); the block's markup is the page's.
+function whatsNewHtml(lang) {
+  const t = T[lang], w = whatsNewFor(lang);
+  return [
+    '<div class="split-head">',
+    `      <h2 class="head" id="new-title">${t.newIn} ${esc(shortVersion(release.version))}.</h2>`,
+    `      <p class="muted">${t.released} ${ctx[lang].release.dateText}. ${esc(w.summary)} <a class="plain" href="${t.root}releases/">${t.earlier}</a></p>`,
+    '    </div>',
+    '    <div class="changes">',
+    ...w.items.map((it) => `      <div><h3>${esc(it.title)}</h3><p>${esc(it.text)}</p></div>`),
+    '    </div>',
+    `    <p class="also">${esc(w.note)}</p>`,
+  ].join('\n');
+}
+for (const lang of LANGS) ctx[lang].whatsnew = whatsNewHtml(lang);
+
+// Release versions in page text: alpha.18, 0.1.0-alpha.11.1, beta.2, rc.1
+// (bare numbers such as "1.30.0" are other software's versions).
+const STAGE_RANK = { alpha: 0, beta: 1, rc: 2 };
+const VERSION_RE = /\b(?:\d+\.\d+\.\d+-)?(alpha|beta|rc)\.(\d+)(?:\.(\d+))?/gi;
+const versionKey = (stage, a, b) => [STAGE_RANK[stage.toLowerCase()], Number(a), Number(b || 0)];
+// (a final release, without alpha/beta/rc, is newer than all of them)
+const current = (() => { const m = release.version.match(new RegExp(VERSION_RE.source, 'i')); return m ? versionKey(m[1], m[2], m[3]) : [3, 0, 0]; })();
+const older = (k) => { for (let i = 0; i < 3; i++) if (k[i] !== current[i]) return k[i] < current[i]; return false; };
+// The HTML without its data-history elements (each with everything inside it).
+function withoutHistory(html) {
+  const open = /<([a-z][a-z0-9]*)\b[^>]*\sdata-history\b[^>]*>/gi;
+  let out = '', from = 0, m;
+  while ((m = open.exec(html))) {
+    const name = m[1].toLowerCase(), tags = new RegExp(`<(/?)${name}\\b[^>]*>`, 'gi');
+    tags.lastIndex = m.index + m[0].length;
+    let depth = 1, t;
+    while (depth > 0 && (t = tags.exec(html))) depth += t[1] ? -1 : 1;
+    if (depth > 0) throw new Error(`data-history <${name}> is never closed`);
+    // Keep the line breaks so line numbers stay right.
+    out += html.slice(from, m.index) + html.slice(m.index, tags.lastIndex).replace(/[^\n]/g, '');
+    from = open.lastIndex = tags.lastIndex;
+  }
+  return out + html.slice(from);
+}
+
 const lookup = (obj, key, where) => {
   const v = key.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj);
   if (v === undefined || typeof v === 'object') throw new Error(`${where}: unknown value {{${key}}}`);
@@ -196,8 +273,8 @@ function jpegSize(file, where) {
 
 const lastChange = (file) => {
   try {
-    const dirty = execFileSync('git', ['status', '--porcelain', '--', file], { cwd: root }).toString().trim();
-    const date = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], { cwd: root }).toString().trim();
+    const dirty = execFileSync('git', ['status', '--porcelain', '--', file], { cwd: root, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
+    const date = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], { cwd: root, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
     if (date && !dirty) return date;
   } catch { /* not a git checkout */ }
   return new Date().toISOString().slice(0, 10);
@@ -230,6 +307,18 @@ for (const { lang, file } of pages) {
   html.split('\n').forEach((line, i) => {
     if (PLACEHOLDERS.some((p) => p.test(line))) left.push(`site${page.path}index.html:${i + 1}: ${line.trim().slice(0, 140)}`);
   });
+  // The release history lists earlier releases by design.
+  if (base !== '/releases/') {
+    let h;
+    try { h = withoutHistory(html); } catch (e) { throw new Error(`${file}: ${e.message}`); }
+    h.split('\n').forEach((line, i) => {
+      for (const v of line.matchAll(VERSION_RE)) {
+        if (!older(versionKey(v[1], v[2], v[3]))) continue;
+        const at = Math.max(0, v.index - 60);
+        stale.push(`${file} (site${page.path}index.html:${i + 1}) names ${v[0]}: …${line.slice(at, v.index + v[0].length + 40).trim()}…`);
+      }
+    });
+  }
   if (!built.has(base)) built.set(base, {});
   built.get(base)[lang] = { page, html, file };
 }
@@ -276,8 +365,12 @@ if (drift.length) {
   console.error(`build: ${drift.length} language drift problem(s):\n  ${drift.join('\n  ')}`);
   if (strict) { console.error('build: refused (--strict): every page needs its counterpart with the same ids and links'); process.exit(1); }
 }
+if (stale.length) {
+  console.error(`build: ${stale.length} stale release text problem(s):\n  ${stale.join('\n  ')}`);
+  if (strict) { console.error(`build: refused (--strict): bring What's new and every sentence naming an older release than ${release.version} up to date, or mark a sentence that is history on purpose with data-history`); process.exit(1); }
+}
 if (left.length) {
   console.error(`build: ${left.length} placeholder line(s) left:\n  ${left.join('\n  ')}`);
   if (strict) { console.error('build: refused (--strict): fill release.json and the marked legal fields first'); process.exit(1); }
 }
-console.log(`build: ${pages.length} pages (${LANGS.join(', ')}), version ${release.version}${left.length ? ' (with placeholders)' : ''}`);
+console.log(`build: ${pages.length} pages (${LANGS.join(', ')}), version ${release.version}${left.length || stale.length ? ' (with problems)' : ''}`);

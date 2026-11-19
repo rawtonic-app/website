@@ -1,7 +1,6 @@
 {
-  "_comment": "The one place for release facts. Fill at release time, then `node scripts/build.mjs --strict`. TBD values are refused by --strict and therefore by scripts/deploy.sh.",
+  "_comment": "The one place for release facts. scripts/release.sh (app repository, stage site) writes version, date, tag and the files from the release's assets; whatsNew (the home page's 'New in' block, en and de) is written with the release's CHANGELOG section. Then `node scripts/build.mjs --strict`. TBD values, a whatsNew of another version and stale version text are refused by --strict and therefore by scripts/deploy.sh.",
   "version": "0.1.0-alpha.18",
-  "name": "In-app updates and Rawtonic's own AI runtime",
   "date": "2026-11-19",
   "dateText": "19 November 2026",
   "tag": "v0.1.0-alpha.18",
@@ -81,5 +80,44 @@
       "size": "0 MiB",
       "sha256": "4f0ac247e2fca9f3c54c2b44fa6590f1737aef3cda5d9ef8a1580771bc58320c"
     }
-  ]
+  ],
+  "whatsNew": {
+    "version": "0.1.0-alpha.18",
+    "en": {
+      "summary": "Updates install from the app, and the AI runtime is Rawtonic’s own build without Microsoft’s usage reporting.",
+      "items": [
+        {
+          "title": "Install update.",
+          "text": "When a newer release is out, the update notice offers Install update. Rawtonic downloads the package only after your click, installs it only if it carries Rawtonic’s own signature for that version, and restarts after saving your edits. This is the first release with the button, so it takes one last manual update; from the next release on, updates install from the notice."
+        },
+        {
+          "title": "Own AI runtime.",
+          "text": "On Apple silicon Macs, Linux and Windows x64, Rawtonic ships ONNX Runtime 1.30.0 built from the same source with Microsoft’s usage reporting left out. In our tests its results matched Microsoft’s library."
+        },
+        {
+          "title": "RAW files closer to the camera.",
+          "text": "Ten Canon CR3 bodies use the white level Adobe uses for them, older Fujifilm kit zooms are framed and corrected like the camera’s JPEG, and Phase One backs, early DNGs and Canon sRAW decode correctly. Nikon High Efficiency NEFs explain why they cannot be opened."
+        }
+      ],
+      "note": "To update, replace the app as usual. Your libraries, sessions and edit settings stay as they are; saved edits of some Canon, Phase One and DNG photos render differently (see the release notes)."
+    },
+    "de": {
+      "summary": "Updates lassen sich in der App installieren, und die KI-Laufzeit ist Rawtonics eigener Build ohne Microsofts Nutzungsberichte.",
+      "items": [
+        {
+          "title": "Update installieren.",
+          "text": "Gibt es eine neuere Version, bietet der Update-Hinweis „Update installieren“ an. Rawtonic lädt das Paket erst nach deinem Klick, installiert es nur mit Rawtonics eigener Signatur für genau diese Version und startet neu, nachdem deine Bearbeitungen gesichert sind. Diese Version bringt den Knopf erst mit, daher ist ein letztes Update von Hand nötig; ab der nächsten Version geht es direkt aus dem Hinweis."
+        },
+        {
+          "title": "Eigene KI-Laufzeit.",
+          "text": "Auf Macs mit Apple-Chip, unter Linux und Windows x64 liefert Rawtonic ONNX Runtime 1.30.0 aus derselben Quelle, aber ohne Microsofts Nutzungsberichte. In unseren Tests stimmten die Ergebnisse mit Microsofts Bibliothek überein."
+        },
+        {
+          "title": "RAW-Dateien näher an der Kamera.",
+          "text": "Zehn Canon-CR3-Modelle nutzen den Weißpunkt, den Adobe für sie verwendet; ältere Fujifilm-Kit-Zooms werden wie im Kamera-JPEG beschnitten und korrigiert; Phase-One-Rückteile, frühe DNGs und Canon sRAW werden richtig dekodiert. Nikon-High-Efficiency-NEFs erklären, warum sie sich nicht öffnen lassen."
+        }
+      ],
+      "note": "Zum Aktualisieren ersetzt du die App wie gewohnt. Bibliotheken, Sitzungen und Bearbeitungseinstellungen bleiben erhalten; gespeicherte Bearbeitungen mancher Canon-, Phase-One- und DNG-Fotos sehen anders aus (siehe Release-Hinweise)."
+    }
+  }
 }

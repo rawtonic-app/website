@@ -33,7 +33,7 @@
     <p class="note small muted">Rawtonic {{release.version}} · <a class="plain" href="#new">What’s new</a> · <a class="plain" href="#install">Requirements and install</a></p>
     <p class="note small muted">macOS 14 or later on Apple Silicon (Intel experimental, macOS 13 or later), signed and notarized · Windows 10 or 11, x64, unsigned · Linux x86-64, AppImage.</p>
     <p class="note small muted">Windows: SmartScreen says “Windows protected your PC”; click <b>More info</b>, then <b>Run anyway</b>. Needs a graphics card with a Vulkan or DirectX 12 driver. <a class="plain" href="#install" data-os-link="windows">Windows install steps</a> · <a class="plain" href="/windows/">Windows blocked the download?</a></p>
-    <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic 0.1.0-alpha.7; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
+    <figure class="shot">{{picture shot-develop "Rawtonic Develop: a Sony RAW of a Dolomites peak at sunset, with a sky layer and a foreground layer in the layer list, white balance and exposure controls, a named snapshot and the filmstrip of RAW files" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption data-history>Develop: a Sony RAW with a sky layer and a graduated foreground layer. Every picture on this page is a capture of Rawtonic 0.1.0-alpha.7; photos by the pixls.us community, <a class="plain" href="/credits/">credits</a>.</figcaption></figure>
   </section>
 
   <section class="section wrap" aria-labelledby="facts-title">
@@ -94,16 +94,7 @@
   </section>
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
-    <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.18.</h2>
-      <p class="muted">Released {{release.dateText}}. Updates install from the app, and the AI runtime is Rawtonic’s own build without Microsoft’s usage reporting. <a class="plain" href="/releases/">Earlier releases</a></p>
-    </div>
-    <div class="changes">
-      <div><h3>Install update.</h3><p>When a newer release is out, the update notice offers Install update. Rawtonic downloads the package only after your click, installs it only if it carries Rawtonic’s own signature for that version, and restarts after saving your edits. This is the first release with the button, so it takes one last manual update; from the next release on, updates install from the notice.</p></div>
-      <div><h3>Own AI runtime.</h3><p>On Apple silicon Macs, Linux and Windows x64, Rawtonic ships ONNX Runtime 1.30.0 built from the same source with Microsoft’s usage reporting left out. In our tests its results matched Microsoft’s library.</p></div>
-      <div><h3>RAW files closer to the camera.</h3><p>Ten Canon CR3 bodies use the white level Adobe uses for them, older Fujifilm kit zooms are framed and corrected like the camera’s JPEG, and Phase One backs, early DNGs and Canon sRAW decode correctly. Nikon High Efficiency NEFs explain why they cannot be opened.</p></div>
-    </div>
-    <p class="also">To update, replace the app as usual. Your libraries, sessions and edit settings stay as they are; saved edits of some Canon, Phase One and DNG photos render differently (see the release notes).</p>
+    {{whatsnew}}
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">
@@ -140,7 +131,7 @@
       <div><dt>What does it cost?</dt><dd>Nothing. Rawtonic is free and open source under the AGPL-3.0-or-later. If you would like to support its development, you can on <a class="plain" href="https://ko-fi.com/nielsfranke">Ko-fi</a>; it stays free either way.</dd></div>
       <div><dt>Which systems does it run on?</dt><dd>macOS 14 Sonoma or later on Apple Silicon (the experimental Intel build: macOS 13 or later), and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. The unsigned Windows installer supports Windows 10 and 11 (x64) with a Vulkan or DirectX 12 graphics driver.</dd></div>
       <div><dt>Will it change my RAW files?</dt><dd>No. Ingest verifies every copy, and edits live in the library and XMP sidecars, never in the RAW file itself.</dd></div>
-      <div><dt>Is the Mac app signed?</dt><dd>Yes. Since alpha.7 it is signed with an Apple Developer ID and notarized by Apple, so it opens like any other app.</dd></div>
+      <div><dt>Is the Mac app signed?</dt><dd data-history>Yes. Since alpha.7 it is signed with an Apple Developer ID and notarized by Apple, so it opens like any other app.</dd></div>
       <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Since alpha.18, Rawtonic’s own AI runtime build leaves Microsoft’s usage reporting out (Apple silicon Macs, Linux, Windows x64). You can also start other connections: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
       <div><dt>Do the AI tools use the cloud?</dt><dd>No. They run on your computer. Each model downloads once, the first time you use the tool.</dd></div>
       <div><dt>Does my camera work?</dt><dd>Files of 965 of the 1,034 camera models in the public raw.pixls.us collection developed in our October 2026 run; Nikon High Efficiency NEFs, Sigma X3F, GoPro and some other formats don’t open yet. <a class="plain" href="#cameras">Camera support</a></dd></div>
