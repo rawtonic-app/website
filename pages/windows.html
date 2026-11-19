@@ -10,7 +10,7 @@
 <main id="main" class="wrap">
   <article class="prose">
     <h1>Windows blocked the download?</h1>
-    <p>Rawtonic’s Windows downloads are not code-signed yet. Windows and browsers often hold back unsigned programs from a new publisher, although nothing is wrong with them. Before each release, every Windows download is scanned with Microsoft Defender, with freshly updated signatures, on a Windows build machine; the results are in the release’s build log. That is evidence, not a promise that your PC’s protection agrees. So check the file before you allow it.</p>
+    <p>Rawtonic’s Windows downloads are unsigned. Windows and browsers often hold back unsigned programs from a new publisher, although nothing is wrong with them. Before each release, every Windows download is scanned with Microsoft Defender, with freshly updated signatures, on a Windows build machine; the results are in the release’s build log. That is evidence, not a promise that your PC’s protection agrees. So check the file before you allow it.</p>
 
     <h2>1. Check the file</h2>
     <p>Download <code>SHA256SUMS-windows.txt</code> from the <a class="plain" href="{{release.url}}">release page</a> too. In PowerShell, in your Downloads folder:</p>
