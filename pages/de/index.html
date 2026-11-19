@@ -33,7 +33,7 @@
     <p class="note small muted">Rawtonic {{release.version}} · <a class="plain" href="#new">Neuigkeiten</a> · <a class="plain" href="#install">Voraussetzungen und Installation</a></p>
     <p class="note small muted">macOS 14 oder neuer auf Apple Silicon (Intel experimentell, macOS 13 oder neuer), signiert und notarisiert · Windows 10 oder 11, x64, nicht signiert · Linux x86-64, AppImage.</p>
     <p class="note small muted">Windows: SmartScreen meldet „Der Computer wurde durch Windows geschützt“; klick auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>. Benötigt eine Grafikkarte mit Vulkan- oder DirectX-12-Treiber. <a class="plain" href="#install" data-os-link="windows">Installation unter Windows</a> · <a class="plain" href="/de/windows/">Windows hat den Download blockiert?</a></p>
-    <figure class="shot">{{picture shot-develop "Rawtonic Entwickeln: ein Sony-RAW eines Dolomitengipfels bei Sonnenuntergang, mit einer Himmels- und einer Vordergrundebene in der Ebenenliste, Reglern für Weißabgleich und Belichtung, einem benannten Schnappschuss und dem Filmstreifen der RAW-Dateien" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption>Entwickeln: ein Sony-RAW mit einer Himmelsebene und einer Verlaufsebene für den Vordergrund. Alle Bilder auf dieser Seite sind Bildschirmaufnahmen von Rawtonic 0.1.0-alpha.7; Fotos aus der pixls.us-Community, <a class="plain" href="/de/credits/">Bildnachweise</a>.</figcaption></figure>
+    <figure class="shot">{{picture shot-develop "Rawtonic Entwickeln: ein Sony-RAW eines Dolomitengipfels bei Sonnenuntergang, mit einer Himmels- und einer Vordergrundebene in der Ebenenliste, Reglern für Weißabgleich und Belichtung, einem benannten Schnappschuss und dem Filmstreifen der RAW-Dateien" "(min-width: 1448px) 1320px, 94vw" eager}}<figcaption data-history>Entwickeln: ein Sony-RAW mit einer Himmelsebene und einer Verlaufsebene für den Vordergrund. Alle Bilder auf dieser Seite sind Bildschirmaufnahmen von Rawtonic 0.1.0-alpha.7; Fotos aus der pixls.us-Community, <a class="plain" href="/de/credits/">Bildnachweise</a>.</figcaption></figure>
   </section>
 
   <section class="section wrap" aria-labelledby="facts-title">
@@ -94,16 +94,7 @@
   </section>
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
-    <div class="split-head">
-      <h2 class="head" id="new-title">Neu in alpha.18.</h2>
-      <p class="muted">Erschienen am {{release.dateText}}. Updates lassen sich in der App installieren, und die KI-Laufzeit ist Rawtonics eigener Build ohne Microsofts Nutzungsberichte. <a class="plain" href="/de/releases/">Frühere Versionen</a></p>
-    </div>
-    <div class="changes">
-      <div><h3>Update installieren.</h3><p>Gibt es eine neuere Version, bietet der Update-Hinweis „Update installieren“ an. Rawtonic lädt das Paket erst nach deinem Klick, installiert es nur mit Rawtonics eigener Signatur für genau diese Version und startet neu, nachdem deine Bearbeitungen gesichert sind. Diese Version bringt den Knopf erst mit, daher ist ein letztes Update von Hand nötig; ab der nächsten Version geht es direkt aus dem Hinweis.</p></div>
-      <div><h3>Eigene KI-Laufzeit.</h3><p>Auf Macs mit Apple-Chip, unter Linux und Windows x64 liefert Rawtonic ONNX Runtime 1.30.0 aus derselben Quelle, aber ohne Microsofts Nutzungsberichte. In unseren Tests stimmten die Ergebnisse mit Microsofts Bibliothek überein.</p></div>
-      <div><h3>RAW-Dateien näher an der Kamera.</h3><p>Zehn Canon-CR3-Modelle nutzen den Weißpunkt, den Adobe für sie verwendet; ältere Fujifilm-Kit-Zooms werden wie im Kamera-JPEG beschnitten und korrigiert; Phase-One-Rückteile, frühe DNGs und Canon sRAW werden richtig dekodiert. Nikon-High-Efficiency-NEFs erklären, warum sie sich nicht öffnen lassen.</p></div>
-    </div>
-    <p class="also">Zum Aktualisieren ersetzt du die App wie gewohnt. Bibliotheken, Sitzungen und Bearbeitungseinstellungen bleiben erhalten; gespeicherte Bearbeitungen mancher Canon-, Phase-One- und DNG-Fotos sehen anders aus (siehe Release-Hinweise).</p>
+    {{whatsnew}}
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">
@@ -140,7 +131,7 @@
       <div><dt>Was kostet es?</dt><dd>Nichts. Rawtonic ist kostenlos und Open Source unter der AGPL-3.0-or-later. Wenn du die Entwicklung unterstützen möchtest, kannst du das auf <a class="plain" href="https://ko-fi.com/nielsfranke">Ko-fi</a> tun; kostenlos bleibt es so oder so.</dd></div>
       <div><dt>Auf welchen Systemen läuft es?</dt><dd>macOS 14 Sonoma oder neuer auf Apple Silicon (die experimentelle Intel-Version: macOS 13 oder neuer) und Linux x86-64 mit glibc 2.35 oder neuer. Die Version für Intel-Macs ist experimentell: Bisher lief sie nur unter Rosetta auf Apple Silicon. Der nicht signierte Windows-Installer unterstützt Windows 10 und 11 (x64) mit einem Vulkan- oder DirectX-12-Grafiktreiber.</dd></div>
       <div><dt>Verändert es meine RAW-Dateien?</dt><dd>Nein. Der Import prüft jede Kopie, und Bearbeitungen liegen in der Bibliothek und in XMP-Sidecars, nie in der RAW-Datei selbst.</dd></div>
-      <div><dt>Ist die Mac-App signiert?</dt><dd>Ja. Seit alpha.7 ist sie mit einer Apple Developer ID signiert und von Apple notarisiert, daher öffnet sie sich wie jede andere App.</dd></div>
+      <div><dt>Ist die Mac-App signiert?</dt><dd data-history>Ja. Seit alpha.7 ist sie mit einer Apple Developer ID signiert und von Apple notarisiert, daher öffnet sie sich wie jede andere App.</dd></div>
       <div><dt>Geht es online?</dt><dd>Einmal am Tag fragt es beim Start GitHub, ob es eine neue Version gibt; das lässt sich in den Einstellungen abschalten. Seit alpha.18 lässt Rawtonics eigener Build der KI-Laufzeit Microsofts Nutzungsberichte weg (Macs mit Apple-Chip, Linux, Windows x64). Du entscheidest, ob du ein KI-Modell herunterlädst, eine Karte öffnest, einen Bericht sendest oder die wöchentliche Statistik einschaltest. <a class="plain" href="/de/privacy/">Datenschutz</a></dd></div>
       <div><dt>Nutzen die KI-Werkzeuge die Cloud?</dt><dd>Nein. Sie laufen auf deinem Computer. Jedes Modell wird einmal heruntergeladen, wenn du das Werkzeug zum ersten Mal verwendest.</dd></div>
       <div><dt>Funktioniert meine Kamera?</dt><dd>Dateien von 965 der 1.034 Kameramodelle der öffentlichen Sammlung raw.pixls.us ließen sich in unserem Durchlauf vom Oktober 2026 entwickeln; Nikon-High-Efficiency-NEFs, Sigma X3F, GoPro und einige andere Formate öffnen sich noch nicht. <a class="plain" href="#cameras">Kameraunterstützung</a></dd></div>

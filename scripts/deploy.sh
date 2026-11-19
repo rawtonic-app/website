@@ -12,8 +12,11 @@ URL=${DEPLOY_URL:-https://rawtonic.cc/}
 DRY=""
 [ "${1:-}" = "--dry-run" ] && DRY="--dry-run"
 
-# Build the pages from pages/ and release.json; refuses while a placeholder
-# (TBD in release.json, OFFEN FÜR NUTZER on the legal pages) is left.
+# The build's own tests, then the pages from pages/ and release.json; the build
+# refuses while a placeholder (TBD in release.json, OFFEN FÜR NUTZER on the legal
+# pages) is left, What's new is not this release's, or a page names an older
+# release outside a data-history element.
+node --test --test-reporter=dot scripts/
 node scripts/build.mjs --strict
 
 npx --yes wrangler deploy $DRY
