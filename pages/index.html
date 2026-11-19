@@ -95,15 +95,15 @@
 
   <section class="section wrap" id="new" aria-labelledby="new-title">
     <div class="split-head">
-      <h2 class="head" id="new-title">New in alpha.17.1.</h2>
-      <p class="muted">Released {{release.dateText}}. Rawtonic disables the AI runtime’s usage reporting to Microsoft. <a class="plain" href="/releases/">Earlier releases</a></p>
+      <h2 class="head" id="new-title">New in alpha.18.</h2>
+      <p class="muted">Released {{release.dateText}}. Updates install from the app, and the AI runtime is Rawtonic’s own build without Microsoft’s usage reporting. <a class="plain" href="/releases/">Earlier releases</a></p>
     </div>
     <div class="changes">
-      <div><h3>AI runtime privacy.</h3><p>Through alpha.17, Microsoft’s ONNX Runtime could report usage data. With reporting disabled, we observed no connection in CPU tests on macOS and Linux or in Linux tests with the WebGPU and CUDA plugins. Windows has the switch set and awaits measurement.</p></div>
-      <div><h3>More RAW files open.</h3><p>Panasonic Lumix DC-FZ83 RAW files now open. Raw TIFF files from supported cameras develop at full sensor resolution.</p></div>
-      <div><h3>Easier to find controls.</h3><p>Screen readers name more controls, and you can open Develop’s scopes from the View menu or the command palette.</p></div>
+      <div><h3>Install update.</h3><p>When a newer release is out, the update notice offers Install update. Rawtonic downloads the package only after your click, installs it only if it carries Rawtonic’s own signature for that version, and restarts after saving your edits. This is the first release with the button, so it takes one last manual update; from the next release on, updates install from the notice.</p></div>
+      <div><h3>Own AI runtime.</h3><p>On Apple silicon Macs, Linux and Windows x64, Rawtonic ships ONNX Runtime 1.30.0 built from the same source with Microsoft’s usage reporting left out. In our tests its results matched Microsoft’s library.</p></div>
+      <div><h3>RAW files closer to the camera.</h3><p>Ten Canon CR3 bodies use the white level Adobe uses for them, older Fujifilm kit zooms are framed and corrected like the camera’s JPEG, and Phase One backs, early DNGs and Canon sRAW decode correctly. Nikon High Efficiency NEFs explain why they cannot be opened.</p></div>
     </div>
-    <p class="also">To update, replace the app as usual. Your libraries, sessions and edits stay as they are.</p>
+    <p class="also">To update, replace the app as usual. Your libraries, sessions and edit settings stay as they are; saved edits of some Canon, Phase One and DNG photos render differently (see the release notes).</p>
   </section>
 
   <section class="section wrap" id="contribute" aria-labelledby="contribute-title">
@@ -141,7 +141,7 @@
       <div><dt>Which systems does it run on?</dt><dd>macOS 14 Sonoma or later on Apple Silicon (the experimental Intel build: macOS 13 or later), and x86-64 Linux with glibc 2.35 or later. The Intel Mac build is experimental: so far it has run only under Rosetta on Apple Silicon. The unsigned Windows installer supports Windows 10 and 11 (x64) with a Vulkan or DirectX 12 graphics driver.</dd></div>
       <div><dt>Will it change my RAW files?</dt><dd>No. Ingest verifies every copy, and edits live in the library and XMP sidecars, never in the RAW file itself.</dd></div>
       <div><dt>Is the Mac app signed?</dt><dd>Yes. Since alpha.7 it is signed with an Apple Developer ID and notarized by Apple, so it opens like any other app.</dd></div>
-      <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Starting with alpha.17.1, Rawtonic disables AI runtime usage reporting. You can also start other connections: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
+      <div><dt>Does it go online?</dt><dd>Once a day at startup it asks GitHub whether a new release exists; turn that off in Preferences. Since alpha.18, Rawtonic’s own AI runtime build leaves Microsoft’s usage reporting out (Apple silicon Macs, Linux, Windows x64). You can also start other connections: an AI model’s first download, a map, a report you send, or weekly statistics if you switch them on. <a class="plain" href="/privacy/">Privacy</a></dd></div>
       <div><dt>Do the AI tools use the cloud?</dt><dd>No. They run on your computer. Each model downloads once, the first time you use the tool.</dd></div>
       <div><dt>Does my camera work?</dt><dd>Files of 965 of the 1,034 camera models in the public raw.pixls.us collection developed in our October 2026 run; Nikon High Efficiency NEFs, Sigma X3F, GoPro and some other formats don’t open yet. <a class="plain" href="#cameras">Camera support</a></dd></div>
       <div><dt>Can I bring my Lightroom or Capture One work?</dt><dd>Yes: catalogs, sessions, presets and styles import, though not every adjustment carries over yet. <a class="plain" href="/switching/">Switching</a></dd></div>
