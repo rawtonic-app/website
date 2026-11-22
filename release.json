@@ -99,7 +99,7 @@
           "text": "On new edits, raised Shadows move at Camera Raw’s pace and lowered Whites leave less of a light rim along strong edges. In the color editor you can move a colour onto a target colour you pick in a photo or type in. Exports can carry a signed provenance record (C2PA), off by default."
         }
       ],
-      "note": "To update, click Install update in the update notice (from 0.1.0-alpha.18) or replace the app as usual. Your libraries, sessions and saved edits stay as they are; a few kinds of photos render differently (see the release notes)."
+      "note": "To update, click Install update in the update notice or replace the app as usual. Your libraries, sessions and saved edits stay as they are; a few kinds of photos render differently (see the release notes)."
     },
     "de": {
       "summary": "Eine Landschaft-Maske, Augen und Zähne in der Gesichtsretusche, ein Aussortieren-Bereich und Tiefen, die sich wie in Camera Raw bewegen.",
@@ -117,7 +117,7 @@
           "text": "Bei neuen Bearbeitungen heben angehobene Tiefen so stark an wie in Camera Raw, und abgesenktes Weiß lässt weniger hellen Saum an kräftigen Kanten. Im Farbeditor bringst du eine Farbe auf eine Zielfarbe, die du im Foto wählst oder eintippst. Exporte können einen signierten Herkunftsnachweis (C2PA) tragen, standardmäßig aus."
         }
       ],
-      "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ (ab 0.1.0-alpha.18) oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten; einige Arten von Fotos sehen anders aus (siehe Release-Hinweise)."
+      "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten; einige Arten von Fotos sehen anders aus (siehe Release-Hinweise)."
     }
   }
 }
