@@ -82,42 +82,42 @@
     }
   ],
   "whatsNew": {
-    "version": "0.1.0-alpha.18",
+    "version": "0.1.0-alpha.19",
     "en": {
-      "summary": "Updates install from the app, and the AI runtime is Rawtonic’s own build without Microsoft’s usage reporting.",
+      "summary": "A Landscape mask, Eyes and Teeth in the face retouch, a Culling panel, and Shadows that move like Camera Raw’s.",
       "items": [
         {
-          "title": "Install update.",
-          "text": "When a newer release is out, the update notice offers Install update. Rawtonic downloads the package only after your click, installs it only if it carries Rawtonic’s own signature for that version, and restarts after saving your edits. This is the first release with the button, so it takes one last manual update; from the next release on, updates install from the notice."
+          "title": "Landscape mask, eyes and teeth.",
+          "text": "A new Landscape mask selects the sky, mountains, water, vegetation, ground or buildings of a photo with one click per part, and Lightroom’s Landscape masks import into it. The face retouch can now lighten the iris and the whites of the eyes and brighten and whiten teeth."
         },
         {
-          "title": "Own AI runtime.",
-          "text": "On Apple silicon Macs, Linux and Windows x64, Rawtonic ships ONNX Runtime 1.30.0 built from the same source with Microsoft’s usage reporting left out. In our tests its results matched Microsoft’s library."
+          "title": "Cull and apply faster.",
+          "text": "The Library’s new Culling panel suggests misfires, photos of documents and closed eyes, and rejects the ones you check in one step; nothing is rejected by itself. Presets with sky, subject or people layers now work on photos you never opened, and five built-in adaptive presets come with the app."
         },
         {
-          "title": "RAW files closer to the camera.",
-          "text": "Ten Canon CR3 bodies use the white level Adobe uses for them, older Fujifilm kit zooms are framed and corrected like the camera’s JPEG, and Phase One backs, early DNGs and Canon sRAW decode correctly. Nikon High Efficiency NEFs explain why they cannot be opened."
+          "title": "Tones and colours.",
+          "text": "On new edits, raised Shadows move at Camera Raw’s pace and lowered Whites leave less of a light rim along strong edges. In the color editor you can move a colour onto a target colour you pick in a photo or type in. Exports can carry a signed provenance record (C2PA), off by default."
         }
       ],
-      "note": "To update, replace the app as usual. Your libraries, sessions and edit settings stay as they are; saved edits of some Canon, Phase One and DNG photos render differently (see the release notes)."
+      "note": "To update, click Install update in the update notice (from 0.1.0-alpha.18) or replace the app as usual. Your libraries, sessions and saved edits stay as they are; a few kinds of photos render differently (see the release notes)."
     },
     "de": {
-      "summary": "Updates lassen sich in der App installieren, und die KI-Laufzeit ist Rawtonics eigener Build ohne Microsofts Nutzungsberichte.",
+      "summary": "Eine Landschaft-Maske, Augen und Zähne in der Gesichtsretusche, ein Aussortieren-Bereich und Tiefen, die sich wie in Camera Raw bewegen.",
       "items": [
         {
-          "title": "Update installieren.",
-          "text": "Gibt es eine neuere Version, bietet der Update-Hinweis „Update installieren“ an. Rawtonic lädt das Paket erst nach deinem Klick, installiert es nur mit Rawtonics eigener Signatur für genau diese Version und startet neu, nachdem deine Bearbeitungen gesichert sind. Diese Version bringt den Knopf erst mit, daher ist ein letztes Update von Hand nötig; ab der nächsten Version geht es direkt aus dem Hinweis."
+          "title": "Landschaft-Maske, Augen und Zähne.",
+          "text": "Die neue Maske Landschaft wählt Himmel, Berge, Wasser, Vegetation, Boden oder Gebäude eines Fotos aus, mit einem Klick pro Teil, und Landschaftsmasken aus Lightroom werden mit übernommen. Die Gesichtsretusche hellt jetzt Iris und das Weiße der Augen auf und macht Zähne heller und weißer."
         },
         {
-          "title": "Eigene KI-Laufzeit.",
-          "text": "Auf Macs mit Apple-Chip, unter Linux und Windows x64 liefert Rawtonic ONNX Runtime 1.30.0 aus derselben Quelle, aber ohne Microsofts Nutzungsberichte. In unseren Tests stimmten die Ergebnisse mit Microsofts Bibliothek überein."
+          "title": "Schneller aussortieren und anwenden.",
+          "text": "Der neue Bereich Aussortieren in der Bibliothek schlägt Fehlauslösungen, Fotos von Dokumenten und geschlossene Augen vor und lehnt die angehakten in einem Schritt ab; von selbst wird nichts abgelehnt. Vorgaben mit Himmel-, Motiv- oder Personen-Ebenen wirken jetzt auch auf Fotos, die du nie geöffnet hast, und fünf adaptive Vorgaben sind eingebaut."
         },
         {
-          "title": "RAW-Dateien näher an der Kamera.",
-          "text": "Zehn Canon-CR3-Modelle nutzen den Weißpunkt, den Adobe für sie verwendet; ältere Fujifilm-Kit-Zooms werden wie im Kamera-JPEG beschnitten und korrigiert; Phase-One-Rückteile, frühe DNGs und Canon sRAW werden richtig dekodiert. Nikon-High-Efficiency-NEFs erklären, warum sie sich nicht öffnen lassen."
+          "title": "Töne und Farben.",
+          "text": "Bei neuen Bearbeitungen heben angehobene Tiefen so stark an wie in Camera Raw, und abgesenktes Weiß lässt weniger hellen Saum an kräftigen Kanten. Im Farbeditor bringst du eine Farbe auf eine Zielfarbe, die du im Foto wählst oder eintippst. Exporte können einen signierten Herkunftsnachweis (C2PA) tragen, standardmäßig aus."
         }
       ],
-      "note": "Zum Aktualisieren ersetzt du die App wie gewohnt. Bibliotheken, Sitzungen und Bearbeitungseinstellungen bleiben erhalten; gespeicherte Bearbeitungen mancher Canon-, Phase-One- und DNG-Fotos sehen anders aus (siehe Release-Hinweise)."
+      "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ (ab 0.1.0-alpha.18) oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten; einige Arten von Fotos sehen anders aus (siehe Release-Hinweise)."
     }
   }
 }
