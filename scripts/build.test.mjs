@@ -62,7 +62,8 @@ test('the current site builds, with What’s new from release.json', () => {
   assert.equal(r.status, 0, r.out);
   const short = release.version.replace(/^\d+\.\d+\.\d+-/, '');
   assert.match(r.index, new RegExp(`<h2 class="head" id="new-title">New in ${short.replace(/\./g, '\\.')}\\.</h2>`));
-  for (const it of release.whatsNew.en.items) assert.ok(r.index.includes(`<h3>${it.title}</h3>`), it.title);
+  const html = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  for (const it of release.whatsNew.en.items) assert.ok(r.index.includes(`<h3>${html(it.title)}</h3>`), it.title);
 });
 
 test('a What’s new of an older release is refused', () => {
