@@ -79,7 +79,7 @@ function windowsKind(file, lang) {
 const T = {
   en: {
     lang: 'en', root: '/', locale: 'en_GB', dateLocale: 'en-GB',
-    skip: 'Skip to content', home: 'Rawtonic home', navMain: 'Main', navFooter: 'Footer',
+    skip: 'Skip to content', home: 'Rawtonic home', navMain: 'Main', navFooter: 'Footer', menu: 'Menu',
     features: 'Features', switching: 'Switching', whatsNew: 'What’s new', install: 'Install', contribute: 'Contribute',
     newIn: 'New in', released: 'Released', earlier: 'Earlier releases',
     github: 'Rawtonic on GitHub', support: 'Support', download: 'Download',
@@ -95,7 +95,7 @@ const T = {
   },
   de: {
     lang: 'de', root: '/de/', locale: 'de_DE', dateLocale: 'de-DE',
-    skip: 'Zum Inhalt springen', home: 'Rawtonic-Startseite', navMain: 'Hauptmenü', navFooter: 'Fußzeile',
+    skip: 'Zum Inhalt springen', home: 'Rawtonic-Startseite', navMain: 'Hauptmenü', navFooter: 'Fußzeile', menu: 'Menü',
     features: 'Funktionen', switching: 'Umsteigen', whatsNew: 'Neuigkeiten', install: 'Installation', contribute: 'Mitwirken',
     newIn: 'Neu in', released: 'Erschienen am', earlier: 'Frühere Versionen',
     github: 'Rawtonic auf GitHub', support: 'Unterstützen', download: 'Download',
@@ -339,8 +339,12 @@ const docsIndex = (lang) => DOC_SECTIONS.map((s) => {
 // {{shot "id" "what it shows"}}: a marked place for a screenshot of a demo scene
 // (made per release by the app's QA harness; see README). Listed by the build.
 const shots = [];
+const showShots = process.argv.includes('--show-shots');
 const shot = (id, what, lang, where) => {
   shots.push(`${where}: ${id}`);
+  // Hidden in the built site (user decision 2026-11-26: pages may go live without
+  // screenshots); `--show-shots` renders the dashed boxes for a local preview.
+  if (!showShots) return `<!-- shot ${id} -->`;
   return `<figure class="shot-todo" data-shot="${id}"><span>${esc(T[lang].shotTodo)}: ${esc(what)}</span></figure>`;
 };
 // The path of a page in another language: /x/ ↔ /de/x/.

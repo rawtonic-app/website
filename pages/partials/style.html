@@ -167,7 +167,12 @@
       .feature:nth-child(even) > div{order:0}
       .nav{order:3;flex-basis:100%;overflow-x:auto;gap:22px;margin-inline:calc(-1 * var(--margin));padding-inline:var(--margin);scrollbar-width:none}
       .nav .button{display:none}
+      /* With script: the links fold into a Menu button (without it they stay a scrolling strip). */
+      .menu-btn:not([hidden]){display:inline-flex;align-items:center;order:2;min-height:2.75rem;padding:0 1rem;border:1px solid var(--line);border-radius:999px;background:none;color:var(--ink);font:inherit;font-size:var(--step-small);cursor:pointer}
+      .top.has-menu .nav{display:none}
+      .top.has-menu.open .nav{display:flex;flex-direction:column;align-items:flex-start;gap:0;overflow:visible}
     }
+    .menu-btn{display:none}
     @media (max-width:640px){
       .dl-grid,.faq-list{grid-template-columns:1fr}
       .dl{padding:24px}
