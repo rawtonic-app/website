@@ -1,0 +1,61 @@
+<!--page {"path": "/docs/basic-tone/", "title": "Basic tone: Exposure, Contrast, Highlights, Shadows, Whites, Blacks", "description": "What the six tone sliders do, a good order to use them in, and how their travel feels if you come from another editor.", "docs": {"section": "basics", "order": 20, "tool": "exposure", "nav": "Basic tone"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Basic tone.</h1>
+      <p class="lead">Six sliders in the <strong>Exposure</strong> group of Develop set the brightness and the tonal range of a photo: Exposure, Contrast, Highlights, Shadows, Whites and Blacks. Most edits start and many end here.</p>
+
+      {{shot "develop-exposure-group" "the Exposure group in Develop with a landscape photo"}}
+
+      <h2 id="order">A good order</h2>
+      <ol>
+        <li><strong>Exposure</strong> until the midtones (faces, the main subject) look right. Ignore the sky for now.</li>
+        <li><strong>Highlights</strong> down to bring back the sky and bright surfaces, <strong>Shadows</strong> up to open dark areas.</li>
+        <li><strong>Whites</strong> and <strong>Blacks</strong> to set where the brightest and the darkest tones end.</li>
+        <li><strong>Contrast</strong> last, to taste: how much punch the midtones get.</li>
+      </ol>
+      <p>Not a rule, just the order in which one slider undoes the least of another. <strong>Auto</strong> in the group’s header (⌘L, Ctrl+L) sets all of them for you as a starting point.</p>
+
+      <h2 id="sliders">What each slider does</h2>
+      <dl>
+        <dt id="exposure">Exposure</dt>
+        <dd>Brightens or darkens the whole photo in stops (EV), from −5 to +5, as if you had exposed longer or shorter. +1 means twice the light. Because the RAW holds more than the screen shows, highlights that look white can often come back with a negative Exposure. Use it first and for the photo as a whole.</dd>
+        <dt id="contrast">Contrast</dt>
+        <dd>Spreads the midtones apart (more punch) or brings them together (softer, flatter). It works mostly on the middle of the tonal range and leaves the very ends to Whites and Blacks.</dd>
+        <dt id="highlights">Highlights</dt>
+        <dd>Darkens (or brightens) only the bright tones: a sky, clouds, a lit wall, a white dress. Lowered, it keeps the texture inside those bright areas, so clouds stay clouds instead of turning into a flat grey sheet.</dd>
+        <dt id="shadows">Shadows</dt>
+        <dd>Lifts (or deepens) only the dark tones, to show what is in a backlit face or a forest floor. Raised, the deepest tones keep a little of their contrast against what is lifted around them, so detail in the shadows does not go flat, and light areas between thin dark lines (text, branches against the sky) stay as they were instead of turning grey.</dd>
+        <dt id="whites">Whites</dt>
+        <dd>Sets where the brightest tones end. Raise it until the brightest part of the photo is just short of pure white for a clean, bright picture; lower it to keep a bright scene from clipping. Lowered strongly, it darkens the bright side of strong edges (a roofline against the sky) about as much as the open sky, so no light rim appears along them.</dd>
+        <dt id="blacks">Blacks</dt>
+        <dd>Sets where the darkest tones end: lower it for a deep, solid black, raise it for a softer, faded look.</dd>
+      </dl>
+      <p>To see what clips, switch on the clipping warnings on the histogram: clipped highlights show red in the photo, clipped shadows blue.</p>
+
+      <h2 id="feel">How the sliders feel</h2>
+      <p>Each slider’s response and its travel (how far you move it for a given change) are measured against the leading RAW editors on the same photos and set to the better of them for that slider. Where neither was clearly better, the slider follows the behaviour most photographers already know. For example, Shadows +50 lifts the darkest quarter of a photo about as far as the familiar Shadows +50 does.</p>
+      <ul>
+        <li><strong>Keys:</strong> with a slider focused or under the pointer, Up and Down move Exposure by 0.10 EV, with Shift by 0.33 EV (a third of a stop), with Alt/Option by 0.01. The other sliders move by 5, with Shift by 20, with Alt/Option by 1. In the number field the steps are 1 and, with Shift, 10.</li>
+        <li><strong>Reset:</strong> double-click a slider to reset it; Alt/Option-click the group’s name to reset the whole group in one undo step.</li>
+      </ul>
+      <p class="when"><strong>If you come from Lightroom or Capture One:</strong> the slider names and ranges are the ones you know, and so is the feel. Capture One’s Shadow scale is different; when you import a Capture One edit, Rawtonic takes the Shadows value whose lift is closest to it (its +10 is about Rawtonic’s +26, +20 about +48, +40 about +75).</p>
+
+      <h2 id="saved">Saved edits keep their look</h2>
+      <p>When a slider gets better, the improvement applies to new edits. A photo you edited earlier keeps exactly the look it had, in Develop and in every export, so an update never changes finished work behind your back. The release notes list each such change under “Changes to existing edits”.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

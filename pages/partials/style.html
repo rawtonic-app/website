@@ -175,4 +175,19 @@
       .top .logo{width:140px}
     }
     @media (prefers-reduced-motion:reduce){.button,.seg button{transition:none}}
+    .docs{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
+    .docs .prose{padding-top:clamp(40px,6vw,88px)}
+    .docs-nav{position:sticky;top:24px;padding-top:clamp(40px,6vw,88px);font-size:var(--step-small)}
+    .docs-nav ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+    .docs-nav>ul>li{margin-top:18px}
+    .docs-nav ul ul{margin-top:6px;padding-left:10px;border-left:1px solid var(--line)}
+    .docs-nav a{color:var(--muted);text-decoration:none}
+    .docs-nav a[aria-current="page"]{color:var(--ink);font-weight:600}
+    .docs-sec{display:block;color:var(--ink);font-weight:600}
+    .docs-list{list-style:none;padding:0}.docs-list li{display:grid;gap:2px}.docs-list span{color:var(--muted)}
+    .docs-group h2{margin-top:40px}
+    .prose .when{border-left:3px solid var(--accent);padding:4px 0 4px 14px}
+    .prose dl dt{font-weight:600;margin-top:16px}.prose dl dd{margin:4px 0 0}
+    .shot-todo{border:1px dashed var(--line);border-radius:10px;padding:40px 16px;margin:20px 0;text-align:center;color:var(--muted);font-size:var(--step-small)}
+    @media (max-width:900px){.docs{grid-template-columns:minmax(0,1fr)}.docs-nav{position:static;order:2;padding-top:24px;border-top:1px solid var(--line);margin-top:32px}.docs .prose{padding-top:16px}}
   </style>

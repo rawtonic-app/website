@@ -1,0 +1,54 @@
+<!--page {"path": "/de/docs/ai-denoise/", "title": "KI-Entrauschen", "description": "Wie KI-Entrauschen RAW-Dateien mit hoher ISO säubert, wann es sich lohnt, Voll oder Schnell, Fujifilm X-Trans und was es für die Exportzeit bedeutet.", "docs": {"section": "ai", "order": 10, "tool": "noiseReduction.aiDenoise", "nav": "KI-Entrauschen"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>KI-Entrauschen.</h1>
+      <p class="lead">KI-Entrauschen entfernt das Rauschen aus Fotos mit hoher ISO und behält dabei feine Details, die eine gewöhnliche Rauschreduzierung verwischt. Du findest es unter Entwickeln in der <strong>Rauschreduzierung</strong>.</p>
+
+      {{shot "develop-ai-denoise" "ein Nachtfoto mit hoher ISO in 100 % vor und nach KI-Entrauschen"}}
+
+      <h2 id="why">Warum es auf den RAW-Daten arbeitet</h2>
+      <p>KI-Entrauschen säubert die Sensordaten selbst, bevor Rawtonic daraus Farben macht (Demosaicing). Dort ist das Rauschen noch einfach, ein Wert pro Fotodiode, und noch nicht zu Farbflecken und Würmern verschmiert. Deshalb kann es mehr Rauschen entfernen und mehr Struktur behalten als ein Filter auf dem fertigen Bild. Das Ergebnis wird auf der Festplatte gespeichert, sodass das Foto nach dem ersten Mal schnell öffnet; es lässt sich jederzeit neu berechnen und verändert nie die Originaldatei.</p>
+
+      <h2 id="when">Wann du es brauchst</h2>
+      <ul>
+        <li>Hohe ISO: Nacht, Konzerte, Hallensport, Tiere in der Dämmerung.</li>
+        <li>Stark aufgehellte Tiefen, die auch bei niedriger ISO rauschen.</li>
+        <li>Fotos, die du groß druckst oder stark beschneidest.</li>
+      </ul>
+      <p>Bei Basis-ISO und gutem Licht bringt es selten etwas Sichtbares und kostet Zeit: Lass es dort aus.</p>
+
+      <h2 id="amount">Die Stärke</h2>
+      <p>Zieh den Regler <strong>KI-Entrauschen</strong> von 0 hoch. 50 ist für die meisten Fotos eine natürliche, ausgewogene Stärke, 100 ist kräftig, für sehr verrauschte Dateien. Unter 50 mischt der Regler das Ergebnis von 50 mit dem Original, sodass ein wenig natürliches Korn bleibt. Beim ersten Mal dauert es bei einem Foto etwa eine halbe Minute, während Rawtonic die RAW-Datei entrauscht.</p>
+      <p class="when"><strong>Wenn du von Lightroom oder Capture One kommst:</strong> Die 50 von Rawtonic liegt nahe an Lightrooms Entrauschen 50, lässt in glatten Flächen aber noch etwas mehr Rauschen stehen, und 100 ist etwa so stark wie die verbesserte Rauschreduzierung von Capture One bei 50.</p>
+
+      <h2 id="quality">Voll oder Schnell</h2>
+      <dl>
+        <dt id="full">Voll</dt>
+        <dd>Die feinsten Details. Mit einer schnellen Grafikkarte zügig, ohne sie langsam: allein auf dem Prozessor kann es viele Minuten pro Foto dauern.</dd>
+        <dt id="fast">Schnell</dt>
+        <dd>Ein kleineres Netz, das Rawtonic auf dasselbe Ergebnis trainiert hat: auf dem Prozessor etwa 15× schneller, mit minimal weniger feinsten Details (in unseren Messungen 98,7 % von Voll; in 100-%-Ausschnitten sehr nah dran).</dd>
+      </dl>
+      <p>Jedes Foto behält seine Wahl in seiner Bearbeitung und wird deshalb auf jedem Computer mit demselben Netz exportiert. Welche Qualität ein Foto bekommt, wenn du KI-Entrauschen zum ersten Mal einschaltest, legst du in den Einstellungen unter <strong>Qualität von KI-Entrauschen für neue Bearbeitungen</strong> fest: <strong>Automatisch</strong> wählt Schnell auf Computern, auf denen KI-Entrauschen auf dem Prozessor läuft, sonst Voll.</p>
+
+      <h2 id="x-trans">Fujifilm X-Trans</h2>
+      <p>X-Trans-Sensoren ordnen ihre Farben anders an als das übliche Bayer-Muster und bekommen deshalb ein eigenes Netz, trainiert mit X-Trans-RAW-Dateien. Es hat eine Qualität; deshalb erscheint bei diesen Fotos keine Wahl zwischen Voll und Schnell. Es ist auch auf dem Prozessor schnell und hinterlässt keine X-Trans-Musterartefakte.</p>
+
+      <h2 id="export">Exportzeit</h2>
+      <p>Exporte mit KI-Entrauschen rechnen es in voller Auflösung, und das ist der längste Schritt eines solchen Exports. Die Export-Warteschlange zeigt den Fortschritt pro Foto. Wie lange es dauert, hängt vor allem von der Grafikkarte ab. Als Anhaltspunkt: Ein 24-Megapixel-Foto mit ISO 51200 brauchte auf einem ausgelasteten Sechskern-Prozessor ohne Hilfe der Grafikkarte 43–51 s mit Schnell und etwa 11 Minuten mit Voll. Auf einem Laptop mit integrierter Grafik nimmst du für Stapelexporte besser Schnell.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

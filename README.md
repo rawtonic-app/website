@@ -17,6 +17,16 @@ node scripts/build.mjs                  # lists placeholders still left (TBD, OF
 python3 -m http.server -d site 8000     # http://localhost:8000/
 ```
 
+## Documentation (`/docs/`)
+
+User documentation for photographers: one page per tool or workflow, English in `pages/docs/x.html` (`/docs/x/`), German in `pages/de/docs/x.html` (`/de/docs/x/`), same pairing rules as every other page. `pages/docs/index.html` is the overview.
+
+- **Front matter.** Besides `path`, `title` and `description` (the description is also the page's line on the overview), a tool page carries `"docs": {"section": "basics", "order": 20, "tool": "exposure", "nav": "Basic tone"}`. `section` is one of `library`, `basics`, `local`, `ai`, `export` (Import & Library → Develop basics → Local adjustments → AI tools → Export & sharing, the order a photographer meets them); `order` sorts within it; `nav` is the short name in the side navigation. `tool` is the app's own key for the tool: the Develop tool group key (`key` of its `ToolGroup` in the app's `StudioDevelop.tsx`, e.g. `exposure`, `noiseReduction`), with `.control` for a page about one control (`noiseReduction.aiDenoise`), or the workflow key (`export`). Each `tool` is unique per language; the build checks section, tool and nav. The app's `?` links will find pages by this key.
+- **Navigation** is generated: `{{docsnav}}` (side navigation, current page marked) and `{{docsindex}}` (overview) come from the front matter, so a new page needs no edits elsewhere. Section names are in the `T` table (`docSections`).
+- **Voice.** Written for photographers, not programmers, like the release notes: what a tool does, why it works that way and when to use it. Numbers only measured ones, with what they cover. Other editors are named only to say "if you come from …" (in a `<p class="when">`), never in a heading or as the name of one of our features. German with "du" and the app's German labels.
+- **Screenshots.** `{{shot "id" "what it shows"}}` marks the place for a screenshot of a licence-clean demo scene (to be made per release by the app's QA harness and turned into `{{picture …}}`); the build lists every empty place.
+- **Rule.** A change to a tool in the app updates its page here in the same release.
+
 ## Two languages
 
 Every page exists in English (`pages/x.html`, `/x/`) and German (`pages/de/x.html`, `/de/x/`). Change both in the same commit:

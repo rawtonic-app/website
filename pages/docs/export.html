@@ -1,0 +1,55 @@
+<!--page {"path": "/docs/export/", "title": "Export: recipes, JPEG size limit, Super Resolution", "description": "Export recipes for settings you use again, several versions in one go, a JPEG file size limit and 2× Super Resolution for large prints.", "docs": {"section": "export", "order": 10, "tool": "export", "nav": "Export"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Export.</h1>
+      <p class="lead">Export turns your edits into files to share, print or hand on: JPEG, TIFF, PNG, WebP, AVIF or JPEG XL, at the size and quality you choose. Your RAW files and your edits are never changed by it.</p>
+
+      {{shot "export-dialog" "the Export dialog with two recipes ticked"}}
+
+      <h2 id="recipes">Recipes: settings you use again</h2>
+      <p>A recipe is a saved set of export settings: format, size, quality, sharpening, metadata, destination, naming. Set up the dialog once and click <strong>Save as recipe</strong>; next time, tick the recipe instead of setting everything again.</p>
+      <ul>
+        <li><strong>Several at once.</strong> Tick more than one recipe to export each photo in several versions in one go, for example a full-size TIFF for print and a small JPEG for the web. Rawtonic develops each photo once and writes every version from it, so two recipes take far less than twice the time.</li>
+        <li><strong>No recipe ticked</strong> means the dialog’s current settings export.</li>
+        <li><strong>Editing a recipe:</strong> click its name; the dialog shows its settings and saves your changes to it.</li>
+        <li>The menu bar’s <strong>Export with Recipe</strong> exports the selected photos with one recipe without opening the dialog.</li>
+      </ul>
+      <p>With exactly one photo selected, <strong>Save As…</strong> exports it under a name and into a folder you pick in the system’s save dialog.</p>
+
+      <h2 id="existing">If a file exists</h2>
+      <p>Under Destination you choose what happens when a file of the same name is already there: <strong>Ask</strong>, <strong>Keep both (new name)</strong>, <strong>Skip</strong> or <strong>Replace if changed</strong>. With Keep both nothing is ever written over. The choice is saved with each recipe, so a recipe for re-exporting a whole shoot can skip or update what is already done.</p>
+
+      <h2 id="size-limit">A file size limit for JPEG</h2>
+      <p>Competitions, client portals and online forms often accept only files up to a certain size. Turn on <strong>Limit file size to … KB</strong> under the file settings and Rawtonic finds a high JPEG quality at which the whole file, metadata and colour profile included, stays under the limit (1 KB is 1000 bytes). The quality field then reads “auto”.</p>
+      <p>Rawtonic never makes the picture smaller to reach the limit: you decide the pixel size under Photo sizing. If even the lowest quality is too big, it writes the smallest file it could make and tells you, in the export queue and in the Activity centre, which files are over their limit, so you can choose a smaller size and export those again. The limit is saved with each recipe.</p>
+
+      <h2 id="super-resolution">Super Resolution</h2>
+      <p><strong>Super Resolution (2×, AI)</strong> under Photo sizing enlarges each photo to twice its width and height with an AI model before resizing, borders and output sharpening, so a 24-megapixel photo exports at 96 megapixels. Use it for large prints and for heavy crops that would otherwise be too small.</p>
+      <p>The model enlarges faithfully and invents no texture: halved and enlarged again, our test photos came back as close to the originals as with Lightroom’s Super Resolution. It takes about 6 s for a 24-megapixel photo on a recent Mac’s graphics card at Full quality.</p>
+      <dl>
+        <dt id="sr-full">Full</dt>
+        <dd>Averages four turned copies of each part of the photo: the cleanest result.</dd>
+        <dt id="sr-fast">Fast</dt>
+        <dd>Enlarges each part once: a quarter of the work, with differences visible only in pixel comparisons. A good choice on computers without a fast graphics card.</dd>
+      </dl>
+      <p>The model downloads the first time you tick the option; the dialog says when it is ready. Super Resolution is part of the recipe, so a “print” recipe can always enlarge and a “web” recipe never does.</p>
+
+      <h2 id="ai-marking">Photos with generated areas</h2>
+      <p>If an AI tool generated part of a photo (for example when removing an object), the exported file says so in its metadata, as the law in the EU requires. Nothing changes for photos without generated areas.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

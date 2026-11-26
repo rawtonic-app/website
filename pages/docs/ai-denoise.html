@@ -1,0 +1,54 @@
+<!--page {"path": "/docs/ai-denoise/", "title": "AI Denoise", "description": "How AI Denoise cleans high-ISO RAWs, when it is worth it, Full or Fast, Fujifilm X-Trans, and what it means for export time.", "docs": {"section": "ai", "order": 10, "tool": "noiseReduction.aiDenoise", "nav": "AI Denoise"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>AI Denoise.</h1>
+      <p class="lead">AI Denoise removes noise from high-ISO photos while keeping fine detail that ordinary noise reduction smears away. You find it in Develop under <strong>Noise reduction</strong>.</p>
+
+      {{shot "develop-ai-denoise" "a high-ISO night photo at 100 % before and after AI Denoise"}}
+
+      <h2 id="why">Why it works on the RAW</h2>
+      <p>AI Denoise cleans the sensor data itself, before Rawtonic turns it into colours (demosaicing). There the noise is still simple, one value per photosite, and has not yet been spread into colour blotches and worms. That is why it can remove more noise and keep more texture than a filter on the finished picture. The result is kept on disk, so after the first time the photo opens quickly; it can always be made again and never changes the original file.</p>
+
+      <h2 id="when">When to use it</h2>
+      <ul>
+        <li>High ISO: night, concerts, indoor sport, wildlife at dusk.</li>
+        <li>Shadows you lift a lot, which show noise even at low ISO.</li>
+        <li>Photos you will print large or crop hard.</li>
+      </ul>
+      <p>At base ISO in good light it rarely adds anything you can see, and it costs time: leave it off there.</p>
+
+      <h2 id="amount">The amount</h2>
+      <p>Move the <strong>AI Denoise</strong> slider from 0. 50 is a natural, balanced strength for most photos; 100 is strong, for very noisy files. Below 50 the slider blends the result of 50 with the original, so a little natural grain stays. The first time on a photo takes about half a minute while Rawtonic denoises the RAW.</p>
+      <p class="when"><strong>If you come from Lightroom or Capture One:</strong> Rawtonic’s 50 is close to Lightroom’s Denoise 50, still leaving a little more noise in flat areas, and 100 is about as strong as Capture One’s Enhanced Denoise at 50.</p>
+
+      <h2 id="quality">Full or Fast</h2>
+      <dl>
+        <dt id="full">Full</dt>
+        <dd>The finest detail. Quick with a fast graphics card, but slow without one: on the processor alone it can take many minutes per photo.</dd>
+        <dt id="fast">Fast</dt>
+        <dd>A smaller network Rawtonic trained to give the same result: about 15× quicker on the processor, with very slightly less of the finest detail (in our measurements 98.7 % of Full’s; very close in 100 % crops).</dd>
+      </dl>
+      <p>Each photo keeps its own choice in its edit, so it exports with the same network on every computer. Which one a photo gets when you first turn AI Denoise on is set in Preferences under <strong>AI Denoise quality for new edits</strong>: <strong>Automatic</strong> picks Fast on computers where AI Denoise runs on the processor, Full otherwise.</p>
+
+      <h2 id="x-trans">Fujifilm X-Trans</h2>
+      <p>X-Trans sensors arrange their colours differently from the usual Bayer pattern, so they get their own network, trained on X-Trans RAW files. It has one quality, which is why the Full/Fast choice does not appear for these photos. It is quick even on the processor and leaves no X-Trans pattern artefacts.</p>
+
+      <h2 id="export">Export time</h2>
+      <p>Exports with AI Denoise run it at full resolution, which is the longest step of such an export. The export queue shows its progress per photo. How long it takes depends mostly on the graphics card: as a guide, a 24-megapixel photo at ISO 51200 on a busy six-core processor without graphics card help took 43–51 s with Fast and about 11 minutes with Full. On a laptop with integrated graphics, choose Fast for batch exports.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>
