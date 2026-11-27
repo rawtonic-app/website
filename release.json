@@ -84,7 +84,7 @@
   "whatsNew": {
     "version": "0.1.0-alpha.21",
     "en": {
-      "summary": "AI Denoise for Fujifilm X-Trans and a much faster Fast quality, colours that follow your monitor on Windows and Linux, and AI masks that wait for memory instead of running out of it.",
+      "summary": "AI Denoise for Fujifilm X-Trans and a much faster Fast quality, colours that follow your monitor on Windows and Linux, and AI masks that wait for memory on computers with 16 GB or less.",
       "items": [
         {
           "title": "AI Denoise for X-Trans, and faster.",
@@ -96,13 +96,13 @@
         },
         {
           "title": "Steadier and easier.",
-          "text": "On computers with 16 GB of memory or less, Subject and Sky selections wait for memory or switch to a slower low-memory mode, and say so on their layer, instead of running out of memory. Also new: Dim Surroundings (Shift+L), a roomier Import dialog with one naming editor for Import, Rename and Export, Undo in the order of what you did, and trashed photos that leave the library at once."
+          "text": "On computers with 16 GB of memory or less, Subject and Sky selections now wait for memory or switch to a slower low-memory mode, and say so on their layer, so they run out of memory far less often. Also new: Dim Surroundings (Shift+L), a roomier Import dialog with one naming editor for Import, Rename and Export, Undo in the order of what you did, and trashed photos that leave the library at once."
         }
       ],
       "note": "To update, click Install update in the update notice or replace the app as usual. Your libraries, sessions and saved edits stay as they are and keep their look; the new Clarity and X-Trans AI Denoise apply to new edits."
     },
     "de": {
-      "summary": "KI-Entrauschen für Fujifilm X-Trans und eine viel schnellere Qualität „Schnell“, Farben passend zu deinem Monitor unter Windows und Linux, und KI-Masken, die auf freien Speicher warten, statt am Speicher zu scheitern.",
+      "summary": "KI-Entrauschen für Fujifilm X-Trans und eine viel schnellere Qualität „Schnell“, Farben passend zu deinem Monitor unter Windows und Linux, und KI-Masken, die auf Computern mit 16 GB oder weniger auf freien Speicher warten.",
       "items": [
         {
           "title": "KI-Entrauschen für X-Trans, und schneller.",
@@ -114,7 +114,7 @@
         },
         {
           "title": "Stabiler und einfacher.",
-          "text": "Auf Computern mit 16 GB Arbeitsspeicher oder weniger warten Auswahlen von Motiv und Himmel auf freien Speicher oder rechnen in einem langsameren, sparsamen Modus, und sagen das an ihrer Ebene, statt am Speicher zu scheitern. Außerdem neu: Umgebung abdunkeln (Umschalt+L), ein geräumigerer Import-Dialog mit einem Benennungs-Editor für Import, Umbenennen und Export, Rückgängig in der Reihenfolge deiner Schritte, und Fotos im Papierkorb verlassen die Bibliothek sofort."
+          "text": "Auf Computern mit 16 GB Arbeitsspeicher oder weniger warten Auswahlen von Motiv und Himmel jetzt auf freien Speicher oder rechnen in einem langsameren, sparsamen Modus und sagen das an ihrer Ebene, so dass ihnen der Speicher viel seltener ausgeht. Außerdem neu: Umgebung abdunkeln (Umschalt+L), ein geräumigerer Import-Dialog mit einem Benennungs-Editor für Import, Umbenennen und Export, Rückgängig in der Reihenfolge deiner Schritte, und Fotos im Papierkorb verlassen die Bibliothek sofort."
         }
       ],
       "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten und sehen aus wie bisher; die neue Klarheit und KI-Entrauschen für X-Trans gelten für neue Bearbeitungen."
