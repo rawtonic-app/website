@@ -1,0 +1,55 @@
+<!--page {"path": "/de/docs/export/", "title": "Export: Rezepte, JPEG-Größengrenze, Super-Resolution", "description": "Export-Rezepte für wiederkehrende Einstellungen, mehrere Fassungen in einem Durchgang, eine Dateigrößengrenze für JPEG und 2× Super-Resolution für große Drucke.", "docs": {"section": "export", "order": 10, "tool": "export", "nav": "Export"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Export.</h1>
+      <p class="lead">Der Export macht aus deinen Bearbeitungen Dateien zum Teilen, Drucken oder Weitergeben: JPEG, TIFF, PNG, WebP, AVIF oder JPEG XL, in der Größe und Qualität, die du wählst. Deine RAW-Dateien und deine Bearbeitungen bleiben dabei unverändert.</p>
+
+      {{shot "export-dialog" "der Export-Dialog mit zwei angekreuzten Rezepten"}}
+
+      <h2 id="recipes">Rezepte: Einstellungen, die du wiederverwendest</h2>
+      <p>Ein Rezept ist ein gespeicherter Satz Export-Einstellungen: Format, Größe, Qualität, Schärfen, Metadaten, Ziel, Dateiname. Richte den Dialog einmal ein und klick auf <strong>Als Rezept speichern</strong>; beim nächsten Mal kreuzt du einfach das Rezept an, statt alles neu einzustellen.</p>
+      <ul>
+        <li><strong>Mehrere auf einmal.</strong> Kreuze mehrere Rezepte an, um jedes Foto in einem Durchgang in mehreren Fassungen zu exportieren, etwa ein TIFF in voller Größe für den Druck und ein kleines JPEG fürs Web. Rawtonic entwickelt jedes Foto einmal und schreibt daraus jede Fassung, zwei Rezepte brauchen also weit weniger als die doppelte Zeit.</li>
+        <li><strong>Kein Rezept angekreuzt</strong> heißt: Es wird mit den aktuellen Einstellungen des Dialogs exportiert.</li>
+        <li><strong>Ein Rezept ändern:</strong> Klick auf seinen Namen; der Dialog zeigt seine Einstellungen und speichert deine Änderungen darin.</li>
+        <li><strong>Mit Rezept exportieren</strong> in der Menüleiste exportiert die ausgewählten Fotos mit einem Rezept, ohne den Dialog zu öffnen.</li>
+      </ul>
+      <p>Ist genau ein Foto ausgewählt, exportiert <strong>Sichern unter…</strong> es unter einem Namen und in einen Ordner, den du im Sichern-Dialog des Systems wählst.</p>
+
+      <h2 id="existing">Wenn eine Datei existiert</h2>
+      <p>Unter Ziel legst du fest, was passiert, wenn dort schon eine Datei mit demselben Namen liegt: <strong>Fragen</strong>, <strong>Beide behalten (neuer Name)</strong>, <strong>Überspringen</strong> oder <strong>Ersetzen, wenn geändert</strong>. Mit „Beide behalten“ wird nie etwas überschrieben. Die Wahl wird mit jedem Rezept gespeichert, sodass ein Rezept zum erneuten Export eines ganzen Shootings überspringen oder aktualisieren kann, was schon fertig ist.</p>
+
+      <h2 id="size-limit">Eine Dateigrößengrenze für JPEG</h2>
+      <p>Wettbewerbe, Kundenportale und Online-Formulare nehmen oft nur Dateien bis zu einer bestimmten Größe an. Schalte in den Dateieinstellungen <strong>Dateigröße begrenzen auf … KB</strong> ein, und Rawtonic sucht eine hohe JPEG-Qualität, bei der die ganze Datei samt Metadaten und Farbprofil unter der Grenze bleibt (1 KB sind 1000 Byte). Im Qualitätsfeld steht dann „automatisch“.</p>
+      <p>Um die Grenze zu erreichen, verkleinert Rawtonic das Bild nie: Die Pixelgröße bestimmst du unter Bildgröße. Ist selbst die niedrigste Qualität zu groß, schreibt es die kleinste Datei, die es erzeugen konnte, und sagt dir in der Export-Warteschlange und in der Aktivitätsübersicht, welche Dateien über ihrer Grenze liegen; diese exportierst du dann in kleinerer Größe noch einmal. Die Grenze wird mit jedem Rezept gespeichert.</p>
+
+      <h2 id="super-resolution">Super-Resolution</h2>
+      <p><strong>Super-Resolution (2×, KI)</strong> unter Bildgröße vergrößert jedes Foto mit einem KI-Modell auf die doppelte Breite und Höhe, vor Größenänderung, Rahmen und Ausgabeschärfung; ein 24-Megapixel-Foto wird so mit 96 Megapixeln exportiert. Nimm es für große Drucke und für starke Ausschnitte, die sonst zu klein wären.</p>
+      <p>Das Modell vergrößert originalgetreu und erfindet keine Strukturen: Halbiert und wieder vergrößert, kamen unsere Testfotos so nah ans Original heran wie mit der Vergrößerung des führenden kommerziellen RAW-Entwicklers, mit dem wir es verglichen haben. Für ein 24-Megapixel-Foto braucht es auf der Grafikkarte eines aktuellen Macs in voller Qualität etwa 6 s.</p>
+      <dl>
+        <dt id="sr-full">Voll</dt>
+        <dd>Mittelt vier gedrehte Kopien jedes Bildteils: das sauberste Ergebnis.</dd>
+        <dt id="sr-fast">Schnell</dt>
+        <dd>Vergrößert jeden Bildteil einmal: ein Viertel der Arbeit, Unterschiede nur im Pixelvergleich sichtbar. Eine gute Wahl auf Computern ohne schnelle Grafikkarte.</dd>
+      </dl>
+      <p>Das Modell wird geladen, wenn du die Option zum ersten Mal ankreuzt; der Dialog zeigt, wann es bereit ist. Super-Resolution gehört zum Rezept, sodass ein „Druck“-Rezept immer vergrößern kann und ein „Web“-Rezept nie.</p>
+
+      <h2 id="ai-marking">Fotos mit generierten Bereichen</h2>
+      <p>Hat ein KI-Werkzeug einen Teil eines Fotos erzeugt (etwa beim Entfernen eines Objekts), vermerkt die exportierte Datei das in ihren Metadaten, wie es das EU-Recht verlangt. Für Fotos ohne generierte Bereiche ändert sich nichts.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

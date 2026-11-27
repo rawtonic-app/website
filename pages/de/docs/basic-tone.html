@@ -1,0 +1,61 @@
+<!--page {"path": "/de/docs/basic-tone/", "title": "Grundlegende Tonwerte: Belichtung, Kontrast, Lichter, Tiefen, Weiß, Schwarz", "description": "Was die sechs Tonwert-Regler tun, eine bewährte Reihenfolge und wie sich ihr Regelweg anfühlt, wenn du von einem anderen Programm kommst.", "docs": {"section": "basics", "order": 20, "tool": "exposure", "nav": "Grundlegende Tonwerte"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Grundlegende Tonwerte.</h1>
+      <p class="lead">Sechs Regler in der Gruppe <strong>Belichtung</strong> unter Entwickeln bestimmen Helligkeit und Tonwertumfang eines Fotos: Belichtung, Kontrast, Lichter, Tiefen, Weiß und Schwarz. Hier beginnen die meisten Bearbeitungen, und viele enden auch hier.</p>
+
+      {{shot "develop-exposure-group" "die Gruppe Belichtung unter Entwickeln mit einem Landschaftsfoto"}}
+
+      <h2 id="order">Eine bewährte Reihenfolge</h2>
+      <ol>
+        <li><strong>Belichtung</strong>, bis die Mitteltöne (Gesichter, das Hauptmotiv) stimmen. Den Himmel lässt du dabei erst einmal außer Acht.</li>
+        <li><strong>Lichter</strong> herunter, um Himmel und helle Flächen zurückzuholen, <strong>Tiefen</strong> hinauf, um dunkle Partien zu öffnen.</li>
+        <li><strong>Weiß</strong> und <strong>Schwarz</strong>, um festzulegen, wo die hellsten und die dunkelsten Töne enden.</li>
+        <li><strong>Kontrast</strong> zum Schluss, nach Geschmack: wie viel Biss die Mitteltöne bekommen.</li>
+      </ol>
+      <p>Das ist keine Regel, nur die Reihenfolge, in der ein Regler am wenigsten von dem zunichtemacht, was ein anderer getan hat. <strong>Auto</strong> im Kopf der Gruppe (⌘L, Strg+L) stellt alle sechs als Ausgangspunkt für dich ein.</p>
+
+      <h2 id="sliders">Was die Regler tun</h2>
+      <dl>
+        <dt id="exposure">Belichtung</dt>
+        <dd>Hellt das ganze Foto in Blendenstufen (EV) auf oder dunkelt es ab, von −5 bis +5, so als hättest du länger oder kürzer belichtet. +1 heißt doppelt so viel Licht. Weil die RAW-Datei mehr enthält, als der Bildschirm zeigt, kommen Lichter, die weiß aussehen, mit negativer Belichtung oft zurück. Setz sie als Erstes und für das Foto als Ganzes.</dd>
+        <dt id="contrast">Kontrast</dt>
+        <dd>Zieht die Mitteltöne auseinander (mehr Biss) oder rückt sie zusammen (weicher, flacher). Er wirkt vor allem in der Mitte des Tonwertumfangs; die Enden überlässt er Weiß und Schwarz.</dd>
+        <dt id="highlights">Lichter</dt>
+        <dd>Dunkelt (oder hellt) nur die hellen Töne: Himmel, Wolken, eine angestrahlte Wand, ein weißes Kleid. Heruntergezogen behält er die Zeichnung in diesen hellen Flächen, sodass Wolken Wolken bleiben und nicht zu einer flachen grauen Fläche werden.</dd>
+        <dt id="shadows">Tiefen</dt>
+        <dd>Hellt nur die dunklen Töne auf (oder vertieft sie), um zu zeigen, was in einem Gesicht im Gegenlicht oder auf dem Waldboden steckt. Hochgezogen behalten die tiefsten Töne etwas von ihrem Kontrast zur aufgehellten Umgebung, damit die Schatten nicht flach wirken, und helle Flächen zwischen dünnen dunklen Linien (Schrift, Äste vor dem Himmel) bleiben, wie sie sind, statt grau zu werden.</dd>
+        <dt id="whites">Weiß</dt>
+        <dd>Legt fest, wo die hellsten Töne enden. Zieh ihn hoch, bis die hellste Stelle knapp vor reinem Weiß liegt, für ein klares, helles Bild; zieh ihn herunter, damit eine helle Szene nicht ausfrisst. Stark heruntergezogen dunkelt er auch die helle Seite starker Kanten (eine Dachkante vor dem Himmel) etwa so ab wie den freien Himmel, sodass dort kein heller Saum entsteht.</dd>
+        <dt id="blacks">Schwarz</dt>
+        <dd>Legt fest, wo die dunkelsten Töne enden: herunter für ein tiefes, sattes Schwarz, hinauf für einen weicheren, verblassten Look.</dd>
+      </dl>
+      <p>Was ausfrisst oder absäuft, zeigen dir die Clipping-Warnungen am Histogramm: ausgefressene Lichter erscheinen im Foto rot, abgesoffene Tiefen blau.</p>
+
+      <h2 id="feel">Wie sich die Regler anfühlen</h2>
+      <p>Wie jeder Regler reagiert und welchen Weg er braucht (wie weit du ihn für eine bestimmte Änderung bewegst), ist an denselben Fotos gegen die führenden RAW-Entwickler gemessen und auf den jeweils besseren eingestellt. Wo keiner klar besser war, folgt der Regler dem Verhalten, das die meisten Fotografen schon kennen. Tiefen +50 etwa hellt das dunkelste Viertel eines Fotos ungefähr so weit auf wie das vertraute Tiefen +50.</p>
+      <ul>
+        <li><strong>Tasten:</strong> Liegt der Fokus oder der Mauszeiger auf einem Regler, bewegen Pfeil hoch und runter die Belichtung um 0,10 EV, mit Umschalt um 0,33 EV (eine Drittelblende), mit Alt/Option um 0,01. Die anderen Regler bewegen sich um 5, mit Umschalt um 20, mit Alt/Option um 1. Im Zahlenfeld sind die Schritte 1 und mit Umschalt 10.</li>
+        <li><strong>Zurücksetzen:</strong> Doppelklick auf einen Regler setzt ihn zurück; Alt/Option-Klick auf den Namen der Gruppe setzt die ganze Gruppe in einem Rückgängig-Schritt zurück.</li>
+      </ul>
+      <p class="when"><strong>Wenn du von Lightroom oder Capture One kommst:</strong> Die Namen und Bereiche der Regler kennst du, und auch das Gefühl dafür. Capture One skaliert seinen Tiefen-Regler anders; beim Import einer Capture-One-Bearbeitung nimmt Rawtonic den Tiefen-Wert, dessen Aufhellung am nächsten liegt (dort +10 ist hier etwa +26, +20 etwa +48, +40 etwa +75).</p>
+
+      <h2 id="saved">Gespeicherte Bearbeitungen behalten ihren Look</h2>
+      <p>Wird ein Regler besser, gilt das für neue Bearbeitungen. Ein Foto, das du früher bearbeitet hast, behält genau seinen Look, in Entwickeln und in jedem Export; ein Update verändert also nie heimlich fertige Arbeit. Die Release Notes nennen jede solche Änderung unter „Änderungen an bestehenden Bearbeitungen“.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

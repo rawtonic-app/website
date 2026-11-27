@@ -1,64 +1,64 @@
 {
   "_comment": "The one place for release facts. scripts/release.sh (app repository, stage site) writes version, date, tag and the files from the release's assets; whatsNew (the home page's 'New in' block, en and de) is written with the release's CHANGELOG section. Then `node scripts/build.mjs --strict`. TBD values, a whatsNew of another version and stale version text are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.20",
-  "date": "2026-11-25",
-  "dateText": "25 November 2026",
-  "tag": "v0.1.0-alpha.20",
+  "version": "0.1.0-alpha.21",
+  "date": "2026-11-27",
+  "dateText": "27 November 2026",
+  "tag": "v0.1.0-alpha.21",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.20_aarch64.dmg",
-    "size": "43 MiB",
-    "sha256": "fb2068c7c0300863c4bc7dd179b693c5907c87687621d7c4f090ec6c9021e02e"
+    "file": "Rawtonic_0.1.0-alpha.21_aarch64.dmg",
+    "size": "44 MiB",
+    "sha256": "6d953e2846c88c76ccb5a26524aae0c3d20b114723943ad7beef95d3aecb7692"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.20_x86_64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.21_x86_64.dmg",
     "size": "50 MiB",
-    "sha256": "157c28fdcb259ea173b14cd728251f15039dacb3f7c765963fe3c103cd48f53e"
+    "sha256": "ef3b0c626e516774197b2b254681439efe2f53ba1ba446e43aa36bc79188ab8c"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.20_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.21_amd64.AppImage",
     "size": "135 MiB",
-    "sha256": "422c0a03b6472fdc60ea45a226e51220ce87841edab75db0c3da797a59ec42be"
+    "sha256": "8c57f757d62bb2ce20b7faaa61d80eb86d615f56731a0120fcd769206c043490"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.20_x64.msi",
+    "file": "Rawtonic_0.1.0-alpha.21_x64.msi",
     "size": "58 MiB",
-    "sha256": "ee330e9fc0d420c915a449273e5c62ff23ff720e2cbb0be10e665233eaf1c326"
+    "sha256": "03aaf616a0e322ded4130558f13061f8220f971c0c27fcdbdb818924c434f662"
   },
   "otherAssets": [
     {
-      "file": "Rawtonic_0.1.0-alpha.20_aarch64.app.tar.gz",
-      "size": "43 MiB",
-      "sha256": "89c800cafa36532e8852064f36d8bccb47aecdef33a888eb00bd16c371c81418"
+      "file": "Rawtonic_0.1.0-alpha.21_aarch64.app.tar.gz",
+      "size": "44 MiB",
+      "sha256": "524e0815ba8aadfdbb3e38e44dbc0156a81119b19bcee6a224aa9e7a095ad6f0"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.20_amd64.AppImage.zsync",
+      "file": "Rawtonic_0.1.0-alpha.21_amd64.AppImage.zsync",
       "size": "0 MiB",
-      "sha256": "fc0a0586d0618acce6082fa68a5a9e1ea59b70dcb7eec87885accdada18e49a5"
+      "sha256": "78bdfb417f5def90c8948e806b16c78a2633932c1414b5d266557d206c40009b"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.20_x64-portable.zip",
+      "file": "Rawtonic_0.1.0-alpha.21_x64-portable.zip",
       "size": "59 MiB",
-      "sha256": "3ed6be4173cd6703d2cd64c5528c11bd86f81b9bb6fbf93a7b2fbbd92a451070"
+      "sha256": "f019bc44398e5a4396574dd21b44bdd3a73f6483081001802424056a8527e8af"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.20_x64-setup.exe",
+      "file": "Rawtonic_0.1.0-alpha.21_x64-setup.exe",
       "size": "40 MiB",
-      "sha256": "bb8aa128063aa132e170a687c23e8ce3c1396b16afae775a772fff6ada85f986"
+      "sha256": "a2a342a92671a3e3570e0a5057ddc0416f3630d3b9bcbad439306d67ec37e397"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.20_x86_64.app.tar.gz",
+      "file": "Rawtonic_0.1.0-alpha.21_x86_64.app.tar.gz",
       "size": "50 MiB",
-      "sha256": "5f71dafa6a123239dbad2ae1ac399cbd887bafcf4897699e9598561a85b8795b"
+      "sha256": "674c513e0a62bab1915aeb9f6a7d7ab9b74e8e9e90676278f3622413e39ebda2"
     },
     {
       "file": "SHA256SUMS-windows.txt",
       "size": "0 MiB",
-      "sha256": "42b9fdec12ad45d646f61210c0a117bb92e8caf57ce0e6b80296b7edbdedb3d0"
+      "sha256": "fbb26e49f779fb3ad77f0c16b5d996325ec1e38a3ea1ddd4ec3c851fd1d947d8"
     },
     {
       "file": "latest.json",
       "size": "0 MiB",
-      "sha256": "8ea19738fdbb0bd2abf267e9b9e43294c515d374cbfdfcb02c64836b429b44db"
+      "sha256": "cce5f29c8baa980328d15a68b0ba6a685ddb78031cf009ac4963faef8b81275a"
     },
     {
       "file": "libgphoto2-2.5.34.tar.bz2",
@@ -78,46 +78,46 @@
     {
       "file": "SHA256SUMS.txt",
       "size": "0 MiB",
-      "sha256": "1581a7df92e21b8865a9b267a191beba8aeec84819be0b6d8d62095478902555"
+      "sha256": "f2537d0f127586866216d2a4154bad062bfdaf3ecc0155c9d54bab2f6cf16a5a"
     }
   ],
   "whatsNew": {
-    "version": "0.1.0-alpha.20",
+    "version": "0.1.0-alpha.21",
     "en": {
-      "summary": "B&W Toning, Shadows and Highlights that keep more detail, a better dead-pixel repair, and exports you can size and save as you like.",
+      "summary": "AI Denoise for Fujifilm X-Trans and a much faster Fast quality, colours that follow your monitor on Windows and Linux, and AI masks that wait for memory on computers with 16 GB or less.",
       "items": [
         {
-          "title": "Tones and black & white.",
-          "text": "The Black & white tool can now tone a photo: a highlights and a shadows tone, how they meet, and how far the tint reaches into the paper. On new edits, raised Shadows keep deep shadows crisper and lowered Highlights keep more texture in clouds. The automatic dead-pixel repair finds more dead pixels in dark and busy areas and fills them in the colour around them; in our test it left fewer visible than Capture One."
+          "title": "AI Denoise for X-Trans, and faster.",
+          "text": "AI Denoise now works on Fujifilm X-Trans photos, with Rawtonic’s own network. A new Quality choice adds Fast beside Full: very close in 100 % crops and many times quicker where AI runs on the processor (one 24 MP photo: under a minute instead of about eleven). Exports with Clarity take about a third less time."
         },
         {
-          "title": "Export the way you need.",
-          "text": "Limit a JPEG to a file size, Save As… a single photo with the system’s save dialog, and choose what happens when a file already exists: keep both, skip it, or replace it only when the photo changed since you last exported it. Virtual copies are now photos of their own in the Library, with their own flags, ratings in smart albums and places in albums. iPhone HEIC photos open on macOS."
+          "title": "Colours that follow your monitor.",
+          "text": "On Windows and Linux the Develop preview is now converted into your monitor’s colour profile, on Linux the thumbnails too, so colours on a wide-gamut screen no longer look too strong. Exports do not change."
         },
         {
-          "title": "Faster and steadier.",
-          "text": "Thumbnails and photos on a network share open much faster. On Windows laptops with Radeon graphics the first photo after an install appears in about 8 instead of 17 seconds, and the view no longer freezes after a graphics driver error. On macOS, Rawtonic no longer hides other apps in Open With."
+          "title": "Steadier and easier.",
+          "text": "On computers with 16 GB of memory or less, Subject and Sky selections now wait for memory or switch to a slower low-memory mode, and say so on their layer, so they run out of memory far less often. Also new: Dim Surroundings (Shift+L), a roomier Import dialog with one naming editor for Import, Rename and Export, Undo in the order of what you did, and trashed photos that leave the library at once."
         }
       ],
-      "note": "To update, click Install update in the update notice or replace the app as usual. Your libraries, sessions and saved edits stay as they are and keep their look; photos you never edited develop with the new dead-pixel repair."
+      "note": "To update, click Install update in the update notice or replace the app as usual. Your libraries, sessions and saved edits stay as they are and keep their look; the new Clarity and X-Trans AI Denoise apply to new edits."
     },
     "de": {
-      "summary": "S/W-Tonung, Tiefen und Lichter mit mehr Zeichnung, eine bessere Reparatur toter Pixel und Exporte in der Größe und unter dem Namen, den du willst.",
+      "summary": "KI-Entrauschen für Fujifilm X-Trans und eine viel schnellere Qualität „Schnell“, Farben passend zu deinem Monitor unter Windows und Linux, und KI-Masken, die auf Computern mit 16 GB oder weniger auf freien Speicher warten.",
       "items": [
         {
-          "title": "Töne und Schwarzweiß.",
-          "text": "Das Werkzeug Schwarzweiß kann ein Foto jetzt tonen: ein Ton für die Lichter und einer für die Tiefen, wo sie sich treffen und wie weit die Tönung ins Papier reicht. Bei neuen Bearbeitungen bleiben tiefe Schatten mit angehobenen Tiefen knackiger, und abgesenkte Lichter behalten mehr Zeichnung in Wolken. Die automatische Reparatur toter Pixel findet mehr davon in dunklen und unruhigen Bereichen und füllt sie in der Farbe ihrer Umgebung; in unserem Test blieben weniger sichtbar als bei Capture One."
+          "title": "KI-Entrauschen für X-Trans, und schneller.",
+          "text": "KI-Entrauschen funktioniert jetzt mit Fotos von Fujifilm-X-Trans-Sensoren, mit Rawtonics eigenem Netz. Eine neue Wahl der Qualität bietet neben Voll auch Schnell: in der 100-%-Ansicht sehr nah dran und um ein Vielfaches schneller, wo KI auf dem Prozessor läuft (ein 24-MP-Foto: unter einer Minute statt etwa elf). Exporte mit Klarheit brauchen etwa ein Drittel weniger Zeit."
         },
         {
-          "title": "Exportieren, wie du es brauchst.",
-          "text": "Begrenze ein JPEG auf eine Dateigröße, sichere ein einzelnes Foto mit „Sichern unter …“ über den Dialog des Systems, und wähle, was passiert, wenn eine Datei schon existiert: beide behalten, überspringen oder nur ersetzen, wenn sich das Foto seit deinem letzten Export geändert hat. Virtuelle Kopien sind jetzt eigene Fotos in der Bibliothek, mit eigenen Markierungen, Bewertungen in intelligenten Alben und Plätzen in Alben. iPhone-HEIC-Fotos öffnen sich unter macOS."
+          "title": "Farben passend zu deinem Monitor.",
+          "text": "Unter Windows und Linux wird die Vorschau in Entwickeln jetzt in das Farbprofil deines Monitors umgerechnet, unter Linux auch die Miniaturen, damit Farben auf einem Wide-Gamut-Bildschirm nicht mehr zu kräftig wirken. Exporte ändern sich nicht."
         },
         {
-          "title": "Schneller und stabiler.",
-          "text": "Miniaturen und Fotos auf einer Netzwerkfreigabe öffnen sich viel schneller. Auf Windows-Laptops mit Radeon-Grafik erscheint das erste Foto nach der Installation nach etwa 8 statt 17 Sekunden, und die Ansicht friert nach einem Fehler des Grafiktreibers nicht mehr ein. Unter macOS verdrängt Rawtonic andere Apps nicht mehr aus „Öffnen mit“."
+          "title": "Stabiler und einfacher.",
+          "text": "Auf Computern mit 16 GB Arbeitsspeicher oder weniger warten Auswahlen von Motiv und Himmel jetzt auf freien Speicher oder rechnen in einem langsameren, sparsamen Modus und sagen das an ihrer Ebene, so dass ihnen der Speicher viel seltener ausgeht. Außerdem neu: Umgebung abdunkeln (Umschalt+L), ein geräumigerer Import-Dialog mit einem Benennungs-Editor für Import, Umbenennen und Export, Rückgängig in der Reihenfolge deiner Schritte, und Fotos im Papierkorb verlassen die Bibliothek sofort."
         }
       ],
-      "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten und sehen aus wie bisher; Fotos, die du nie bearbeitet hast, nutzen die neue Reparatur toter Pixel."
+      "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten und sehen aus wie bisher; die neue Klarheit und KI-Entrauschen für X-Trans gelten für neue Bearbeitungen."
     }
   }
 }

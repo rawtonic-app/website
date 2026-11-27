@@ -79,7 +79,7 @@ function windowsKind(file, lang) {
 const T = {
   en: {
     lang: 'en', root: '/', locale: 'en_GB', dateLocale: 'en-GB',
-    skip: 'Skip to content', home: 'Rawtonic home', navMain: 'Main', navFooter: 'Footer',
+    skip: 'Skip to content', home: 'Rawtonic home', navMain: 'Main', navFooter: 'Footer', menu: 'Menu',
     features: 'Features', switching: 'Switching', whatsNew: 'What’s new', install: 'Install', contribute: 'Contribute',
     newIn: 'New in', released: 'Released', earlier: 'Earlier releases',
     github: 'Rawtonic on GitHub', support: 'Support', download: 'Download',
@@ -89,10 +89,13 @@ const T = {
     legal: 'Rawtonic is an independent project, not affiliated with, endorsed or sponsored by Adobe, Capture One or any camera maker. Lightroom, Capture One and camera names are trademarks of their owners and appear here only to say what Rawtonic imports from, works with or was measured against.',
     ogImageAlt: 'Rawtonic: The photograph comes first. A free, open-source RAW developer for macOS and Linux, beside a screenshot of Develop.',
     more: (n) => `and ${n} more`,
+    docs: 'Docs', docsNav: 'Documentation', docsHome: 'All topics', shotTodo: 'Screenshot to come',
+    docSections: { library: 'Import & Library', basics: 'Develop basics', local: 'Local adjustments', ai: 'AI tools', export: 'Export & sharing' },
+    docsSoon: 'Pages for this part are being written.',
   },
   de: {
     lang: 'de', root: '/de/', locale: 'de_DE', dateLocale: 'de-DE',
-    skip: 'Zum Inhalt springen', home: 'Rawtonic-Startseite', navMain: 'Hauptmenü', navFooter: 'Fußzeile',
+    skip: 'Zum Inhalt springen', home: 'Rawtonic-Startseite', navMain: 'Hauptmenü', navFooter: 'Fußzeile', menu: 'Menü',
     features: 'Funktionen', switching: 'Umsteigen', whatsNew: 'Neuigkeiten', install: 'Installation', contribute: 'Mitwirken',
     newIn: 'Neu in', released: 'Erschienen am', earlier: 'Frühere Versionen',
     github: 'Rawtonic auf GitHub', support: 'Unterstützen', download: 'Download',
@@ -102,6 +105,9 @@ const T = {
     legal: 'Rawtonic ist ein unabhängiges Projekt und steht in keiner Verbindung zu Adobe, Capture One oder einem Kamerahersteller, wird von ihnen weder empfohlen noch gesponsert. Lightroom, Capture One und Kameranamen sind Marken ihrer Inhaber und werden hier nur genannt, um zu sagen, woraus Rawtonic importiert, womit es zusammenarbeitet oder womit es verglichen wurde.',
     ogImageAlt: 'Rawtonic: „The photograph comes first.“ Ein kostenloser Open-Source-RAW-Entwickler für macOS und Linux, neben einem Screenshot von Entwickeln.',
     more: (n) => `und ${n} weitere`,
+    docs: 'Anleitung', docsNav: 'Anleitung', docsHome: 'Alle Themen', shotTodo: 'Screenshot folgt',
+    docSections: { library: 'Import & Bibliothek', basics: 'Grundlagen der Entwicklung', local: 'Lokale Anpassungen', ai: 'KI-Werkzeuge', export: 'Export & Weitergabe' },
+    docsSoon: 'Die Seiten zu diesem Teil entstehen gerade.',
   },
 };
 const LANGS = Object.keys(T);
@@ -283,7 +289,64 @@ const lastChange = (file) => {
 // Every page in every language: pages/x.html (English) and pages/<lang>/x.html.
 const pageFiles = (dir) => (fs.existsSync(path.join(root, dir)) ? fs.readdirSync(path.join(root, dir)) : [])
   .filter((f) => f.endsWith('.html')).sort().map((f) => path.join(dir, f));
-const pages = LANGS.flatMap((lang) => pageFiles(lang === 'en' ? 'pages' : `pages/${lang}`).map((file) => ({ lang, file })));
+// The user documentation lives one level down: pages/docs/x.html → /docs/x/.
+const langDir = (lang) => (lang === 'en' ? 'pages' : `pages/${lang}`);
+const pages = LANGS.flatMap((lang) => [...pageFiles(langDir(lang)), ...pageFiles(`${langDir(lang)}/docs`)].map((file) => ({ lang, file })));
+const frontMatter = (file) => {
+  const m = fs.readFileSync(path.join(root, file), 'utf8').match(/^<!--page\s+(\{[\s\S]*?\})\s*-->\n/);
+  if (!m) throw new Error(`${file}: missing <!--page {…} --> front matter`);
+  return { m, page: JSON.parse(m[1]) };
+};
+
+// Docs: one page per tool or workflow. Its front matter carries
+// "docs": {"section", "order", "tool", "nav"}: section is one of DOC_SECTIONS
+// (the navigation follows a photographer's workflow), tool is the app's own
+// tool key (the Develop tool group key, e.g. "exposure", or a workflow key such
+// as "export"), so the app can open /docs/<page>/ from that tool's ? later.
+const DOC_SECTIONS = Object.keys(T.en.docSections);
+const docs = Object.fromEntries(LANGS.map((lang) => [lang, pageFiles(`${langDir(lang)}/docs`)
+  .map((file) => ({ file, page: frontMatter(file).page })).filter((d) => d.page.docs)]));
+for (const lang of LANGS) {
+  const tools = new Map();
+  for (const { file, page } of docs[lang]) {
+    const d = page.docs;
+    if (!DOC_SECTIONS.includes(d.section)) throw new Error(`${file}: docs.section must be one of ${DOC_SECTIONS.join(', ')}`);
+    if (typeof d.tool !== 'string' || !/^[a-zA-Z][\w.-]*$/.test(d.tool)) throw new Error(`${file}: docs.tool must be the app's tool key`);
+    if (typeof d.nav !== 'string' || !Number.isFinite(d.order)) throw new Error(`${file}: docs needs nav (short title) and order (number)`);
+    if (tools.has(d.tool)) throw new Error(`${file}: docs.tool ${d.tool} is already ${tools.get(d.tool)}`);
+    tools.set(d.tool, file);
+  }
+}
+const bySection = (lang, section) => docs[lang].filter((d) => d.page.docs.section === section)
+  .sort((a, b) => a.page.docs.order - b.page.docs.order);
+// {{docsnav}}: the side navigation of a docs page, current page marked.
+const docsNav = (lang, current) => {
+  const t = T[lang];
+  const groups = DOC_SECTIONS.map((s) => {
+    const items = bySection(lang, s).map(({ page }) => `<li><a href="${page.path}"${page.path === current ? ' aria-current="page"' : ''}>${esc(page.docs.nav)}</a></li>`);
+    return `<li><span class="docs-sec">${esc(t.docSections[s])}</span>${items.length ? `<ul>${items.join('')}</ul>` : ''}</li>`;
+  });
+  return `<nav class="docs-nav" aria-label="${esc(t.docsNav)}"><a class="docs-home" href="${t.root}docs/"${current === `${t.root}docs/` ? ' aria-current="page"' : ''}>${esc(t.docsHome)}</a><ul>${groups.join('')}</ul></nav>`;
+};
+// {{docsindex}}: every section with its pages and their descriptions.
+const docsIndex = (lang) => DOC_SECTIONS.map((s) => {
+  const items = bySection(lang, s);
+  const body = items.length
+    ? `<ul class="docs-list">${items.map(({ page }) => `<li><a href="${page.path}">${esc(page.docs.nav)}</a><span>${esc(page.description)}</span></li>`).join('')}</ul>`
+    : `<p class="muted">${esc(T[lang].docsSoon)}</p>`;
+  return `<section class="docs-group"><h2 id="${s}">${esc(T[lang].docSections[s])}</h2>${body}</section>`;
+}).join('\n');
+// {{shot "id" "what it shows"}}: a marked place for a screenshot of a demo scene
+// (made per release by the app's QA harness; see README). Listed by the build.
+const shots = [];
+const showShots = process.argv.includes('--show-shots');
+const shot = (id, what, lang, where) => {
+  shots.push(`${where}: ${id}`);
+  // Hidden in the built site (user decision 2026-11-26: pages may go live without
+  // screenshots); `--show-shots` renders the dashed boxes for a local preview.
+  if (!showShots) return `<!-- shot ${id} -->`;
+  return `<figure class="shot-todo" data-shot="${id}"><span>${esc(T[lang].shotTodo)}: ${esc(what)}</span></figure>`;
+};
 // The path of a page in another language: /x/ ↔ /de/x/.
 const enPath = (p, lang) => (lang === 'en' ? p : p.slice(lang.length + 1));
 const langPath = (p, lang) => (lang === 'en' ? p : `/${lang}${p}`);
@@ -291,16 +354,15 @@ const left = [];
 const built = new Map(); // English path → { lang: { page, html, file } }
 for (const { lang, file } of pages) {
   const src = fs.readFileSync(path.join(root, file), 'utf8');
-  const m = src.match(/^<!--page\s+(\{[\s\S]*?\})\s*-->\n/);
-  if (!m) throw new Error(`${file}: missing <!--page {…} --> front matter`);
-  const page = JSON.parse(m[1]);
+  const { m, page } = frontMatter(file);
   if (lang !== 'en' && !page.path.startsWith(`/${lang}/`)) throw new Error(`${file}: path ${page.path} must start with /${lang}/`);
   if (!new RegExp(`<html lang="${lang}">`).test(src)) throw new Error(`${file}: needs <html lang="${lang}">`);
   const base = enPath(page.path, lang);
   Object.assign(page, Object.fromEntries(LANGS.map((l) => [`${l}Url`, ORIGIN + langPath(base, l)])));
   page.url = ORIGIN + page.path;
   page.altPath = langPath(base, T[lang].other.lang);
-  const html = render(src.slice(m[0].length), { ...ctx[lang], page }, file);
+  const body = src.slice(m[0].length).replace(/\{\{shot\s+"([\w-]+)"\s+"([^"]+)"\s*\}\}/g, (_, id, what) => shot(id, what, lang, file));
+  const html = render(body, { ...ctx[lang], page, docsnav: docsNav(lang, page.path), docsindex: docsIndex(lang) }, file);
   const out = path.join(root, 'site', page.path, 'index.html');
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, html);
@@ -373,4 +435,5 @@ if (left.length) {
   console.error(`build: ${left.length} placeholder line(s) left:\n  ${left.join('\n  ')}`);
   if (strict) { console.error('build: refused (--strict): fill release.json and the marked legal fields first'); process.exit(1); }
 }
+if (shots.length) console.log(`build: ${shots.length} screenshot place(s) still empty:\n  ${shots.join('\n  ')}`);
 console.log(`build: ${pages.length} pages (${LANGS.join(', ')}), version ${release.version}${left.length || stale.length ? ' (with problems)' : ''}`);
