@@ -39,7 +39,8 @@ function build(change = () => {}) {
     const r = spawnSync(process.execPath, [path.join(dir, 'scripts/build.mjs'), '--strict'], {
       cwd: dir, encoding: 'utf8', env: { ...process.env, RAWTONIC_CHANGELOG: path.join(dir, 'CHANGELOG.md') },
     });
-    return { status: r.status, out: r.stdout + r.stderr, index: r.status === 0 ? fs.readFileSync(path.join(dir, 'site/index.html'), 'utf8') : '' };
+    const read = (f) => (r.status === 0 ? fs.readFileSync(path.join(dir, 'site', f), 'utf8') : '');
+    return { status: r.status, out: r.stdout + r.stderr, index: read('index.html'), docsExport: read('docs/export/index.html') };
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
@@ -106,4 +107,12 @@ test('the release history page may name every earlier release', () => {
 test('the current and newer versions in page text are fine', () => {
   const r = build((dir) => editPage(dir, 'code-signing.html', (s) => s.replace('</main>', `<p>Since ${release.version}.</p></main>`)));
   assert.equal(r.status, 0, r.out);
+});
+
+test('empty screenshot places are listed but not shown on the built pages', () => {
+  const r = build();
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.out, /screenshot place\(s\) still empty/);
+  assert.ok(!r.docsExport.includes('class="shot-todo"'), 'a dashed screenshot box reached the built page');
+  assert.ok(r.docsExport.includes('<!-- shot export-dialog -->'));
 });
