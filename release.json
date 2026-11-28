@@ -82,42 +82,42 @@
     }
   ],
   "whatsNew": {
-    "version": "0.1.0-alpha.21",
+    "version": "0.1.0-alpha.22",
     "en": {
-      "summary": "AI Denoise for Fujifilm X-Trans and a much faster Fast quality, colours that follow your monitor on Windows and Linux, and AI masks that wait for memory on computers with 16 GB or less.",
+      "summary": "A calmer interface, preset thumbnails of your photo, Export with Previous, Z to zoom, and AI masks on very large photos that no longer run out of memory on 16 GB computers.",
       "items": [
         {
-          "title": "AI Denoise for X-Trans, and faster.",
-          "text": "AI Denoise now works on Fujifilm X-Trans photos, with Rawtonic’s own network. A new Quality choice adds Fast beside Full: very close in 100 % crops and many times quicker where AI runs on the processor (one 24 MP photo: under a minute instead of about eleven). Exports with Clarity take about a third less time."
+          "title": "Calmer, and the photo first.",
+          "text": "The panels use neutral greys and sit a step darker than the photo, one accent colour marks what is selected or on, sliders are plainer and menus show text without icons. Styles & presets can show each preset as a small thumbnail of the photo you have open, and holding a slider’s name shows the photo at that slider’s default until you let go."
         },
         {
-          "title": "Colours that follow your monitor.",
-          "text": "On Windows and Linux the Develop preview is now converted into your monitor’s colour profile, on Linux the thumbnails too, so colours on a wide-gamut screen no longer look too strong. Exports do not change."
+          "title": "Faster at the routine work.",
+          "text": "Export with Previous (⌥⇧⌘E, Ctrl+Alt+Shift+E) exports the selected photos with your last export’s settings, without the dialog. Z switches between Fit and your last zoom level, and the zoom menu now goes from 25 to 1600 %."
         },
         {
-          "title": "Steadier and easier.",
-          "text": "On computers with 16 GB of memory or less, Subject and Sky selections now wait for memory or switch to a slower low-memory mode, and say so on their layer, so they run out of memory far less often. Also new: Dim Surroundings (Shift+L), a roomier Import dialog with one naming editor for Import, Rename and Export, Undo in the order of what you did, and trashed photos that leave the library at once."
+          "title": "Steadier.",
+          "text": "Subject and Sky masks on very large photos (around 50 MP) no longer run out of memory on computers with 16 GB; when memory is short they wait and compute as soon as there is room. JPEG and TIFF files saved with a RAW extension now open instead of failing silently."
         }
       ],
-      "note": "To update, click Install update in the update notice or replace the app as usual. Your libraries, sessions and saved edits stay as they are and keep their look; the new Clarity and X-Trans AI Denoise apply to new edits."
+      "note": "To update, click Install update in the update notice or replace the app as usual. Your libraries, sessions and saved edits stay as they are and keep their look."
     },
     "de": {
-      "summary": "KI-Entrauschen für Fujifilm X-Trans und eine viel schnellere Qualität „Schnell“, Farben passend zu deinem Monitor unter Windows und Linux, und KI-Masken, die auf Computern mit 16 GB oder weniger auf freien Speicher warten.",
+      "summary": "Eine ruhigere Oberfläche, Vorgaben als Miniaturen deines Fotos, Mit vorherigen Einstellungen exportieren, Z zum Zoomen und KI-Masken auf sehr großen Fotos, denen auf 16-GB-Computern nicht mehr der Speicher ausgeht.",
       "items": [
         {
-          "title": "KI-Entrauschen für X-Trans, und schneller.",
-          "text": "KI-Entrauschen funktioniert jetzt mit Fotos von Fujifilm-X-Trans-Sensoren, mit Rawtonics eigenem Netz. Eine neue Wahl der Qualität bietet neben Voll auch Schnell: in der 100-%-Ansicht sehr nah dran und um ein Vielfaches schneller, wo KI auf dem Prozessor läuft (ein 24-MP-Foto: unter einer Minute statt etwa elf). Exporte mit Klarheit brauchen etwa ein Drittel weniger Zeit."
+          "title": "Ruhiger, und das Foto zuerst.",
+          "text": "Die Bedienfelder nutzen neutrale Grautöne und sind eine Stufe dunkler als das Foto, eine einzige Akzentfarbe zeigt, was ausgewählt oder eingeschaltet ist, Regler sind schlichter und Menüs zeigen Text ohne Symbole. Stile & Vorgaben kann jede Vorgabe als kleine Miniatur des geöffneten Fotos zeigen, und wenn du den Namen eines Reglers gedrückt hältst, zeigt das Foto diesen Regler auf seinem Standardwert, bis du loslässt."
         },
         {
-          "title": "Farben passend zu deinem Monitor.",
-          "text": "Unter Windows und Linux wird die Vorschau in Entwickeln jetzt in das Farbprofil deines Monitors umgerechnet, unter Linux auch die Miniaturen, damit Farben auf einem Wide-Gamut-Bildschirm nicht mehr zu kräftig wirken. Exporte ändern sich nicht."
+          "title": "Schneller bei der Routine.",
+          "text": "Mit vorherigen Einstellungen exportieren (⌥⇧⌘E, Strg+Alt+Umschalt+E) exportiert die ausgewählten Fotos mit den Einstellungen deines letzten Exports, ohne Dialog. Z wechselt zwischen Einpassen und deiner letzten Zoomstufe, und das Zoom-Menü reicht jetzt von 25 bis 1600 %."
         },
         {
-          "title": "Stabiler und einfacher.",
-          "text": "Auf Computern mit 16 GB Arbeitsspeicher oder weniger warten Auswahlen von Motiv und Himmel jetzt auf freien Speicher oder rechnen in einem langsameren, sparsamen Modus und sagen das an ihrer Ebene, so dass ihnen der Speicher viel seltener ausgeht. Außerdem neu: Umgebung abdunkeln (Umschalt+L), ein geräumigerer Import-Dialog mit einem Benennungs-Editor für Import, Umbenennen und Export, Rückgängig in der Reihenfolge deiner Schritte, und Fotos im Papierkorb verlassen die Bibliothek sofort."
+          "title": "Stabiler.",
+          "text": "Masken für Motiv und Himmel auf sehr großen Fotos (um 50 MP) bringen Computer mit 16 GB nicht mehr an die Speichergrenze; ist der Speicher knapp, warten sie und rechnen, sobald Platz ist. JPEG- und TIFF-Dateien mit einer RAW-Endung öffnen sich jetzt, statt still zu scheitern."
         }
       ],
-      "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten und sehen aus wie bisher; die neue Klarheit und KI-Entrauschen für X-Trans gelten für neue Bearbeitungen."
+      "note": "Zum Aktualisieren klickst du im Update-Hinweis auf „Update installieren“ oder ersetzt die App wie gewohnt. Bibliotheken, Sitzungen und gespeicherte Bearbeitungen bleiben erhalten und sehen aus wie bisher."
     }
   }
 }
