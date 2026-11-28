@@ -1,64 +1,64 @@
 {
   "_comment": "The one place for release facts. scripts/release.sh (app repository, stage site) writes version, date, tag and the files from the release's assets; whatsNew (the home page's 'New in' block, en and de) is written with the release's CHANGELOG section. Then `node scripts/build.mjs --strict`. TBD values, a whatsNew of another version and stale version text are refused by --strict and therefore by scripts/deploy.sh.",
-  "version": "0.1.0-alpha.21",
-  "date": "2026-11-27",
-  "dateText": "27 November 2026",
-  "tag": "v0.1.0-alpha.21",
+  "version": "0.1.0-alpha.22",
+  "date": "2026-11-28",
+  "dateText": "28 November 2026",
+  "tag": "v0.1.0-alpha.22",
   "mac": {
-    "file": "Rawtonic_0.1.0-alpha.21_aarch64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.22_aarch64.dmg",
     "size": "44 MiB",
-    "sha256": "6d953e2846c88c76ccb5a26524aae0c3d20b114723943ad7beef95d3aecb7692"
+    "sha256": "a96fca4e798ce6a96ad9bbccf946eae2a4d962916e0da919dd8f187236db8390"
   },
   "macIntel": {
-    "file": "Rawtonic_0.1.0-alpha.21_x86_64.dmg",
+    "file": "Rawtonic_0.1.0-alpha.22_x86_64.dmg",
     "size": "50 MiB",
-    "sha256": "ef3b0c626e516774197b2b254681439efe2f53ba1ba446e43aa36bc79188ab8c"
+    "sha256": "d5c7823e864a3ce7f34f1d3e93c242de59c40560e6cf800d83a32dbcc95444f3"
   },
   "linux": {
-    "file": "Rawtonic_0.1.0-alpha.21_amd64.AppImage",
+    "file": "Rawtonic_0.1.0-alpha.22_amd64.AppImage",
     "size": "135 MiB",
-    "sha256": "8c57f757d62bb2ce20b7faaa61d80eb86d615f56731a0120fcd769206c043490"
+    "sha256": "b4f1fd0f0d2617cdde8822f2849f75e10b61fdd8bd5c57cc63c91f31cd26ed89"
   },
   "windows": {
-    "file": "Rawtonic_0.1.0-alpha.21_x64.msi",
+    "file": "Rawtonic_0.1.0-alpha.22_x64.msi",
     "size": "58 MiB",
-    "sha256": "03aaf616a0e322ded4130558f13061f8220f971c0c27fcdbdb818924c434f662"
+    "sha256": "1a13328cfb5ea9c61f5362ff669be61c2f705bd1f3f0cc73fed4078a4e7cab79"
   },
   "otherAssets": [
     {
-      "file": "Rawtonic_0.1.0-alpha.21_aarch64.app.tar.gz",
+      "file": "Rawtonic_0.1.0-alpha.22_aarch64.app.tar.gz",
       "size": "44 MiB",
-      "sha256": "524e0815ba8aadfdbb3e38e44dbc0156a81119b19bcee6a224aa9e7a095ad6f0"
+      "sha256": "d19935260c7bf4ab33e9ce4b205834eb121e7ed2aae0713ed4a6a06842f9d896"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.21_amd64.AppImage.zsync",
+      "file": "Rawtonic_0.1.0-alpha.22_amd64.AppImage.zsync",
       "size": "0 MiB",
-      "sha256": "78bdfb417f5def90c8948e806b16c78a2633932c1414b5d266557d206c40009b"
+      "sha256": "bc417be4ff6596c284e432bdf6414fd368be3bec320949a56f1af83d04a152d8"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.21_x64-portable.zip",
+      "file": "Rawtonic_0.1.0-alpha.22_x64-portable.zip",
       "size": "59 MiB",
-      "sha256": "f019bc44398e5a4396574dd21b44bdd3a73f6483081001802424056a8527e8af"
+      "sha256": "d3c46f28fe6df0e45cd6414d01aa7b6f91d23f21e03469aa7802e72a719831d8"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.21_x64-setup.exe",
+      "file": "Rawtonic_0.1.0-alpha.22_x64-setup.exe",
       "size": "40 MiB",
-      "sha256": "a2a342a92671a3e3570e0a5057ddc0416f3630d3b9bcbad439306d67ec37e397"
+      "sha256": "eaa43c9f12126513cec4f5c79fc23574e9dcf84fa45228c1eab6165e08c0328a"
     },
     {
-      "file": "Rawtonic_0.1.0-alpha.21_x86_64.app.tar.gz",
+      "file": "Rawtonic_0.1.0-alpha.22_x86_64.app.tar.gz",
       "size": "50 MiB",
-      "sha256": "674c513e0a62bab1915aeb9f6a7d7ab9b74e8e9e90676278f3622413e39ebda2"
+      "sha256": "f470fe127a6b432d4c363034635372e86aa040909b8f3bda1abaa78ee3b7f71a"
     },
     {
       "file": "SHA256SUMS-windows.txt",
       "size": "0 MiB",
-      "sha256": "fbb26e49f779fb3ad77f0c16b5d996325ec1e38a3ea1ddd4ec3c851fd1d947d8"
+      "sha256": "cbf4ea1f3869fee7ed2cb781080d1b8cb4ed330798e6f2115269c6062fc49bdc"
     },
     {
       "file": "latest.json",
       "size": "0 MiB",
-      "sha256": "cce5f29c8baa980328d15a68b0ba6a685ddb78031cf009ac4963faef8b81275a"
+      "sha256": "271a3200b6f27d2db27bd68442c64b38d8067703f296d885f271558558433513"
     },
     {
       "file": "libgphoto2-2.5.34.tar.bz2",
@@ -78,7 +78,7 @@
     {
       "file": "SHA256SUMS.txt",
       "size": "0 MiB",
-      "sha256": "f2537d0f127586866216d2a4154bad062bfdaf3ecc0155c9d54bab2f6cf16a5a"
+      "sha256": "db1ccef54baee357fcbf1e8db82c4164c3ece0be87798487cd8cd8118020ed80"
     }
   ],
   "whatsNew": {
