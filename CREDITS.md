@@ -25,6 +25,21 @@ The `site/assets/shot-*` images are window captures of Rawtonic 0.1.0-alpha.7 on
 | Tea_time.RAF | Daniel (DanielLikesDT) | [Raw Tea Time Image](https://discuss.pixls.us/t/raw-tea-time-image/55066) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Windmills.CR2 | Uli (Popanz) | [A fight against windmills or just a Play Raw?](https://discuss.pixls.us/t/a-fight-against-windmills-or-just-a-play-raw/48366) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
+The documentation pages (`/docs/`) show screenshots of the same demo, made by each release's QA build (Rawtonic's `scripts/docs-shots/`), with these photos added from [raw.pixls.us](https://raw.pixls.us/), whose files are all dedicated to the public domain under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/):
+
+| Name in the demo | Camera | Source |
+| :-- | :-- | :-- |
+| Street_at_night.NEF | Nikon D5600 | [Nikon/D5600/2018-01-20_01-14_0793.NEF](https://raw.pixls.us/data/Nikon/D5600/2018-01-20_01-14_0793.NEF) |
+| Colour_chart.ORF | Olympus E-M1 Mark II | [OLYMPUS/E-M1MarkII/Olympus_EM1mk2_Standard_20MP_ColorChecker.ORF](https://raw.pixls.us/data/OLYMPUS/E-M1MarkII/Olympus_EM1mk2_Standard_20MP_ColorChecker.ORF) |
+| _MG_7191.CR2 (the memory card of the Import picture) | Canon EOS 450D | [Canon/EOS 450D/_MG_7191.CR2](https://raw.pixls.us/data/Canon/EOS%20450D/_MG_7191.CR2) |
+| IMG_4047.CR2 (card) | Canon EOS 550D | [Canon/EOS 550D/IMG_4047.CR2](https://raw.pixls.us/data/Canon/EOS%20550D/IMG_4047.CR2) |
+| IMG_1813.CR2 (card) | Canon EOS 200D | [Canon/EOS 200D/IMG_1813.CR2](https://raw.pixls.us/data/Canon/EOS%20200D/IMG_1813.CR2) |
+| _MG_1948.CR2 (card) | Canon EOS 700D | [Canon/EOS 700D/_MG_1948.CR2](https://raw.pixls.us/data/Canon/EOS%20700D/_MG_1948.CR2) |
+| IMG_3688.CR2 (card) | Canon EOS Kiss X80 | [Canon/EOS Kiss X80/IMG_3688.CR2](https://raw.pixls.us/data/Canon/EOS%20Kiss%20X80/IMG_3688.CR2) |
+| _MG_1061.CR3 (card) | Canon EOS Rebel SL3 | [Canon/EOS Rebel SL3/Sedona2020_SL3__MG_1061.CR3](https://raw.pixls.us/data/Canon/EOS%20Rebel%20SL3/Sedona2020_SL3__MG_1061.CR3) |
+| IMG_7229.CR2 (card) | Canon EOS Rebel T100 | [Canon/EOS Rebel T100/IMG_7229.CR2](https://raw.pixls.us/data/Canon/EOS%20Rebel%20T100/IMG_7229.CR2) |
+| IMG_2422.CR2 (card) | Canon EOS Rebel T6 | [Canon/EOS Rebel T6/IMG_2422.CR2](https://raw.pixls.us/data/Canon/EOS%20Rebel%20T6/IMG_2422.CR2) |
+
 Licence statements were read from each post on 24 October 2026 ("This file is licensed Creative Commons, By-Attribution, Share-Alike" linking to CC BY-SA 4.0; "Image is CC-BY"; "Both are CC0").
 
 ## Fonts
