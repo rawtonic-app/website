@@ -36,7 +36,7 @@
           <li class="no">AI Denoise is slower than Lightroom’s and its result is a little less accurate.</li>
           <li class="no">With a Fujifilm GFX 50R, tethered shots arrive a little later than in Capture One.</li>
           <li class="no">Auto straighten’s rare misses are a little larger than Lightroom’s.</li>
-          <li class="no">A project’s photos cannot be moved to another drive one by one yet; move the whole folder instead.</li>
+          <li class="no">A session’s photos cannot be moved to another drive one by one yet; move the whole folder instead.</li>
         </ul>
       </div>
     </div>
@@ -60,7 +60,7 @@
           <tr><th scope="row">Export two recipes of 20 RAWs (38 files)</th><td class="num">10.1 s</td><td class="num">14 s (11–21 s)</td><td class="num">10.7 s</td><td><span class="v equal">Equal</span></td><td data-history>19 Nikon RAWs (one of the 20 is not supported) with the same four edits in all three programs (exposure +0.3, contrast +10, highlights −30, shadows +30, checked on screen in Lightroom and Capture One), exported as a 2048 px JPEG with watermark and a full-size 16-bit TIFF, until the last file is written. Same laptop, 17 November 2026, Rawtonic alpha.16 exporting from the Library, median of three interleaved runs (five runs: 10.1 s, Lightroom 19 s, Capture One 10.7 s); Rawtonic’s and Capture One’s ranges overlap (9.8–10.9 s and 9.7–10.9 s), every Lightroom run (11.3–21.2 s) took longer than every Rawtonic run. The earlier figures (alpha.4: Rawtonic 17 s, Lightroom 8 s, Capture One 9 s) compared photos without any edit; sharpening, noise reduction defaults and watermark rendering differ between the programs.</td></tr>
           <tr><th scope="row">AI subject mask, very first use</th><td class="num" data-history>alpha.4: 13.7 s; since alpha.6 1.5–3.3 s</td><td class="num">7.9 s</td><td>not measured</td><td><span class="v equal">Mixed</span></td><td data-history>First use after installing, model loading included; later uses take under a second. Since alpha.6 Rawtonic prepares the model in the background in Develop: 1.5–3.3 s is a click 25 s after the first photo opened (four runs, same laptop); a click within about 15 s still waits for part of the loading.</td></tr>
           <tr><th scope="row">AI denoise, 24 MP</th><td class="num">about 10 s, error 2.21</td><td class="num">6.5 s, error 1.69</td><td>not compared</td><td><span class="v worse">Worse</span></td><td>Time per photo, and lightness error at the same remaining noise. Lightroom’s figure is Camera Raw’s Denoise.</td></tr>
-          <tr><th scope="row">Moving a shoot to another drive</th><td>a project’s photos cannot leave its folder yet: move the whole folder</td><td>moves and keeps working, 2.1 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>26 RAW+JPEG pairs to an external drive. Moving a whole folder, or a catalog’s photos, works and is verified byte for byte.</td></tr>
+          <tr><th scope="row">Moving a shoot to another drive</th><td>a session’s photos cannot leave its folder yet: move the whole folder</td><td>moves and keeps working, 2.1 s</td><td>not measured</td><td><span class="v worse">Worse</span></td><td>26 RAW+JPEG pairs to an external drive. Moving a whole folder, or a catalog’s photos, works and is verified byte for byte.</td></tr>
         </tbody>
       </table>
     </div>
@@ -82,7 +82,7 @@
         <thead><tr><th scope="col">Lightroom</th><th scope="col">Capture One</th><th scope="col">Rawtonic</th></tr></thead>
         <tbody>
           <tr><td>Catalog</td><td>Catalog</td><td>Catalog</td></tr>
-          <tr><td>—</td><td>Session</td><td>Project (one folder with Capture, Selects, Output and Trash)</td></tr>
+          <tr><td>—</td><td>Session</td><td>Session (one folder with Capture, Selects, Output and Trash)</td></tr>
           <tr><td>Survey view</td><td>Viewer with several variants selected</td><td>Multi view, <kbd>N</kbd></td></tr>
           <tr><td>Export preset</td><td>Process recipe</td><td>Export recipe</td></tr>
           <tr><td>Masking</td><td>Layers</td><td>Layers, each with its masks</td></tr>

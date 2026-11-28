@@ -1,0 +1,57 @@
+<!--page {"path": "/de/docs/detail/", "title": "Details: Schärfen, Rauschreduzierung, Körnung", "description": "Aufnahmeschärfung mit Radius, Details und Maskieren, klassische und KI-Rauschreduzierung, Filmkorn und Korrekturen für Farbsäume und Moiré.", "docs": {"section": "basics", "order": 40, "tool": "sharpening", "nav": "Details"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Details.</h1>
+      <p class="lead">Der Reiter <strong>Details</strong> enthält die Werkzeuge, die im Maßstab einzelner Pixel arbeiten: Schärfen, Rauschreduzierung, Körnung und Korrekturen für Farbsäume und Moiré. Beurteile sie bei 100 % (<kbd>Z</kbd>); eingepasst siehst du wenig von dem, was sie tun.</p>
+
+      {{shot "detail-sharpening" "die Gruppe Schärfen neben einer 100-%-Ansicht eines Auges"}}
+
+      <h2 id="sharpening">Schärfen</h2>
+      <p>Jede RAW-Datei ist durch den Sensor und seine Filter etwas weich; Schärfen holt die Klarheit zurück, die die Szene hatte.</p>
+      <dl>
+        <dt id="amount">Stärke</dt>
+        <dd>Wie stark Kanten geschärft werden, bis 150.</dd>
+        <dt id="radius">Radius</dt>
+        <dd>Wie breit die geschärfte Kante ist, von 0,5 bis 3 Pixel. Klein für feine Details wie Landschaften und Stoffe, größer für weiche Motive.</dd>
+        <dt id="detail-slider">Details</dt>
+        <dd>Wie viel der feinsten Struktur mitgeschärft wird, statt nur klarer Kanten. Hohe Werte holen Struktur heraus, und Rauschen mit ihr.</dd>
+        <dt id="masking">Maskieren</dt>
+        <dd>Lässt glatte Flächen wie Haut und Himmel beim Schärfen aus, sodass nur Kanten geschärft werden. Für Porträts höher stellen.</dd>
+        <dt id="threshold">Schwellenwert</dt>
+        <dd>Lässt Unterschiede aus, die kleiner sind als dieser Wert, damit feines Rauschen nicht geschärft wird.</dd>
+        <dt id="falloff">Abfall</dt>
+        <dd>Schärft die Ecken stärker als die Mitte, für Objektive, die zum Rand hin weicher sind.</dd>
+      </dl>
+      <p>Auf einer Ebene kann Schärfen auch negativ sein, um einen Teil des Fotos weicher zu machen, etwa einen Hintergrund. Für eine Schärfung, die zu Druck oder Bildschirm in der Endgröße passt, nimm die Ausgabeschärfung im <a href="/de/docs/export/">Export</a>.</p>
+
+      <h2 id="noise">Rauschreduzierung</h2>
+      <p>Die <strong>Rauschreduzierung</strong> behandelt zwei Arten von Rauschen. <strong>Luminanz</strong> glättet das körnige Rauschen von Fotos mit hoher ISO, mit <strong>Details</strong> und <strong>Kontrast</strong>, um feine Struktur zu erhalten. <strong>Farbe</strong> entfernt die farbigen Flecken, mit <strong>Details</strong> und <strong>Glättung</strong>. Setz die Luminanz-Rauschreduzierung mit Bedacht ein: Sie kostet immer etwas feines Detail.</p>
+      <p>Für Fotos mit hoher ISO entfernt <strong>KI-Entrauschen</strong> das Rauschen, bevor aus dem RAW Farben werden, und erhält dabei weit mehr Detail, als nachträgliches Glätten kann. Es hat eine eigene Seite: <a href="/de/docs/ai-denoise/">KI-Entrauschen</a>.</p>
+
+      <h2 id="grain">Körnung</h2>
+      <p><strong>Körnung</strong> fügt eine filmähnliche Struktur hinzu: <strong>Stärke</strong>, <strong>Größe</strong> und <strong>Rauheit</strong>, eine Kornfarbe und eine Struktur (Gleichmäßig, Weich, Klumpig, Rau oder Gesprenkelt). Sie wird im Maßstab des Fotos selbst gezeichnet, so hat die exportierte Datei die Körnung, die du bei 100 % siehst. Ein wenig Körnung verbirgt auch Tonwertabrisse in glatten Himmeln nach starken Bearbeitungen.</p>
+
+      <h2 id="fringes">Farbsäume und Moiré</h2>
+      <ul>
+        <li><strong>Rand entfernen</strong> beseitigt die violetten und grünen Säume, die manche Objektive an kontrastreichen Kanten hinterlassen, etwa an Ästen vor hellem Himmel. Die seitlichen Farbsäume in den Ecken werden mit dem Objektiv korrigiert: siehe <a href="/de/docs/crop/#lens">Objektivkorrektur</a>.</li>
+        <li><strong>Moiré</strong> entfernt die farbigen Wellenmuster, die feine Stoffe oder Bildschirme auf Sensoren ohne Tiefpassfilter erzeugen können.</li>
+      </ul>
+
+      <p class="when"><strong>Wenn du von Lightroom kommst:</strong> Stärke, Radius, Details und Maskieren sind Lightrooms Regler mit denselben Bereichen. <strong>Von Capture One:</strong> Schwellenwert und Abfall gibt es wie beim Schärfen in Capture One.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

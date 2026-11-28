@@ -1,0 +1,50 @@
+<!--page {"path": "/de/docs/from-other-editors/", "title": "Von Lightroom oder Capture One: deine Bibliothek importieren", "description": "Einen Lightroom-Classic-Katalog oder eine Capture-One-Session oder einen Capture-One-Katalog übernehmen, und was davon in Rawtonic ankommt.", "docs": {"section": "library", "order": 15, "tool": "catalogImport", "nav": "Von Lightroom oder Capture One"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Von Lightroom oder Capture One.</h1>
+      <p class="lead">Du musst nicht von vorn anfangen. Rawtonic liest einen Lightroom-Classic-Katalog (<code>.lrcat</code>) oder eine Capture-One-Session (<code>.cosessiondb</code>) oder einen Capture-One-Katalog (<code>.cocatalog</code>) und holt deine Bewertungen, Markierungen, Stichwörter, Alben und Bearbeitungen in einen Rawtonic-Katalog. Die Bibliothek des anderen Programms wird nur gelesen, nie verändert, und deine Fotos bleiben, wo sie sind.</p>
+
+      {{shot "catalog-import" "der Dialog Aus Lightroom oder Capture One importieren mit den Zahlen eines geprüften Katalogs"}}
+
+      <h2 id="how">So importierst du</h2>
+      <ol>
+        <li>Wähle <strong>Aus Lightroom oder Capture One importieren…</strong> im Startbildschirm oder im Menü der Bibliothek. Rawtonic legt dafür zuerst einen neuen Katalog an (oder importiert in den geöffneten Katalog).</li>
+        <li>Wähle die Katalog- oder Session-Datei und klick auf <strong>Prüfen</strong>. Rawtonic zeigt, was es gefunden hat, bevor etwas geschieht: Fotos, wie viele davon bearbeitet sind, Alben, virtuelle Kopien, Stichwörter und was es weglassen wird.</li>
+        <li>Sind Fotos umgezogen, seit das andere Programm sie zuletzt gesehen hat, gib neben jedem aufgeführten Ordner seinen neuen Ort an.</li>
+        <li>Klick auf <strong>In … importieren</strong>. Danach stehen die Fotos im Album <strong>Letzter Import</strong>.</li>
+      </ol>
+
+      <h2 id="translates">Was übernommen wird</h2>
+      <ul>
+        <li><strong>Bibliothek:</strong> Bewertungen, Markierungen, Farbmarkierungen, Stichwörter mit ihrer Hierarchie, Alben, intelligente Alben, deren Regeln Rawtonic lesen kann, virtuelle Kopien und Schnappschüsse.</li>
+        <li><strong>Bearbeitungen:</strong> die globalen Anpassungen, Zuschnitt und Geometrie, Objektivkorrektur und lokale Anpassungen. Himmel-, Motiv- und Landschaftsmasken wählt Rawtonics eigene KI-Auswahl auf dem Foto neu aus; Verläufe bleiben bearbeitbare Verläufe.</li>
+        <li><strong>Vorgaben und Stile</strong> importierst du getrennt, in der Leiste <a href="/de/docs/presets/#import">Stile &amp; Vorgaben</a> von Entwickeln.</li>
+        <li><strong>Begleitdateien:</strong> Rawtonic liest Bewertungen, Farbmarkierungen und Stichwörter aus XMP-Dateien und lässt die eigenen Einstellungen des anderen Programms in einer XMP-Datei unangetastet, wenn es hineinschreibt.</li>
+      </ul>
+
+      <h2 id="not-yet">Was noch nicht übernommen wird</h2>
+      <ul>
+        <li>Lightrooms Bereichsreparatur, Protokollschritte und die Namen virtueller Kopien; Stichwort-Synonyme und intelligente Alben mit Regeln, die Rawtonic nicht lesen kann (die Prüfung nennt sie).</li>
+        <li>Capture Ones Pinselstriche, Farbbereiche und KI-Auswahlen kommen als feste Masken, nicht als Striche oder Bereiche, die du bearbeiten kannst.</li>
+        <li>Nicht jede Anpassung sieht genau so aus wie im Programm, aus dem sie kommt; prüf die Fotos, auf die es ankommt, bevor du sie lieferst.</li>
+      </ul>
+
+      <h2 id="names">Wo was ist</h2>
+      <p>Die meisten Werkzeuge haben die Namen, die du kennst. Einige heißen anders: Lightrooms Maskieren und Capture Ones Ebenen sind <a href="/de/docs/masks/">Ebenen</a>, Vorgaben und Stile sind <a href="/de/docs/presets/">Stile &amp; Vorgaben</a>, eine Exportvorgabe oder ein Prozessrezept ist ein <a href="/de/docs/export/">Export-Rezept</a>, Lightrooms Übersicht ist die <a href="/de/docs/library/#compare">Mehrfachansicht</a> (<kbd>N</kbd>). Die vollständige Liste und wo Rawtonic im Vergleich zu beiden Programmen steht, findest du unter <a href="/de/switching/">Umsteigen</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

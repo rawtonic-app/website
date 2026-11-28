@@ -1,0 +1,50 @@
+<!--page {"path": "/docs/from-other-editors/", "title": "From Lightroom or Capture One: importing your library", "description": "Bring a Lightroom Classic catalog or a Capture One session or catalog over, and what of it translates into Rawtonic.", "docs": {"section": "library", "order": 15, "tool": "catalogImport", "nav": "From Lightroom or Capture One"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>From Lightroom or Capture One.</h1>
+      <p class="lead">You do not have to start over. Rawtonic reads a Lightroom Classic catalog (<code>.lrcat</code>) or a Capture One session (<code>.cosessiondb</code>) or catalog (<code>.cocatalog</code>) and brings your ratings, labels, keywords, albums and edits into a Rawtonic catalog. The other program’s library is only read, never changed, and your photos stay where they are.</p>
+
+      {{shot "catalog-import" "the Import from Lightroom or Capture One dialog with the counts of a checked catalog"}}
+
+      <h2 id="how">How to import</h2>
+      <ol>
+        <li>Choose <strong>Import from Lightroom or Capture One…</strong> on the start screen or in the library menu. Rawtonic first makes a new catalog for it (or imports into the catalog that is open).</li>
+        <li>Pick the catalog or session file and click <strong>Check</strong>. Rawtonic shows what it found before anything happens: photos, how many with edits, albums, virtual copies, keywords, and what it will leave out.</li>
+        <li>If photos moved since the other program last saw them, point to their new folder beside each folder it lists.</li>
+        <li>Click <strong>Import into …</strong>. Afterwards, the photos are in a <strong>Previous Import</strong> album.</li>
+      </ol>
+
+      <h2 id="translates">What translates</h2>
+      <ul>
+        <li><strong>Library:</strong> ratings, flags, colour labels, keywords with their hierarchy, albums, smart albums whose rules Rawtonic can read, virtual copies and snapshots.</li>
+        <li><strong>Edits:</strong> the global adjustments, crop and geometry, lens correction, and local adjustments. Sky, Subject and Landscape masks are selected again on the photo by Rawtonic’s own AI selections; gradients stay editable gradients.</li>
+        <li><strong>Presets and styles</strong> import separately, in Develop’s <a href="/docs/presets/#import">Styles &amp; presets</a> panel.</li>
+        <li><strong>Sidecars:</strong> Rawtonic reads ratings, labels and keywords from XMP sidecars and keeps the other program’s own settings in a sidecar untouched when it writes to it.</li>
+      </ul>
+
+      <h2 id="not-yet">What does not translate yet</h2>
+      <ul>
+        <li>Lightroom’s spot removal, history steps and the names of virtual copies; keyword synonyms and smart albums with rules Rawtonic cannot read (the check lists them).</li>
+        <li>Capture One’s brush strokes, colour ranges and AI selections come over as fixed masks, not as strokes or ranges you can edit.</li>
+        <li>Not every adjustment looks exactly as it did in the program it came from; check the photos that matter before you deliver them.</li>
+      </ul>
+
+      <h2 id="names">Where things are</h2>
+      <p>Most tools have the names you know. A few are called differently: Lightroom’s Masking and Capture One’s layers are <a href="/docs/masks/">Layers</a>, presets and styles are <a href="/docs/presets/">Styles &amp; presets</a>, an export preset or process recipe is an <a href="/docs/export/">Export recipe</a>, Lightroom’s Survey view is the <a href="/docs/library/#compare">Multi view</a> (<kbd>N</kbd>). The full list, and where Rawtonic stands against both programs, is on <a href="/switching/">Switching</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

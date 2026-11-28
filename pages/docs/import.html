@@ -1,0 +1,57 @@
+<!--page {"path": "/docs/import/", "title": "Import, sessions and catalogs", "description": "Sessions for one shoot, catalogs for your whole collection, and an import that copies from cards and checks every copy.", "docs": {"section": "library", "order": 10, "tool": "import", "nav": "Import, sessions & catalogs"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Import, sessions and catalogs.</h1>
+      <p class="lead">Rawtonic keeps your photos in a library of one of two kinds: a <strong>session</strong> for one shoot or assignment, or a <strong>catalog</strong> for your whole collection. Both use the same editing tools. Import brings photos into the open library; your original files are never changed by it.</p>
+
+      {{shot "import-dialog" "the Import dialog with a memory card's photos, one rated in the large view"}}
+
+      <h2 id="session-or-catalog">Session or catalog?</h2>
+      <dl>
+        <dt id="session">Session</dt>
+        <dd>One folder that holds everything of one job: <code>Capture</code> for the photos, <code>Selects</code> for the ones you pick, <code>Output</code> for exports, <code>Trash</code> for what you throw out, and the edits beside them. Move or copy the folder to another disk or computer and it opens there as it was. Use it for a shoot, a client job, a day of work.</dd>
+        <dt id="catalog">Catalog</dt>
+        <dd>One catalog for your collection, with albums, smart albums, keywords and search across years of photos. Photos are copied into the catalog folder by default; with <strong>Add folder…</strong> photos can also stay where they are and only be listed in the catalog (they then do not travel with the catalog folder, which the dialog says).</dd>
+      </dl>
+      <p><strong>New session or catalog…</strong> (⌘N, Ctrl+N) and <strong>Open session or catalog…</strong> (⌘O, Ctrl+O) are on the start screen and in the menu. The library’s name in the top bar opens the same choices.</p>
+
+      <h2 id="import">Importing photos</h2>
+      <p><strong>Import</strong> in the top bar (⇧⌘I, Ctrl+Shift+I) opens the Import dialog; putting in a memory card opens it too, and you can drop photos or folders on the window. The photos fill the dialog; the settings sit in a column beside them: destination, file naming, metadata.</p>
+      <ul>
+        <li><strong>Copy or add.</strong> <strong>Copy to …</strong> copies the photos into the library. <strong>Add where they are</strong> lists photos from a disk without copying them. Photos on a memory card are always copied, since a card is erased and reused.</li>
+        <li><strong>Every copy is checked.</strong> Each copied file is compared with its source by its SHA-256 checksum before it counts as imported. A file of the same name already there is never written over, and photos already in the library (same size and content) are marked <strong>In library</strong> and skipped.</li>
+        <li><strong>Second copy</strong> writes a backup of every photo to another disk in the same import. <strong>Eject … after the import</strong> ejects the card, but only when every photo came off it copied and verified.</li>
+        <li><strong>Look before you copy.</strong> Double-click a photo or press Space for the large view; a click or <kbd>Z</kbd> shows 100 % around the pointer, so you can check focus before anything is copied. <kbd>P</kbd> includes a photo, <kbd>X</kbd> leaves it out, <kbd>0</kbd>–<kbd>5</kbd> rate it; the rating comes into the library with it.</li>
+        <li><strong>File names and metadata.</strong> Name the copies from tokens (date, original name, counter, …) and fill creator, copyright (<code>{year}</code> becomes the capture year) and keywords from a <strong>Metadata preset</strong>. The same naming editor is used for renaming and for export.</li>
+        <li>RAW and JPEG of the same shot come in as one photo, unless you tick <strong>Import JPEGs next to RAW files as separate photos</strong>.</li>
+      </ul>
+      <p>You can keep editing while an import runs; the Activity centre shows how far it is.</p>
+
+      <h2 id="hot-folder">Hot folder</h2>
+      <p><strong>Hot folder</strong> in the top bar watches a folder (for example the one another program saves tethered shots to) and copies every new, complete photo into the library as it arrives, checked like an import. Each new photo can get a rating, keywords, a metadata preset and develop settings. For a camera on USB, see <a href="/docs/tethering/">Tethering</a>.</p>
+
+      <h2 id="sidecars">XMP sidecars and other programs</h2>
+      <p>Ratings, colour labels and keywords in XMP sidecars are read when photos come in, and Rawtonic writes yours to the photo’s XMP sidecar, so other programs see them (Settings → General, on by default). If another program changed a sidecar since, Rawtonic does not write over it: the top bar shows how many sidecars differ, and you choose <strong>Keep library</strong> or <strong>Use XMP</strong>. Your edits themselves stay in the library and in Rawtonic’s own sidecar beside the photo.</p>
+      <p><strong>Synchronize Folder…</strong> brings the library in line with the disk after files were moved, renamed, added or deleted outside Rawtonic: it shows what it found (moves it could verify byte for byte, new photos, missing ones) and changes only what you tick. Files on disk are not changed by it.</p>
+
+      <h2 id="move">Taking a catalog to another computer</h2>
+      <p><strong>Export as Catalog…</strong> makes a new catalog of the selected photos, for example to edit a job on a laptop. <strong>Import from Catalog…</strong> brings the work back: photos are matched by their identity or the content of their original, never by file name; for photos changed on both sides you choose what wins, and the side that loses is kept as a snapshot.</p>
+
+      <p class="when"><strong>If you come from Lightroom or Capture One:</strong> a catalog works like Lightroom’s and Capture One’s, a session like Capture One’s. To bring your existing library over, see <a href="/docs/from-other-editors/">From Lightroom or Capture One</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

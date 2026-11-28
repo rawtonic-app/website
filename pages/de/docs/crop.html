@@ -1,0 +1,67 @@
+<!--page {"path": "/de/docs/crop/", "title": "Zuschnitt und Geometrie: Seitenverhältnis, Ausrichten, Perspektive, Objektivkorrektur", "description": "Auf ein Format zuschneiden, einen Horizont automatisch ausrichten, stürzende Linien korrigieren und die Objektivkorrektur nutzen, die deine Kamera in ihren RAW-Dateien speichert.", "docs": {"section": "basics", "order": 50, "tool": "crop", "nav": "Zuschnitt & Geometrie"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Zuschnitt und Geometrie.</h1>
+      <p class="lead">Der Reiter <strong>Zuschnitt</strong> rahmt das Foto und bringt seine Linien in Ordnung: zuschneiden und ausrichten, die Perspektive von Gebäuden korrigieren und entfernen, was das Objektiv mit dem Bild gemacht hat (Verzeichnung, dunkle Ecken, Farbsäume). <kbd>C</kbd> holt das Zuschnittwerkzeug von überall in Entwickeln.</p>
+
+      {{shot "crop-overlay" "das Zuschnittwerkzeug auf einer Landschaft mit der Drittel-Überlagerung und offener Format-Liste"}}
+
+      <h2 id="crop">Zuschneiden</h2>
+      <ul>
+        <li><strong>Format</strong>: Original, Frei, 1 × 1 bis 65 × 24 (3 × 2, 4 × 3, 5 × 4, 16 × 9 und weitere), A-Format (√2 × 1) oder ein eigenes (Hinzufügen). Der Knopf daneben tauscht Hoch- und Querformat.</li>
+        <li>Zieh an den Ecken oder Kanten des Rahmens oder verschieb das Foto darin. Die Überlagerung (Drittel, Goldener Schnitt, Goldene Spirale und Goldenes Dreieck, Diagonale, Armatur, Mitte) hilft beim Bildaufbau; sie kann immer oder nur beim Ziehen erscheinen.</li>
+        <li><kbd>[</kbd> und <kbd>]</kbd> drehen das Foto um 90°; Spiegeln steht in derselben Gruppe.</li>
+      </ul>
+
+      <h2 id="straighten">Ausrichten</h2>
+      <p>Drei Wege, ein Foto gerade zu stellen:</p>
+      <ul>
+        <li><strong>Auto</strong> (<kbd>⇧R</kbd>) richtet das Foto an seinem Horizont oder seinen Senkrechten aus und passt den Zuschnitt an, damit keine leeren Ecken bleiben. Hat das Foto keine klaren Linien, lässt es das Foto, wie es ist, und sagt das.</li>
+        <li>Das Werkzeug <strong>Ausrichten</strong> (<kbd>R</kbd>): Zieh eine Linie entlang von etwas, das waagerecht oder senkrecht sein soll.</li>
+        <li>Der Regler <strong>Ausrichten</strong>, für das letzte Zehntelgrad.</li>
+      </ul>
+
+      <h2 id="perspective">Perspektive</h2>
+      <p>Die <strong>Perspektivkorrektur</strong> in der Gruppe Geometrie findet die geraden Linien des Fotos und korrigiert sie:</p>
+      <dl>
+        <dt id="upright-auto">Auto</dt>
+        <dd>Macht stürzende Linien parallel, wo das Foto welche hat, und richtet es sonst nur aus.</dd>
+        <dt id="upright-level">Ebene</dt>
+        <dd>Nur Drehung. Auf 20 Testfotos, deren Waagerechte wir von Hand geprüft haben, lag der mittlere Fehler (Median) danach bei 0,06°.</dd>
+        <dt id="upright-vertical">Vertikal</dt>
+        <dd>Stürzende Linien werden parallel, die klassische Korrektur für ein Gebäude, das von unten fotografiert wurde.</dd>
+        <dt id="upright-full">Voll</dt>
+        <dd>Vertikale und horizontale Perspektive zugleich.</dd>
+        <dt id="upright-guided">Geführt</dt>
+        <dd>Du zeichnest bis zu zwei vertikale und zwei horizontale Hilfslinien entlang von Kanten, die gerade sein sollen; die Korrektur folgt ihnen.</dd>
+      </dl>
+      <p><strong>Zuschnitt beschränken</strong> zoomt hinein, bis keine leeren Ecken bleiben. Die Regler unter <strong>Transformieren</strong> (Vertikal, Horizontal, Drehung, Seitenverhältnis, Skalieren, Versatz, Verzerrung) tun dasselbe von Hand oder verfeinern ein automatisches Ergebnis.</p>
+
+      {{shot "crop-perspective-guided" "geführte Perspektivkorrektur mit zwei vertikalen Hilfslinien an einem Gebäude"}}
+
+      <h2 id="lens">Objektivkorrektur</h2>
+      <p>Jedes Objektiv biegt gerade Linien ein wenig, dunkelt die Ecken ab und hinterlässt Farbsäume zum Rand hin. <strong>Profilkorrekturen aktivieren</strong> entfernt alle drei. Woher die Korrektur kommt:</p>
+      <ul>
+        <li><strong>Kameradaten.</strong> Viele Kameras speichern die Objektivkorrektur ihres Herstellers in jeder RAW-Datei: Fujifilm, Sony, Panasonic, Olympus und OM System, Nikon Z, neuere Canon-CR3-Dateien und Samsung. Rawtonic nutzt sie, wenn sie da ist, so wird ein Foto so korrigiert, wie die Kamera ihre eigenen JPEGs korrigiert, auch mit Objektiven, die keine Datenbank kennt.</li>
+        <li><strong>Objektivdatenbank.</strong> Sonst sucht Rawtonic das Objektiv in der Lensfun-Datenbank nach dem, was das Foto darüber sagt. Passen mehrere Objektive, fragt es dich, statt zu raten; <strong>Objektivdatenbank verwenden…</strong> wählt ein Profil von Hand, auch anstelle der Kameradaten.</li>
+      </ul>
+      <p>Verzeichnung, Vignettierung und chromatische Aberration haben je eine eigene Stärke, so kannst du etwas vom Charakter des Objektivs behalten. <strong>Chromatische Aberration entfernen</strong> misst die roten und blauen Säume des Fotos selbst und bringt die Farben zur Deckung, für Objektive ohne Profil. <strong>Beugungskorrektur</strong> schärft die Weichheit kleiner Blenden weg, berechnet aus der Blendenzahl und der Pixelgröße des Sensors.</p>
+
+      <p class="when"><strong>Wenn du von Lightroom kommst:</strong> Auto, Ebene, Vertikal, Voll und Geführt der Perspektivkorrektur arbeiten wie Upright. <strong>Von Capture One:</strong> Die Kameradaten sind dieselbe eingebaute Korrektur, die Capture One auf die Dateien dieser Kameras anwendet, und Capture-One-Importe bringen die Objektivkorrektur mit.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

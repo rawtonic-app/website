@@ -1,0 +1,47 @@
+<!--page {"path": "/docs/presets/", "title": "Styles and presets: thumbnails, Amount, defaults per camera", "description": "Save an edit as a style, see every style as a thumbnail of your photo, dial it in with Amount, and give each camera its own starting point.", "docs": {"section": "basics", "order": 60, "tool": "presets", "nav": "Styles & presets"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Styles and presets.</h1>
+      <p class="lead">A style is a saved edit you can put on any photo with one click. <strong>Styles &amp; presets</strong> sits at the top of Develop’s Adjust tab, with Rawtonic’s own styles under <strong>Built-in</strong>, yours under the folders you make, and the ones you use most under <strong>Favorites</strong>.</p>
+
+      {{shot "presets-grid" "the Styles & presets panel as a grid of thumbnails of the open photo"}}
+
+      <h2 id="try">Trying and applying</h2>
+      <ul>
+        <li><strong>Point</strong> at a style to see it on the photo; nothing is applied yet.</li>
+        <li><strong>Click</strong> to apply it. With several photos selected, one click applies it to all of them, as one undo step.</li>
+        <li><strong>Amount</strong> sets how strongly the applied style acts on the open photo, from 0 to 100 % of what it was saved with.</li>
+        <li><strong>Thumbnails.</strong> The Grid switch shows each style as a small picture of your own photo with that style applied, so you choose by looking rather than by name. Going back to a style you looked at is instant; a style that crops or has to develop the RAW again shows a hatched tile instead, until you apply it. The list stays the default; Rawtonic remembers your choice.</li>
+      </ul>
+
+      <h2 id="replace">Styles replace each other</h2>
+      <p>Applying a style while another is applied takes the first one back before it applies the new one, so you can click through styles without them piling up. Click the applied style again to take it back. Settings you changed yourself after applying a style keep your value when the style is replaced or taken back.</p>
+      <p>Tool presets work differently: each tool’s header has a presets button for that tool alone (for example only sharpening, or only a vignette), and those add to what is there. Rawtonic’s built-in presets for sky, subject, eyes, skin and background bring an AI layer with them, which is selected anew on each photo.</p>
+
+      <h2 id="save">Saving your own</h2>
+      <p><strong>New preset</strong> (+) saves the open photo’s settings. <strong>Only changed settings</strong> (on by default) keeps it to what you changed, so the style does not reset the rest; tick <strong>Crop &amp; geometry</strong> and <strong>Layers &amp; masks</strong> only when the style should carry them. Right-click a style to rename, duplicate, move, export it, or <strong>Update with current settings</strong>.</p>
+
+      <h2 id="defaults">Develop defaults: a starting point per camera</h2>
+      <p>Every photo you have not edited yet starts from its develop defaults. Right-click a style or the photo and choose <strong>Set as default for …</strong> a camera model or one camera body (by its serial number), or <strong>Set as global default</strong> for all photos. A single tool’s settings can be saved as a camera default from its header. Settings lists them under Camera defaults. <strong>Reset Adjustments</strong> brings a photo back to these defaults.</p>
+
+      <h2 id="import">Importing presets and styles</h2>
+      <p><strong>Import presets</strong> reads Lightroom presets and Capture One styles and translates them into Rawtonic’s tools. What it cannot translate it lists by name after the import, so you know what to check.</p>
+
+      <p class="when"><strong>If you come from Capture One:</strong> styles behave like Capture One’s, except that your own changes made after a style are kept when the style is replaced. <strong>From Lightroom:</strong> presets with Amount and hover preview work like Lightroom’s; the grid of thumbnails is in the panel itself.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

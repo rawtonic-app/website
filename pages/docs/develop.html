@@ -1,0 +1,78 @@
+<!--page {"path": "/docs/develop/", "title": "Develop: tabs, before/after, history, copying edits", "description": "How Develop is laid out, how to compare with the original, undo with History and Snapshots, and carry an edit to other photos.", "docs": {"section": "basics", "order": 10, "tool": "develop", "nav": "Develop overview"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Develop.</h1>
+      <p class="lead">Develop is where a RAW file becomes a photograph. Every change is a setting stored with the photo, never a change to the file itself: you can go back to any earlier state, compare it with the original, and carry it to other photos.</p>
+
+      {{shot "develop-overview" "Develop with the Adjust tab open beside a portrait, filmstrip below"}}
+
+      <h2 id="tabs">The tabs</h2>
+      <p>The tools sit in six tabs at the top of the tool column (left or right of the photo, as you chose at the start; Settings → General changes it):</p>
+      <dl>
+        <dt id="tab-adjust">Adjust</dt>
+        <dd>The everyday tools: Styles &amp; presets, profile, white balance, Exposure (<a href="/docs/basic-tone/">Basic tone</a>), Presence, tone curve, and effects such as vignette and light effects. Many edits never leave this tab.</dd>
+        <dt id="tab-color">Color</dt>
+        <dd>The colour mixer, colour editor, colour grading, black &amp; white and calibration: see <a href="/docs/colour/">Colour</a>.</dd>
+        <dt id="tab-detail">Detail</dt>
+        <dd>Sharpening, noise reduction (with <a href="/docs/ai-denoise/">AI Denoise</a>), grain, defringe and moiré: see <a href="/docs/detail/">Detail</a>.</dd>
+        <dt id="tab-crop">Crop</dt>
+        <dd>Crop, straighten, perspective and lens correction: see <a href="/docs/crop/">Crop and geometry</a>.</dd>
+        <dt id="tab-layers">Layers</dt>
+        <dd>Local adjustments with brushes, gradients and AI selections: see <a href="/docs/masks/">Masks and layers</a>.</dd>
+        <dt id="tab-retouch">Retouch</dt>
+        <dd>Spot removal, object removal and face retouch.</dd>
+      </dl>
+      <p>Each tool’s header has a switch to turn the tool off and on and a reset; holding the reset (or pressing it with ⌥/Alt) shows the photo without that tool until you let go. ⌥/Alt-click a header to open only that tool; Right-click a header to move the tool up or down, or to turn on Solo Mode, which keeps one tool open at a time. <strong>Auto</strong> (⌘L, Ctrl+L) sets the tone for you as a starting point.</p>
+
+      <h2 id="sliders">Sliders</h2>
+      <p>Drag a slider, or its name, to change it; double-click either to reset it; click the number to type a value. A small tick under each slider marks its default. <strong>Press and hold a slider’s name</strong> for a quarter of a second to see the photo with just that slider at its default; let go and your setting is back exactly. Nothing changes and no history step is added, so it is a quick “what does this slider do here?”.</p>
+
+      <h2 id="before-after">Before and after</h2>
+      <ul>
+        <li><strong>Hold <kbd>\</kbd></strong> to see the whole photo as it was before your edits; let go to return. ⌘\ (Ctrl+\) keeps the before until you press it again.</li>
+        <li><kbd>Y</kbd> turns on the before/after view; <kbd>⇧Y</kbd> steps through its modes: split left/right, split top/bottom, side by side.</li>
+        <li>Instead of the unedited photo, a snapshot can be the “before”: choose Compare on the snapshot.</li>
+        <li><kbd>J</kbd> shows the clipping warnings: where highlights or shadows lose their detail.</li>
+      </ul>
+
+      <h2 id="history">History and snapshots</h2>
+      <p>⌘Z (Ctrl+Z) undoes, ⇧⌘Z or ⌘Y (Ctrl+Y) redoes. <strong>History</strong>, at the bottom of the tool column, lists the steps of the open photo; click one to go back to it. Rawtonic keeps the last 50 steps of each of the last 100 photos you edited while it is open.</p>
+      <p><strong>Snapshots</strong> keep an edit under a name for good: + saves the current edit, the camera beside a history step saves that step. Restoring a snapshot is itself a step that Undo takes back, so trying a snapshot never loses your current edit. Snapshots are kept with the photo in the library.</p>
+
+      {{shot "develop-history-snapshots" "the History and Snapshots dock with three named snapshots"}}
+
+      <h2 id="copy">Carrying an edit to other photos</h2>
+      <dl>
+        <dt id="copy-paste">Copy and paste</dt>
+        <dd>⇧⌘C (Ctrl+Shift+C) opens <strong>Copy adjustments</strong>: tick the tools to copy (<strong>Changed</strong> picks only the tools changed on this photo) and whether local layers come along. ⇧⌘V (Ctrl+Shift+V) pastes onto the selected photos. On Windows and Linux, Ctrl+C in Develop copies the same tools as last time without the dialog.</dd>
+        <dt id="previous">From the previous photo</dt>
+        <dd>⌥⌘V (Ctrl+Alt+V) pastes the edit of the photo you had open before, the quickest way through a series shot in the same light.</dd>
+        <dt id="sync">Sync</dt>
+        <dd>Select several photos in the filmstrip and press ⇧⌘S (Ctrl+Shift+S): the open photo’s edit goes to all of them, with the same choice of tools as Copy.</dd>
+        <dt id="per-tool">One tool</dt>
+        <dd>Each tool’s copy button copies or applies just that tool, for example only the white balance.</dd>
+      </dl>
+      <p>Pasted layers join each photo’s own. AI selections such as Sky or Subject are detected again on each photo, so a pasted sky mask fits that photo’s sky.</p>
+      <p><strong>Reset Adjustments</strong> (⇧⌘R, Ctrl+Shift+R) goes back to the photo’s develop defaults; <strong>Reset to Neutral</strong> goes back to no adjustments at all.</p>
+
+      <h2 id="export">Exporting from Develop</h2>
+      <p>⇧⌘E (Ctrl+Shift+E) opens the Export dialog; <strong>Export with Previous</strong> (⌥⇧⌘E, Ctrl+Alt+Shift+E) exports the selected photos again with the settings of the last export, without the dialog. See <a href="/docs/export/">Export</a>.</p>
+
+      <p class="when"><strong>If you come from Lightroom or Capture One:</strong> the keys for before/after (<kbd>\</kbd>, <kbd>Y</kbd>), copy and paste (⇧⌘C, ⇧⌘V), sync and reset are the ones you know. Two things are new: holding a slider’s name to see its default, and holding a tool’s reset to see the photo without the tool.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

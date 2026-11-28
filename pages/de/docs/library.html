@@ -1,0 +1,60 @@
+<!--page {"path": "/de/docs/library/", "title": "Bibliothek und Aussortieren: Sterne, Markierungen, Mehrfachansicht", "description": "Ein Shooting schnell bewerten, markieren und vergleichen: Tasten für jede Bewertung, Automatisch weiter, die Mehrfachansicht zum Vergleichen und Zoom mit Z.", "docs": {"section": "library", "order": 20, "tool": "library", "nav": "Bibliothek & Aussortieren"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Bibliothek und Aussortieren.</h1>
+      <p class="lead">In der Bibliothek gehst du ein Shooting durch: jedes Foto ansehen, die guten behalten, die misslungenen aussortieren und später das eine wiederfinden, das du suchst. Alles geht hier mit der Tastatur, so bleiben deine Augen bei den Fotos.</p>
+
+      {{shot "library-grid" "das Bibliotheksraster mit Sternen, Markierungen und Farbmarkierungen auf den Miniaturen"}}
+
+      <h2 id="views">Raster, Lupe und Entwickeln</h2>
+      <p><kbd>G</kbd> zeigt das Raster, <kbd>E</kbd> ein Foto groß (die Lupe), <kbd>D</kbd> öffnet es in Entwickeln, <kbd>F</kbd> zeigt das Foto allein auf dem Bildschirm, bis du wieder <kbd>F</kbd> oder Esc drückst. Die Pfeiltasten gehen in jeder Ansicht von Foto zu Foto. <kbd>Tab</kbd> blendet die Seitenleisten aus, <kbd>⇧</kbd><kbd>Tab</kbd> alle Leisten.</p>
+
+      <h2 id="rate">Sterne, Markierungen und Farbmarkierungen</h2>
+      <dl>
+        <dt id="stars">Sterne</dt>
+        <dd><kbd>1</kbd> bis <kbd>5</kbd> bewerten das Foto, <kbd>0</kbd> löscht die Bewertung.</dd>
+        <dt id="flags">Markierungen</dt>
+        <dd><kbd>P</kbd> markiert, <kbd>X</kbd> lehnt ab, <kbd>U</kbd> hebt die Markierung auf. Ein abgelehntes Foto bleibt, wo es ist, bis du es aussortierst; eine Markierung löscht nichts.</dd>
+        <dt id="labels">Farbmarkierungen</dt>
+        <dd><kbd>6</kbd> Rot, <kbd>7</kbd> Gelb, <kbd>8</kbd> Grün, <kbd>9</kbd> Blau; oder <kbd>⇧1</kbd> bis <kbd>⇧5</kbd> für Rot bis Lila, <kbd>⇧0</kbd> für keine.</dd>
+      </dl>
+      <p><strong>Automatisch weiter</strong> springt nach jeder Bewertung oder Markierung zum nächsten Foto, so ist Aussortieren eine Taste pro Foto. Anfangs ist es aus; die Feststelltaste oder das Menü Foto schaltet es ein und aus (Einstellungen → Allgemein merkt sich die Wahl).</p>
+      <p>Filter über dem Raster zeigen nur markierte, abgelehnte oder unmarkierte Fotos, Fotos ab einer Bewertung oder mit bestimmten Farbmarkierungen. <strong>Löschen</strong> (<kbd>⌫</kbd>) verschiebt die ausgewählten Fotos in den eigenen Trash-Ordner der Bibliothek, aus dem Widerrufen sie zurückholt; erst <strong>Papierkorb leeren…</strong> legt sie in den Papierkorb deines Rechners. In einer Session verschiebt ⌘J (Strg+J) die ausgewählten Fotos in den Ordner <code>Selects</code>.</p>
+
+      <h2 id="compare">Vergleichen: die Mehrfachansicht</h2>
+      <p>Wähle zwei oder mehr Fotos aus und drück <kbd>N</kbd>: Die <strong>Mehrfachansicht</strong> zeigt sie nebeneinander, jedes mit eigener Bewertung, Markierung und einem Knopf, der es aus der Auswahl nimmt. So findest du am schnellsten das beste einer Serie.</p>
+      <ul>
+        <li><strong>Zoom koppeln</strong> (<kbd>⇧N</kbd>): Zoomst du ein Foto, zoomen und verschieben sich alle auf dieselbe Stelle, um Schärfe oder Ausdruck bei 100 % zu vergleichen.</li>
+        <li><strong>Eine Referenz.</strong> ⇧Return heftet das Foto, das du ansiehst, als Referenz an; es bleibt stehen, während du durch die anderen gehst. ⌘Return (Strg+Eingabe) löst es.</li>
+        <li>Die Mehrfachansicht gibt es auch in Entwickeln: <strong>Alle ausgewählten bearbeiten</strong> gibt jede Änderung an alle gezeigten Fotos weiter.</li>
+      </ul>
+
+      {{shot "library-multi-view" "die Mehrfachansicht mit vier Fotos einer Serie, Zoom gekoppelt bei 100 %"}}
+
+      <h2 id="zoom">Zoom</h2>
+      <p><kbd>Z</kbd> wechselt zwischen Einpassen und der Zoomstufe, die du zuletzt gewählt hast (100 %, bis du eine andere wählst), in der Lupe, in Entwickeln und in der Mehrfachansicht; die Leertaste geht durch Einpassen, doppelt Einpassen und 100 %, <kbd>↑</kbd> und <kbd>↓</kbd> zoomen in Stufen. Das Zoommenü reicht von 25 bis 1600 %; die Stufen zählen die Pixel des Fotos so, wie es zugeschnitten ist.</p>
+
+      <h2 id="suggestions">Vorschläge zum Aussortieren</h2>
+      <p>Im Werkzeug Aussortieren markiert <strong>Fehlaufnahmen und Dokumente finden</strong> Fehlaufnahmen (Objektivdeckel, Boden, Tasche, Verwackler) und Dokumente (Seiten, Belege, Bildschirmfotos), und <strong>Augen prüfen…</strong> markiert Gesichter mit geschlossenen Augen. Das sind nur Vorschläge: Abgelehnt wird nichts, bis du auf <strong>Ablehnen</strong> klickst, und Widerrufen nimmt das zurück. Das Suchmodell dafür läuft auf deinem Rechner und wird beim ersten Mal heruntergeladen.</p>
+
+      <h2 id="stacks">Stapel und virtuelle Kopien</h2>
+      <p>⌘G (Strg+G) fasst die ausgewählten Fotos zu einem Stapel zusammen, <kbd>S</kbd> klappt ihn auf oder zu, <strong>Automatisch nach Aufnahmezeit stapeln…</strong> stapelt Serien und Belichtungsreihen für dich. ⌘' (Strg+') legt eine virtuelle Kopie an: eine zweite Bearbeitung derselben Datei, ohne zweite Datei auf der Platte.</p>
+
+      <p class="when"><strong>Wenn du von Lightroom kommst:</strong> Die Tasten sind die, die du kennst (P, X, U, 0–5, 6–9, G, E, D, N, Z, Feststelltaste). <strong>Von Capture One:</strong> ⌘J verschiebt wie dort nach Selects, und die Referenz in der Mehrfachansicht nutzt Capture Ones ⇧Return und ⌘Return. Jede Taste lässt sich in den Einstellungen ändern; siehe <a href="/de/docs/shortcuts/">Tastenkürzel</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

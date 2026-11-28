@@ -31,6 +31,7 @@
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadAppFiles, shortcutTables } from './shortcuts.mjs';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const strict = process.argv.includes('--strict');
@@ -90,7 +91,7 @@ const T = {
     ogImageAlt: 'Rawtonic: The photograph comes first. A free, open-source RAW developer for macOS and Linux, beside a screenshot of Develop.',
     more: (n) => `and ${n} more`,
     docs: 'Docs', docsNav: 'Documentation', docsHome: 'All topics', shotTodo: 'Screenshot to come',
-    docSections: { library: 'Import & Library', basics: 'Develop basics', local: 'Local adjustments', ai: 'AI tools', export: 'Export & sharing' },
+    docSections: { library: 'Import & Library', basics: 'Develop basics', local: 'Local adjustments', ai: 'AI tools', export: 'Export & sharing', reference: 'Reference' },
     docsSoon: 'Pages for this part are being written.',
   },
   de: {
@@ -106,7 +107,7 @@ const T = {
     ogImageAlt: 'Rawtonic: „The photograph comes first.“ Ein kostenloser Open-Source-RAW-Entwickler für macOS und Linux, neben einem Screenshot von Entwickeln.',
     more: (n) => `und ${n} weitere`,
     docs: 'Anleitung', docsNav: 'Anleitung', docsHome: 'Alle Themen', shotTodo: 'Screenshot folgt',
-    docSections: { library: 'Import & Bibliothek', basics: 'Grundlagen der Entwicklung', local: 'Lokale Anpassungen', ai: 'KI-Werkzeuge', export: 'Export & Weitergabe' },
+    docSections: { library: 'Import & Bibliothek', basics: 'Grundlagen der Entwicklung', local: 'Lokale Anpassungen', ai: 'KI-Werkzeuge', export: 'Export & Weitergabe', reference: 'Nachschlagen' },
     docsSoon: 'Die Seiten zu diesem Teil entstehen gerade.',
   },
 };
@@ -173,7 +174,15 @@ function releaseHistory(md, current, lang) {
   return `<ol class="releases"${lang === 'en' ? '' : ' lang="en"'}>${items.join('\n')}</ol>`;
 }
 const changelog = await loadChangelog();
-const ctx = Object.fromEntries(LANGS.map((lang) => [lang, { ...ctxFor(lang), history: { list: releaseHistory(changelog, release.version, lang) } }]));
+// {{shortcuts}}: the app's keymap at this release (scripts/shortcuts.mjs), read
+// only when a page uses it.
+const usesShortcuts = ['pages', 'pages/docs', ...LANGS.filter((l) => l !== 'en').flatMap((l) => [`pages/${l}`, `pages/${l}/docs`])]
+  .some((d) => fs.existsSync(path.join(root, d)) && fs.readdirSync(path.join(root, d)).some((f) => f.endsWith('.html') && fs.readFileSync(path.join(root, d, f), 'utf8').includes('{{shortcuts}}')));
+const appFiles = usesShortcuts ? await loadAppFiles(release.tag) : null;
+const ctx = Object.fromEntries(LANGS.map((lang) => [lang, {
+  ...ctxFor(lang), history: { list: releaseHistory(changelog, release.version, lang) },
+  shortcuts: appFiles ? shortcutTables(appFiles, lang) : '',
+}]));
 
 // What's new (release.json whatsNew): problems are collected and refused by
 // --strict; a missing text renders as TBD so a plain build shows the gap.

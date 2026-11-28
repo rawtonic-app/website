@@ -1,0 +1,57 @@
+<!--page {"path": "/docs/detail/", "title": "Detail: sharpening, noise reduction, grain", "description": "Capture sharpening with Radius, Detail and Masking, classic and AI noise reduction, film grain, and fixes for colour fringes and moiré.", "docs": {"section": "basics", "order": 40, "tool": "sharpening", "nav": "Detail"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Detail.</h1>
+      <p class="lead">The <strong>Detail</strong> tab holds the tools that work at the scale of single pixels: sharpening, noise reduction, grain, and fixes for colour fringes and moiré. Judge them at 100 % (<kbd>Z</kbd>); at Fit you see little of what they do.</p>
+
+      {{shot "detail-sharpening" "the Sharpening group beside a 100 % view of an eye"}}
+
+      <h2 id="sharpening">Sharpening</h2>
+      <p>Every RAW file is a little soft from the sensor and its filters; sharpening brings back the crispness the scene had.</p>
+      <dl>
+        <dt id="amount">Amount</dt>
+        <dd>How strongly edges are sharpened, up to 150.</dd>
+        <dt id="radius">Radius</dt>
+        <dd>How wide the sharpened edge is, from 0.5 to 3 pixels. Small for fine detail such as landscapes and fabric, larger for soft subjects.</dd>
+        <dt id="detail-slider">Detail</dt>
+        <dd>How much of the finest texture is sharpened as well, compared with clear edges only. High values bring out texture, and noise with it.</dd>
+        <dt id="masking">Masking</dt>
+        <dd>Leaves smooth areas such as skin and sky out of the sharpening, so only edges get it. Raise it for portraits.</dd>
+        <dt id="threshold">Threshold</dt>
+        <dd>Leaves out differences smaller than this, so faint noise is not sharpened.</dd>
+        <dt id="falloff">Falloff</dt>
+        <dd>Sharpens the corners more than the centre, for lenses that are softer at the edges.</dd>
+      </dl>
+      <p>On a layer, sharpening can also be negative, to soften one part of the photo, for example a background. For sharpening that fits print or screen at the final size, use the output sharpening in <a href="/docs/export/">Export</a>.</p>
+
+      <h2 id="noise">Noise reduction</h2>
+      <p><strong>Noise reduction</strong> has two kinds of noise to treat. <strong>Luminance</strong> smooths the grainy speckle of high-ISO photos, with <strong>Detail</strong> and <strong>Contrast</strong> to keep fine structure. <strong>Color</strong> removes the coloured blotches, with <strong>Detail</strong> and <strong>Smoothness</strong>. Use luminance noise reduction with care: it always costs some fine detail.</p>
+      <p>For high-ISO photos, <strong>AI Denoise</strong> removes noise before the RAW is turned into colours, keeping far more detail than smoothing afterwards can. It has its own page: <a href="/docs/ai-denoise/">AI Denoise</a>.</p>
+
+      <h2 id="grain">Grain</h2>
+      <p><strong>Grain</strong> adds a film-like texture: <strong>Amount</strong>, <strong>Size</strong> and <strong>Roughness</strong>, a grain colour, and a structure (even, soft, clumped, gritty or speckled). It is drawn at the photo’s own scale, so the exported file has the grain you see at 100 %. A little grain also hides banding in smooth skies after strong edits.</p>
+
+      <h2 id="fringes">Colour fringes and moiré</h2>
+      <ul>
+        <li><strong>Defringe</strong> removes the purple and green fringes that some lenses leave along high-contrast edges, such as branches against a bright sky. The lateral colour fringes in the corners are corrected with the lens instead: see <a href="/docs/crop/#lens">Lens correction</a>.</li>
+        <li><strong>Moiré</strong> removes the coloured wavy patterns that fine fabric or screens can make on sensors without an anti-alias filter.</li>
+      </ul>
+
+      <p class="when"><strong>If you come from Lightroom:</strong> Amount, Radius, Detail and Masking are Lightroom’s sliders with the same ranges. <strong>From Capture One:</strong> Threshold and Falloff are there as in Capture One’s sharpening.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

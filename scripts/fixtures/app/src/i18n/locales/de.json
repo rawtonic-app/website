@@ -1,0 +1,4 @@
+{
+  "appMenu": { "items": { "view_grid": "Bibliotheksraster", "flag_reject": "Ablehnen", "export_previous": "Mit vorherigen Einstellungen exportieren", "copy_files": "Dateien kopieren", "zoom_in": "Vergrößern", "show_original": "Halten: ganzes Foto vorher" } },
+  "settings": { "keybinds": { "sections": { "library": "Bibliothek", "view": "Ansicht" } } }
+}

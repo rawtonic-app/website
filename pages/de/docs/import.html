@@ -1,0 +1,57 @@
+<!--page {"path": "/de/docs/import/", "title": "Import, Sessions und Kataloge", "description": "Sessions für ein Shooting, Kataloge für deine ganze Sammlung und ein Import, der von Karten kopiert und jede Kopie prüft.", "docs": {"section": "library", "order": 10, "tool": "import", "nav": "Import, Sessions & Kataloge"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Import, Sessions und Kataloge.</h1>
+      <p class="lead">Rawtonic verwahrt deine Fotos in einer Bibliothek von einer von zwei Arten: einer <strong>Session</strong> für ein Shooting oder einen Auftrag oder einem <strong>Katalog</strong> für deine ganze Sammlung. Beide haben dieselben Werkzeuge zum Bearbeiten. Der Import holt Fotos in die geöffnete Bibliothek; deine Originaldateien verändert er nie.</p>
+
+      {{shot "import-dialog" "der Import-Dialog mit den Fotos einer Speicherkarte, eines in der großen Ansicht bewertet"}}
+
+      <h2 id="session-or-catalog">Session oder Katalog?</h2>
+      <dl>
+        <dt id="session">Session</dt>
+        <dd>Ein Ordner, der alles zu einem Auftrag enthält: <code>Capture</code> für die Fotos, <code>Selects</code> für die ausgewählten, <code>Output</code> für Exporte, <code>Trash</code> für Aussortiertes, und daneben die Bearbeitungen. Verschiebe oder kopiere den Ordner auf eine andere Platte oder einen anderen Rechner, und er öffnet sich dort so, wie er war. Gut für ein Shooting, einen Kundenauftrag, einen Arbeitstag.</dd>
+        <dt id="catalog">Katalog</dt>
+        <dd>Ein Katalog für deine Sammlung, mit Alben, intelligenten Alben, Stichwörtern und Suche über Jahre von Fotos. Fotos werden standardmäßig in den Katalogordner kopiert; mit <strong>Ordner hinzufügen …</strong> können sie auch bleiben, wo sie sind, und werden nur im Katalog geführt (dann reisen sie nicht mit dem Katalogordner mit, was der Dialog auch sagt).</dd>
+      </dl>
+      <p><strong>Neue Session oder neuer Katalog…</strong> (⌘N, Strg+N) und <strong>Session oder Katalog öffnen…</strong> (⌘O, Strg+O) findest du im Startbildschirm und im Menü. Der Name der Bibliothek in der oberen Leiste öffnet dieselbe Auswahl.</p>
+
+      <h2 id="import">Fotos importieren</h2>
+      <p><strong>Import</strong> in der oberen Leiste (⇧⌘I, Strg+Umschalt+I) öffnet den Dialog <strong>Fotos importieren</strong>; auch eine eingelegte Speicherkarte öffnet ihn, und du kannst Fotos oder Ordner aufs Fenster ziehen. Die Fotos füllen den Dialog, die Einstellungen stehen in einer Spalte daneben: Ziel, Dateiname, Metadaten.</p>
+      <ul>
+        <li><strong>Kopieren oder hinzufügen.</strong> <strong>Nach … kopieren</strong> kopiert die Fotos in die Bibliothek. <strong>Am Speicherort hinzufügen</strong> nimmt Fotos von einer Platte auf, ohne sie zu kopieren. Fotos auf einer Speicherkarte werden immer kopiert, weil eine Karte gelöscht und wiederverwendet wird.</li>
+        <li><strong>Jede Kopie wird geprüft.</strong> Jede kopierte Datei wird über ihre SHA-256-Prüfsumme mit ihrer Quelle verglichen, bevor sie als importiert gilt. Eine gleichnamige Datei am Ziel wird nie überschrieben, und Fotos, die schon in der Bibliothek sind (gleiche Größe und gleicher Inhalt), sind mit <strong>In Bibliothek</strong> markiert und werden übersprungen.</li>
+        <li><strong>Zweite Kopie</strong> schreibt im selben Import eine Sicherung jedes Fotos auf eine andere Platte. <strong>… nach dem Import auswerfen</strong> wirft die Karte aus, aber nur, wenn jedes Foto kopiert und geprüft von ihr kam.</li>
+        <li><strong>Erst schauen, dann kopieren.</strong> Ein Doppelklick auf ein Foto oder die Leertaste öffnet die große Ansicht; ein Klick oder <kbd>Z</kbd> zeigt 100 % um den Mauszeiger, so prüfst du die Schärfe, bevor etwas kopiert wird. <kbd>P</kbd> nimmt ein Foto auf, <kbd>X</kbd> lässt es weg, <kbd>0</kbd>–<kbd>5</kbd> bewerten es; die Bewertung kommt mit in die Bibliothek.</li>
+        <li><strong>Dateinamen und Metadaten.</strong> Benenne die Kopien aus Bausteinen (Datum, Originalname, Zähler, …) und fülle Urheber, Copyright (<code>{year}</code> wird zum Aufnahmejahr) und Stichwörter aus einer <strong>Metadatenvorlage</strong>. Derselbe Namens-Editor dient auch zum Umbenennen und beim Export.</li>
+        <li>RAW und JPEG derselben Aufnahme kommen als ein Foto, außer du kreuzt <strong>JPEGs neben RAW-Dateien als eigene Fotos importieren</strong> an.</li>
+      </ul>
+      <p>Während ein Import läuft, kannst du weiterarbeiten; die Aktivitätsanzeige zeigt, wie weit er ist.</p>
+
+      <h2 id="hot-folder">Überwachter Ordner</h2>
+      <p><strong>Überwachen</strong> in der oberen Leiste beobachtet einen Ordner (etwa den, in den ein anderes Programm Tether-Aufnahmen speichert) und kopiert jedes neue, vollständige Foto in die Bibliothek, sobald es ankommt, geprüft wie bei einem Import. Jedes neue Foto kann eine Bewertung, Stichwörter, eine Metadatenvorlage und Entwicklungseinstellungen bekommen. Für eine Kamera am USB-Kabel siehe <a href="/de/docs/tethering/">Tethering</a>.</p>
+
+      <h2 id="sidecars">XMP-Begleitdateien und andere Programme</h2>
+      <p>Bewertungen, Farbmarkierungen und Stichwörter aus XMP-Begleitdateien werden beim Hereinholen gelesen, und Rawtonic schreibt deine in die XMP-Datei des Fotos, damit andere Programme sie sehen (Einstellungen → Allgemein, standardmäßig an). Hat ein anderes Programm eine XMP-Datei inzwischen geändert, überschreibt Rawtonic sie nicht: Die obere Leiste zeigt, wie viele abweichen, und du wählst <strong>Bibliothek behalten</strong> oder <strong>XMP übernehmen</strong>. Deine Bearbeitungen selbst bleiben in der Bibliothek und in Rawtonics eigener Begleitdatei neben dem Foto.</p>
+      <p><strong>Ordner synchronisieren…</strong> bringt die Bibliothek auf den Stand der Platte, wenn Dateien außerhalb von Rawtonic verschoben, umbenannt, hinzugefügt oder gelöscht wurden: Es zeigt, was es gefunden hat (Byte für Byte bestätigte Verschiebungen, neue Fotos, fehlende), und ändert nur, was du ankreuzt. Die Dateien auf der Platte ändert es nicht.</p>
+
+      <h2 id="move">Einen Katalog auf einen anderen Rechner mitnehmen</h2>
+      <p><strong>Als Katalog exportieren…</strong> macht aus den ausgewählten Fotos einen neuen Katalog, etwa um einen Auftrag auf dem Laptop zu bearbeiten. <strong>Aus Katalog importieren…</strong> holt die Arbeit zurück: Fotos werden über ihre Identität oder den Inhalt ihres Originals zugeordnet, nie über den Dateinamen; bei Fotos, die auf beiden Seiten geändert wurden, wählst du, was gilt, und die unterlegene Seite bleibt als Schnappschuss erhalten.</p>
+
+      <p class="when"><strong>Wenn du von Lightroom oder Capture One kommst:</strong> Ein Katalog funktioniert wie in Lightroom und Capture One, eine Session wie in Capture One. Wie du deine bisherige Bibliothek mitnimmst, steht unter <a href="/de/docs/from-other-editors/">Von Lightroom oder Capture One</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

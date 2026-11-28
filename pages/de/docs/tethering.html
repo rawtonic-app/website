@@ -1,0 +1,62 @@
+<!--page {"path": "/de/docs/tethering/", "title": "Tethered fotografieren", "description": "Mit der Kamera am USB-Kabel fotografieren: Jedes Foto landet geprüft in der Bibliothek, mit den Einstellungen der nächsten Aufnahme, und auf der Karte wird nichts gelöscht.", "docs": {"section": "library", "order": 30, "tool": "tether", "nav": "Tethering"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Tethered fotografieren.</h1>
+      <p class="lead">Mit der Kamera am USB-Kabel kommt jedes Foto, das du machst, direkt in die geöffnete Session oder den Katalog und erscheint in Entwickeln, so sehen du und deine Kundschaft es groß, während du fotografierst. Rawtonic kopiert jedes Foto und prüft die Kopie; auf der Kamera und ihrer Karte löscht es nie etwas.</p>
+
+      {{shot "tether-panel" "die Leiste Tethered fotografieren mit verbundener Kamera und den Einstellungen der nächsten Aufnahme"}}
+
+      <h2 id="connect">Verbinden</h2>
+      <ol>
+        <li>Stell den USB-Modus der Kamera auf Fernsteuerung (Sony: PC-Fernbedienung; Fujifilm: USB-Tether-Aufnahme).</li>
+        <li>Schließ das Kabel an, klick in der oberen Leiste auf <strong>Tether</strong> und dann auf <strong>Verbinden</strong>.</li>
+        <li>Löse mit dem Auslöser der Kamera aus oder mit <strong>Aufnehmen</strong> (⌘K, Strg+K) in Rawtonic. Live-View, Fokus und die wichtigsten Einstellungen der Kamera stehen in der Leiste, wenn die Kamera sie anbietet.</li>
+      </ol>
+      <p>Wird das Kabel gezogen, verbindet Rawtonic die Kamera wieder, sobald sie zurück ist.</p>
+
+      <h2 id="next-capture">Die nächste Aufnahme</h2>
+      <p>Unter <strong>Nächste Aufnahme</strong> legst du fest, was jedes neue Foto beim Eintreffen bekommt: eine Bewertung, Stichwörter, eine Metadatenvorlage (Urheber, Copyright) und Entwicklungseinstellungen, etwa einen Stil oder die Bearbeitung des letzten Fotos. So kommt eine Studioserie schon so an, wie du sie eingerichtet hast.</p>
+
+      <h2 id="safety">Deine Fotos sind sicher</h2>
+      <ul>
+        <li>Jedes Foto wird in die Bibliothek kopiert und geprüft, bevor es zählt. Auf der Speicherkarte der Kamera wird nichts gelöscht.</li>
+        <li>Manche Kameras (etwa Fujifilm im USB-Tether-Modus) halten jedes gesendete Foto fest, bis der Rechner es abholt, und lösen nicht mehr aus, wenn sie zu viele halten. Rawtonic gibt ein Foto auf einer solchen Kamera erst frei, wenn es in der Bibliothek geprüft ist; <strong>Fotos auf der Kamera freigeben, sobald sie in der Bibliothek sind</strong> schaltet das ab.</li>
+        <li>Eine Kamera, die Fotos nur in ihrem Speicher hält (ohne Karte), könnte ein Foto unterwegs verlieren; Rawtonic löst sie weder aus noch holt es Fotos von ihr, bis die Kamera auch auf die Karte speichert.</li>
+      </ul>
+
+      <h2 id="cameras">Welche Kameras funktionieren</h2>
+      <p>Vom Projekt gemessen, vom Auslösebefehl bis zum Foto in Entwickeln (Median, macOS 26, Oktober 2026):</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Kamera</th><th>Foto auf dem Bildschirm</th><th>Aufnahmen</th></tr></thead>
+          <tbody>
+            <tr><td>Sony α7 IV</td><td>1,1 s</td><td>100 von 100</td></tr>
+            <tr><td>Sony α7 III</td><td>1,5 s</td><td>100 von 100</td></tr>
+            <tr><td>Fujifilm X-H2S</td><td>1,1 s</td><td>50 von 50</td></tr>
+            <tr><td>Fujifilm GFX 50R</td><td>2,4 s</td><td>50 von 50</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Andere Kameras dieser Hersteller können funktionieren, sind aber noch nicht getestet, und unter Windows oder Linux wurde noch keine Kamera ausprobiert. Canon-Kameras sind experimentell und standardmäßig aus: Schalte <strong>Experimentell: Canon-Kameras (beim Testen helfen)</strong> unter Einstellungen → Tethering ein und lass eine Speicherkarte in der Kamera, denn eine Aufnahme, die Rawtonic nicht erreicht, ist dann noch auf der Karte. Die vollständige Liste mit Hinweisen zu jeder Kamera steht auf <a href="https://github.com/rawtonic-app/rawtonic/blob/main/docs/TETHER_CAMERAS.md">GitHub</a> (englisch).</p>
+
+      <h2 id="camera-test">Beim Kameratest helfen</h2>
+      <p><strong>Kameratest…</strong> in der Tether-Leiste geht Schritt für Schritt durch Verbinden, Auslösen, Einstellungen, Autofokus und Kabelziehen und misst jeden Schritt. Am Ende zeigt <strong>Ergebnis senden…</strong> genau, was gesendet würde (Kameramodell und Firmware, System, Rawtonic-Version und die Ergebnisse; keine Fotos, Dateinamen oder Seriennummer), und sendet es erst, wenn du bestätigst. Jeder Bericht hilft uns, eine Kamera als funktionierend zu kennzeichnen.</p>
+
+      <p class="when"><strong>Wenn du von Lightroom oder Capture One kommst:</strong> Die Einstellungen der nächsten Aufnahme tun, was in Capture One die Anpassungen der nächsten Aufnahme und in Lightroom die Entwicklungseinstellungen beim Tethering tun. Fotografieren in einen überwachten Ordner aus einem anderen Programm geht auch: siehe <a href="/de/docs/import/#hot-folder">Überwachter Ordner</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!--page {"path": "/docs/colour/", "title": "Colour: white balance, colour mixer, colour editor, grading, black & white", "description": "Set the white balance in Kelvin, change single colours with the mixer or the colour editor, grade shadows and highlights, and make black-and-white photos with toning.", "docs": {"section": "basics", "order": 30, "tool": "color", "nav": "Colour"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Colour.</h1>
+      <p class="lead">Colour work goes from the whole photo to single colours: first the white balance, so white looks white, then the colours you want to change, then a mood. The white balance is in the Adjust tab; everything else on this page is in the <strong>Color</strong> tab.</p>
+
+      <h2 id="white-balance">White balance</h2>
+      <p>For a RAW file, <strong>White balance</strong> works in real units: <strong>Temp</strong> in Kelvin (2000 to 50 000 K) and <strong>Tint</strong> from green to magenta, computed from the camera’s own colour data. Start from <strong>As Shot</strong> (what the camera chose), <strong>Auto</strong>, or a light: Daylight, Cloudy, Shade, Tungsten, Fluorescent, Flash.</p>
+      <ul>
+        <li>The <strong>White balance picker</strong> (<kbd>W</kbd>): click something that should be neutral grey or white. Shift-click keeps the picker on, to try several spots.</li>
+        <li><strong>Auto white balance</strong>: ⇧⌘U (Ctrl+Shift+U).</li>
+        <li>JPEGs and TIFFs have no camera data to compute Kelvin from; for them, and on a layer, the sliders correct relative to the photo as it is (<strong>Relative correction</strong>).</li>
+      </ul>
+
+      {{shot "colour-white-balance" "the White balance group with the picker over a grey card"}}
+
+      <h2 id="mixer">Colour mixer</h2>
+      <p>The <strong>Color mixer</strong> changes eight colours, reds to magentas, each in hue, saturation and luminance: make a sky a deeper blue, calm a green that shouts, warm skin a little. <strong>Targeted</strong> lets you work on the photo itself: switch it on, then drag up or down on the colour you want to change; the mixer moves the channels under the pointer (Shift for finer steps, Esc to stop).</p>
+
+      <h2 id="editor">Colour editor</h2>
+      <p>When the mixer’s eight fixed colours are too coarse, the <strong>Color editor</strong> works on a colour you pick. Click the colour in the photo; Rawtonic shows its range on a colour wheel, where you drag its centre or edges to make it wider or narrower. Then change its hue, saturation and lightness. <strong>Uniformity</strong> evens out the colours in the range (blotchy skin, a patchy sky), <strong>Smoothness</strong> sets how softly the change fades at the range’s edges, and “show range” greys out everything else, so you see what you are changing.</p>
+      <ul>
+        <li><strong>Skin tone</strong>: pick skin, then even it out with Uniformity and Amount.</li>
+        <li><strong>Target colour</strong>: give a range a colour to move to: pick it in the photo, sample it in another photo of the series, or type it (sRGB hex, R/G/B or L*C*h°). Rawtonic sets the sliders and then measures the result at the picked point, telling you how far it still is (as ΔE00) and which slider is at its limit, for example to match a product colour across a shoot.</li>
+      </ul>
+
+      {{shot "colour-editor" "the Color editor with a picked range on the wheel and a target colour"}}
+
+      <h2 id="grading">Colour grading</h2>
+      <p><strong>Color grading</strong> tints the shadows, midtones and highlights each with a colour wheel (drag for hue and strength; Alt keeps the hue, Shift moves finer), plus a global wheel for the whole photo. <strong>3-way</strong> shows the three tonal wheels at once. <strong>Blending</strong> sets how much the three ranges overlap and <strong>Balance</strong> moves the split between shadows and highlights. Use it for a look: cool shadows and warm highlights, a faded print, a warmer evening.</p>
+
+      <h2 id="bw">Black &amp; white and toning</h2>
+      <p><strong>Convert to black &amp; white</strong> turns the photo grey; the eight colour sliders then set how light each colour becomes in grey, as colour filters on a black-and-white film did: darker blues give a darker sky, lighter oranges lighter skin. <strong>Auto</strong> sets a mix from the photo, and the targeted tool lets you drag on the photo instead.</p>
+      <p><strong>B&amp;W toning</strong> tints the result like a toned print: a <strong>Paper</strong> colour, a <strong>Shadows tone</strong> and a <strong>Highlights tone</strong>, with <strong>Balance</strong> between them and <strong>Density</strong> for how strong the tone is.</p>
+
+      <h2 id="calibration">Calibration</h2>
+      <p><strong>Calibration</strong> shifts the hue and saturation of the red, green and blue primaries the whole colour rendering is built on, and the tint of the shadows. It changes all colours at once, in a way the mixer cannot; use it sparingly, usually once per camera and saved as a preset.</p>
+
+      <p class="when"><strong>If you come from Lightroom:</strong> the colour mixer, colour grading and calibration work like the ones you know, with the same names. <strong>From Capture One:</strong> the colour editor with its ranges, Uniformity and Skin tone is the tool you know as the Color Editor; Capture One styles with Color Editor ranges import into it.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

@@ -36,7 +36,7 @@
           <li class="no">Die KI-Rauschentfernung ist langsamer als die von Lightroom und ihr Ergebnis etwas weniger genau.</li>
           <li class="no">Mit einer Fujifilm GFX 50R kommen Tethering-Aufnahmen etwas später an als in Capture One.</li>
           <li class="no">Die seltenen Fehlgriffe des automatischen Ausrichtens sind etwas größer als bei Lightroom.</li>
-          <li class="no">Die Fotos eines Projekts lassen sich noch nicht einzeln auf ein anderes Laufwerk verschieben; verschiebe stattdessen den ganzen Ordner.</li>
+          <li class="no">Die Fotos einer Session lassen sich noch nicht einzeln auf ein anderes Laufwerk verschieben; verschiebe stattdessen den ganzen Ordner.</li>
         </ul>
       </div>
     </div>
@@ -60,7 +60,7 @@
           <tr><th scope="row">Zwei Rezepte für 20 RAWs exportieren (38 Dateien)</th><td class="num">10,1 s</td><td class="num">14 s (11–21 s)</td><td class="num">10,7 s</td><td><span class="v equal">Gleichauf</span></td><td data-history>19 Nikon-RAWs (eines der 20 wird nicht unterstützt) mit denselben vier Bearbeitungen in allen drei Programmen (Belichtung +0,3, Kontrast +10, Lichter −30, Tiefen +30, in Lightroom und Capture One am Bildschirm geprüft), exportiert als 2048-px-JPEG mit Wasserzeichen und als 16-Bit-TIFF in voller Größe, bis die letzte Datei geschrieben ist. Derselbe Laptop, 17. November 2026, Rawtonic alpha.16 beim Export aus der Bibliothek, Median aus drei abwechselnd gemessenen Durchläufen (fünf Durchläufe: 10,1 s, Lightroom 19 s, Capture One 10,7 s); die Bereiche von Rawtonic und Capture One überlappen sich (9,8–10,9 s und 9,7–10,9 s), jeder Lightroom-Durchlauf (11,3–21,2 s) dauerte länger als jeder von Rawtonic. Die früheren Zahlen (alpha.4: Rawtonic 17 s, Lightroom 8 s, Capture One 9 s) verglichen Fotos ohne jede Bearbeitung; Schärfung, Voreinstellungen der Rauschreduzierung und Wasserzeichen-Darstellung unterscheiden sich zwischen den Programmen.</td></tr>
           <tr><th scope="row">KI-Motivmaske, allererste Verwendung</th><td class="num" data-history>alpha.4: 13,7 s; seit alpha.6 1,5–3,3 s</td><td class="num">7,9 s</td><td>nicht gemessen</td><td><span class="v equal">Gemischt</span></td><td data-history>Erste Verwendung nach der Installation, Laden des Modells eingeschlossen; spätere Verwendungen dauern unter einer Sekunde. Seit alpha.6 bereitet Rawtonic das Modell in Entwickeln im Hintergrund vor: 1,5–3,3 s ist ein Klick 25 s nach dem Öffnen des ersten Fotos (vier Durchläufe, derselbe Laptop); ein Klick innerhalb von etwa 15 s wartet noch auf einen Teil des Ladens.</td></tr>
           <tr><th scope="row">KI-Rauschentfernung, 24 MP</th><td class="num">etwa 10 s, Fehler 2,21</td><td class="num">6,5 s, Fehler 1,69</td><td>nicht verglichen</td><td><span class="v worse">Schlechter</span></td><td>Zeit pro Foto und Helligkeitsfehler bei gleichem Restrauschen. Der Wert für Lightroom ist die Rauschentfernung von Camera Raw.</td></tr>
-          <tr><th scope="row">Ein Shooting auf ein anderes Laufwerk verschieben</th><td>Die Fotos eines Projekts können seinen Ordner noch nicht verlassen: Verschiebe den ganzen Ordner</td><td>verschiebt und arbeitet weiter, 2,1 s</td><td>nicht gemessen</td><td><span class="v worse">Schlechter</span></td><td>26 RAW+JPEG-Paare auf ein externes Laufwerk. Einen ganzen Ordner oder die Fotos eines Katalogs zu verschieben funktioniert und wird Byte für Byte geprüft.</td></tr>
+          <tr><th scope="row">Ein Shooting auf ein anderes Laufwerk verschieben</th><td>Die Fotos einer Session können ihren Ordner noch nicht verlassen: Verschiebe den ganzen Ordner</td><td>verschiebt und arbeitet weiter, 2,1 s</td><td>nicht gemessen</td><td><span class="v worse">Schlechter</span></td><td>26 RAW+JPEG-Paare auf ein externes Laufwerk. Einen ganzen Ordner oder die Fotos eines Katalogs zu verschieben funktioniert und wird Byte für Byte geprüft.</td></tr>
         </tbody>
       </table>
     </div>
@@ -82,7 +82,7 @@
         <thead><tr><th scope="col">Lightroom</th><th scope="col">Capture One</th><th scope="col">Rawtonic</th></tr></thead>
         <tbody>
           <tr><td>Katalog</td><td>Katalog</td><td>Katalog</td></tr>
-          <tr><td>—</td><td>Session</td><td>Projekt (ein Ordner mit Capture, Selects, Output und Trash)</td></tr>
+          <tr><td>—</td><td>Session</td><td>Session (ein Ordner mit Capture, Selects, Output und Trash)</td></tr>
           <tr><td>Übersichtsansicht</td><td>Viewer mit mehreren ausgewählten Varianten</td><td>Mehrfachansicht, <kbd>N</kbd></td></tr>
           <tr><td>Exportvorgabe</td><td>Process Recipe</td><td>Export-Rezept</td></tr>
           <tr><td>Maskieren</td><td>Ebenen</td><td>Ebenen, jede mit ihren Masken</td></tr>

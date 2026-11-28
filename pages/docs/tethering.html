@@ -1,0 +1,62 @@
+<!--page {"path": "/docs/tethering/", "title": "Tethered shooting", "description": "Shoot with the camera on USB: every photo lands in the library, checked, with the next capture's settings, and nothing on the card is deleted.", "docs": {"section": "library", "order": 30, "tool": "tether", "nav": "Tethering"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Tethered shooting.</h1>
+      <p class="lead">With the camera on a USB cable, every photo you take comes straight into the open session or catalog and shows in Develop, so you and your client see it large while you shoot. Rawtonic copies each photo and checks the copy; it never deletes anything on the camera or its card.</p>
+
+      {{shot "tether-panel" "the Tethered shooting panel with a connected camera and the next capture settings"}}
+
+      <h2 id="connect">Connecting</h2>
+      <ol>
+        <li>Set the camera’s USB mode to remote shooting (Sony: PC Remote; Fujifilm: USB tether shooting).</li>
+        <li>Connect the cable, click <strong>Tether</strong> in the top bar, then <strong>Connect</strong>.</li>
+        <li>Shoot with the camera’s shutter button, or with <strong>Capture</strong> (⌘K, Ctrl+K) in Rawtonic. Live view, focus and the camera’s main settings are in the panel for cameras that offer them.</li>
+      </ol>
+      <p>If the cable comes out, Rawtonic connects the camera again when it is back.</p>
+
+      <h2 id="next-capture">The next capture</h2>
+      <p>Under <strong>Next capture</strong> you set what each new photo gets as it comes in: a rating, keywords, a metadata preset (creator, copyright) and develop settings, such as a style or the edit of the last photo. That way a studio series arrives already looking the way you set it up.</p>
+
+      <h2 id="safety">Your photos are safe</h2>
+      <ul>
+        <li>Each photo is copied into the library and checked before it counts. Nothing on the camera’s memory card is deleted.</li>
+        <li>Some cameras (Fujifilm in USB tether mode, for example) hold each photo they send until the computer takes it, and stop shooting when they hold too many. Rawtonic frees a photo on such a camera only after it is checked in the library; <strong>Free photos on the camera once they are in the library</strong> can turn that off.</li>
+        <li>A camera set to keep photos only in its memory (no card) could lose a photo on its way; Rawtonic neither fires it nor takes photos from it until the camera saves to the card as well.</li>
+      </ul>
+
+      <h2 id="cameras">Which cameras work</h2>
+      <p>Measured by the project, from the shutter request to the photo shown in Develop (median, macOS 26, October 2026):</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Camera</th><th>Photo on screen</th><th>Shots</th></tr></thead>
+          <tbody>
+            <tr><td>Sony α7 IV</td><td>1.1 s</td><td>100 of 100</td></tr>
+            <tr><td>Sony α7 III</td><td>1.5 s</td><td>100 of 100</td></tr>
+            <tr><td>Fujifilm X-H2S</td><td>1.1 s</td><td>50 of 50</td></tr>
+            <tr><td>Fujifilm GFX 50R</td><td>2.4 s</td><td>50 of 50</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Other cameras of these makers may work but are not tested yet, and no camera has been tried on Windows or Linux yet. Canon cameras are experimental and off by default: turn on <strong>Experimental: Canon cameras (help test)</strong> in Settings → Tethering, and keep a memory card in the camera, since a shot that does not reach Rawtonic is then still on the card. The full list with notes per camera is on <a href="https://github.com/rawtonic-app/rawtonic/blob/main/docs/TETHER_CAMERAS.md">GitHub</a>.</p>
+
+      <h2 id="camera-test">Help with the camera test</h2>
+      <p><strong>Camera test…</strong> in the tether panel goes through connecting, shooting, settings, autofocus and pulling the cable step by step and measures each. At the end, <strong>Send result…</strong> shows exactly what would be sent (camera model and firmware, system, Rawtonic version and the results; no photos, file names or serial number) and sends it only when you confirm. Each report helps us mark a camera as working.</p>
+
+      <p class="when"><strong>If you come from Lightroom or Capture One:</strong> the next-capture settings do what Capture One’s Next Capture Adjustments and Lightroom’s tethered develop settings do. Shooting into a hot folder from another program works too: see <a href="/docs/import/#hot-folder">Hot folder</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!--page {"path": "/docs/crop/", "title": "Crop and geometry: aspect ratio, straighten, perspective, lens correction", "description": "Crop to a ratio, level a horizon automatically, correct converging lines, and use the lens correction your camera stores in its RAW files.", "docs": {"section": "basics", "order": 50, "tool": "crop", "nav": "Crop & geometry"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Crop and geometry.</h1>
+      <p class="lead">The <strong>Crop</strong> tab frames the photo and makes its lines right: crop and straighten, correct the perspective of buildings, and remove what the lens did to the image (distortion, dark corners, colour fringes). Press <kbd>C</kbd> for the crop tool from anywhere in Develop.</p>
+
+      {{shot "crop-overlay" "the crop tool on a landscape photo with the thirds overlay and the Ratio list open"}}
+
+      <h2 id="crop">Crop</h2>
+      <ul>
+        <li><strong>Ratio</strong>: Original, Unconstrained, 1 × 1 to 65 × 24 (3 × 2, 4 × 3, 5 × 4, 16 × 9 and others), A paper (√2 × 1), or one of your own (Add). The button beside it swaps portrait and landscape.</li>
+        <li>Drag the corners or edges of the frame, or drag the photo inside it. The overlay (thirds, golden ratio, golden spiral and triangle, diagonals, armature, centre) helps with the composition; it can show always or only while you drag.</li>
+        <li><kbd>[</kbd> and <kbd>]</kbd> turn the photo by 90°; flipping it is in the same group.</li>
+      </ul>
+
+      <h2 id="straighten">Straighten</h2>
+      <p>Three ways to level a photo:</p>
+      <ul>
+        <li><strong>Auto</strong> (<kbd>⇧R</kbd>) levels the photo by its horizon or its verticals and fits the crop so no empty corners show. When the photo has no clear lines, it leaves the photo as it is and says so.</li>
+        <li>The <strong>Straighten</strong> tool (<kbd>R</kbd>): draw a line along something that should be level or plumb.</li>
+        <li>The <strong>Straighten</strong> slider, for the last tenth of a degree.</li>
+      </ul>
+
+      <h2 id="perspective">Perspective</h2>
+      <p><strong>Perspective Correction</strong> in the Geometry group finds the straight lines of the photo and corrects them:</p>
+      <dl>
+        <dt id="upright-auto">Auto</dt>
+        <dd>Makes converging verticals parallel where the photo has them, and otherwise only levels it.</dd>
+        <dt id="upright-level">Level</dt>
+        <dd>Rotation only. On 20 test photos whose level we checked by hand, the median error after Level was 0.06°.</dd>
+        <dt id="upright-vertical">Vertical</dt>
+        <dd>Converging verticals made parallel, the classic fix for a building shot from below.</dd>
+        <dt id="upright-full">Full</dt>
+        <dd>Vertical and horizontal perspective at once.</dd>
+        <dt id="upright-guided">Guided</dt>
+        <dd>You draw up to two vertical and two horizontal guides along edges that should be straight; the correction follows them.</dd>
+      </dl>
+      <p><strong>Constrain crop</strong> zooms in so no empty corners remain. The <strong>Transform</strong> sliders (vertical, horizontal, rotation, aspect, scale, offset, distortion) do the same by hand or refine an automatic result.</p>
+
+      {{shot "crop-perspective-guided" "Guided perspective correction with two vertical guides on a building"}}
+
+      <h2 id="lens">Lens correction</h2>
+      <p>Every lens bends straight lines a little, darkens the corners and leaves colour fringes towards the edges. <strong>Enable profile corrections</strong> removes all three. Where the correction comes from:</p>
+      <ul>
+        <li><strong>Camera data.</strong> Many cameras store their maker’s own lens correction in each RAW file: Fujifilm, Sony, Panasonic, Olympus and OM System, Nikon Z, newer Canon CR3 files and Samsung. Rawtonic uses it when it is there, so a photo is corrected the way the camera corrects its own JPEGs, also with lenses no database knows.</li>
+        <li><strong>Lens database.</strong> Otherwise Rawtonic looks the lens up in the Lensfun database by what the photo says about it. If several lenses fit, it asks you to choose instead of guessing; <strong>Use lens database…</strong> picks a profile by hand, also in place of the camera data.</li>
+      </ul>
+      <p>Distortion, vignetting and chromatic aberration each have their own amount, so you can keep some of the lens’s character. <strong>Remove chromatic aberration</strong> measures the red and blue fringes of the photo itself and lines the colours up, for lenses without a profile. <strong>Diffraction correction</strong> sharpens away the softness of small apertures, worked out from the f-number and the sensor’s pixel size.</p>
+
+      <p class="when"><strong>If you come from Lightroom:</strong> Perspective Correction’s Auto, Level, Vertical, Full and Guided work like Upright. <strong>From Capture One:</strong> the camera data is the same built-in correction Capture One applies to these cameras’ files, and Capture One imports bring the lens correction along.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

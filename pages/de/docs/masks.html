@@ -1,0 +1,73 @@
+<!--page {"path": "/de/docs/masks/", "title": "Masken und Ebenen: Pinsel, Verläufe, Bereiche, KI-Auswahlen", "description": "Teile eines Fotos mit Ebenen bearbeiten: Pinsel und Verläufe, Farb-, Luminanz- und Tiefenbereiche und KI-Auswahlen von Motiv, Himmel, Personen, Landschaft und Objekten.", "docs": {"section": "local", "order": 10, "tool": "layers", "nav": "Masken & Ebenen"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Masken und Ebenen.</h1>
+      <p class="lead">Eine <strong>Ebene</strong> ist ein zweiter Satz Anpassungen, der nur dort wirkt, wo ihre <strong>Maske</strong> es sagt: ein Gesicht aufhellen, einen Himmel abdunkeln, einen Hintergrund wärmer machen. Jede Ebene hat ihre eigenen Regler (Belichtung, Farbe, Schärfen und die meisten anderen Werkzeuge) und eine Maske aus einem oder mehreren Teilen.</p>
+
+      {{shot "masks-layers-panel" "der Reiter Ebenen mit einer Himmels- und einer Motiv-Ebene, die Maske als Überlagerung"}}
+
+      <h2 id="layers">Mit Ebenen arbeiten</h2>
+      <ul>
+        <li><strong>Neue Ebene</strong> (+) im Reiter Ebenen oder in Ebenen &amp; Masken oben im Reiter Anpassen bietet jede der unten beschriebenen Maskenarten an. Solange eine Ebene ausgewählt ist, wirken die Regler aller Reiter auf sie; <strong>Hintergrund</strong> kehrt zum ganzen Foto zurück.</li>
+        <li>Eine Maske kann Teile verbinden: Jeder Teil wird <strong>hinzugefügt</strong>, <strong>abgezogen</strong> oder bildet eine <strong>Schnittmenge</strong>, und ein Teil oder die ganze Maske lässt sich <strong>umkehren</strong>. Zum Beispiel: Himmel, dann ein Pinsel abgezogen, wo ein Baum hineinragt.</li>
+        <li><kbd>M</kbd> zeigt oder verbirgt die Maske über dem Foto, ⌥M (Alt+M) zeigt sie in Grau, <kbd>H</kbd> zeigt nur die Wirkung der ausgewählten Ebene. Die Einstellungen der Maskenüberlagerung bestimmen ihre Farbe und wann sie erscheint.</li>
+        <li>Bis zu 32 sichtbare Ebenen werden auf ein Foto angewendet; blende eine aus oder lösche sie, um Platz zu machen.</li>
+      </ul>
+
+      <h2 id="draw">Zeichnen: Pinsel und Verläufe</h2>
+      <dl>
+        <dt id="brush">Pinsel</dt>
+        <dd><kbd>B</kbd> malt die Maske, <kbd>E</kbd> radiert in ihr; ⌘↑ und ⌘↓ (Strg+↑, Strg+↓) ändern die Größe. Größe, Härte, Fluss und Deckkraft stehen in den Einstellungen des Pinsels (Rechtsklick aufs Foto). <strong>Automatisch maskieren</strong> hält den Strich an der Kante unter dem Pinsel, so malst du eine Wand an, ohne den Himmel daneben mitzufärben. Mit einem drucksensitiven Stift malt stärkerer Druck breiter oder kräftiger.</dd>
+        <dt id="linear">Linearer Verlauf</dt>
+        <dd><kbd>L</kbd>: Zieh über das Foto für eine Wirkung, die von einer Seite her ausläuft, der Verlaufsfilter für einen hellen Himmel. Auch ein beidseitiges Band ist möglich.</dd>
+        <dt id="radial">Radialer Verlauf</dt>
+        <dd><kbd>T</kbd>: eine Ellipse, die zu ihrem Rand hin ausläuft, innen oder außen, um den Blick zu führen oder eine eigene Vignette zu machen.</dd>
+      </dl>
+      <p>Pinsel und Radiergummi wirken auch auf Verlaufs- und KI-Ebenen: Mal ein Stück dazu oder nimm eins weg, und der Verlauf bleibt bearbeitbar.</p>
+
+      <h2 id="ranges">Bereich: Farbe, Luminanz und Tiefe</h2>
+      <ul>
+        <li><strong>Farbbereich</strong>: Klick auf eine Farbe im Foto oder zieh über eine Fläche (Umschalt fügt bis zu fünf Proben hinzu); die Maske nimmt jede Stelle dieser Farbe, mit Verfeinern für die Breite.</li>
+        <li><strong>Luminanzbereich</strong>: Tonwerte von den Schatten bis zu den Lichtern, mit weichem Übergang. <strong>Auf Luminanzbereich beschränken…</strong> macht dasselbe für jede andere Maske, etwa nur den hellen Teil eines Verlaufs.</li>
+        <li><strong>Tiefenbereich</strong>: nahes und fernes Ende in der Tiefe der Szene, von einem KI-Modell aus dem Foto geschätzt, etwa um einen unruhigen Hintergrund zu beruhigen.</li>
+      </ul>
+
+      <h2 id="ai">Auswählen: KI-Auswahlen</h2>
+      <dl>
+        <dt id="subject">Motiv und Hintergrund</dt>
+        <dd>Das Hauptmotiv oder alles außer ihm. <kbd>⇧,</kbd> und <kbd>⇧.</kbd> legen sofort eine neue Motiv- oder Hintergrund-Ebene an.</dd>
+        <dt id="sky">Himmel</dt>
+        <dd>Der Himmel, für ein tieferes Blau oder ruhigere Wolken, ohne das Land zu berühren.</dd>
+        <dt id="people">Personen</dt>
+        <dd>Jede Person oder alle, ganz oder in Teilen: Gesichtshaut, Körperhaut, Haare, Augenbrauen, Iris und Pupille, Lederhaut, Lippen, Zähne, Kleidung.</dd>
+        <dt id="landscape">Landschaft</dt>
+        <dd>Teile einer Landschaft zur Auswahl: Himmel, Berge, Vegetation, Wasser, natürlicher Boden, künstlicher Boden, Architektur. Ein Teil, den das Foto nicht hat, ist als nicht gefunden markiert.</dd>
+        <dt id="object">Objekt</dt>
+        <dd>Klick auf ein Objekt oder zieh einen Rahmen darum; Umschalt-Klick fügt ein weiteres hinzu, Alt-Klick lässt einen Teil weg.</dd>
+      </dl>
+      <p><strong>Kante verfeinern</strong> lässt die Maske innerhalb eines Radius, den du setzt, der Kante des Fotos folgen, so behalten Haare, Fell und Blätter ihre weichen Umrisse. Die KI-Modelle laufen auf deinem Rechner, nie auf einem Server; jedes wird bei der ersten Benutzung heruntergeladen.</p>
+      <p>KI-Auswahlen entstehen für jedes Foto neu: Setz eine Himmelsebene in fünfzig Fotos ein, synchronisiere sie oder wende eine Vorgabe mit ihr an, und jedes bekommt seinen eigenen Himmel, auch Fotos, die du nie geöffnet hast.</p>
+
+      {{shot "masks-people-parts" "eine Personen-Ebene mit angekreuzter Gesichtshaut und Haaren auf einem Porträt"}}
+
+      <h2 id="memory">Auf Rechnern mit wenig Arbeitsspeicher</h2>
+      <p>KI-Auswahlen brauchen für ein großes Foto viel Arbeitsspeicher. Auf einem Rechner mit 16 GB oder weniger startet Rawtonic eine erst, wenn Platz für sie ist: Bis dahin steht an ihrer Ebene „wartet auf freien Arbeitsspeicher…“, und sie wird von selbst berechnet, sobald Speicher frei ist (andere Programme zu schließen oder zu einer Einzelansicht zu wechseln hilft). Auf Windows- und Linux-Rechnern, die KI auf dem Prozessor rechnen, läuft eine Motiv- oder Hintergrund-Auswahl, die nicht passen würde, in einem langsameren Modus mit weniger Speicherbedarf, und ihre Ebene sagt das. In unserem Test mit einem 50-Megapixel-RAW auf einem Windows-Laptop mit 14 GB blieben Motiv-Auswahlen in 11 von 11 Läufen innerhalb von Rawtonics Speichergrenze; andere Rechner und Fotos sind noch nicht gemessen.</p>
+
+      <p class="when"><strong>Wenn du von Lightroom kommst:</strong> Ebenen sind Lightrooms Masken, mit denselben Arten und Hinzufügen, Abziehen und Schnittmenge. <strong>Von Capture One:</strong> Eine Ebene ist eine Capture-One-Ebene, ihre Maske aus Teilen aufgebaut; Capture-One-Ebenen mit Verläufen kommen beim Import als bearbeitbare Verläufe, Pinselstriche als feste Masken.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

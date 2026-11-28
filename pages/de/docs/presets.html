@@ -1,0 +1,47 @@
+<!--page {"path": "/de/docs/presets/", "title": "Stile und Vorgaben: Miniaturen, Stärke, Standards pro Kamera", "description": "Eine Bearbeitung als Stil speichern, jeden Stil als Miniatur deines Fotos sehen, mit der Stärke dosieren und jeder Kamera einen eigenen Ausgangspunkt geben.", "docs": {"section": "basics", "order": 60, "tool": "presets", "nav": "Stile & Vorgaben"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Stile und Vorgaben.</h1>
+      <p class="lead">Ein Stil ist eine gespeicherte Bearbeitung, die du mit einem Klick auf jedes Foto legen kannst. <strong>Stile &amp; Vorgaben</strong> steht oben im Reiter Anpassen von Entwickeln, mit Rawtonics eigenen Stilen unter <strong>Mitgeliefert</strong>, deinen in den Ordnern, die du anlegst, und den meistgenutzten unter <strong>Favoriten</strong>.</p>
+
+      {{shot "presets-grid" "die Leiste Stile & Vorgaben als Raster von Miniaturen des geöffneten Fotos"}}
+
+      <h2 id="try">Ausprobieren und anwenden</h2>
+      <ul>
+        <li><strong>Zeig</strong> mit dem Mauszeiger auf einen Stil, um ihn auf dem Foto zu sehen; angewendet ist noch nichts.</li>
+        <li><strong>Klick</strong>, um ihn anzuwenden. Sind mehrere Fotos ausgewählt, wendet ein Klick ihn auf alle an, als ein Widerrufen-Schritt.</li>
+        <li><strong>Stärke</strong> bestimmt, wie stark der angewendete Stil auf das geöffnete Foto wirkt, von 0 bis 100 % dessen, womit er gespeichert wurde.</li>
+        <li><strong>Miniaturen.</strong> Der Raster-Schalter zeigt jeden Stil als kleines Bild deines eigenen Fotos mit diesem Stil, so wählst du nach dem Bild statt nach dem Namen. Zurück zu einem Stil, den du schon angesehen hast, geht es sofort; ein Stil, der zuschneidet oder das RAW neu entwickeln muss, zeigt stattdessen eine schraffierte Kachel, bis du ihn anwendest. Die Liste bleibt der Standard; Rawtonic merkt sich deine Wahl.</li>
+      </ul>
+
+      <h2 id="replace">Stile ersetzen einander</h2>
+      <p>Wendest du einen Stil an, während ein anderer angewendet ist, nimmt Rawtonic den ersten zurück, bevor es den neuen anwendet, so kannst du dich durch Stile klicken, ohne dass sie sich stapeln. Ein Klick auf den angewendeten Stil nimmt ihn zurück. Einstellungen, die du nach dem Anwenden selbst geändert hast, behalten deinen Wert, wenn der Stil ersetzt oder zurückgenommen wird.</p>
+      <p>Werkzeugvorgaben funktionieren anders: Die Kopfzeile jedes Werkzeugs hat einen Vorgaben-Knopf nur für dieses Werkzeug (etwa nur Schärfen oder nur eine Vignette), und diese Vorgaben kommen zu dem dazu, was schon da ist. Rawtonics mitgelieferte Vorgaben für Himmel, Motiv, Augen, Haut und Hintergrund bringen eine KI-Ebene mit, die auf jedem Foto neu ausgewählt wird.</p>
+
+      <h2 id="save">Eigene speichern</h2>
+      <p><strong>Neue Vorgabe</strong> (+) speichert die Einstellungen des geöffneten Fotos. <strong>Nur geänderte Einstellungen</strong> (standardmäßig an) beschränkt sie auf das, was du geändert hast, so setzt der Stil den Rest nicht zurück; kreuze <strong>Zuschnitt &amp; Geometrie</strong> und <strong>Ebenen &amp; Masken</strong> nur an, wenn der Stil sie mitnehmen soll. Ein Rechtsklick auf einen Stil benennt ihn um, dupliziert, verschiebt oder exportiert ihn oder <strong>aktualisiert ihn mit den aktuellen Einstellungen</strong>.</p>
+
+      <h2 id="defaults">Entwicklungsstandards: ein Ausgangspunkt pro Kamera</h2>
+      <p>Jedes Foto, das du noch nicht bearbeitet hast, beginnt mit seinen Entwicklungsstandards. Ein Rechtsklick auf einen Stil oder das Foto und <strong>Als Standard für … festlegen</strong> macht ihn zum Standard eines Kameramodells oder eines einzelnen Kameragehäuses (nach seiner Seriennummer), <strong>Als globalen Standard festlegen</strong> für alle Fotos. Die Einstellungen eines einzelnen Werkzeugs lassen sich aus seiner Kopfzeile als Kamerastandard speichern. Die Einstellungen listen sie unter Kamerastandards. <strong>Anpassungen zurücksetzen</strong> bringt ein Foto zu diesen Standards zurück.</p>
+
+      <h2 id="import">Vorgaben und Stile importieren</h2>
+      <p><strong>Vorgaben importieren</strong> liest Lightroom-Vorgaben und Capture-One-Stile und übersetzt sie in Rawtonics Werkzeuge. Was es nicht übersetzen kann, nennt es nach dem Import mit Namen, damit du weißt, was du prüfen solltest.</p>
+
+      <p class="when"><strong>Wenn du von Capture One kommst:</strong> Stile verhalten sich wie in Capture One, nur bleiben deine eigenen Änderungen nach einem Stil erhalten, wenn der Stil ersetzt wird. <strong>Von Lightroom:</strong> Vorgaben mit Stärke und Vorschau beim Überfahren funktionieren wie in Lightroom; das Raster mit Miniaturen steckt in der Leiste selbst.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

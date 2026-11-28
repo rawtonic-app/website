@@ -1,0 +1,56 @@
+<!--page {"path": "/de/docs/colour/", "title": "Farbe: Weißabgleich, Farbmischer, Farbeditor, Color Grading, Schwarzweiß", "description": "Den Weißabgleich in Kelvin setzen, einzelne Farben mit dem Farbmischer oder dem Farbeditor ändern, Schatten und Lichter tönen und Schwarzweißfotos mit Tonung machen.", "docs": {"section": "basics", "order": 30, "tool": "color", "nav": "Farbe"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Farbe.</h1>
+      <p class="lead">Farbarbeit geht vom ganzen Foto zu einzelnen Farben: zuerst der Weißabgleich, damit Weiß weiß aussieht, dann die Farben, die du ändern willst, dann eine Stimmung. Der Weißabgleich steht im Reiter Anpassen, alles andere auf dieser Seite im Reiter <strong>Farbe</strong>.</p>
+
+      <h2 id="white-balance">Weißabgleich</h2>
+      <p>Bei einer RAW-Datei arbeitet der <strong>Weißabgleich</strong> in echten Einheiten: <strong>Temp.</strong> in Kelvin (2000 bis 50 000 K) und <strong>Tönung</strong> von Grün bis Magenta, berechnet aus den Farbdaten der Kamera selbst. Beginne mit <strong>Wie Aufnahme</strong> (was die Kamera gewählt hat), <strong>Auto</strong> oder einem Licht: Tageslicht, Bewölkt, Schatten, Kunstlicht, Leuchtstoffröhre, Blitz.</p>
+      <ul>
+        <li>Die <strong>Weißabgleich-Pipette</strong> (<kbd>W</kbd>): Klick auf etwas, das neutral grau oder weiß sein soll. Mit Umschalt-Klick bleibt die Pipette an, um mehrere Stellen auszuprobieren.</li>
+        <li><strong>Automatischer Weißabgleich</strong>: ⇧⌘U (Strg+Umschalt+U).</li>
+        <li>JPEGs und TIFFs haben keine Kameradaten, aus denen sich Kelvin berechnen ließe; für sie und auf einer Ebene korrigieren die Regler relativ zum Foto, wie es ist (<strong>Relative Korrektur</strong>).</li>
+      </ul>
+
+      {{shot "colour-white-balance" "die Gruppe Weißabgleich mit der Pipette über einer Graukarte"}}
+
+      <h2 id="mixer">Farbmischer</h2>
+      <p>Der <strong>Farbmischer</strong> ändert acht Farben, von Rot bis Magenta, jede in Farbton, Sättigung und Luminanz: einen Himmel tiefer blau machen, ein schreiendes Grün beruhigen, Haut ein wenig wärmer. <strong>Gezielt</strong> lässt dich am Foto selbst arbeiten: Schalte es ein und zieh auf der Farbe, die du ändern willst, nach oben oder unten; der Mischer bewegt die Kanäle unter dem Zeiger (Umschalt für feinere Schritte, Esc zum Beenden).</p>
+
+      <h2 id="editor">Farbeditor</h2>
+      <p>Sind die acht festen Farben des Mischers zu grob, arbeitet der <strong>Farbeditor</strong> mit einer Farbe, die du auswählst. Klick die Farbe im Foto an; Rawtonic zeigt ihren Bereich auf einem Farbrad, wo du Mitte oder Ränder ziehst, um ihn breiter oder schmaler zu machen. Dann änderst du Farbton, Sättigung und Helligkeit. <strong>Gleichmäßigkeit</strong> gleicht die Farben im Bereich an (fleckige Haut, ein ungleichmäßiger Himmel), <strong>Glättung</strong> bestimmt, wie weich die Änderung an den Rändern des Bereichs ausläuft, und „Bereich zeigen“ macht alles andere grau, damit du siehst, was du änderst.</p>
+      <ul>
+        <li><strong>Hautton</strong>: Haut auswählen, dann mit Gleichmäßigkeit und Stärke angleichen.</li>
+        <li><strong>Zielfarbe</strong>: Gib einem Bereich eine Farbe, zu der er wandern soll: im Foto auswählen, in einem anderen Foto der Serie aufnehmen oder eintippen (sRGB-Hex, R/G/B oder L*C*h°). Rawtonic setzt die Regler und misst dann das Ergebnis an der gewählten Stelle; es sagt dir, wie weit es noch entfernt ist (als ΔE00) und welcher Regler am Anschlag steht, etwa um eine Produktfarbe über ein ganzes Shooting gleich zu halten.</li>
+      </ul>
+
+      {{shot "colour-editor" "der Farbeditor mit einem ausgewählten Bereich auf dem Rad und einer Zielfarbe"}}
+
+      <h2 id="grading">Color Grading</h2>
+      <p><strong>Color Grading</strong> tönt Schatten, Mitteltöne und Lichter mit je einem Farbrad (ziehen für Farbton und Stärke; Alt behält den Farbton, Umschalt bewegt feiner), dazu ein globales Rad für das ganze Foto. <strong>3-Wege</strong> zeigt die drei Tonwerträder zugleich. <strong>Mischen</strong> bestimmt, wie stark die drei Bereiche ineinander übergehen, <strong>Abgleich</strong> verschiebt die Grenze zwischen Schatten und Lichtern. Gut für einen Look: kühle Schatten und warme Lichter, ein verblasster Abzug, ein wärmerer Abend.</p>
+
+      <h2 id="bw">Schwarzweiß und Tonung</h2>
+      <p><strong>In Schwarzweiß umwandeln</strong> macht das Foto grau; die acht Farbregler bestimmen dann, wie hell jede Farbe im Grau wird, wie Farbfilter beim Schwarzweißfilm: dunkleres Blau gibt einen dunkleren Himmel, helleres Orange hellere Haut. <strong>Auto</strong> setzt eine Mischung aus dem Foto, und mit dem gezielten Werkzeug ziehst du stattdessen am Foto.</p>
+      <p><strong>S/W-Tonung</strong> tönt das Ergebnis wie einen getonten Abzug: eine <strong>Papier</strong>farbe, ein <strong>Schattenton</strong> und ein <strong>Lichterton</strong>, mit <strong>Balance</strong> zwischen ihnen und <strong>Dichte</strong> für die Stärke der Tonung.</p>
+
+      <h2 id="calibration">Kalibrierung</h2>
+      <p>Die <strong>Kalibrierung</strong> verschiebt Farbton und Sättigung der Grundfarben Rot, Grün und Blau, auf denen die ganze Farbwiedergabe aufbaut, und die Tönung der Schatten. Sie ändert alle Farben zugleich, auf eine Art, die der Mischer nicht kann; nutze sie sparsam, meist einmal pro Kamera und als Vorgabe gespeichert.</p>
+
+      <p class="when"><strong>Wenn du von Lightroom kommst:</strong> Farbmischer, Color Grading und Kalibrierung funktionieren wie die, die du kennst. <strong>Von Capture One:</strong> Der Farbeditor mit seinen Bereichen, Gleichmäßigkeit und Hautton ist das Werkzeug, das du als Color Editor kennst; Capture-One-Stile mit Color-Editor-Bereichen werden in ihn importiert.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

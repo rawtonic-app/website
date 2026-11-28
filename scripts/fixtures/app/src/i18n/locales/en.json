@@ -1,0 +1,4 @@
+{
+  "appMenu": { "items": { "view_grid": "Library Grid", "flag_reject": "Reject", "export_previous": "Export with Previous", "copy_files": "Copy files", "zoom_in": "Zoom In", "show_original": "Hold: whole photo before" } },
+  "settings": { "keybinds": { "sections": { "library": "Library", "view": "View" } } }
+}

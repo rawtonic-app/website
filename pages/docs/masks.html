@@ -1,0 +1,73 @@
+<!--page {"path": "/docs/masks/", "title": "Masks and layers: brush, gradients, ranges, AI selections", "description": "Adjust parts of a photo with layers: brushes and gradients, colour, luminance and depth ranges, and AI selections of subject, sky, people, landscape and objects.", "docs": {"section": "local", "order": 10, "tool": "layers", "nav": "Masks & layers"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Masks and layers.</h1>
+      <p class="lead">A <strong>layer</strong> is a second set of adjustments that acts only where its <strong>mask</strong> says: brighten a face, darken a sky, warm a background. Each layer has its own sliders (exposure, colour, sharpening and most other tools) and a mask built from one or more parts.</p>
+
+      {{shot "masks-layers-panel" "the Layers tab with a sky and a subject layer, the mask shown as an overlay"}}
+
+      <h2 id="layers">Working with layers</h2>
+      <ul>
+        <li><strong>New layer</strong> (+) in the Layers tab, or in Layers &amp; masks at the top of the Adjust tab, offers every kind of mask below. While a layer is selected, the sliders of every tab act on it; <strong>Background</strong> goes back to the whole photo.</li>
+        <li>A mask can combine parts: <strong>Add</strong>, <strong>Subtract</strong> or <strong>Intersect</strong> each one, and <strong>Invert</strong> a part or the whole mask. For example: Sky, then subtract a brush where a tree reaches into it.</li>
+        <li><kbd>M</kbd> shows or hides the mask over the photo, ⌥M (Alt+M) shows it in grey, <kbd>H</kbd> shows only the selected layer’s effect. Mask overlay settings set its colour and when it shows.</li>
+        <li>Up to 32 visible layers are applied to a photo; hide or delete one to make room.</li>
+      </ul>
+
+      <h2 id="draw">Draw: brush and gradients</h2>
+      <dl>
+        <dt id="brush">Brush</dt>
+        <dd><kbd>B</kbd> paints the mask, <kbd>E</kbd> erases from it; ⌘↑ and ⌘↓ (Ctrl+↑, Ctrl+↓) change the size. Size, hardness, flow and opacity are in the brush’s settings (right-click the photo). <strong>Auto mask</strong> keeps the stroke to the edge under the brush, so you can paint a wall without colouring the sky beside it. With a pressure-sensitive pen, pressing harder can paint wider or stronger.</dd>
+        <dt id="linear">Linear gradient</dt>
+        <dd><kbd>L</kbd>: drag across the photo for an effect that fades from one side, the graduated filter for a bright sky. A two-sided band is possible too.</dd>
+        <dt id="radial">Radial gradient</dt>
+        <dd><kbd>T</kbd>: an ellipse that fades towards its edge, inside or outside, to lead the eye or make your own vignette.</dd>
+      </dl>
+      <p>Brush and eraser also work on gradient and AI layers: paint in or take out a bit, and the gradient stays editable.</p>
+
+      <h2 id="ranges">Range: colour, luminance and depth</h2>
+      <ul>
+        <li><strong>Color range</strong>: click a colour in the photo or drag over an area (Shift adds up to five samples); the mask takes every place of that colour, with Refine for how wide.</li>
+        <li><strong>Luminance range</strong>: tones from shadows to highlights, with a soft falloff. <strong>Limit to a luma range…</strong> does the same for any other mask, for example only the bright part of a gradient.</li>
+        <li><strong>Depth range</strong>: near and far limits in the scene’s depth, estimated by an AI model from the photo, for example to calm a busy background.</li>
+      </ul>
+
+      <h2 id="ai">Select: AI selections</h2>
+      <dl>
+        <dt id="subject">Subject and Background</dt>
+        <dd>The main subject, or everything but it. <kbd>⇧,</kbd> and <kbd>⇧.</kbd> make a new subject or background layer at once.</dd>
+        <dt id="sky">Sky</dt>
+        <dd>The sky, for a deeper blue or calmer clouds without touching the land.</dd>
+        <dt id="people">People</dt>
+        <dd>Each person, or everyone, as a whole or in parts: face skin, body skin, hair, eyebrows, iris and pupil, eye sclera, lips, teeth, clothes.</dd>
+        <dt id="landscape">Landscape</dt>
+        <dd>Parts of a landscape to pick from: sky, mountains, vegetation, water, natural ground, artificial ground, architecture. A part the photo does not have is shown as not found.</dd>
+        <dt id="object">Object</dt>
+        <dd>Click an object or drag a box around it; Shift-click adds another, Alt-click leaves a part out.</dd>
+      </dl>
+      <p><strong>Refine edge</strong> lets the mask follow the photo’s own edge within a radius you set, so hair, fur and leaves keep their soft outline. The AI models run on your computer, never on a server; each downloads the first time you use it.</p>
+      <p>AI selections are made for each photo: paste, sync or apply a preset with a sky layer to fifty photos, and each gets its own sky, also photos you never opened.</p>
+
+      {{shot "masks-people-parts" "a People layer with face skin and hair ticked on a portrait"}}
+
+      <h2 id="memory">On computers with little memory</h2>
+      <p>AI selections need a lot of memory for a large photo. On a computer with 16 GB or less, Rawtonic starts one only when there is room for it: until then its layer says “waiting for memory…”, and it is computed by itself once memory is free (closing other programs or switching to a single photo view helps). On Windows and Linux computers that run AI on the processor, a Subject or Background selection that would not fit runs in a slower mode that needs less memory, and its layer says so. In our test with a 50-megapixel RAW on a 14 GB Windows laptop, Subject selections stayed within Rawtonic’s memory limit in 11 of 11 runs; other computers and photos are not measured yet.</p>
+
+      <p class="when"><strong>If you come from Lightroom:</strong> layers are Lightroom’s masks, with the same kinds and Add, Subtract and Intersect. <strong>From Capture One:</strong> a layer is a Capture One layer, with its mask built from parts; Capture One’s layers with gradients come over in imports as editable gradients, brush strokes as fixed masks.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

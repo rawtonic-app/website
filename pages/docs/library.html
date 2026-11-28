@@ -1,0 +1,60 @@
+<!--page {"path": "/docs/library/", "title": "Library and culling: ratings, flags, multi view", "description": "Rate, flag and compare a shoot fast: keys for every rating, auto-advance, the multi view for comparing, and zoom with Z.", "docs": {"section": "library", "order": 20, "tool": "library", "nav": "Library & culling"}} -->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Library and culling.</h1>
+      <p class="lead">The Library is where you go through a shoot: look at every photo, keep the good ones, throw out the misses, and find the one you want later. Everything here works from the keyboard, so your eyes stay on the photos.</p>
+
+      {{shot "library-grid" "the Library grid with stars, flags and colour labels on the thumbnails"}}
+
+      <h2 id="views">Grid, loupe and Develop</h2>
+      <p><kbd>G</kbd> shows the grid, <kbd>E</kbd> one photo large (the loupe), <kbd>D</kbd> opens it in Develop, <kbd>F</kbd> shows the photo alone on the screen until you press <kbd>F</kbd> or Esc again. The arrow keys step from photo to photo in every view. <kbd>Tab</kbd> hides the side panels, <kbd>⇧</kbd><kbd>Tab</kbd> every panel and bar.</p>
+
+      <h2 id="rate">Ratings, flags and colour labels</h2>
+      <dl>
+        <dt id="stars">Stars</dt>
+        <dd><kbd>1</kbd> to <kbd>5</kbd> rate the photo, <kbd>0</kbd> clears the rating.</dd>
+        <dt id="flags">Flags</dt>
+        <dd><kbd>P</kbd> picks, <kbd>X</kbd> rejects, <kbd>U</kbd> removes the flag. A rejected photo stays where it is until you decide to throw it out; nothing is deleted by a flag.</dd>
+        <dt id="labels">Colour labels</dt>
+        <dd><kbd>6</kbd> red, <kbd>7</kbd> yellow, <kbd>8</kbd> green, <kbd>9</kbd> blue; or <kbd>⇧1</kbd> to <kbd>⇧5</kbd> for red to purple, <kbd>⇧0</kbd> for none.</dd>
+      </dl>
+      <p><strong>Auto-advance</strong> moves to the next photo after each rating or flag, so culling is one key per photo. It is off at first; Caps Lock or the Photo menu turns it on and off (Settings → General keeps the choice).</p>
+      <p>Filters above the grid show only picked, rejected or unflagged photos, photos with at least a given rating, or with given colour labels. <strong>Delete</strong> (<kbd>⌫</kbd>) moves the selected photos to the library’s own Trash folder, where Undo can bring them back; only <strong>Empty Trash…</strong> moves them to your computer’s Trash. In a session, ⌘J (Ctrl+J) moves the selected photos to the <code>Selects</code> folder.</p>
+
+      <h2 id="compare">Comparing: the multi view</h2>
+      <p>Select two or more photos and press <kbd>N</kbd>: the <strong>Multi view</strong> shows them side by side, each with its own rating, flag and a button to drop it from the selection. That is the quickest way to choose the best of a series.</p>
+      <ul>
+        <li><strong>Lock zoom</strong> (<kbd>⇧N</kbd>): zooming one photo zooms and pans all of them to the same spot, to compare focus or expression at 100 %.</li>
+        <li><strong>A reference.</strong> ⇧Return pins the photo you are looking at as the reference, which stays in place while you step through the others; ⌘Return (Ctrl+Enter) clears it.</li>
+        <li>The multi view works in Develop too: <strong>Edit all selected</strong> sends each change to every photo shown.</li>
+      </ul>
+
+      {{shot "library-multi-view" "the multi view with four photos of a series, zoom locked at 100 %"}}
+
+      <h2 id="zoom">Zoom</h2>
+      <p><kbd>Z</kbd> switches between Fit and the zoom level you chose last (100 % until you choose another), in the loupe, Develop and the multi view; Space steps through Fit, twice Fit and 100 %, <kbd>↑</kbd> and <kbd>↓</kbd> zoom in steps. The zoom menu goes from 25 to 1600 %; the levels count the pixels of the photo as it is cropped.</p>
+
+      <h2 id="suggestions">Culling suggestions</h2>
+      <p>In the Culling tool, <strong>Find misfires and documents</strong> marks misfires (lens cap, ground, pocket, motion smear) and documents (pages, receipts, screenshots), and <strong>Check eyes…</strong> marks faces with closed eyes. These are suggestions only: nothing is rejected until you click <strong>Reject</strong>, and Undo takes that back. The search model they use runs on your computer and downloads the first time.</p>
+
+      <h2 id="stacks">Stacks and virtual copies</h2>
+      <p>⌘G (Ctrl+G) groups the selected photos into a stack, <kbd>S</kbd> folds or unfolds it, <strong>Auto-Stack by Capture Time…</strong> stacks bursts and brackets for you. ⌘' (Ctrl+') makes a virtual copy: a second edit of the same file, without a second file on disk.</p>
+
+      <p class="when"><strong>If you come from Lightroom:</strong> the keys are the ones you know (P, X, U, 0–5, 6–9, G, E, D, N, Z, Caps Lock). <strong>From Capture One:</strong> ⌘J moves to Selects as there, and the reference in the multi view uses Capture One’s ⇧Return and ⌘Return. Every key can be changed in Settings; see <a href="/docs/shortcuts/">Keyboard shortcuts</a>.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>

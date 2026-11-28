@@ -1,0 +1,78 @@
+<!--page {"path": "/de/docs/develop/", "title": "Entwickeln: Reiter, Vorher/Nachher, Protokoll, Bearbeitungen übertragen", "description": "Wie Entwickeln aufgebaut ist, wie du mit dem Original vergleichst, mit Protokoll und Schnappschüssen zurückgehst und eine Bearbeitung auf andere Fotos überträgst.", "docs": {"section": "basics", "order": 10, "tool": "develop", "nav": "Entwickeln im Überblick"}} -->
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+</head>
+<body>
+{{> header}}
+
+<main id="main" class="wrap">
+  <div class="docs">
+    {{docsnav}}
+    <article class="prose">
+      <h1>Entwickeln.</h1>
+      <p class="lead">In Entwickeln wird aus einer RAW-Datei ein Foto. Jede Änderung ist eine Einstellung, die mit dem Foto gespeichert wird, nie eine Änderung der Datei selbst: Du kannst zu jedem früheren Stand zurück, ihn mit dem Original vergleichen und ihn auf andere Fotos übertragen.</p>
+
+      {{shot "develop-overview" "Entwickeln mit geöffnetem Reiter Anpassen neben einem Porträt, darunter der Filmstreifen"}}
+
+      <h2 id="tabs">Die Reiter</h2>
+      <p>Die Werkzeuge liegen in sechs Reitern oben in der Werkzeugspalte (links oder rechts vom Foto, wie du es zu Beginn gewählt hast; unter Einstellungen → Allgemein änderst du es):</p>
+      <dl>
+        <dt id="tab-adjust">Anpassen</dt>
+        <dd>Die Werkzeuge für jeden Tag: Stile &amp; Vorgaben, Profil, Weißabgleich, Belichtung (<a href="/de/docs/basic-tone/">Grundlegende Tonwerte</a>), Präsenz, Gradationskurve und Effekte wie Vignettierung und Lichteffekte. Viele Bearbeitungen verlassen diesen Reiter nie.</dd>
+        <dt id="tab-color">Farbe</dt>
+        <dd>Farbmischer, Farbeditor, Color Grading, Schwarzweiß und Kalibrierung: siehe <a href="/de/docs/colour/">Farbe</a>.</dd>
+        <dt id="tab-detail">Details</dt>
+        <dd>Schärfen, Rauschreduzierung (mit <a href="/de/docs/ai-denoise/">KI-Entrauschen</a>), Körnung, Rand entfernen und Moiré: siehe <a href="/de/docs/detail/">Details</a>.</dd>
+        <dt id="tab-crop">Zuschnitt</dt>
+        <dd>Zuschneiden, Ausrichten, Perspektive und Objektivkorrektur: siehe <a href="/de/docs/crop/">Zuschnitt und Geometrie</a>.</dd>
+        <dt id="tab-layers">Ebenen</dt>
+        <dd>Lokale Anpassungen mit Pinsel, Verläufen und KI-Auswahlen: siehe <a href="/de/docs/masks/">Masken und Ebenen</a>.</dd>
+        <dt id="tab-retouch">Retusche</dt>
+        <dd>Bereichsreparatur, Objekte entfernen und Gesichtsretusche.</dd>
+      </dl>
+      <p>Jede Werkzeugkopfzeile hat einen Schalter, der das Werkzeug aus- und einschaltet, und ein Zurücksetzen; hältst du Zurücksetzen gedrückt (oder drückst es mit Wahltaste/Alt), zeigt das Foto sich ohne dieses Werkzeug, bis du loslässt. Ein Klick mit Wahltaste/Alt auf eine Kopfzeile öffnet nur dieses Werkzeug. Ein Rechtsklick auf eine Kopfzeile verschiebt das Werkzeug nach oben oder unten oder schaltet den Solomodus ein, der immer nur ein Werkzeug offen hält. <strong>Auto</strong> (⌘L, Strg+L) setzt den Tonwert als Ausgangspunkt für dich.</p>
+
+      <h2 id="sliders">Regler</h2>
+      <p>Zieh einen Regler oder seinen Namen, um ihn zu ändern; ein Doppelklick auf einen von beiden setzt ihn zurück; ein Klick auf die Zahl lässt dich einen Wert tippen. Ein kleiner Strich unter jedem Regler markiert seinen Standard. <strong>Halte den Namen eines Reglers gedrückt</strong>, eine Viertelsekunde lang, um das Foto mit genau diesem Regler auf seinem Standard zu sehen; lass los, und deine Einstellung ist genau wieder da. Es ändert sich nichts und kein Protokollschritt entsteht, also ein schnelles „Was macht dieser Regler hier?“.</p>
+
+      <h2 id="before-after">Vorher und Nachher</h2>
+      <ul>
+        <li><strong>Halte <kbd>\</kbd> gedrückt</strong>, um das ganze Foto so zu sehen, wie es vor deinen Bearbeitungen war; lass los, um zurückzukehren. ⌘\ (Strg+\) behält das Vorher, bis du die Taste wieder drückst.</li>
+        <li><kbd>Y</kbd> schaltet die Vorher/Nachher-Ansicht ein; <kbd>⇧Y</kbd> geht durch ihre Arten: geteilt links/rechts, geteilt oben/unten, nebeneinander.</li>
+        <li>Statt des unbearbeiteten Fotos kann ein Schnappschuss das „Vorher“ sein: Wähle beim Schnappschuss Vergleichen.</li>
+        <li><kbd>J</kbd> zeigt die Clipping-Warnungen: wo Lichter oder Schatten ihre Zeichnung verlieren.</li>
+      </ul>
+
+      <h2 id="history">Protokoll und Schnappschüsse</h2>
+      <p>⌘Z (Strg+Z) widerruft, ⇧⌘Z oder ⌘Y (Strg+Y) wiederholt. Das <strong>Protokoll</strong> unten in der Werkzeugspalte listet die Schritte des geöffneten Fotos; ein Klick auf einen Schritt geht dorthin zurück. Rawtonic behält, solange es geöffnet ist, die letzten 50 Schritte jedes der letzten 100 Fotos, die du bearbeitet hast.</p>
+      <p><strong>Schnappschüsse</strong> bewahren eine Bearbeitung dauerhaft unter einem Namen: + speichert die aktuelle Bearbeitung, die Kamera neben einem Protokollschritt speichert diesen Schritt. Einen Schnappschuss wiederherzustellen ist selbst ein Schritt, den Widerrufen zurücknimmt, so verlierst du beim Ausprobieren nie deine aktuelle Bearbeitung. Schnappschüsse werden mit dem Foto in der Bibliothek gespeichert.</p>
+
+      {{shot "develop-history-snapshots" "Protokoll und Schnappschüsse mit drei benannten Schnappschüssen"}}
+
+      <h2 id="copy">Eine Bearbeitung auf andere Fotos übertragen</h2>
+      <dl>
+        <dt id="copy-paste">Kopieren und einsetzen</dt>
+        <dd>⇧⌘C (Strg+Umschalt+C) öffnet <strong>Anpassungen kopieren</strong>: Kreuze die Werkzeuge an, die mitkommen sollen (<strong>Geänderte</strong> wählt nur die, die an diesem Foto geändert sind), und ob lokale Ebenen mitkommen. ⇧⌘V (Strg+Umschalt+V) setzt sie in die ausgewählten Fotos ein. Unter Windows und Linux kopiert Strg+C in Entwickeln dieselben Werkzeuge wie beim letzten Mal, ohne den Dialog.</dd>
+        <dt id="previous">Vom vorherigen Foto</dt>
+        <dd>⌥⌘V (Strg+Alt+V) setzt die Bearbeitung des Fotos ein, das du davor offen hattest, der schnellste Weg durch eine Serie im selben Licht.</dd>
+        <dt id="sync">Synchronisieren</dt>
+        <dd>Wähle im Filmstreifen mehrere Fotos aus und drück ⇧⌘S (Strg+Umschalt+S): Die Bearbeitung des geöffneten Fotos geht an alle, mit derselben Werkzeugauswahl wie beim Kopieren.</dd>
+        <dt id="per-tool">Ein Werkzeug</dt>
+        <dd>Der Kopierknopf jedes Werkzeugs kopiert oder überträgt nur dieses Werkzeug, etwa nur den Weißabgleich.</dd>
+      </dl>
+      <p>Eingesetzte Ebenen kommen zu den eigenen Ebenen jedes Fotos dazu. KI-Auswahlen wie Himmel oder Motiv werden auf jedem Foto neu erkannt, so passt eine eingesetzte Himmelsmaske zum Himmel dieses Fotos.</p>
+      <p><strong>Anpassungen zurücksetzen</strong> (⇧⌘R, Strg+Umschalt+R) kehrt zu den Entwicklungsstandards des Fotos zurück; <strong>Auf neutral zurücksetzen</strong> zu gar keinen Anpassungen.</p>
+
+      <h2 id="export">Aus Entwickeln exportieren</h2>
+      <p>⇧⌘E (Strg+Umschalt+E) öffnet den Export-Dialog; <strong>Mit vorherigen Einstellungen exportieren</strong> (⌥⇧⌘E, Strg+Alt+Umschalt+E) exportiert die ausgewählten Fotos erneut mit den Einstellungen des letzten Exports, ohne den Dialog. Siehe <a href="/de/docs/export/">Export</a>.</p>
+
+      <p class="when"><strong>Wenn du von Lightroom oder Capture One kommst:</strong> Die Tasten für Vorher/Nachher (<kbd>\</kbd>, <kbd>Y</kbd>), Kopieren und Einsetzen (⇧⌘C, ⇧⌘V), Synchronisieren und Zurücksetzen sind die, die du kennst. Neu sind zwei Dinge: den Namen eines Reglers halten, um seinen Standard zu sehen, und das Zurücksetzen eines Werkzeugs halten, um das Foto ohne das Werkzeug zu sehen.</p>
+    </article>
+  </div>
+</main>
+
+{{> footer}}
+</body>
+</html>
