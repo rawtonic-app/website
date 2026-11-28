@@ -40,7 +40,8 @@ function build(change = () => {}) {
       cwd: dir, encoding: 'utf8', env: { ...process.env, RAWTONIC_CHANGELOG: path.join(dir, 'CHANGELOG.md'), RAWTONIC_APP: path.join(root, 'scripts/fixtures/app') },
     });
     const read = (f) => (r.status === 0 ? fs.readFileSync(path.join(dir, 'site', f), 'utf8') : '');
-    return { status: r.status, out: r.stdout + r.stderr, index: read('index.html'), docsExport: read('docs/export/index.html'), shortcutsDe: read('de/docs/shortcuts/index.html') };
+    return { status: r.status, out: r.stdout + r.stderr, index: read('index.html'), docsExport: read('docs/export/index.html'),
+      deDocsExport: read('de/docs/export/index.html'), shortcutsDe: read('de/docs/shortcuts/index.html') };
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
@@ -109,12 +110,36 @@ test('the current and newer versions in page text are fine', () => {
   assert.equal(r.status, 0, r.out);
 });
 
+// A screenshot of a demo scene as scripts/images.sh writes it (the home page's files stand in).
+const fakeShot = (dir, name) => {
+  const a = path.join(dir, 'site/assets');
+  fs.copyFileSync(path.join(a, 'shot-export.jpg'), path.join(a, `${name}.jpg`));
+  for (const w of [720, 1440]) for (const ext of ['avif', 'webp']) fs.copyFileSync(path.join(a, `shot-export-${w}.${ext}`), path.join(a, `${name}-${w}.${ext}`));
+};
+const withPlace = (dir) => ['docs/export.html', 'de/docs/export.html'].forEach((page) =>
+  editPage(dir, page, (s) => s.replace('<h2 ', '{{shot "test-place" "the test scene"}}\n<h2 ')));
+
 test('empty screenshot places are listed but not shown on the built pages', () => {
-  const r = build();
+  const r = build(withPlace);
   assert.equal(r.status, 0, r.out);
-  assert.match(r.out, /screenshot place\(s\) still empty/);
+  assert.match(r.out, /screenshot place\(s\) still empty:[\s\S]*test-place/);
   assert.ok(!r.docsExport.includes('class="shot-todo"'), 'a dashed screenshot box reached the built page');
-  assert.ok(r.docsExport.includes('<!-- shot export-dialog -->'));
+  assert.ok(r.docsExport.includes('<!-- shot test-place -->'));
+});
+
+test('a screenshot place with its image shows the picture, the German page its German capture', () => {
+  const r = build((dir) => { withPlace(dir); fakeShot(dir, 'shot-test-place'); fakeShot(dir, 'shot-test-place-de'); });
+  assert.equal(r.status, 0, r.out);
+  assert.doesNotMatch(r.out, /test-place/);
+  assert.match(r.docsExport, /<figure class="shot crop" data-shot="test-place"><picture>.*src="\/assets\/shot-test-place\.jpg" alt="The test scene"/);
+  assert.match(r.deDocsExport, /src="\/assets\/shot-test-place-de\.jpg"/);
+});
+
+test('a German page without its own capture shows the English one and the build says so', () => {
+  const r = build((dir) => { withPlace(dir); fakeShot(dir, 'shot-test-place'); });
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.deDocsExport, /src="\/assets\/shot-test-place\.jpg"/);
+  assert.match(r.out, /show the English interface[\s\S]*de\/docs\/export\.html: test-place/);
 });
 
 test('the shortcuts page is made from the app’s keymap, in each language', () => {

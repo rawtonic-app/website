@@ -345,11 +345,23 @@ const docsIndex = (lang) => DOC_SECTIONS.map((s) => {
     : `<p class="muted">${esc(T[lang].docsSoon)}</p>`;
   return `<section class="docs-group"><h2 id="${s}">${esc(T[lang].docSections[s])}</h2>${body}</section>`;
 }).join('\n');
-// {{shot "id" "what it shows"}}: a marked place for a screenshot of a demo scene
-// (made per release by the app's QA harness; see README). Listed by the build.
+// {{shot "id" "what it shows"}}: the place of a screenshot of a demo scene, made
+// per release by the app (scripts/docs-shots/ there; see README). With
+// site/assets/shot-<id>.jpg (German pages: shot-<id>-de.jpg first) it becomes that
+// picture, with "what it shows" as its alt text; else the build lists it as empty.
 const shots = [];
+const shotsInEnglish = [];
 const showShots = process.argv.includes('--show-shots');
+const SHOT_SIZES = '(min-width: 1100px) 720px, 94vw';
+const shotImage = (id, lang) => [...(lang === 'en' ? [] : [`shot-${id}-${lang}`]), `shot-${id}`]
+  .find((name) => fs.existsSync(path.join(root, 'site/assets', `${name}.jpg`)));
 const shot = (id, what, lang, where) => {
+  const image = shotImage(id, lang);
+  if (image) {
+    if (lang !== 'en' && image === `shot-${id}`) shotsInEnglish.push(`${where}: ${id}`);
+    const alt = what.charAt(0).toUpperCase() + what.slice(1);
+    return `<figure class="shot crop" data-shot="${id}">{{picture ${image} "${alt}" "${SHOT_SIZES}"}}</figure>`;
+  }
   shots.push(`${where}: ${id}`);
   // Hidden in the built site (user decision 2026-11-26: pages may go live without
   // screenshots); `--show-shots` renders the dashed boxes for a local preview.
@@ -445,4 +457,5 @@ if (left.length) {
   if (strict) { console.error('build: refused (--strict): fill release.json and the marked legal fields first'); process.exit(1); }
 }
 if (shots.length) console.log(`build: ${shots.length} screenshot place(s) still empty:\n  ${shots.join('\n  ')}`);
+if (shotsInEnglish.length) console.log(`build: ${shotsInEnglish.length} screenshot place(s) show the English interface (no shot-<id>-<lang>.jpg):\n  ${shotsInEnglish.join('\n  ')}`);
 console.log(`build: ${pages.length} pages (${LANGS.join(', ')}), version ${release.version}${left.length || stale.length ? ' (with problems)' : ''}`);
